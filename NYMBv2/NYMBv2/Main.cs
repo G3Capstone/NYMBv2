@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace NYMBv2
 {
-    public partial class Form1 : Form
+    public partial class Main : Form
     {
-        public Form1()
+        public Main()
         {
             InitializeComponent();
             tabControl1.DrawItem += new DrawItemEventHandler(tabControl1_DrawItem);

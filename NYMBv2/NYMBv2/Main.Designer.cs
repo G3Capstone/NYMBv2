@@ -1,6 +1,6 @@
 ﻿namespace NYMBv2
 {
-    partial class Form1
+    partial class Main
     {
         /// <summary>
         /// Required designer variable.
@@ -59,7 +59,7 @@
             this.tabControl1.Font = new System.Drawing.Font("Century", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tabControl1.ImeMode = System.Windows.Forms.ImeMode.Off;
             this.tabControl1.ItemSize = new System.Drawing.Size(45, 145);
-            this.tabControl1.Location = new System.Drawing.Point(1, 49);
+            this.tabControl1.Location = new System.Drawing.Point(1, 54);
             this.tabControl1.Multiline = true;
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
@@ -71,7 +71,7 @@
             // tpAnnouncements
             // 
             this.tpAnnouncements.BackColor = System.Drawing.Color.LightBlue;
-            this.tpAnnouncements.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
+            this.tpAnnouncements.ForeColor = System.Drawing.SystemColors.ControlText;
             this.tpAnnouncements.Location = new System.Drawing.Point(149, 4);
             this.tpAnnouncements.Name = "tpAnnouncements";
             this.tpAnnouncements.Padding = new System.Windows.Forms.Padding(3);
@@ -147,7 +147,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Segoe Print", 24F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(-9, -5);
+            this.label1.Location = new System.Drawing.Point(1, -5);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(485, 57);
             this.label1.TabIndex = 1;
@@ -181,19 +181,19 @@
             this.btnLogOut.Text = "Log Out";
             this.btnLogOut.UseVisualStyleBackColor = true;
             // 
-            // Form1
+            // Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.InactiveCaption;
-            this.ClientSize = new System.Drawing.Size(1071, 727);
+            this.ClientSize = new System.Drawing.Size(1071, 733);
             this.Controls.Add(this.btnLogOut);
             this.Controls.Add(this.lblActiveUser);
             this.Controls.Add(this.lblUserText);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.tabControl1);
-            this.Name = "Form1";
-            this.Text = "Form1";
+            this.Name = "Main";
+            this.Text = "Main";
             this.tabControl1.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
