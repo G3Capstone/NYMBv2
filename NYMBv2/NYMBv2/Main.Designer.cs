@@ -41,6 +41,7 @@
             this.lblUserText = new System.Windows.Forms.Label();
             this.lblActiveUser = new System.Windows.Forms.Label();
             this.btnLogOut = new System.Windows.Forms.Button();
+            this.linkLabel1 = new System.Windows.Forms.LinkLabel();
             this.tabControl1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -156,18 +157,20 @@
             // lblUserText
             // 
             this.lblUserText.AutoSize = true;
-            this.lblUserText.Location = new System.Drawing.Point(754, 25);
+            this.lblUserText.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblUserText.Location = new System.Drawing.Point(745, 12);
             this.lblUserText.Name = "lblUserText";
-            this.lblUserText.Size = new System.Drawing.Size(32, 13);
+            this.lblUserText.Size = new System.Drawing.Size(40, 16);
             this.lblUserText.TabIndex = 2;
             this.lblUserText.Text = "User:";
             // 
             // lblActiveUser
             // 
             this.lblActiveUser.AutoSize = true;
-            this.lblActiveUser.Location = new System.Drawing.Point(792, 25);
+            this.lblActiveUser.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblActiveUser.Location = new System.Drawing.Point(783, 12);
             this.lblActiveUser.Name = "lblActiveUser";
-            this.lblActiveUser.Size = new System.Drawing.Size(87, 13);
+            this.lblActiveUser.Size = new System.Drawing.Size(112, 16);
             this.lblActiveUser.TabIndex = 3;
             this.lblActiveUser.Text = "[Username Here]";
             // 
@@ -178,8 +181,18 @@
             this.btnLogOut.Name = "btnLogOut";
             this.btnLogOut.Size = new System.Drawing.Size(117, 23);
             this.btnLogOut.TabIndex = 4;
-            this.btnLogOut.Text = "Log Out";
+            this.btnLogOut.Text = "Log in/out";
             this.btnLogOut.UseVisualStyleBackColor = true;
+            // 
+            // linkLabel1
+            // 
+            this.linkLabel1.AutoSize = true;
+            this.linkLabel1.Location = new System.Drawing.Point(745, 34);
+            this.linkLabel1.Name = "linkLabel1";
+            this.linkLabel1.Size = new System.Drawing.Size(180, 13);
+            this.linkLabel1.TabIndex = 5;
+            this.linkLabel1.TabStop = true;
+            this.linkLabel1.Text = "Don\'t have an account? Create one.";
             // 
             // Main
             // 
@@ -187,6 +200,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.InactiveCaption;
             this.ClientSize = new System.Drawing.Size(1071, 733);
+            this.Controls.Add(this.linkLabel1);
             this.Controls.Add(this.btnLogOut);
             this.Controls.Add(this.lblActiveUser);
             this.Controls.Add(this.lblUserText);
@@ -214,6 +228,7 @@
         private System.Windows.Forms.Label lblUserText;
         private System.Windows.Forms.Label lblActiveUser;
         private System.Windows.Forms.Button btnLogOut;
+        private System.Windows.Forms.LinkLabel linkLabel1;
     }
 }
 
