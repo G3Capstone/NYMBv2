@@ -87,6 +87,19 @@
     <Compile Include="MessageBox Dummy.Designer.cs">
       <DependentUpon>MessageBox Dummy.cs</DependentUpon>
     </Compile>
+    <Compile Include="NYMB_DataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>NYMB_DataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="NYMB_DBDataSet.cs">
+      <DependentUpon>NYMB_DBDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="NYMB_DBDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>NYMB_DBDataSet.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Product Manager Dummy.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -131,6 +144,28 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <None Include="NYMB_DataSet.xsc">
+      <DependentUpon>NYMB_DataSet.xsd</DependentUpon>
+    </None>
+    <None Include="NYMB_DataSet.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>NYMB_DataSet.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="NYMB_DataSet.xss">
+      <DependentUpon>NYMB_DataSet.xsd</DependentUpon>
+    </None>
+    <None Include="NYMB_DBDataSet.xsc">
+      <DependentUpon>NYMB_DBDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="NYMB_DBDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>NYMB_DBDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="NYMB_DBDataSet.xss">
+      <DependentUpon>NYMB_DBDataSet.xsd</DependentUpon>
+    </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
