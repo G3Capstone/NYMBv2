@@ -37,13 +37,13 @@
             this.tpProductManager = new System.Windows.Forms.TabPage();
             this.tpUserManager = new System.Windows.Forms.TabPage();
             this.tpSettings = new System.Windows.Forms.TabPage();
-            this.label1 = new System.Windows.Forms.Label();
+            this.lblTitle = new System.Windows.Forms.Label();
             this.lblUserText = new System.Windows.Forms.Label();
             this.lblActiveUser = new System.Windows.Forms.Label();
             this.btnLogOut = new System.Windows.Forms.Button();
-            this.linkLabel1 = new System.Windows.Forms.LinkLabel();
+            this.llblCreateAccount = new System.Windows.Forms.LinkLabel();
             this.lblAnnouncements = new System.Windows.Forms.Label();
-            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
+            this.rtbAnnouncements = new System.Windows.Forms.RichTextBox();
             this.tabControl1.SuspendLayout();
             this.tpAnnouncements.SuspendLayout();
             this.SuspendLayout();
@@ -75,7 +75,7 @@
             // tpAnnouncements
             // 
             this.tpAnnouncements.BackColor = System.Drawing.Color.LightBlue;
-            this.tpAnnouncements.Controls.Add(this.richTextBox1);
+            this.tpAnnouncements.Controls.Add(this.rtbAnnouncements);
             this.tpAnnouncements.Controls.Add(this.lblAnnouncements);
             this.tpAnnouncements.ForeColor = System.Drawing.SystemColors.ControlText;
             this.tpAnnouncements.Location = new System.Drawing.Point(149, 4);
@@ -147,15 +147,15 @@
             this.tpSettings.Text = "Settings";
             this.tpSettings.UseVisualStyleBackColor = true;
             // 
-            // label1
+            // lblTitle
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Segoe Print", 24F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(1, -5);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(485, 57);
-            this.label1.TabIndex = 1;
-            this.label1.Text = "Not Your Mothers Basement";
+            this.lblTitle.AutoSize = true;
+            this.lblTitle.Font = new System.Drawing.Font("Segoe Print", 24F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTitle.Location = new System.Drawing.Point(1, -5);
+            this.lblTitle.Name = "lblTitle";
+            this.lblTitle.Size = new System.Drawing.Size(485, 57);
+            this.lblTitle.TabIndex = 1;
+            this.lblTitle.Text = "Not Your Mothers Basement";
             // 
             // lblUserText
             // 
@@ -187,15 +187,15 @@
             this.btnLogOut.Text = "Log in/out";
             this.btnLogOut.UseVisualStyleBackColor = true;
             // 
-            // linkLabel1
+            // llblCreateAccount
             // 
-            this.linkLabel1.AutoSize = true;
-            this.linkLabel1.Location = new System.Drawing.Point(745, 34);
-            this.linkLabel1.Name = "linkLabel1";
-            this.linkLabel1.Size = new System.Drawing.Size(180, 13);
-            this.linkLabel1.TabIndex = 5;
-            this.linkLabel1.TabStop = true;
-            this.linkLabel1.Text = "Don\'t have an account? Create one.";
+            this.llblCreateAccount.AutoSize = true;
+            this.llblCreateAccount.Location = new System.Drawing.Point(745, 34);
+            this.llblCreateAccount.Name = "llblCreateAccount";
+            this.llblCreateAccount.Size = new System.Drawing.Size(180, 13);
+            this.llblCreateAccount.TabIndex = 5;
+            this.llblCreateAccount.TabStop = true;
+            this.llblCreateAccount.Text = "Don\'t have an account? Create one.";
             // 
             // lblAnnouncements
             // 
@@ -207,16 +207,16 @@
             this.lblAnnouncements.Text = "Announcements";
             this.lblAnnouncements.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // richTextBox1
+            // rtbAnnouncements
             // 
-            this.richTextBox1.BackColor = System.Drawing.Color.LightBlue;
-            this.richTextBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.richTextBox1.Location = new System.Drawing.Point(0, 51);
-            this.richTextBox1.Name = "richTextBox1";
-            this.richTextBox1.ReadOnly = true;
-            this.richTextBox1.Size = new System.Drawing.Size(920, 618);
-            this.richTextBox1.TabIndex = 1;
-            this.richTextBox1.Text = "";
+            this.rtbAnnouncements.BackColor = System.Drawing.Color.LightBlue;
+            this.rtbAnnouncements.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.rtbAnnouncements.Location = new System.Drawing.Point(0, 51);
+            this.rtbAnnouncements.Name = "rtbAnnouncements";
+            this.rtbAnnouncements.ReadOnly = true;
+            this.rtbAnnouncements.Size = new System.Drawing.Size(920, 618);
+            this.rtbAnnouncements.TabIndex = 1;
+            this.rtbAnnouncements.Text = "";
             // 
             // Main
             // 
@@ -224,11 +224,11 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.InactiveCaption;
             this.ClientSize = new System.Drawing.Size(1071, 733);
-            this.Controls.Add(this.linkLabel1);
+            this.Controls.Add(this.llblCreateAccount);
             this.Controls.Add(this.btnLogOut);
             this.Controls.Add(this.lblActiveUser);
             this.Controls.Add(this.lblUserText);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.lblTitle);
             this.Controls.Add(this.tabControl1);
             this.Name = "Main";
             this.Text = "Main";
@@ -249,12 +249,12 @@
         private System.Windows.Forms.TabPage tpProductManager;
         private System.Windows.Forms.TabPage tpUserManager;
         private System.Windows.Forms.TabPage tpSettings;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label lblTitle;
         private System.Windows.Forms.Label lblUserText;
         private System.Windows.Forms.Label lblActiveUser;
         private System.Windows.Forms.Button btnLogOut;
-        private System.Windows.Forms.LinkLabel linkLabel1;
-        private System.Windows.Forms.RichTextBox richTextBox1;
+        private System.Windows.Forms.LinkLabel llblCreateAccount;
+        private System.Windows.Forms.RichTextBox rtbAnnouncements;
         private System.Windows.Forms.Label lblAnnouncements;
     }
 }
