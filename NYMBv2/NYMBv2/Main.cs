@@ -54,5 +54,12 @@ namespace NYMBv2
             g.DrawString(_tabPage.Text, _tabFont, _textBrush, _tabBounds, new StringFormat(_stringFlags));
             
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            LogIn mylogin = new LogIn();
+
+            mylogin.ShowDialog();
+        }
     }
 }
