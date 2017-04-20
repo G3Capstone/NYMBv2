@@ -117,5 +117,12 @@ namespace NYMBv2
 
 			settings.ShowDialog();
 		}
-	}
+
+        private void btnLogOut_Click(object sender, EventArgs e)
+        {
+            LogIn mylogin = new LogIn();
+
+            mylogin.ShowDialog();
+        }
+    }
 }
