@@ -200,7 +200,7 @@
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Location = new System.Drawing.Point(367, 23);
+            this.pictureBox1.Location = new System.Drawing.Point(83, 23);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(27, 20);
             this.pictureBox1.TabIndex = 16;
@@ -208,7 +208,7 @@
             // 
             // pictureBox2
             // 
-            this.pictureBox2.Location = new System.Drawing.Point(367, 71);
+            this.pictureBox2.Location = new System.Drawing.Point(86, 70);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(27, 20);
             this.pictureBox2.TabIndex = 17;
@@ -216,7 +216,7 @@
             // 
             // pictureBox3
             // 
-            this.pictureBox3.Location = new System.Drawing.Point(367, 118);
+            this.pictureBox3.Location = new System.Drawing.Point(38, 117);
             this.pictureBox3.Name = "pictureBox3";
             this.pictureBox3.Size = new System.Drawing.Size(27, 20);
             this.pictureBox3.TabIndex = 18;
@@ -224,7 +224,7 @@
             // 
             // pictureBox4
             // 
-            this.pictureBox4.Location = new System.Drawing.Point(367, 256);
+            this.pictureBox4.Location = new System.Drawing.Point(21, 255);
             this.pictureBox4.Name = "pictureBox4";
             this.pictureBox4.Size = new System.Drawing.Size(27, 20);
             this.pictureBox4.TabIndex = 19;
@@ -232,18 +232,18 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(193, 304);
+            this.button1.Location = new System.Drawing.Point(101, 317);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.Size = new System.Drawing.Size(127, 38);
             this.button1.TabIndex = 20;
             this.button1.Text = "Create User";
             this.button1.UseVisualStyleBackColor = true;
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(286, 304);
+            this.button2.Location = new System.Drawing.Point(234, 317);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 23);
+            this.button2.Size = new System.Drawing.Size(127, 38);
             this.button2.TabIndex = 21;
             this.button2.Text = "Cancel";
             this.button2.UseVisualStyleBackColor = true;
@@ -253,7 +253,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.ClientSize = new System.Drawing.Size(404, 338);
+            this.ClientSize = new System.Drawing.Size(375, 367);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.pictureBox4);
