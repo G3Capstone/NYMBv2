@@ -1,9 +1,24 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
-VisualStudioVersion = 15.0.26403.3
+VisualStudioVersion = 15.0.26403.7
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NYMBv2", "NYMBv2\NYMBv2.csproj", "{D1F392A1-186E-40B2-BDE2-084B77D3721E}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{BD7D6515-C007-4C8D-B343-408C596E1389}"
+	ProjectSection(SolutionItems) = preProject
+		NYMBv2\Binder.cs = NYMBv2\Binder.cs
+		NYMBv2\BoardGame.cs = NYMBv2\BoardGame.cs
+		NYMBv2\Comic.cs = NYMBv2\Comic.cs
+		NYMBv2\Dice.cs = NYMBv2\Dice.cs
+		NYMBv2\Event.cs = NYMBv2\Event.cs
+		NYMBv2\Item.cs = NYMBv2\Item.cs
+		NYMBv2\Misc.cs = NYMBv2\Misc.cs
+		NYMBv2\NYMB_DB.mwb = NYMBv2\NYMB_DB.mwb
+		NYMBv2\Sleeves.cs = NYMBv2\Sleeves.cs
+		NYMBv2\TabletopGame.cs = NYMBv2\TabletopGame.cs
+		NYMBv2\TradingCard.cs = NYMBv2\TradingCard.cs
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
