@@ -42,7 +42,10 @@
             this.lblActiveUser = new System.Windows.Forms.Label();
             this.btnLogOut = new System.Windows.Forms.Button();
             this.linkLabel1 = new System.Windows.Forms.LinkLabel();
+            this.lblAnnouncements = new System.Windows.Forms.Label();
+            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
             this.tabControl1.SuspendLayout();
+            this.tpAnnouncements.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -57,9 +60,9 @@
             this.tabControl1.Controls.Add(this.tpUserManager);
             this.tabControl1.Controls.Add(this.tpSettings);
             this.tabControl1.DrawMode = System.Windows.Forms.TabDrawMode.OwnerDrawFixed;
-            this.tabControl1.Font = new System.Drawing.Font("Century", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tabControl1.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tabControl1.ImeMode = System.Windows.Forms.ImeMode.Off;
-            this.tabControl1.ItemSize = new System.Drawing.Size(45, 145);
+            this.tabControl1.ItemSize = new System.Drawing.Size(84, 145);
             this.tabControl1.Location = new System.Drawing.Point(1, 54);
             this.tabControl1.Multiline = true;
             this.tabControl1.Name = "tabControl1";
@@ -72,10 +75,11 @@
             // tpAnnouncements
             // 
             this.tpAnnouncements.BackColor = System.Drawing.Color.LightBlue;
+            this.tpAnnouncements.Controls.Add(this.richTextBox1);
+            this.tpAnnouncements.Controls.Add(this.lblAnnouncements);
             this.tpAnnouncements.ForeColor = System.Drawing.SystemColors.ControlText;
             this.tpAnnouncements.Location = new System.Drawing.Point(149, 4);
             this.tpAnnouncements.Name = "tpAnnouncements";
-            this.tpAnnouncements.Padding = new System.Windows.Forms.Padding(3);
             this.tpAnnouncements.Size = new System.Drawing.Size(917, 670);
             this.tpAnnouncements.TabIndex = 0;
             this.tpAnnouncements.Text = "Announcements";
@@ -85,7 +89,6 @@
             this.tpInventory.BackColor = System.Drawing.Color.PaleGreen;
             this.tpInventory.Location = new System.Drawing.Point(149, 4);
             this.tpInventory.Name = "tpInventory";
-            this.tpInventory.Padding = new System.Windows.Forms.Padding(3);
             this.tpInventory.Size = new System.Drawing.Size(917, 670);
             this.tpInventory.TabIndex = 1;
             this.tpInventory.Text = "Inventory";
@@ -194,6 +197,27 @@
             this.linkLabel1.TabStop = true;
             this.linkLabel1.Text = "Don\'t have an account? Create one.";
             // 
+            // lblAnnouncements
+            // 
+            this.lblAnnouncements.Font = new System.Drawing.Font("Arial", 24F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblAnnouncements.Location = new System.Drawing.Point(3, 13);
+            this.lblAnnouncements.Name = "lblAnnouncements";
+            this.lblAnnouncements.Size = new System.Drawing.Size(906, 35);
+            this.lblAnnouncements.TabIndex = 0;
+            this.lblAnnouncements.Text = "Announcements";
+            this.lblAnnouncements.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // richTextBox1
+            // 
+            this.richTextBox1.BackColor = System.Drawing.Color.LightBlue;
+            this.richTextBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.richTextBox1.Location = new System.Drawing.Point(0, 51);
+            this.richTextBox1.Name = "richTextBox1";
+            this.richTextBox1.ReadOnly = true;
+            this.richTextBox1.Size = new System.Drawing.Size(920, 618);
+            this.richTextBox1.TabIndex = 1;
+            this.richTextBox1.Text = "";
+            // 
             // Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -209,6 +233,7 @@
             this.Name = "Main";
             this.Text = "Main";
             this.tabControl1.ResumeLayout(false);
+            this.tpAnnouncements.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -229,6 +254,8 @@
         private System.Windows.Forms.Label lblActiveUser;
         private System.Windows.Forms.Button btnLogOut;
         private System.Windows.Forms.LinkLabel linkLabel1;
+        private System.Windows.Forms.RichTextBox richTextBox1;
+        private System.Windows.Forms.Label lblAnnouncements;
     }
 }
 
