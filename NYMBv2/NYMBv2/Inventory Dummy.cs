@@ -16,5 +16,20 @@ namespace NYMBv2
 		{
 			InitializeComponent();
 		}
-	}
+
+        private void tradingCardsBindingNavigatorSaveItem_Click(object sender, EventArgs e)
+        {
+            this.Validate();
+            this.tradingCardsBindingSource.EndEdit();
+            this.tableAdapterManager.UpdateAll(this.nYMB_DBDataSet);
+
+        }
+
+        private void Inventory_Dummy_Load(object sender, EventArgs e)
+        {
+            // TODO: This line of code loads data into the 'nYMB_DBDataSet.TradingCards' table. You can move, or remove it, as needed.
+            this.tradingCardsTableAdapter.Fill(this.nYMB_DBDataSet.TradingCards);
+
+        }
+    }
 }

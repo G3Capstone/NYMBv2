@@ -11,6 +11,21 @@
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -87,6 +102,11 @@
     <Compile Include="MessageBox Dummy.Designer.cs">
       <DependentUpon>MessageBox Dummy.cs</DependentUpon>
     </Compile>
+    <Compile Include="NYMBv2_DBDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>NYMBv2_DBDataSet.xsd</DependentUpon>
+    </Compile>
     <Compile Include="NYMB_DataSet.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -129,6 +149,9 @@
     <EmbeddedResource Include="CreateUser.resx">
       <DependentUpon>CreateUser.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Inventory Dummy.resx">
+      <DependentUpon>Inventory Dummy.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="LogIn.resx">
       <DependentUpon>LogIn.cs</DependentUpon>
     </EmbeddedResource>
@@ -144,6 +167,17 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <None Include="NYMBv2_DBDataSet.xsc">
+      <DependentUpon>NYMBv2_DBDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="NYMBv2_DBDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>NYMBv2_DBDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="NYMBv2_DBDataSet.xss">
+      <DependentUpon>NYMBv2_DBDataSet.xsd</DependentUpon>
+    </None>
     <None Include="NYMB_DataSet.xsc">
       <DependentUpon>NYMB_DataSet.xsd</DependentUpon>
     </None>
@@ -178,6 +212,27 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="NYMBv2_DB.mdf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="NYMBv2_DB_log.ldf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <DependentUpon>NYMBv2_DB.mdf</DependentUpon>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.5.2">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.5.2 %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
