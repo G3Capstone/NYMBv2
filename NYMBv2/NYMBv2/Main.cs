@@ -64,58 +64,42 @@ namespace NYMBv2
 
 		private void button2_Click(object sender, EventArgs e)
 		{
-			Announcements_Dummy announcements = new Announcements_Dummy();
 
-			announcements.ShowDialog();
 		}
 
 		private void button9_Click(object sender, EventArgs e)
 		{
-			Inventory_Dummy inventory = new Inventory_Dummy();
 
-			inventory.ShowDialog();
 		}
 
 		private void button3_Click(object sender, EventArgs e)
 		{
-			Events_Dummy events = new Events_Dummy();
 
-			events.ShowDialog();
 		}
 
 		private void button4_Click(object sender, EventArgs e)
 		{
-			Store_Info_Dummy store = new Store_Info_Dummy();
 
-			store.ShowDialog();
 		}
 
 		private void button5_Click(object sender, EventArgs e)
 		{
-			MessageBox_Dummy message = new MessageBox_Dummy();
 
-			message.ShowDialog();
 		}
 
 		private void button6_Click(object sender, EventArgs e)
 		{
-			Product_Manager_Dummy product = new Product_Manager_Dummy();
 
-			product.ShowDialog();
 		}
 
 		private void button7_Click(object sender, EventArgs e)
 		{
-			User_Manager_Dummy user = new User_Manager_Dummy();
 
-			user.ShowDialog();
 		}
 
 		private void button8_Click(object sender, EventArgs e)
 		{
-			Settings_Dummy settings = new Settings_Dummy();
 
-			settings.ShowDialog();
 		}
 
         private void btnLogOut_Click(object sender, EventArgs e)
