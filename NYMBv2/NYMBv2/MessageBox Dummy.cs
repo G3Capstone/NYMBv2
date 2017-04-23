@@ -16,21 +16,5 @@ namespace NYMBv2
 		{
 			InitializeComponent();
 		}
-
-		private void bindersBindingNavigatorSaveItem_Click(object sender, EventArgs e)
-		{
-			this.Validate();
-			this.bindersBindingSource.EndEdit();
-			this.tableAdapterManager.UpdateAll(this.nYMBv2_DBDataSet);
-
-		}
-
-		private void bindersBindingNavigatorSaveItem_Click_1(object sender, EventArgs e)
-		{
-			this.Validate();
-			this.bindersBindingSource.EndEdit();
-			this.tableAdapterManager.UpdateAll(this.nYMBv2_DBDataSet);
-
-		}
 	}
 }
