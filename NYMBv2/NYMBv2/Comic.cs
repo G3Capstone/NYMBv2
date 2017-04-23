@@ -29,7 +29,7 @@ public class Comic
         _issue = issue;
     }
 
-    get/setters
+    //get/setters
     public string Title
     {
         get { return _title; }
