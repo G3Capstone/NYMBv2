@@ -34,7 +34,7 @@
             this.rtbAnnouncements = new System.Windows.Forms.RichTextBox();
             this.lblAnnouncements = new System.Windows.Forms.Label();
             this.tpInventory = new System.Windows.Forms.TabPage();
-            this.button9 = new System.Windows.Forms.Button();
+            this.btnEditBindersTable = new System.Windows.Forms.Button();
             this.txtbxSearchInventory = new System.Windows.Forms.TextBox();
             this.lblInventory = new System.Windows.Forms.Label();
             this.tpEvents = new System.Windows.Forms.TabPage();
@@ -136,7 +136,7 @@
             // tpInventory
             // 
             this.tpInventory.BackColor = System.Drawing.Color.PaleGreen;
-            this.tpInventory.Controls.Add(this.button9);
+            this.tpInventory.Controls.Add(this.btnEditBindersTable);
             this.tpInventory.Controls.Add(this.txtbxSearchInventory);
             this.tpInventory.Controls.Add(this.lblInventory);
             this.tpInventory.Location = new System.Drawing.Point(149, 4);
@@ -145,15 +145,15 @@
             this.tpInventory.TabIndex = 1;
             this.tpInventory.Text = "Inventory";
             // 
-            // button9
+            // btnEditBindersTable
             // 
-            this.button9.Location = new System.Drawing.Point(834, 611);
-            this.button9.Name = "button9";
-            this.button9.Size = new System.Drawing.Size(75, 23);
-            this.button9.TabIndex = 4;
-            this.button9.Text = "button9";
-            this.button9.UseVisualStyleBackColor = true;
-            this.button9.Click += new System.EventHandler(this.button9_Click);
+            this.btnEditBindersTable.Location = new System.Drawing.Point(376, 141);
+            this.btnEditBindersTable.Name = "btnEditBindersTable";
+            this.btnEditBindersTable.Size = new System.Drawing.Size(167, 44);
+            this.btnEditBindersTable.TabIndex = 4;
+            this.btnEditBindersTable.Text = "Edit binder table";
+            this.btnEditBindersTable.UseVisualStyleBackColor = true;
+            this.btnEditBindersTable.Click += new System.EventHandler(this.btnEditBindersTable_Click);
             // 
             // txtbxSearchInventory
             // 
@@ -399,7 +399,7 @@
 		private System.Windows.Forms.Button button6;
 		private System.Windows.Forms.Button button7;
 		private System.Windows.Forms.Button button8;
-		private System.Windows.Forms.Button button9;
+		private System.Windows.Forms.Button btnEditBindersTable;
 	}
 }
 

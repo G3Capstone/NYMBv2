@@ -67,10 +67,6 @@ namespace NYMBv2
 
 		}
 
-		private void button9_Click(object sender, EventArgs e)
-		{
-
-		}
 
 		private void button3_Click(object sender, EventArgs e)
 		{
@@ -107,6 +103,13 @@ namespace NYMBv2
             LogIn mylogin = new LogIn();
 
             mylogin.ShowDialog();
+        }
+
+        private void btnEditBindersTable_Click(object sender, EventArgs e)
+        {
+            Edit_DB_Binders_Table editBinderTable = new Edit_DB_Binders_Table();
+
+            editBinderTable.ShowDialog();
         }
     }
 }

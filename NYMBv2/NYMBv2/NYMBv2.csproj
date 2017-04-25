@@ -66,6 +66,12 @@
     <Compile Include="CreateUser.Designer.cs">
       <DependentUpon>CreateUser.cs</DependentUpon>
     </Compile>
+    <Compile Include="Edit_DB_Binders_Table.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Edit_DB_Binders_Table.Designer.cs">
+      <DependentUpon>Edit_DB_Binders_Table.cs</DependentUpon>
+    </Compile>
     <Compile Include="LogIn.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -87,6 +93,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="CreateUser.resx">
       <DependentUpon>CreateUser.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Edit_DB_Binders_Table.resx">
+      <DependentUpon>Edit_DB_Binders_Table.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="LogIn.resx">
       <DependentUpon>LogIn.cs</DependentUpon>
