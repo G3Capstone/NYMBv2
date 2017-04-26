@@ -64,7 +64,9 @@ namespace NYMBv2
 
 		private void button2_Click(object sender, EventArgs e)
 		{
+			Announcements_Dummy dummy = new Announcements_Dummy();
 
+			dummy.ShowDialog();
 		}
 
 

@@ -60,6 +60,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Announcements Dummy.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Announcements Dummy.Designer.cs">
+      <DependentUpon>Announcements Dummy.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Announcements Wizard.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Announcements Wizard.Designer.cs">
+      <DependentUpon>Announcements Wizard.cs</DependentUpon>
+    </Compile>
     <Compile Include="CreateUser.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -91,6 +103,12 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Announcements Dummy.resx">
+      <DependentUpon>Announcements Dummy.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Announcements Wizard.resx">
+      <DependentUpon>Announcements Wizard.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="CreateUser.resx">
       <DependentUpon>CreateUser.cs</DependentUpon>
     </EmbeddedResource>
