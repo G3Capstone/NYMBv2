@@ -34,6 +34,11 @@
             this.txtbxPassword = new System.Windows.Forms.TextBox();
             this.btnLogIn = new System.Windows.Forms.Button();
             this.btnCancel = new System.Windows.Forms.Button();
+            this.useR_TABLETableAdapter1 = new NYMBv2.NYMBv2_DBDataSetTableAdapters.USER_TABLETableAdapter();
+            this.sessonTokensTableAdapter1 = new NYMBv2.NYMBv2_DBDataSetTableAdapters.SessonTokensTableAdapter();
+            this.nymBv2_DBDataSet1 = new NYMBv2.NYMBv2_DBDataSet();
+            this.tableAdapterManager1 = new NYMBv2.NYMBv2_DBDataSetTableAdapters.TableAdapterManager();
+            ((System.ComponentModel.ISupportInitialize)(this.nymBv2_DBDataSet1)).BeginInit();
             this.SuspendLayout();
             // 
             // lblUsername
@@ -78,6 +83,7 @@
             this.btnLogIn.TabIndex = 7;
             this.btnLogIn.Text = "Log In";
             this.btnLogIn.UseVisualStyleBackColor = true;
+            this.btnLogIn.Click += new System.EventHandler(this.btnLogIn_Click);
             // 
             // btnCancel
             // 
@@ -87,6 +93,39 @@
             this.btnCancel.TabIndex = 8;
             this.btnCancel.Text = "Cancel";
             this.btnCancel.UseVisualStyleBackColor = true;
+            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
+            // 
+            // useR_TABLETableAdapter1
+            // 
+            this.useR_TABLETableAdapter1.ClearBeforeFill = true;
+            // 
+            // sessonTokensTableAdapter1
+            // 
+            this.sessonTokensTableAdapter1.ClearBeforeFill = true;
+            // 
+            // nymBv2_DBDataSet1
+            // 
+            this.nymBv2_DBDataSet1.DataSetName = "NYMBv2_DBDataSet";
+            this.nymBv2_DBDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // tableAdapterManager1
+            // 
+            this.tableAdapterManager1.BackupDataSetBeforeUpdate = false;
+            this.tableAdapterManager1.BindersTableAdapter = null;
+            this.tableAdapterManager1.BoardGamesTableAdapter = null;
+            this.tableAdapterManager1.CardSleevesTableAdapter = null;
+            this.tableAdapterManager1.ComicBooksTableAdapter = null;
+            this.tableAdapterManager1.Connection = null;
+            this.tableAdapterManager1.EventSpaceTableAdapter = null;
+            this.tableAdapterManager1.EventsTableAdapter = null;
+            this.tableAdapterManager1.MiscTableAdapter = null;
+            this.tableAdapterManager1.PublisherTableAdapter = null;
+            this.tableAdapterManager1.SessonTokensTableAdapter = null;
+            this.tableAdapterManager1.TabletopGamesTableAdapter = null;
+            this.tableAdapterManager1.TradingCardsTableAdapter = null;
+            this.tableAdapterManager1.UpdateOrder = NYMBv2.NYMBv2_DBDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
+            this.tableAdapterManager1.USER_LEVELSTableAdapter = null;
+            this.tableAdapterManager1.USER_TABLETableAdapter = null;
             // 
             // LogIn
             // 
@@ -102,6 +141,7 @@
             this.Controls.Add(this.lblUsername);
             this.Name = "LogIn";
             this.Text = "LogIn";
+            ((System.ComponentModel.ISupportInitialize)(this.nymBv2_DBDataSet1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -115,5 +155,9 @@
         private System.Windows.Forms.TextBox txtbxPassword;
         private System.Windows.Forms.Button btnLogIn;
         private System.Windows.Forms.Button btnCancel;
+        private NYMBv2_DBDataSetTableAdapters.USER_TABLETableAdapter useR_TABLETableAdapter1;
+        private NYMBv2_DBDataSetTableAdapters.SessonTokensTableAdapter sessonTokensTableAdapter1;
+        private NYMBv2_DBDataSet nymBv2_DBDataSet1;
+        private NYMBv2_DBDataSetTableAdapters.TableAdapterManager tableAdapterManager1;
     }
 }

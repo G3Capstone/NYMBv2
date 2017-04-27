@@ -6,3 +6,10 @@
     {
     }
 }
+
+namespace NYMBv2.NYMBv2_DBDataSetTableAdapters {
+    
+    
+    public partial class USER_TABLETableAdapter {
+    }
+}

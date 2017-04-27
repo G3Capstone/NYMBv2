@@ -91,9 +91,8 @@
             this.tableAdapterManager.BindersTableAdapter = this.bindersTableAdapter;
             this.tableAdapterManager.BoardGamesTableAdapter = null;
             this.tableAdapterManager.CardSleevesTableAdapter = null;
-            this.tableAdapterManager.ComicsTableAdapter = null;
             this.tableAdapterManager.EventSpaceTableAdapter = null;
-            this.tableAdapterManager.EventsTableAdapter = null;
+
             this.tableAdapterManager.MiscTableAdapter = null;
             this.tableAdapterManager.PublisherTableAdapter = null;
             this.tableAdapterManager.TabletopGamesTableAdapter = null;
