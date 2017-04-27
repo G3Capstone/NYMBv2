@@ -18,8 +18,6 @@ namespace NYMBv2
             tabControl1.DrawItem += new DrawItemEventHandler(tabControl1_DrawItem);
         }
 
-        #region draw Tab Control
-
         private void tabControl1_DrawItem(object sender, DrawItemEventArgs e)
         {
             Graphics g = e.Graphics;
@@ -57,37 +55,57 @@ namespace NYMBv2
             
         }
 
-        #endregion
+        private void button1_Click(object sender, EventArgs e)
+        {
+            LogIn mylogin = new LogIn();
+
+            mylogin.ShowDialog();
+        }
+
+		private void button2_Click(object sender, EventArgs e)
+		{
+			Announcements_Dummy dummy = new Announcements_Dummy();
+
+			dummy.ShowDialog();
+		}
 
 
-        #region Top of page
+		private void button3_Click(object sender, EventArgs e)
+		{
+
+		}
+
+		private void button4_Click(object sender, EventArgs e)
+		{
+
+		}
+
+		private void button5_Click(object sender, EventArgs e)
+		{
+
+		}
+
+		private void button6_Click(object sender, EventArgs e)
+		{
+
+		}
+
+		private void button7_Click(object sender, EventArgs e)
+		{
+
+		}
+
+		private void button8_Click(object sender, EventArgs e)
+		{
+
+		}
 
         private void btnLogOut_Click(object sender, EventArgs e)
         {
             LogIn mylogin = new LogIn();
 
             mylogin.ShowDialog();
-            String ActiveUser = (String) sessonTokensTableAdapter1.GetSessonUser();
-            
-
-            lblActiveUser.Text = ActiveUser;
-
         }
-
-
-        #endregion
-
-
-        #region Announcements Tab
-        private void button2_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        #endregion
-
-
-        #region Inventory Tab
 
         private void btnEditBindersTable_Click(object sender, EventArgs e)
         {
@@ -95,63 +113,5 @@ namespace NYMBv2
 
             editBinderTable.ShowDialog();
         }
-
-
-        #endregion
-
-
-        #region Events Tab
-
-        private void button3_Click(object sender, EventArgs e)
-        {
-
-        }
-        #endregion
-
-
-        #region Store Info Tab
-        private void button4_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        #endregion
-
-
-        #region Message Box Tab
-        private void button5_Click(object sender, EventArgs e)
-        {
-
-        }
-        #endregion
-
-
-        #region Product Manager Tab
-        private void button6_Click(object sender, EventArgs e)
-        {
-
-        }
-        #endregion
-
-
-        #region User Manager Tab
-        private void button7_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        #endregion
-
-
-        #region Settings Tab
-        private void button8_Click(object sender, EventArgs e)
-        {
-
-        }
-
-
-
-        #endregion
-
     }
 }

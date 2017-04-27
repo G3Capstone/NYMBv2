@@ -60,6 +60,19 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Announcement.cs" />
+    <Compile Include="Announcements Dummy.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Announcements Dummy.Designer.cs">
+      <DependentUpon>Announcements Dummy.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Announcements Wizard.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Announcements Wizard.Designer.cs">
+      <DependentUpon>Announcements Wizard.cs</DependentUpon>
+    </Compile>
     <Compile Include="CreateUser.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -84,9 +97,6 @@
     <Compile Include="Main.Designer.cs">
       <DependentUpon>Main.cs</DependentUpon>
     </Compile>
-    <Compile Include="NYMBv2_DBDataSet.cs">
-      <DependentUpon>NYMBv2_DBDataSet.xsd</DependentUpon>
-    </Compile>
     <Compile Include="NYMBv2_DBDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -94,7 +104,12 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="UserToken.cs" />
+    <EmbeddedResource Include="Announcements Dummy.resx">
+      <DependentUpon>Announcements Dummy.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Announcements Wizard.resx">
+      <DependentUpon>Announcements Wizard.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="CreateUser.resx">
       <DependentUpon>CreateUser.cs</DependentUpon>
     </EmbeddedResource>
