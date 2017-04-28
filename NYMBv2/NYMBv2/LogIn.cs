@@ -14,6 +14,7 @@ namespace NYMBv2
     public partial class LogIn : Form
     {
         string connectionString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\Aloquin\Source\Repos\NYMBv2\NYMBv2\NYMBv2\NYMBv2_DB.mdf;Integrated Security=True";
+        
 
         public LogIn()
         {
@@ -24,6 +25,8 @@ namespace NYMBv2
         #region Cancel button
         private void btnCancel_Click(object sender, EventArgs e)
         {
+            SetActiveUserAsGuest();
+
             this.Close();
         }
         #endregion
@@ -45,52 +48,72 @@ namespace NYMBv2
 
                     using (SqlConnection connection = new SqlConnection(connectionString))
                     {
+                        String queryClearTokens = @"DELETE FROM [dbo].[SessonTokens] ";
+                        String queryNewToken = @"INSERT INTO [dbo].[SessonTokens] VALUES ( '" + _UserName + "' , '" + _UserLevel + "' , '1' )";
+                        
 
-                        String queryString = @"INSERT INTO [dbo].[SessonTokens] VALUES ( 'Admin' , '4' , '1' )";
-                        String query1 = @"DELETE FROM [dbo].[SessonTokens] ";
-                        String query2 = @"SELECT [User], [UserLevel] FROM [dbo].[SessonTokens] ";
-
-                        SqlCommand command = new SqlCommand(query1, connection);
+                        SqlCommand command = new SqlCommand(queryClearTokens, connection);
                         command.Connection.Open();
                         command.ExecuteNonQuery();
                         command.Connection.Close();
 
 
-                        command = new SqlCommand( queryString, connection);
+                        command = new SqlCommand(queryNewToken, connection);
                         command.Connection.Open();
                         command.ExecuteNonQuery();
                         command.Connection.Close();
-
-                        command = new SqlCommand(query2, connection);
-                        command.Connection.Open();
-                        using (SqlDataReader oReader = command.ExecuteReader())
-                        {
-                            MessageBox.Show("Rows: " + oReader.HasRows.ToString() +  ", Columns: " + oReader.FieldCount.ToString());
-                            
-                            
-                            while (oReader.Read())
-                            {
-                                string thingone = oReader.GetValue(0).ToString();
-                                int thingtwo = (int)oReader["UserLevel"];
-                                
-                                MessageBox.Show( thingone + thingtwo);
-                            }
-
-
-                        }
-
 
                         this.Close();
 
                     }
                 }
-
-                else { MessageBox.Show("Nothing returned"); }
+                else { MessageBox.Show("Invalid UserName or Password"); }
 
             } catch (Exception ex) { MessageBox.Show(ex.Message); }
 
         }
 
+        #endregion
+
+
+        #region Set Active User As Guest
+        private void SetActiveUserAsGuest()
+        {
+            //Create a connection to the database
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                //SQL Query string that delets the sessonTokens
+                String queryClearTokens = @"DELETE FROM [dbo].[SessonTokens] ";
+
+                //SQL Query that adds the Guest SessonToken to the sessonToken table of the database
+                String queryGuestToken = @"INSERT INTO [dbo].[SessonTokens] VALUES ( 'Guest' , '1' , '1' )";
+
+                //Creates the SQL Command with the clear query
+                SqlCommand command = new SqlCommand(queryClearTokens, connection);
+
+                //Connects the database with the command
+                command.Connection.Open();
+
+                //Runs the query
+                command.ExecuteNonQuery();
+
+                //Closes the connection
+                command.Connection.Close();
+
+
+                //Sets the Command to run the query guest Token 
+                command = new SqlCommand(queryGuestToken, connection);
+
+                //Connects the database with the command
+                command.Connection.Open();
+
+                //Runs the query
+                command.ExecuteNonQuery();
+
+                //Closes the connection
+                command.Connection.Close();
+            }
+        }
         #endregion
 
     }

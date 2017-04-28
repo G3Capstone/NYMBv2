@@ -18,8 +18,8 @@ namespace NYMBv2
         #endregion
 
         #region Global variables
-        string activeUser;
-        int activeLevel;
+        string activeUser = "Guest";
+        int activeLevel = 1;
         #endregion
 
 
@@ -27,14 +27,12 @@ namespace NYMBv2
         {
             InitializeComponent();
             tabControl1.DrawItem += new DrawItemEventHandler(tabControl1_DrawItem);
+            lblActiveUser.Text = activeUser;
         }
 
 
         private void button1_Click(object sender, EventArgs e)
         {
-            LogIn mylogin = new LogIn();
-
-            mylogin.ShowDialog();
         }
 
 		private void button2_Click(object sender, EventArgs e)
@@ -42,8 +40,7 @@ namespace NYMBv2
 			Announcements_Dummy dummy = new Announcements_Dummy();
 
 			dummy.ShowDialog();
-
-            lblActiveUser.Text = (string) sessonTokensTableAdapter1.GetSessonUser();
+            
 		}
 
 
@@ -83,7 +80,7 @@ namespace NYMBv2
 
             mylogin.ShowDialog();
 
-            
+            GetActiveUserInfo();
 
             lblActiveUser.Text = activeUser;
         }
@@ -183,6 +180,47 @@ namespace NYMBv2
                         activeLevel = (int)sql_reader["UserLevel"];
                     }
                 }
+            }
+        }
+        #endregion
+
+
+        #region Set Active User As Guest
+        private void SetActiveUserAsGuest()
+        {
+            //Create a connection to the database
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                //SQL Query string that delets the sessonTokens
+                String queryClearTokens = @"DELETE FROM [dbo].[SessonTokens] ";
+
+                //SQL Query that adds the Guest SessonToken to the sessonToken table of the database
+                String queryGuestToken = @"INSERT INTO [dbo].[SessonTokens] VALUES ( 'Guest' , '1' , '1' )";
+
+                //Creates the SQL Command with the clear query
+                SqlCommand command = new SqlCommand(queryClearTokens, connection);
+
+                //Connects the database with the command
+                command.Connection.Open();
+                
+                //Runs the query
+                command.ExecuteNonQuery();
+
+                //Closes the connection
+                command.Connection.Close();
+
+
+                //Sets the Command to run the query guest Token 
+                command = new SqlCommand(queryGuestToken, connection);
+
+                //Connects the database with the command
+                command.Connection.Open();
+
+                //Runs the query
+                command.ExecuteNonQuery();
+
+                //Closes the connection
+                command.Connection.Close();
             }
         }
         #endregion
