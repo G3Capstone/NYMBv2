@@ -35,17 +35,21 @@ namespace NYMBv2
         #region Log in button
         private void btnLogIn_Click(object sender, EventArgs e)
         {
-            String _UserName = txtbxUsername.Text;
-            String _Password = txtbxPassword.Text;
-            int _UserLevel;
+            String _UserName = txtbxUsername.Text;          //Holds the username
+            String _Password = txtbxPassword.Text;          //Holds the password
+            int _UserLevel;                                 //Holds the rank of user
 
-
+            /**
+             * Try statement to catch errors 
+             */
             try
             {
                 if (useR_TABLETableAdapter1.IsValid(_UserName, _Password).Equals(1))
                 {
+                    //Retrieve the user rank from the database
                     _UserLevel = (int)useR_TABLETableAdapter1.GetUserLevelByUserName(_UserName);
 
+                    //Holds who is the most current user
                     using (SqlConnection connection = new SqlConnection(connectionString))
                     {
                         String queryClearTokens = @"DELETE FROM [dbo].[SessonTokens] ";
