@@ -13,6 +13,8 @@ namespace NYMBv2
 {
     public partial class LogIn : Form
     {
+        string connectionString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\Aloquin\Source\Repos\NYMBv2\NYMBv2\NYMBv2\NYMBv2_DB.mdf;Integrated Security=True";
+
         public LogIn()
         {
             InitializeComponent();
@@ -39,18 +41,50 @@ namespace NYMBv2
             {
                 if (useR_TABLETableAdapter1.IsValid(_UserName, _Password).Equals(1))
                 {
-                    MessageBox.Show("good");
-                    _UserLevel = (int) useR_TABLETableAdapter1.GetUserLevelByUserName(_UserName);
-                    MessageBox.Show(_UserName + _UserLevel);
-                    sessonTokensTableAdapter1.Insert(_UserName, _UserLevel, 1);
-                    
-                    this.sessonTokensTableAdapter1.Fill(this.nymBv2_DBDataSet1.SessonTokens);
-                    this.tableAdapterManager1.UpdateAll(this.nymBv2_DBDataSet1);
-                    MessageBox.Show( (String) sessonTokensTableAdapter1.GetSessonUser());
+                    _UserLevel = (int)useR_TABLETableAdapter1.GetUserLevelByUserName(_UserName);
 
-                    this.Close();
+                    using (SqlConnection connection = new SqlConnection(connectionString))
+                    {
 
+                        String queryString = @"INSERT INTO [dbo].[SessonTokens] VALUES ( 'Admin' , '4' , '1' )";
+                        String query1 = @"DELETE FROM [dbo].[SessonTokens] ";
+                        String query2 = @"SELECT [User], [UserLevel] FROM [dbo].[SessonTokens] ";
+
+                        SqlCommand command = new SqlCommand(query1, connection);
+                        command.Connection.Open();
+                        command.ExecuteNonQuery();
+                        command.Connection.Close();
+
+
+                        command = new SqlCommand( queryString, connection);
+                        command.Connection.Open();
+                        command.ExecuteNonQuery();
+                        command.Connection.Close();
+
+                        command = new SqlCommand(query2, connection);
+                        command.Connection.Open();
+                        using (SqlDataReader oReader = command.ExecuteReader())
+                        {
+                            MessageBox.Show("Rows: " + oReader.HasRows.ToString() +  ", Columns: " + oReader.FieldCount.ToString());
+                            
+                            
+                            while (oReader.Read())
+                            {
+                                string thingone = oReader.GetValue(0).ToString();
+                                int thingtwo = (int)oReader["UserLevel"];
+                                
+                                MessageBox.Show( thingone + thingtwo);
+                            }
+
+
+                        }
+
+
+                        this.Close();
+
+                    }
                 }
+
                 else { MessageBox.Show("Nothing returned"); }
 
             } catch (Exception ex) { MessageBox.Show(ex.Message); }
