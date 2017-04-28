@@ -36,6 +36,28 @@ namespace NYMBv2
             UpdateActiveUser();
         }
 
+        #region Log in/out button
+
+        private void btnLogInAndOut_Click(object sender, EventArgs e)
+        {
+            //If the Active user is a guest then it opens the 
+            //Log in popup. If the user is not a guest then
+            //It logs the user out and logs in the guest.
+            if (activeUser == "Guest")
+            {
+                LogIn mylogin = new LogIn();
+                mylogin.ShowDialog();
+                UpdateActiveUser();
+            }
+            else
+            {
+                SetActiveUserAsGuest();
+                UpdateActiveUser();
+            }
+        }
+
+        #endregion
+
 
         private void button1_Click(object sender, EventArgs e)
         {
@@ -325,29 +347,6 @@ namespace NYMBv2
         #endregion
 
         #endregion
-
-#region Log in/out button
-
-        private void btnLogInAndOut_Click(object sender, EventArgs e)
-        {
-            //If the Active user is a guest then it opens the 
-            //Log in popup. If the user is not a guest then
-            //It logs the user out and logs in the guest.
-            if (activeUser == "Guest")
-            {
-                LogIn mylogin = new LogIn();
-                mylogin.ShowDialog();
-                UpdateActiveUser();
-            }
-            else
-            {
-                SetActiveUserAsGuest();
-                UpdateActiveUser();
-            }
-        }
-
-#endregion
-
 
     }
 }
