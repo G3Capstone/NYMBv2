@@ -18,8 +18,8 @@ namespace NYMBv2
         #endregion
 
         #region Global variables
-        string activeUser = "Guest";
-        int activeLevel = 1;
+        string activeUser;
+        int activeLevel;
         #endregion
 
 
@@ -27,7 +27,13 @@ namespace NYMBv2
         {
             InitializeComponent();
             tabControl1.DrawItem += new DrawItemEventHandler(tabControl1_DrawItem);
-            lblActiveUser.Text = activeUser;
+
+            //Set the active user as guest so the program starts 
+            //with you logged in as a guest
+            SetActiveUserAsGuest();
+
+            //Updates the Actuve user
+            UpdateActiveUser();
         }
 
 
@@ -74,16 +80,8 @@ namespace NYMBv2
 
 		}
 
-        private void btnLogOut_Click(object sender, EventArgs e)
-        {
-            LogIn mylogin = new LogIn();
 
-            mylogin.ShowDialog();
-
-            GetActiveUserInfo();
-
-            lblActiveUser.Text = activeUser;
-        }
+        
 
         private void btnEditBindersTable_Click(object sender, EventArgs e)
         {
@@ -222,8 +220,67 @@ namespace NYMBv2
                 //Closes the connection
                 command.Connection.Close();
             }
+
+            
+
         }
         #endregion
+
+        #region Update ActiveUser
+        private void UpdateActiveUser()
+        {
+
+            //Gets the active user from the Database table
+            //SessonTokens
+            GetActiveUserInfo();
+
+            //Displays the current user on the form
+            lblActiveUser.Text = activeUser;
+
+            //If the active user is guest
+            //then it changes the button to say
+            //Log In. Otherwise it sets it
+            //to Log Out
+            if (activeUser == "Guest")
+            {
+                btnLogInAndOut.Text = "Log In";
+            }
+            else
+            {
+                btnLogInAndOut.Text = "Log Out";
+            }
+
+            ////For changing what is displayed for different users
+            ////To be implemented later
+            ////
+            ////What tabs need to be displayed for guest?
+            ////--
+            ////For customer?
+            ////--
+            ////For Employee?
+            ////--
+            ////For Admin?
+            ////-- All
+
+            //if (activeLevel == 4)
+            //{
+
+            //}else if (activeLevel == 3)
+            //{
+
+            //}else if (activeLevel == 2)
+            //{
+
+            //}
+            //else
+            //{
+
+            //}
+
+          
+        }
+
+#endregion
 
         #region Draw Tab control 
         private void tabControl1_DrawItem(object sender, DrawItemEventArgs e)
@@ -263,10 +320,33 @@ namespace NYMBv2
 
         }
 
-        #endregion
 
 
         #endregion
+
+        #endregion
+
+#region Log in/out button
+
+        private void btnLogInAndOut_Click(object sender, EventArgs e)
+        {
+            //If the Active user is a guest then it opens the 
+            //Log in popup. If the user is not a guest then
+            //It logs the user out and logs in the guest.
+            if (activeUser == "Guest")
+            {
+                LogIn mylogin = new LogIn();
+                mylogin.ShowDialog();
+                UpdateActiveUser();
+            }
+            else
+            {
+                SetActiveUserAsGuest();
+                UpdateActiveUser();
+            }
+        }
+
+#endregion
 
 
     }

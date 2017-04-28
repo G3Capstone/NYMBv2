@@ -36,8 +36,8 @@
             this.btnCancel = new System.Windows.Forms.Button();
             this.nymBv2_DBDataSet1 = new NYMBv2.NYMBv2_DBDataSet();
             this.tableAdapterManager1 = new NYMBv2.NYMBv2_DBDataSetTableAdapters.TableAdapterManager();
-            this.useR_TABLETableAdapter1 = new NYMBv2.NYMBv2_DBDataSetTableAdapters.USER_TABLETableAdapter();
             this.sessonTokensTableAdapter1 = new NYMBv2.NYMBv2_DBDataSetTableAdapters.SessonTokensTableAdapter();
+            this.useR_TABLETableAdapter1 = new NYMBv2.NYMBv2_DBDataSetTableAdapters.USER_TABLETableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.nymBv2_DBDataSet1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -74,6 +74,7 @@
             this.txtbxPassword.Name = "txtbxPassword";
             this.txtbxPassword.Size = new System.Drawing.Size(170, 20);
             this.txtbxPassword.TabIndex = 6;
+            this.txtbxPassword.UseSystemPasswordChar = true;
             // 
             // btnLogIn
             // 
@@ -119,13 +120,13 @@
             this.tableAdapterManager1.USER_LEVELSTableAdapter = null;
             this.tableAdapterManager1.USER_TABLETableAdapter = this.useR_TABLETableAdapter1;
             // 
-            // useR_TABLETableAdapter1
-            // 
-            this.useR_TABLETableAdapter1.ClearBeforeFill = true;
-            // 
             // sessonTokensTableAdapter1
             // 
             this.sessonTokensTableAdapter1.ClearBeforeFill = true;
+            // 
+            // useR_TABLETableAdapter1
+            // 
+            this.useR_TABLETableAdapter1.ClearBeforeFill = true;
             // 
             // LogIn
             // 
