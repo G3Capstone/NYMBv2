@@ -8,13 +8,15 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Configuration;
 
 namespace NYMBv2
 {
 	public partial class Announcements_Dummy : Form
 	{
-
-        const string connectionString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\Aloquin\Source\Repos\NYMBv2\NYMBv2\NYMBv2\NYMBv2_DB.mdf;Integrated Security=True";
+        #region Connection String
+        public string connectionString = ConfigurationManager.ConnectionStrings["NYMBv2.Properties.Settings.NYMBv2_DBConnectionString"].ConnectionString;
+        #endregion
 
         public Announcements_Dummy()
 		{
@@ -59,7 +61,7 @@ namespace NYMBv2
             using (SqlConnection connection = new SqlConnection(connectionString))
             {
                 //SQL select statement
-                String query = @"SELECT [Subject], [Body] FROM [dbo].[Announcements] WHERE ([StartDisplayDate] <= GETDATE()) AND (GETDATE() < [EndDisplayDate])";
+                string query = @"SELECT [Subject], [Body] FROM [dbo].[Announcements] WHERE ([StartDisplayDate] <= GETDATE()) AND (GETDATE() < [EndDisplayDate])";
 
                 //Create a SQLCommand, passing the query and the connection
                 SqlCommand cmd = new SqlCommand(query, connection);

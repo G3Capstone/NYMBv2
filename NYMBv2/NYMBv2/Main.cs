@@ -8,14 +8,17 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Configuration;
 
 namespace NYMBv2
 {
     public partial class Main : Form
     {
         #region Connection String
-        const string connectionString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\Aloquin\Source\Repos\NYMBv2\NYMBv2\NYMBv2\NYMBv2_DB.mdf;Integrated Security=True";
+        public string connectionString = ConfigurationManager.ConnectionStrings["NYMBv2.Properties.Settings.NYMBv2_DBConnectionString"].ConnectionString;
         #endregion
+
+
 
         #region Global variables
         string activeUser;
@@ -34,6 +37,10 @@ namespace NYMBv2
 
             //Updates the Actuve user
             UpdateActiveUser();
+
+            //Gets the announcements from the Database table announcements
+            //and displays them in the announcements tab
+            DisplayAnnouncements();
         }
 
         #region Log in/out button
@@ -63,47 +70,47 @@ namespace NYMBv2
         {
         }
 
-		private void button2_Click(object sender, EventArgs e)
-		{
-			Announcements_Dummy dummy = new Announcements_Dummy();
+        private void button2_Click(object sender, EventArgs e)
+        {
+            Announcements_Dummy dummy = new Announcements_Dummy();
 
-			dummy.ShowDialog();
-            
-		}
+            dummy.ShowDialog();
 
-
-		private void button3_Click(object sender, EventArgs e)
-		{
-
-		}
-
-		private void button4_Click(object sender, EventArgs e)
-		{
-
-		}
-
-		private void button5_Click(object sender, EventArgs e)
-		{
-
-		}
-
-		private void button6_Click(object sender, EventArgs e)
-		{
-
-		}
-
-		private void button7_Click(object sender, EventArgs e)
-		{
-
-		}
-
-		private void button8_Click(object sender, EventArgs e)
-		{
-
-		}
+        }
 
 
-        
+        private void button3_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button7_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button8_Click(object sender, EventArgs e)
+        {
+
+        }
+
+
+
 
         private void btnEditBindersTable_Click(object sender, EventArgs e)
         {
@@ -114,60 +121,116 @@ namespace NYMBv2
 
         #region Tabs
 
-            #region Announcements
+        #region Announcements
+
+        #region Display Announcements
+
+        private void DisplayAnnouncements()
+        {
+            var Announcementlist = new List<Announcement>();
+
+
+            //foreach statement that will repeat for the number of announcments in the database.
+            //Announcment entry = new announcment();	//the () will contain headline, content, start and end date for the announcment.
+            //list.Add(entry);
+            //if(entry._start <= currentdate)
+            //add entry to panelAnnouncmentStream
+
+            GetAnnouncements(Announcementlist);
+
+            rtbAnnouncements.Clear();
+            rtbAnnouncements.SelectionAlignment = HorizontalAlignment.Center;
+            rtbAnnouncements.SelectedText += "\n <><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><> \n";
+
+            foreach (Announcement bulletin in Announcementlist)
+            {
+                rtbAnnouncements.SelectedText += "\n~~~~~  " + bulletin._headline.ToString() + "  ~~~~~";
+                rtbAnnouncements.SelectedText += "\n";
+                rtbAnnouncements.SelectedText += "\n " + bulletin._content.ToString() + " \n";
+                rtbAnnouncements.SelectedText += "\n <><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><> \n";
+            }
+
+        }
+
+
+        #endregion
+
+        #region Get Announcements
+        private List<Announcement> GetAnnouncements(List<Announcement> AnnouncementsList)
+        {
+            //Create a connection to the database
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                //SQL select statement
+                string query = @"SELECT [Subject], [Body] FROM [dbo].[Announcements] WHERE ([StartDisplayDate] <= GETDATE()) AND (GETDATE() < [EndDisplayDate])";
+
+                //Create a SQLCommand, passing the query and the connection
+                SqlCommand cmd = new SqlCommand(query, connection);
+
+                //connecting the SQLCommand Control and the database
+                cmd.Connection.Open();
+
+                //Creating a SQLDataReader to read the results of the query ran by the
+                // SQLCommand ExecuteReader function
+                using (SqlDataReader sql_reader = cmd.ExecuteReader())
+                {
+                    while (sql_reader.Read())
+                    {
+                        AnnouncementsList.Add(new Announcement(sql_reader["Subject"].ToString(), sql_reader["body"].ToString()));
+                    }
+                }
+            }
+
+            return AnnouncementsList;
+        }
+        #endregion
+
+        #endregion
+        
+        #region Inventory
 
 
 
-            #endregion
+        #endregion
 
-
-            #region Inventory
-
-
-
-            #endregion
-
-            #region Events
+        #region Events
 
 
 
-            #endregion
+        #endregion
 
-            #region Store Info
-
-
-
-            #endregion
-
-            #region Message Box
+        #region Store Info
 
 
 
-            #endregion
+        #endregion
 
-            #region Product Manager
-
-
-
-            #endregion
-
-            #region User Manager
+        #region Message Box
 
 
 
-            #endregion
+        #endregion
 
-            #region Settings
+        #region Product Manager
 
 
 
-            #endregion
+        #endregion
+
+        #region User Manager
+
+
+
+        #endregion
+
+        #region Settings
+
 
 
         #endregion
 
 
-
+        #endregion
 
         #region Methods
 
@@ -208,6 +271,9 @@ namespace NYMBv2
         #region Set Active User As Guest
         private void SetActiveUserAsGuest()
         {
+
+            try { 
+
             //Create a connection to the database
             using (SqlConnection connection = new SqlConnection(connectionString))
             {
@@ -243,7 +309,7 @@ namespace NYMBv2
                 command.Connection.Close();
             }
 
-            
+            } catch (Exception ex) { MessageBox.Show(ex.Message); }
 
         }
         #endregion
