@@ -8,13 +8,15 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
+using System.Configuration;
 
 namespace NYMBv2
 {
     public partial class LogIn : Form
     {
-        string connectionString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\Aloquin\Source\Repos\NYMBv2\NYMBv2\NYMBv2\NYMBv2_DB.mdf;Integrated Security=True";
-        
+        #region Connection String
+        public string connectionString = ConfigurationManager.ConnectionStrings["NYMBv2.Properties.Settings.NYMBv2_DBConnectionString"].ConnectionString;
+        #endregion
 
         public LogIn()
         {
@@ -48,8 +50,8 @@ namespace NYMBv2
 
                     using (SqlConnection connection = new SqlConnection(connectionString))
                     {
-                        String queryClearTokens = @"DELETE FROM [dbo].[SessonTokens] ";
-                        String queryNewToken = @"INSERT INTO [dbo].[SessonTokens] VALUES ( '" + _UserName + "' , '" + _UserLevel + "' , '1' )";
+                        string queryClearTokens = @"DELETE FROM [dbo].[SessonTokens] ";
+                        string queryNewToken = @"INSERT INTO [dbo].[SessonTokens] VALUES ( '" + _UserName + "' , '" + _UserLevel + "' , '1' )";
                         
 
                         SqlCommand command = new SqlCommand(queryClearTokens, connection);
@@ -79,14 +81,17 @@ namespace NYMBv2
         #region Set Active User As Guest
         private void SetActiveUserAsGuest()
         {
+
+            try { 
+
             //Create a connection to the database
             using (SqlConnection connection = new SqlConnection(connectionString))
             {
                 //SQL Query string that delets the sessonTokens
-                String queryClearTokens = @"DELETE FROM [dbo].[SessonTokens] ";
+                string queryClearTokens = @"DELETE FROM [dbo].[SessonTokens] ";
 
                 //SQL Query that adds the Guest SessonToken to the sessonToken table of the database
-                String queryGuestToken = @"INSERT INTO [dbo].[SessonTokens] VALUES ( 'Guest' , '1' , '1' )";
+                string queryGuestToken = @"INSERT INTO [dbo].[SessonTokens] VALUES ( 'Guest' , '1' , '1' )";
 
                 //Creates the SQL Command with the clear query
                 SqlCommand command = new SqlCommand(queryClearTokens, connection);
@@ -113,6 +118,8 @@ namespace NYMBv2
                 //Closes the connection
                 command.Connection.Close();
             }
+
+            } catch (Exception ex) { MessageBox.Show(ex.Message); }
         }
         #endregion
 
