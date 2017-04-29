@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tpAnnouncements = new System.Windows.Forms.TabPage();
             this.button2 = new System.Windows.Forms.Button();
@@ -56,6 +57,7 @@
             this.llblCreateAccount = new System.Windows.Forms.LinkLabel();
             this.sessonTokensTableAdapter1 = new NYMBv2.NYMBv2_DBDataSetTableAdapters.SessonTokensTableAdapter();
             this.nymBv2_DBDataSet1 = new NYMBv2.NYMBv2_DBDataSet();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.tabControl1.SuspendLayout();
             this.tpAnnouncements.SuspendLayout();
             this.tpInventory.SuspendLayout();
@@ -415,6 +417,7 @@
 		private System.Windows.Forms.Button btnEditBindersTable;
         private NYMBv2_DBDataSetTableAdapters.SessonTokensTableAdapter sessonTokensTableAdapter1;
         private NYMBv2_DBDataSet nymBv2_DBDataSet1;
+        private System.Windows.Forms.Timer timer1;
     }
 }
 
