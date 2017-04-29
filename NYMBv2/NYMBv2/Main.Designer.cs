@@ -52,8 +52,10 @@
             this.lblTitle = new System.Windows.Forms.Label();
             this.lblUserText = new System.Windows.Forms.Label();
             this.lblActiveUser = new System.Windows.Forms.Label();
-            this.btnLogOut = new System.Windows.Forms.Button();
+            this.btnLogInAndOut = new System.Windows.Forms.Button();
             this.llblCreateAccount = new System.Windows.Forms.LinkLabel();
+            this.sessonTokensTableAdapter1 = new NYMBv2.NYMBv2_DBDataSetTableAdapters.SessonTokensTableAdapter();
+            this.nymBv2_DBDataSet1 = new NYMBv2.NYMBv2_DBDataSet();
             this.tabControl1.SuspendLayout();
             this.tpAnnouncements.SuspendLayout();
             this.tpInventory.SuspendLayout();
@@ -63,6 +65,7 @@
             this.tpProductManager.SuspendLayout();
             this.tpUserManager.SuspendLayout();
             this.tpSettings.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nymBv2_DBDataSet1)).BeginInit();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -104,7 +107,7 @@
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(845, 620);
+            this.button2.Location = new System.Drawing.Point(32, 13);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(75, 23);
             this.button2.TabIndex = 2;
@@ -323,16 +326,16 @@
             this.lblActiveUser.TabIndex = 3;
             this.lblActiveUser.Text = "[Username Here]";
             // 
-            // btnLogOut
+            // btnLogInAndOut
             // 
-            this.btnLogOut.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnLogOut.Location = new System.Drawing.Point(950, 20);
-            this.btnLogOut.Name = "btnLogOut";
-            this.btnLogOut.Size = new System.Drawing.Size(117, 23);
-            this.btnLogOut.TabIndex = 4;
-            this.btnLogOut.Text = "Log in/out";
-            this.btnLogOut.UseVisualStyleBackColor = true;
-            this.btnLogOut.Click += new System.EventHandler(this.btnLogOut_Click);
+            this.btnLogInAndOut.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnLogInAndOut.Location = new System.Drawing.Point(950, 20);
+            this.btnLogInAndOut.Name = "btnLogInAndOut";
+            this.btnLogInAndOut.Size = new System.Drawing.Size(117, 23);
+            this.btnLogInAndOut.TabIndex = 4;
+            this.btnLogInAndOut.Text = "Log in/out";
+            this.btnLogInAndOut.UseVisualStyleBackColor = true;
+            this.btnLogInAndOut.Click += new System.EventHandler(this.btnLogInAndOut_Click);
             // 
             // llblCreateAccount
             // 
@@ -344,6 +347,15 @@
             this.llblCreateAccount.TabStop = true;
             this.llblCreateAccount.Text = "Don\'t have an account? Create one.";
             // 
+            // sessonTokensTableAdapter1
+            // 
+            this.sessonTokensTableAdapter1.ClearBeforeFill = true;
+            // 
+            // nymBv2_DBDataSet1
+            // 
+            this.nymBv2_DBDataSet1.DataSetName = "NYMBv2_DBDataSet";
+            this.nymBv2_DBDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
             // Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -351,7 +363,7 @@
             this.BackColor = System.Drawing.SystemColors.InactiveCaption;
             this.ClientSize = new System.Drawing.Size(1071, 733);
             this.Controls.Add(this.llblCreateAccount);
-            this.Controls.Add(this.btnLogOut);
+            this.Controls.Add(this.btnLogInAndOut);
             this.Controls.Add(this.lblActiveUser);
             this.Controls.Add(this.lblUserText);
             this.Controls.Add(this.lblTitle);
@@ -368,6 +380,7 @@
             this.tpProductManager.ResumeLayout(false);
             this.tpUserManager.ResumeLayout(false);
             this.tpSettings.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.nymBv2_DBDataSet1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -386,7 +399,7 @@
         private System.Windows.Forms.Label lblTitle;
         private System.Windows.Forms.Label lblUserText;
         private System.Windows.Forms.Label lblActiveUser;
-        private System.Windows.Forms.Button btnLogOut;
+        private System.Windows.Forms.Button btnLogInAndOut;
         private System.Windows.Forms.LinkLabel llblCreateAccount;
         private System.Windows.Forms.RichTextBox rtbAnnouncements;
         private System.Windows.Forms.Label lblAnnouncements;
@@ -400,6 +413,8 @@
 		private System.Windows.Forms.Button button7;
 		private System.Windows.Forms.Button button8;
 		private System.Windows.Forms.Button btnEditBindersTable;
-	}
+        private NYMBv2_DBDataSetTableAdapters.SessonTokensTableAdapter sessonTokensTableAdapter1;
+        private NYMBv2_DBDataSet nymBv2_DBDataSet1;
+    }
 }
 

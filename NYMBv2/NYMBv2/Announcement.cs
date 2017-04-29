@@ -2,19 +2,33 @@
 
 public class Announcement
 {
-	private string _headline, _content;
+    public string _headline { get; set; }
 
-	private DateTime _start, _end;
+    public string _content { get; set; }
+
+    private DateTime _start, _end;
 
 	public Announcement()
 	{
 	}
 
-	public Announcement(string h, string c, DateTime s, DateTime e)
+    public Announcement(string h, string c)
+    {
+        _headline = h;
+        _content = c;
+    }
+
+    public Announcement(string h, string c, DateTime s, DateTime e)
 	{
 		_headline = h;
 		_content = c;
 		_start = s;
 		_end = e;
 	}
+
+    #region Accessors and Modifiers
+
+#endregion
+
+
 }
