@@ -267,7 +267,6 @@ namespace NYMBv2
         }
         #endregion
 
-
         #region Set Active User As Guest
         private void SetActiveUserAsGuest()
         {
@@ -353,57 +352,37 @@ namespace NYMBv2
         //What tabs need to be displayed for guest?
         //--
         //For customer?
-        //--
+        //-- Announcements
+        //-- Inventory
+        //-- Events
+        //-- StoreInfo
+        //-- Message box
         //For Employee?
-        //--
+        //-- Skip
         //For Admin?
         //-- All
         public void DisplayAvailableTabs()
         {
-            //did this to figure out how to use the tab control
-
+            // If all the tabs are showing, remove the 
+            //product manager, user manager, and settings
+            // tabs
+            if (tabControl1.TabCount == 8)
+            { 
             tabControl1.TabPages.RemoveAt(7);
             tabControl1.TabPages.RemoveAt(6);
             tabControl1.TabPages.RemoveAt(5);
-            tabControl1.TabPages.RemoveAt(4);
-            tabControl1.TabPages.RemoveAt(3);
-            tabControl1.TabPages.RemoveAt(2);
-            tabControl1.TabPages.RemoveAt(1);
-            tabControl1.TabPages.RemoveAt(0);
-                
+            }
 
-            tabControl1.TabPages.Add(tpAnnouncements);
-            tabControl1.TabPages.Add(tpInventory);
-            tabControl1.TabPages.Add(tpEvents);
-            tabControl1.TabPages.Add(tpStoreInfo);
-            tabControl1.TabPages.Add(tpMessagebox);
-            tabControl1.TabPages.Add(tpProductManager);
-            tabControl1.TabPages.Add(tpUserManager);
-            tabControl1.TabPages.Add(tpSettings);
+            //If the active user has admin rights, 
+            // then add the product manager, user manager
+            //, and settings tabs
+            if (activeLevel == 4)
+            {
+                tabControl1.TabPages.Add(tpProductManager);
+                tabControl1.TabPages.Add(tpUserManager);
+                tabControl1.TabPages.Add(tpSettings);
+            }
 
-            //if (activeLevel == 4)
-            //{
-            //    //tabControl1.TabPages.Insert(0, tpAnnouncements);
-            //    tabControl1.TabPages.Insert(1, tpInventory);
-            //    tabControl1.TabPages.Insert(2, tpEvents);
-            //    tabControl1.TabPages.Insert(3, tpStoreInfo);
-            //    tabControl1.TabPages.Insert(4, tpMessagebox);
-            //    tabControl1.TabPages.Insert(5, tpProductManager);
-            //    tabControl1.TabPages.Insert(6, tpUserManager);
-            //    tabControl1.TabPages.Insert(7, tpSettings);
-            //}
-            //else
-            //{
-
-            //    tabControl1.TabPages.Insert(0, tpAnnouncements);
-            //    tabControl1.TabPages.Insert(0, tpInventory);
-            //    tabControl1.TabPages.Insert(0, tpEvents);
-            //    tabControl1.TabPages.Insert(0, tpStoreInfo);
-            //    tabControl1.TabPages.Insert(0, tpMessagebox);
-
-
-
-            //}
 
         }
 
