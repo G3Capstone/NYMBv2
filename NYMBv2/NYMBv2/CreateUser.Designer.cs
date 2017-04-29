@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.lblUserName = new System.Windows.Forms.Label();
             this.lblPassword = new System.Windows.Forms.Label();
             this.lblConfirmPassword = new System.Windows.Forms.Label();
@@ -50,10 +51,12 @@
             this.pbxEmail = new System.Windows.Forms.PictureBox();
             this.btnCreate = new System.Windows.Forms.Button();
             this.btnCancel = new System.Windows.Forms.Button();
+            this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.pbxUsernameWarning)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbxPasswordWarning)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbxConfirmPasswordWarning)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbxEmail)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.SuspendLayout();
             // 
             // lblUserName
@@ -239,6 +242,7 @@
             this.btnCreate.TabIndex = 20;
             this.btnCreate.Text = "Create User";
             this.btnCreate.UseVisualStyleBackColor = true;
+            this.btnCreate.Click += new System.EventHandler(this.btnCreate_Click);
             // 
             // btnCancel
             // 
@@ -249,6 +253,10 @@
             this.btnCancel.TabIndex = 21;
             this.btnCancel.Text = "Cancel";
             this.btnCancel.UseVisualStyleBackColor = true;
+            // 
+            // errorProvider1
+            // 
+            this.errorProvider1.ContainerControl = this;
             // 
             // CreateUser
             // 
@@ -285,6 +293,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pbxPasswordWarning)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbxConfirmPasswordWarning)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbxEmail)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -314,5 +323,6 @@
         private System.Windows.Forms.PictureBox pbxEmail;
         private System.Windows.Forms.Button btnCreate;
         private System.Windows.Forms.Button btnCancel;
+        private System.Windows.Forms.ErrorProvider errorProvider1;
     }
 }
