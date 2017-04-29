@@ -223,7 +223,7 @@ namespace NYMBv2
          * returns true if the password entered contains at least
          * 1 lowercase letter
          */
-        private bool CheckLowerCase(string password)
+        private bool CheckPasswordLowerCase(string password)
         {
             int lowercase = 0;      //The number of lowercase letters in the password.
             bool valid = false;     //Flags verification of category 
@@ -266,7 +266,7 @@ namespace NYMBv2
          * returns true if the password entered contains at least
          * 1 number
          */
-        private bool CheckDigit(string password)
+        private bool CheckPasswordDigit(string password)
         {
             int digit = 0;          //The number of digits in the password.
             bool valid = false;     //Flags verification of category 
@@ -309,7 +309,7 @@ namespace NYMBv2
         * returns true if the password entered contains at least
         * 1 special character
         */
-        private bool CheckSpecial(string password)
+        private bool CheckPasswordSpecial(string password)
         {
             int special = 0;        //The number of special characters in the password.
             bool valid = false;     //Flags verification of category 
@@ -346,21 +346,68 @@ namespace NYMBv2
         #endregion
 
         #region First Validation
+
+        /**
+         * The first validation checks the password string to see if it meets
+         * all the set requirements.
+         */
         private void ValidatePassword(string password)
         {
-            const int MIN_LENGTH = 8;     //The lowest number of characters a password can contain.
-            const int MAX_LENGTH = 12;    //The highest number of characters a password can contain.
-            bool valid = true;            //Flag to indicate validity.
+            bool flag = false;           //Counts the number of false returns this method receives.
+            string pass = password;      //Holds the password
 
-            //check if the string's length is valid.
-            if (password.Length <= MIN_LENGTH && password.Length >= MAX_LENGTH)
+            //help me lol
+
+            #region Alternative validation code 1
+            
+            /**
+            //Check if the password meets all of the requirements.
+            if (CheckPasswordLength(pass) == &&
+                CheckPasswordUpperCase(pass) = true &&
+                CheckPasswordLowerCase(pass) = true &&
+                CheckPasswordDigit(pass) = true &&
+                CheckPasswordSpecial(pass) = true )
             {
-                //Check for each character in the string.
-                foreach (char ch in password)
-                {
 
+            }
+
+            */
+
+            #endregion
+
+            #region Alternative validation code 2
+            /** if (CheckPasswordLength(password) == false )
+            {
+                flag++;
+
+                if (CheckPasswordUpperCase(password) == false)
+                {
+                    flag++;
+
+                    if (CheckPasswordLowerCase(password) == false)
+                    {
+                        flag++;
+
+                        if (CheckPasswordDigit(password) == false)
+                        {
+                            flag++;
+
+                            if (CheckPasswordSpecial(password) == false)
+                            {
+                                flag++;
+                            }
+                        }
+                    }
                 }
             }
+    
+            //If there are no flags, return the password.
+            if (flag == 0 )
+            {
+
+            }
+             */
+            #endregion
         }
         #endregion
 
