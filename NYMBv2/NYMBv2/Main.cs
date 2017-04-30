@@ -183,13 +183,51 @@ namespace NYMBv2
 
             return AnnouncementsList;
         }
-        #endregion
+		#endregion
 
-        #endregion
-        
-        #region Inventory
+		#endregion
+
+		#region Inventory
+
+		public List<TradingCardControl> SearchTradingCards(string s)
+		{
+			List<TradingCards> cards = new List<TradingCards>();
+
+			//Create a connection to the database
+			using (SqlConnection connection = new SqlConnection(connectionString))
+			{
+				string name, game, set, isFoil, condition;
+				double price = 0;
+
+				//SQL select statement
+				string query = @"SELECT [Name] FROM [dbo].[TradingCards] WHERE [Name] LIKE ('%" + s + "%')";
+
+				//Create a SQLCommand, passing the query and the connection
+				SqlCommand cmd = new SqlCommand(query, connection);
+
+				//connection the SQLCommand Control and the database
+				cmd.Connection.Open();
+
+				//Creating a SQLDataReader to read the results of a query
+				using (SqlDataReader sql_reader = cmd.ExecuteReader())
+				{
+					while (sql_reader.Read())
+					{
+						//set variables
+						name = sql_reader["Name"].ToString();
+						game = sql_reader["Game"].ToString();
+						set = sql_reader["Set"].ToString();
+						isFoil = sql_reader["IsFoil"].ToString();
+						condition = sql_reader["Condition"].ToString();
+						//price = sql_reader["Price"];
+
+						TradingCards card = new TradingCards(game, set, isFoil, condition);	//there is something wrong with TradingCard inhereting from Item.
 
 
+					}
+				}
+			}
+		}
 
         #endregion
 

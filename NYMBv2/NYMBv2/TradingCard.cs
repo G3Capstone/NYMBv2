@@ -2,9 +2,7 @@
 
 public class TradingCards : Item
 {
-    private string _game, _set; //holds game and set respectively
-    private bool _is_foil;      //holds whether it's foil or not
-    private int _condition;     //holds condition
+    private string _game, _set, _is_foil, condition; //holds game and set respectively
 
 	/// <summary>
     /// no arg constructor
@@ -17,11 +15,12 @@ public class TradingCards : Item
     /// <summary>
     /// constructor to initiate with values
     /// </summary>
+	/// <param name="n"></param>
     /// <param name="g"></param>
     /// <param name="s"></param>
     /// <param name="i"></param>
     /// <param name="c"></param>
-    public TradingCards(string g, string s, bool i, int c)
+    public TradingCards(string g, string s, string i, string c)
         : base ("Item")
     {
         _game = g;
