@@ -86,6 +86,12 @@
     <Compile Include="Edit_DB_Binders_Table.Designer.cs">
       <DependentUpon>Edit_DB_Binders_Table.cs</DependentUpon>
     </Compile>
+    <Compile Include="Events Dummy.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Events Dummy.Designer.cs">
+      <DependentUpon>Events Dummy.cs</DependentUpon>
+    </Compile>
     <Compile Include="LogIn.cs">
       <SubType>Form</SubType>
     </Compile>
