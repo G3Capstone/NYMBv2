@@ -31,6 +31,7 @@
 			this.buttonSearch = new System.Windows.Forms.Button();
 			this.textBoxSearch = new System.Windows.Forms.TextBox();
 			this.comboBoxSearch = new System.Windows.Forms.ComboBox();
+			this.flowLayoutPanelResults = new System.Windows.Forms.FlowLayoutPanel();
 			this.SuspendLayout();
 			// 
 			// buttonSearch
@@ -66,11 +67,19 @@
 			this.comboBoxSearch.Size = new System.Drawing.Size(121, 21);
 			this.comboBoxSearch.TabIndex = 2;
 			// 
+			// flowLayoutPanelResults
+			// 
+			this.flowLayoutPanelResults.Location = new System.Drawing.Point(75, 76);
+			this.flowLayoutPanelResults.Name = "flowLayoutPanelResults";
+			this.flowLayoutPanelResults.Size = new System.Drawing.Size(510, 518);
+			this.flowLayoutPanelResults.TabIndex = 3;
+			// 
 			// Inventory_Dummy
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.ClientSize = new System.Drawing.Size(688, 606);
+			this.Controls.Add(this.flowLayoutPanelResults);
 			this.Controls.Add(this.comboBoxSearch);
 			this.Controls.Add(this.textBoxSearch);
 			this.Controls.Add(this.buttonSearch);
@@ -86,5 +95,6 @@
 		private System.Windows.Forms.Button buttonSearch;
 		private System.Windows.Forms.TextBox textBoxSearch;
 		private System.Windows.Forms.ComboBox comboBoxSearch;
+		private System.Windows.Forms.FlowLayoutPanel flowLayoutPanelResults;
 	}
 }
