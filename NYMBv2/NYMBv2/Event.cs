@@ -2,9 +2,8 @@
 
 public class Event
 {
-    private string _name, _type, _description, _organizer, _reservation;    
-        //holds name, type, description, organizer, and reservation respectively
-    private int _month, _day, _hour, _minute;   //holds month, day, hour and time respectively
+    private string _name, _type, _description, _organizer, _reservedSpace, _date, _time; ;    
+        //holds name, type, description, organizer, and reservation space date and time respectively
 
 	/// <summary>
     /// no arg constructor
@@ -17,21 +16,20 @@ public class Event
     /// constructor to initiate with values 
     /// </summary>
     /// <param name="n"></param>
-    /// <param name="d"></param>
+    /// <param name="type"></param>
+    /// <param name="desc"></param>
     /// <param name="o"></param>
-    /// <param name="mo"></param>
     /// <param name="d"></param>
-    /// <param name="h"></param>
-    /// <param name="mi"></param>
-    public Event(string n, string desc, string o, int mo, int d, int h, int mi)
+    /// <param name="time"></param>
+
+    public Event(string n, string type, string desc, string o, string d, string time)
     {
         _name = n;
+        _type = type;
         _description = desc;
         _organizer = o;
-        _month = mo;
-        _day = d;
-        _hour = h;
-        _minute = mi;
+        _date = d;
+        _time = time;
     }
 
     //get/setters
@@ -59,33 +57,21 @@ public class Event
         set { _organizer = value; }
     }
 
-    public string Reservation
+    public string ReservedSpace
     {
-        get { return _reservation; }
-        set { _reservation = value; }
+        get { return _reservedSpace; }
+        set { _reservedSpace = value; }
     }
 
-    public int Month
+    public string Date
     {
-        get { return _month; }
-        set { _month = value; }
+        get { return _date; }
+        set { _date = value; }
     }
 
-    public int Day
+    public string Time
     {
-        get { return _day; }
-        set { _day = value; }
-    }
-
-    public int Hour
-    {
-        get { return _hour; }
-        set { _hour = value; }
-    }
-
-    public int Minute
-    {
-        get { return _minute; }
-        set { _minute = value; }
+        get { return _time; }
+        set { _time = value; }
     }
 }
