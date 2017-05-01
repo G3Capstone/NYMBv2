@@ -28,9 +28,17 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
+            this.SuspendLayout();
+            // 
+            // StoreInfo_Dummy
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.ClientSize = new System.Drawing.Size(811, 498);
+            this.Name = "StoreInfo_Dummy";
             this.Text = "StoreInfo_Dummy";
+            this.ResumeLayout(false);
+
         }
 
         #endregion

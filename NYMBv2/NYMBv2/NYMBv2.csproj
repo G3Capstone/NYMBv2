@@ -180,6 +180,9 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="StoreInfo_Dummy.resx">
+      <DependentUpon>StoreInfo_Dummy.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="TradingCardControl.resx">
       <DependentUpon>TradingCardControl.cs</DependentUpon>
     </EmbeddedResource>

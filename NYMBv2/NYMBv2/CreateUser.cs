@@ -33,6 +33,7 @@ namespace NYMBv2
         {
 
         }
+        
 
         #region Username Validation Methods
 
@@ -169,6 +170,49 @@ namespace NYMBv2
 
             return valid;
 
+        }
+
+        #endregion
+
+        #region Check for White Spaces
+
+       /**
+       * The CheckPasswordUppercase method accepts a string argument
+       * returns true if the password doesn't have any whitespaces
+       */
+        private bool CheckPasswordWhitespace(string password)
+        {
+            int whitespace = 0;     //The number of white spaces in the password.
+            bool valid = false;     //Flags verification of category 
+
+            //Count the uppercase characters in the password.
+            foreach (char ch in password)
+            {
+                if (char.IsWhiteSpace(ch))
+                {
+                    whitespace++;
+                }
+            }
+
+            //Check if there is at least 1 uppercase letter in the password.
+            if (whitespace == 0)
+            {
+                valid = true;
+            }
+            else
+            {
+                //flag that the password does not meet the necessary requirements.
+                valid = false;
+
+                //Show the error message below the password textbox.
+                lblPasswordErrMsg.Visible = true;
+
+                //Change the text to inform the user of the password error.
+                lblPasswordErrMsg.Text = "Password can't have white spaces.";
+
+            }
+
+            return valid;
         }
 
         #endregion
@@ -351,27 +395,32 @@ namespace NYMBv2
          * The first validation checks the password string to see if it meets
          * all the set requirements.
          */
-        private void ValidatePassword(string password)
+        private bool ValidatePassword(string password)
         {
             bool flag = false;           //Counts the number of false returns this method receives.
             string pass = password;      //Holds the password
 
-            //help me lol
+            
 
             #region Alternative validation code 1
             
-            /**
+            
             //Check if the password meets all of the requirements.
-            if (CheckPasswordLength(pass) == &&
-                CheckPasswordUpperCase(pass) = true &&
-                CheckPasswordLowerCase(pass) = true &&
-                CheckPasswordDigit(pass) = true &&
-                CheckPasswordSpecial(pass) = true )
+            if (CheckPasswordLength(pass) == true &&
+                CheckPasswordUpperCase(pass) == true &&
+                CheckPasswordLowerCase(pass) == true &&
+                CheckPasswordDigit(pass) == true &&
+                CheckPasswordSpecial(pass) == true )
             {
-
+                flag = true;
+            }
+            else
+            {
+                pass = "";
             }
 
-            */
+
+            return flag;
 
             #endregion
 
