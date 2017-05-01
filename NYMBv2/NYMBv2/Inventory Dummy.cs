@@ -22,6 +22,7 @@ namespace NYMBv2
 		private void buttonSearch_Click(object sender, EventArgs e)
 		{
 			string searchType = comboBoxSearch.Text;
+			int count = 0;
 
 			switch(searchType)
 			{
@@ -46,6 +47,15 @@ namespace NYMBv2
 				case "Trading Card":
 					List<TradingCardControl> results = new List<TradingCardControl>();
 					results = main.SearchTradingCards(textBoxSearch.Text);
+
+					count = results.Count();
+
+					TradingCardControl asdf = new TradingCardControl();
+
+					foreach (TradingCardControl entry in results)
+					{
+						flowLayoutPanelResults.Controls.Add(entry);
+					}
 					break;
 			}
 		}
