@@ -187,6 +187,108 @@ namespace NYMBv2
 
 		#region Inventory
 
+		#region Search methods
+		#region SearchBinder
+		#endregion
+
+		#region SearchBoardGame
+		#endregion
+
+		#region SearchComic
+		#endregion
+
+		#region SearchDice
+		#endregion
+
+		#region SearchSleeves
+		public List<SleevesControl> SearchSleeves(string s)
+		{
+			List<SleevesControl> sleeves = new List<SleevesControl>();
+
+			string name, type, size, color, manufacturer, price;
+
+			//Create a connection to the database
+			using (SqlConnection connection = new SqlConnection(connectionString))
+			{
+				//SQL select statement
+				string query = @"SELECT [Name], [Type], [Size], [Color], [Manufacturer], [Price] FROM [dbo].[CardSleeves] WHERE [Name] LIKE ('%" + s + "%')";
+
+				//Create a SQLCommand, passing the query and the connection
+				SqlCommand cmd = new SqlCommand(query, connection);
+
+				//connection the SQLCommand Control and the database
+				cmd.Connection.Open();
+
+				//Creating a SQLDataReader to read the results of a query
+				using (SqlDataReader sql_reader = cmd.ExecuteReader())
+				{
+					while (sql_reader.Read())
+					{
+						//set variables
+						name = sql_reader["Name"].ToString();
+						type = sql_reader["Type"].ToString();
+						size = sql_reader["Size"].ToString();
+						color = sql_reader["Color"].ToString();
+						manufacturer = sql_reader["Manufacturer"].ToString();
+						price = sql_reader["Price"].ToString();
+
+						Sleeves sleeve = new Sleeves(type, size, color, manufacturer);
+						sleeve.Name = name;
+						sleeve.Price = price;
+
+						SleevesControl control = new SleevesControl();
+
+						sleeves.Add(control);
+					}
+				}
+			}
+			return sleeves;
+		}
+		#endregion
+
+						#region SearchTabletopGame
+						public List<TabletopGameControl> SearchTabletopGame(string s)
+		{
+			List<TabletopGameControl> games = new List<TabletopGameControl>();
+
+			string name, game, publisher, price;
+
+			//Create a connection to the database
+			using (SqlConnection connection = new SqlConnection(connectionString))
+			{
+				//Sql select statement
+				string query = @"SELECT [Name], [Game], [Publisher], [Price] FROM [dbo].[TabletopGames] WHERE [Name] LIKE ('%" + s + "%')";
+
+				//Create a SQLCommand, passing the query and the connection
+				SqlCommand cmd = new SqlCommand(query, connection);
+
+				//connection the SQLCommand Control and the database
+				cmd.Connection.Open();
+
+				//Creating a SQLDataReader to read the results of a query
+				using (SqlDataReader sql_reader = cmd.ExecuteReader())
+				{
+					while (sql_reader.Read())
+					{
+						name = sql_reader["Name"].ToString();
+						game = sql_reader["Game"].ToString();
+						publisher = sql_reader["Publisher"].ToString();
+						price = sql_reader["Price"].ToString();
+
+						TabletopGame ttGame = new TabletopGame(game, publisher);
+						ttGame.Name = name;
+						ttGame.Price = price;
+
+						TabletopGameControl control = new TabletopGameControl(ttGame.Name, ttGame.Game, ttGame.Publisher, ttGame.Price);
+
+						games.Add(control);
+					}
+				}
+			}
+			return games;
+		}
+#endregion
+
 		#region SearchTradingCards
 		public List<TradingCardControl> SearchTradingCards(string s)
 		{
@@ -233,6 +335,7 @@ namespace NYMBv2
 			return cards;
 			
 		}
+		#endregion
 #endregion
 
 		#endregion

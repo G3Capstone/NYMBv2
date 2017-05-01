@@ -75,8 +75,26 @@
       <DependentUpon>Announcements Wizard.cs</DependentUpon>
     </Compile>
     <Compile Include="Binder.cs" />
+    <Compile Include="BinderControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="BinderControl.Designer.cs">
+      <DependentUpon>BinderControl.cs</DependentUpon>
+    </Compile>
     <Compile Include="BoardGame.cs" />
+    <Compile Include="BoardGameControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="BoardGameControl.Designer.cs">
+      <DependentUpon>BoardGameControl.cs</DependentUpon>
+    </Compile>
     <Compile Include="Comic.cs" />
+    <Compile Include="ComicControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ComicControl.Designer.cs">
+      <DependentUpon>ComicControl.cs</DependentUpon>
+    </Compile>
     <Compile Include="CreateUser.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -84,6 +102,12 @@
       <DependentUpon>CreateUser.cs</DependentUpon>
     </Compile>
     <Compile Include="Dice.cs" />
+    <Compile Include="DiceControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="DiceControl.Designer.cs">
+      <DependentUpon>DiceControl.cs</DependentUpon>
+    </Compile>
     <Compile Include="Edit_DB_Binders_Table.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -130,6 +154,12 @@
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Sleeves.cs" />
+    <Compile Include="SleevesControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="SleevesControl.Designer.cs">
+      <DependentUpon>SleevesControl.cs</DependentUpon>
+    </Compile>
     <Compile Include="StoreInfo_Dummy.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -137,6 +167,12 @@
       <DependentUpon>StoreInfo_Dummy.cs</DependentUpon>
     </Compile>
     <Compile Include="TabletopGame.cs" />
+    <Compile Include="TabletopGameControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="TabletopGameControl.Designer.cs">
+      <DependentUpon>TabletopGameControl.cs</DependentUpon>
+    </Compile>
     <Compile Include="TradingCard.cs" />
     <Compile Include="TradingCardControl.cs">
       <SubType>UserControl</SubType>
@@ -150,8 +186,20 @@
     <EmbeddedResource Include="Announcements Wizard.resx">
       <DependentUpon>Announcements Wizard.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="BinderControl.resx">
+      <DependentUpon>BinderControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BoardGameControl.resx">
+      <DependentUpon>BoardGameControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ComicControl.resx">
+      <DependentUpon>ComicControl.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="CreateUser.resx">
       <DependentUpon>CreateUser.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DiceControl.resx">
+      <DependentUpon>DiceControl.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Edit_DB_Binders_Table.resx">
       <DependentUpon>Edit_DB_Binders_Table.cs</DependentUpon>
@@ -180,8 +228,14 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="SleevesControl.resx">
+      <DependentUpon>SleevesControl.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="StoreInfo_Dummy.resx">
       <DependentUpon>StoreInfo_Dummy.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TabletopGameControl.resx">
+      <DependentUpon>TabletopGameControl.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="TradingCardControl.resx">
       <DependentUpon>TradingCardControl.cs</DependentUpon>

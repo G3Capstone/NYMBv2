@@ -28,7 +28,7 @@
 		/// </summary>
 		private void InitializeComponent()
 		{
-			this.label1 = new System.Windows.Forms.Label();
+			this.labelName = new System.Windows.Forms.Label();
 			this.labelType = new System.Windows.Forms.Label();
 			this.labelSize = new System.Windows.Forms.Label();
 			this.labelColor = new System.Windows.Forms.Label();
@@ -36,12 +36,12 @@
 			this.labelManufacturer = new System.Windows.Forms.Label();
 			this.SuspendLayout();
 			// 
-			// label1
+			// labelName
 			// 
-			this.label1.Location = new System.Drawing.Point(4, 4);
-			this.label1.Name = "label1";
-			this.label1.Size = new System.Drawing.Size(100, 15);
-			this.label1.TabIndex = 0;
+			this.labelName.Location = new System.Drawing.Point(4, 4);
+			this.labelName.Name = "labelName";
+			this.labelName.Size = new System.Drawing.Size(100, 15);
+			this.labelName.TabIndex = 0;
 			// 
 			// labelType
 			// 
@@ -87,7 +87,7 @@
 			this.Controls.Add(this.labelColor);
 			this.Controls.Add(this.labelSize);
 			this.Controls.Add(this.labelType);
-			this.Controls.Add(this.label1);
+			this.Controls.Add(this.labelName);
 			this.Name = "SleevesControl";
 			this.Size = new System.Drawing.Size(340, 55);
 			this.ResumeLayout(false);
@@ -96,7 +96,7 @@
 
 		#endregion
 
-		private System.Windows.Forms.Label label1;
+		private System.Windows.Forms.Label labelName;
 		private System.Windows.Forms.Label labelType;
 		private System.Windows.Forms.Label labelSize;
 		private System.Windows.Forms.Label labelColor;

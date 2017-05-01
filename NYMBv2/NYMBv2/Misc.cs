@@ -15,8 +15,7 @@ public class Misc : Item
     /// constructor to initiate with description
     /// </summary>
     /// <param name="d"></param>
-    public Misc(string d)
-        : base ("Item")
+    public Misc(string d) : base ()
     {
         _descrip = d;
     }
