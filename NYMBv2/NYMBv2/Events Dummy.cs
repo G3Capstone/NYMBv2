@@ -19,57 +19,26 @@ namespace NYMBv2
         public string connectionString = ConfigurationManager.ConnectionStrings["NYMBv2.Properties.Settings.NYMBv2_DBConnectionString"].ConnectionString;
         #endregion
 
+        DateTime today = System.DateTime.Now;
+        DateTime BeginningOfWeek;
+        DateTime EndOfWeek;
 
         public Events_Dummy()
         {
             InitializeComponent();
-        }
-
-        private void monthCalendarEvents_DateSelected(object sender, DateRangeEventArgs e)
-        {
-
-        }
-
-        #region Display Announcements
-
-        private void DisplayAnnouncements()
-        {
-            var Announcementlist = new List<Announcement>();
-
-
-            //foreach statement that will repeat for the number of announcments in the database.
-            //Announcment entry = new announcment();	//the () will contain headline, content, start and end date for the announcment.
-            //list.Add(entry);
-            //if(entry._start <= currentdate)
-            //add entry to panelAnnouncmentStream
-
-            GetAnnouncements(Announcementlist);
-
-            rtbEvents.Clear();
-            rtbEvents.SelectionAlignment = HorizontalAlignment.Center;
-            rtbEvents.SelectedText += "\n <><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><> \n";
-
-            foreach (Announcement bulletin in Announcementlist)
-            {
-                rtbEvents.SelectedText += "\n~~~~~  " + bulletin._headline.ToString() + "  ~~~~~";
-                rtbEvents.SelectedText += "\n";
-                rtbEvents.SelectedText += "\n " + bulletin._content.ToString() + " \n";
-                rtbEvents.SelectedText += "\n <><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><> \n";
-            }
 
         }
 
 
-        #endregion
-
-        #region Get Announcements
-        private List<List<Event>> GetEvents(List<List<Event>> EventList)
+        #region Get Events
+        private List<Event> GetEvents(List<Event> EventList)
         {
             //Create a connection to the database
             using (SqlConnection connection = new SqlConnection(connectionString))
             {
                 //SQL select statement
-                string query = @"SELECT [Subject], [Body] FROM [dbo].[Announcements] WHERE ([StartDisplayDate] <= GETDATE()) AND (GETDATE() < [EndDisplayDate])";
+                string query = @"SELECT [Name], [EventType], [Description], [Organizer], [StartDate], [StartTime] " + 
+                    @"FROM [dbo].[Events] WHERE ( '" + BeginningOfWeek + "' <= [StartDate]) AND ([StartDate] <= '" + EndOfWeek + "')";
 
                 //Create a SQLCommand, passing the query and the connection
                 SqlCommand cmd = new SqlCommand(query, connection);
@@ -81,11 +50,9 @@ namespace NYMBv2
                 // SQLCommand ExecuteReader function
                 using (SqlDataReader sql_reader = cmd.ExecuteReader())
                 {
-
-
                     while (sql_reader.Read())
                     {
-                        EventList.Add(new Event(sql_reader["Subject"].ToString(), sql_reader["body"].ToString()));
+                        //EventList.Add();
                     }
                 }
             }
@@ -93,5 +60,94 @@ namespace NYMBv2
             return EventList;
         }
         #endregion
+
+        #region add event 
+
+        //adds an event to one of the 
+        private void AddEvent()
+        {
+
+        }
+
+        #endregion
+
+        #region Clear event 
+        //Clears the events from all the different textboxes in the events tab
+        private void ClearEvents()
+        {
+            rtbSunday.Clear();
+            rtbMonday.Clear();
+            rtbTuesday.Clear();
+            rtbWednesday.Clear();
+            rtbThursday.Clear();
+            rtbFriday.Clear();
+            rtbSaturday.Clear();
+        }
+
+        #endregion
+
+        #region get Current Week
+
+        public void getCurrentWeek()
+        {
+            //a bunch of if statements to find out the range of the current
+            //week (sunday to saturday).
+            if(today.DayOfWeek == DayOfWeek.Sunday)
+            {
+                BeginningOfWeek = today;
+                
+            }
+            else if (today.DayOfWeek == DayOfWeek.Monday)
+            {
+                BeginningOfWeek = today.AddDays(-1);
+            }
+            else if (today.DayOfWeek == DayOfWeek.Tuesday)
+            {
+                BeginningOfWeek = today.AddDays(-2);
+            }
+            else if (today.DayOfWeek == DayOfWeek.Wednesday)
+            {
+                BeginningOfWeek = today.AddDays(-3);
+            }
+            else if (today.DayOfWeek == DayOfWeek.Thursday)
+            {
+                BeginningOfWeek = today.AddDays(-4);
+            }
+            else if (today.DayOfWeek == DayOfWeek.Friday)
+            {
+                BeginningOfWeek = today.AddDays(-5);
+            }
+            else   //if its saturday
+            {
+                BeginningOfWeek = today.AddDays(-6);
+            }
+
+            EndOfWeek = BeginningOfWeek.AddDays(6);
+
+        }
+
+
+        #endregion
+
+        #region Get previous week  
+
+        private void previousWeek()
+        {
+            BeginningOfWeek.AddDays(-7);
+            EndOfWeek.AddDays(-7);
+        }
+
+        #endregion
+
+        #region Get Next week  
+
+        private void nextWeek()
+        {
+            BeginningOfWeek.AddDays(7);
+            EndOfWeek.AddDays(7);
+        }
+
+        #endregion
+
     }
 }

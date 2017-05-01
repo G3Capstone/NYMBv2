@@ -2,7 +2,7 @@
 
 public class Event
 {
-    private string _name, _type, _description, _organizer, _reservedSpace, _date, _time; ;    
+    private string _name, _type, _description, _organizer, _reservedSpace, _date, _time;    
         //holds name, type, description, organizer, and reservation space date and time respectively
 
 	/// <summary>
@@ -14,21 +14,20 @@ public class Event
 
     /// <summary>
     /// constructor to initiate with values 
-    /// </summary>
-    /// <param name="n"></param>
+    /// <param name="n">name</param>
     /// <param name="type"></param>
     /// <param name="desc"></param>
     /// <param name="o"></param>
     /// <param name="d"></param>
     /// <param name="time"></param>
-
-    public Event(string n, string type, string desc, string o, string d, string time)
+    /// </summary>
+    public Event(string name, string type, string desc, string organizer, string date, string time)
     {
-        _name = n;
+        _name = name;
         _type = type;
         _description = desc;
-        _organizer = o;
-        _date = d;
+        _organizer = organizer;
+        _date = date;
         _time = time;
     }
 
