@@ -30,7 +30,6 @@
         {
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tpAnnouncements = new System.Windows.Forms.TabPage();
-            this.button2 = new System.Windows.Forms.Button();
             this.rtbAnnouncements = new System.Windows.Forms.RichTextBox();
             this.lblAnnouncements = new System.Windows.Forms.Label();
             this.tpInventory = new System.Windows.Forms.TabPage();
@@ -125,7 +124,6 @@
             // tpAnnouncements
             // 
             this.tpAnnouncements.BackColor = System.Drawing.Color.LightBlue;
-            this.tpAnnouncements.Controls.Add(this.button2);
             this.tpAnnouncements.Controls.Add(this.rtbAnnouncements);
             this.tpAnnouncements.Controls.Add(this.lblAnnouncements);
             this.tpAnnouncements.ForeColor = System.Drawing.SystemColors.ControlText;
@@ -134,16 +132,6 @@
             this.tpAnnouncements.Size = new System.Drawing.Size(917, 670);
             this.tpAnnouncements.TabIndex = 0;
             this.tpAnnouncements.Text = "Announcements";
-            // 
-            // button2
-            // 
-            this.button2.Location = new System.Drawing.Point(32, 13);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 23);
-            this.button2.TabIndex = 2;
-            this.button2.Text = "button2";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // rtbAnnouncements
             // 
@@ -390,7 +378,7 @@
             // gbxEventsAdminToolBox
             // 
             this.gbxEventsAdminToolBox.Controls.Add(this.btnEditEvents);
-            this.gbxEventsAdminToolBox.Location = new System.Drawing.Point(14, 11);
+            this.gbxEventsAdminToolBox.Location = new System.Drawing.Point(733, 3);
             this.gbxEventsAdminToolBox.Name = "gbxEventsAdminToolBox";
             this.gbxEventsAdminToolBox.Size = new System.Drawing.Size(176, 53);
             this.gbxEventsAdminToolBox.TabIndex = 11;
@@ -410,16 +398,16 @@
             // lblEvents
             // 
             this.lblEvents.Font = new System.Drawing.Font("Arial", 24F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblEvents.Location = new System.Drawing.Point(359, 11);
+            this.lblEvents.Location = new System.Drawing.Point(369, 0);
             this.lblEvents.Name = "lblEvents";
-            this.lblEvents.Size = new System.Drawing.Size(194, 35);
+            this.lblEvents.Size = new System.Drawing.Size(177, 35);
             this.lblEvents.TabIndex = 0;
             this.lblEvents.Text = "Events";
             this.lblEvents.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // btnPreviousWeek
             // 
-            this.btnPreviousWeek.Location = new System.Drawing.Point(196, 38);
+            this.btnPreviousWeek.Location = new System.Drawing.Point(192, 64);
             this.btnPreviousWeek.Name = "btnPreviousWeek";
             this.btnPreviousWeek.Size = new System.Drawing.Size(119, 34);
             this.btnPreviousWeek.TabIndex = 3;
@@ -429,7 +417,7 @@
             // 
             // btnNextWeek
             // 
-            this.btnNextWeek.Location = new System.Drawing.Point(614, 38);
+            this.btnNextWeek.Location = new System.Drawing.Point(604, 64);
             this.btnNextWeek.Name = "btnNextWeek";
             this.btnNextWeek.Size = new System.Drawing.Size(119, 34);
             this.btnNextWeek.TabIndex = 4;
@@ -439,12 +427,12 @@
             // 
             // lblWeekOf
             // 
-            this.lblWeekOf.AutoSize = true;
-            this.lblWeekOf.Location = new System.Drawing.Point(382, 46);
+            this.lblWeekOf.Location = new System.Drawing.Point(317, 72);
             this.lblWeekOf.Name = "lblWeekOf";
-            this.lblWeekOf.Size = new System.Drawing.Size(123, 18);
+            this.lblWeekOf.Size = new System.Drawing.Size(281, 18);
             this.lblWeekOf.TabIndex = 5;
             this.lblWeekOf.Text = "[Week Of [Date]]";
+            this.lblWeekOf.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // tpStoreInfo
             // 
@@ -625,7 +613,6 @@
             this.tpInventory.ResumeLayout(false);
             this.tpInventory.PerformLayout();
             this.tpEvents.ResumeLayout(false);
-            this.tpEvents.PerformLayout();
             this.pnlWeek.ResumeLayout(false);
             this.gbxSaturday.ResumeLayout(false);
             this.gbxSunday.ResumeLayout(false);
@@ -665,7 +652,6 @@
         private System.Windows.Forms.Label lblAnnouncements;
 		private System.Windows.Forms.TextBox txtbxSearchInventory;
 		private System.Windows.Forms.Label lblInventory;
-		private System.Windows.Forms.Button button2;
 		private System.Windows.Forms.Button button4;
 		private System.Windows.Forms.Button button5;
 		private System.Windows.Forms.Button button6;

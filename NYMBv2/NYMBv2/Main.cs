@@ -96,18 +96,12 @@ namespace NYMBv2
 
         #endregion
 
+        #region Dummy Buttons
 
         private void button1_Click(object sender, EventArgs e)
         {
         }
 
-        private void button2_Click(object sender, EventArgs e)
-        {
-            Announcements_Dummy dummy = new Announcements_Dummy();
-
-            dummy.ShowDialog();
-
-        }
 
         private void button3_Click(object sender, EventArgs e)
         {
@@ -139,13 +133,9 @@ namespace NYMBv2
 
         }
 
+        #endregion
 
-        private void btnEditBindersTable_Click(object sender, EventArgs e)
-        {
-            Edit_DB_Binders_Table editBinderTable = new Edit_DB_Binders_Table();
 
-            editBinderTable.ShowDialog();
-        }
 
         #region Tabs
 
@@ -211,27 +201,38 @@ namespace NYMBv2
 
             return AnnouncementsList;
         }
-		#endregion
+        #endregion
 
-		#endregion
+        #endregion
 
-		#region Inventory
+        #region Inventory
 
-		#region Search methods
-		#region SearchBinder
-		#endregion
+        #region Inventory form objects
 
-		#region SearchBoardGame
-		#endregion
+        private void btnEditBindersTable_Click(object sender, EventArgs e)
+        {
+            Edit_DB_Binders_Table editBinderTable = new Edit_DB_Binders_Table();
 
-		#region SearchComic
-		#endregion
+            editBinderTable.ShowDialog();
+        }
 
-		#region SearchDice
-		#endregion
+        #endregion
 
-		#region SearchSleeves
-		public List<SleevesControl> SearchSleeves(string s)
+        #region Search methods
+        #region SearchBinder
+        #endregion
+
+        #region SearchBoardGame
+        #endregion
+
+        #region SearchComic
+        #endregion
+
+        #region SearchDice
+        #endregion
+
+        #region SearchSleeves
+        public List<SleevesControl> SearchSleeves(string s)
 		{
 			List<SleevesControl> sleeves = new List<SleevesControl>();
 
@@ -276,8 +277,8 @@ namespace NYMBv2
 		}
 		#endregion
 
-						#region SearchTabletopGame
-						public List<TabletopGameControl> SearchTabletopGame(string s)
+		#region SearchTabletopGame
+	    public List<TabletopGameControl> SearchTabletopGame(string s)
 		{
 			List<TabletopGameControl> games = new List<TabletopGameControl>();
 
