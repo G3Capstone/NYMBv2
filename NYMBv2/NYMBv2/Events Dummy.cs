@@ -52,6 +52,8 @@ namespace NYMBv2
             #endregion
         }
 
+        #region Event Methods
+
         #region Clear events
         //Clears the events from all the different textboxes in the events tab
         private void ClearEvents()
@@ -274,6 +276,8 @@ namespace NYMBv2
             //Updates the page
             GetEvents();
         }
+
+        #endregion
 
         #endregion
 
