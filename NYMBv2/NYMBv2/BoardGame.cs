@@ -4,21 +4,22 @@ public class BoardGame : Item
 {
     private string _publisher, _description;
     private int _id;
-    
-	public BoardGame()
-        : base ("Item")
+
+	#region constuctors
+	public BoardGame() : base()
 	{
 	}
 
-    public BoardGame(string p, string d, int i)
-        : base ("Item")
+    public BoardGame(string p, string d, int i) : base()
     {
         _publisher = p;
         _description = d;
         _id = i;
     }
+	#endregion
 
-    public string Publisher
+#region get/setters
+	public string Publisher
     {
         get { return _publisher; }
         set { _publisher = value; }
@@ -35,4 +36,5 @@ public class BoardGame : Item
         get { return _id; }
         set { _id = value; }
     }
+#endregion
 }

@@ -9,7 +9,7 @@ public class TabletopGame : Item
     /// no arg constuctor
     /// </summary>
     public TabletopGame()
-        : base ("Item")
+        : base ()
 	{
 	}
 
@@ -19,12 +19,11 @@ public class TabletopGame : Item
     /// <param name="g"></param>
     /// <param name="p"></param>
     /// <param name="g"></param>
-    public TabletopGame(string g, string p, int g)
+    public TabletopGame(string g, string p)
         : base ("Item")
     {
         _game = g;
         _publisher = p;
-        _game = g;
     }
 
     //get/setters

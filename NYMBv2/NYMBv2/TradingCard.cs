@@ -2,13 +2,13 @@
 
 public class TradingCards : Item
 {
-    private string _game, _set, _is_foil, condition; //holds game and set respectively
+    private string _game, _set, _is_foil, _condition; //holds game and set respectively
 
+#region constructors
 	/// <summary>
-    /// no arg constructor
-    /// </summary>
-    public TradingCards()
-        : base ("Item")
+	/// no arg constructor
+	/// </summary>
+	public TradingCards() : base()
 	{
 	}
 
@@ -20,17 +20,18 @@ public class TradingCards : Item
     /// <param name="s"></param>
     /// <param name="i"></param>
     /// <param name="c"></param>
-    public TradingCards(string g, string s, string i, string c)
-        : base ("Item")
+    public TradingCards(string g, string s, string i, string c) : base()
     {
         _game = g;
         _set = s;
         _is_foil = i;
         _condition = c;
     }
+	#endregion
 
-    //get/setters
-    public string Game
+	#region get/setters
+	//get/setters
+	public string Game
     {
         get { return _game; }
         set { _game = value; }
@@ -42,15 +43,16 @@ public class TradingCards : Item
         set { _set = value; }
     }
 
-    public bool IsFoil
+    public string IsFoil
     {
         get { return _is_foil; }
         set { _is_foil = value; }
     }
 
-    public int Condition
+    public string Condition
     {
         get { return _condition; }
         set { _condition = value; }
     }
+#endregion
 }

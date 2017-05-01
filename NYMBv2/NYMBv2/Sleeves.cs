@@ -4,11 +4,11 @@ public class Sleeves : Item
 {
     private string _type, _size, _color, _manufacturer; //holds type, size, color, and manufacturer respectively
 
+#region constructors
 	/// <summary>
-    /// no arg constuctor
-    /// </summary>
-    public Sleeves()
-        : base ("Item")
+	/// no arg constuctor
+	/// </summary>
+	public Sleeves() : base()
 	{
 	}
 
@@ -19,17 +19,18 @@ public class Sleeves : Item
     /// <param name="s"></param>
     /// <param name="c"></param>
     /// <param name="m"></param>
-    public Sleeves(string t, string s, string c, string m)
-        : base ("Item")
+    public Sleeves(string t, string s, string c, string m) : base()
     {
         _type = t;
         _size = s;
         _color = c;
         _manufacturer = m;
     }
+#endregion
 
-    //get/setters
-    public string Type
+	#region get/setters
+	//get/setters
+	public string Type
     {
         get { return _type; }
         set { _type = value; }
@@ -52,4 +53,6 @@ public class Sleeves : Item
         get { return _manufacturer;}
         set { _manufacturer = value; }
     }
+#endregion
+
 }
