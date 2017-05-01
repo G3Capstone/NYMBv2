@@ -47,6 +47,8 @@
             this.rtbMonday = new System.Windows.Forms.RichTextBox();
             this.gbxSunday = new System.Windows.Forms.GroupBox();
             this.rtbSunday = new System.Windows.Forms.RichTextBox();
+            this.gbxEventsAdminToolBox = new System.Windows.Forms.GroupBox();
+            this.btnEditEvents = new System.Windows.Forms.Button();
             this.gbxEvents.SuspendLayout();
             this.gbxSaturday.SuspendLayout();
             this.gbxFriday.SuspendLayout();
@@ -55,6 +57,7 @@
             this.gbxTuesday.SuspendLayout();
             this.gbxMonday.SuspendLayout();
             this.gbxSunday.SuspendLayout();
+            this.gbxEventsAdminToolBox.SuspendLayout();
             this.SuspendLayout();
             // 
             // lblEvents
@@ -98,6 +101,7 @@
             // 
             // gbxEvents
             // 
+            this.gbxEvents.Controls.Add(this.gbxEventsAdminToolBox);
             this.gbxEvents.Controls.Add(this.gbxSaturday);
             this.gbxEvents.Controls.Add(this.gbxFriday);
             this.gbxEvents.Controls.Add(this.gbxThursday);
@@ -255,6 +259,26 @@
             this.rtbSunday.TabIndex = 0;
             this.rtbSunday.Text = "";
             // 
+            // gbxEventsAdminToolBox
+            // 
+            this.gbxEventsAdminToolBox.Controls.Add(this.btnEditEvents);
+            this.gbxEventsAdminToolBox.Location = new System.Drawing.Point(6, 17);
+            this.gbxEventsAdminToolBox.Name = "gbxEventsAdminToolBox";
+            this.gbxEventsAdminToolBox.Size = new System.Drawing.Size(176, 53);
+            this.gbxEventsAdminToolBox.TabIndex = 11;
+            this.gbxEventsAdminToolBox.TabStop = false;
+            this.gbxEventsAdminToolBox.Text = "Event Admin ToolBox";
+            // 
+            // btnEditEvents
+            // 
+            this.btnEditEvents.Location = new System.Drawing.Point(7, 20);
+            this.btnEditEvents.Name = "btnEditEvents";
+            this.btnEditEvents.Size = new System.Drawing.Size(163, 23);
+            this.btnEditEvents.TabIndex = 0;
+            this.btnEditEvents.Text = "Edit Events";
+            this.btnEditEvents.UseVisualStyleBackColor = true;
+            this.btnEditEvents.Click += new System.EventHandler(this.btnEditEvents_Click);
+            // 
             // Events_Dummy
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -272,6 +296,7 @@
             this.gbxTuesday.ResumeLayout(false);
             this.gbxMonday.ResumeLayout(false);
             this.gbxSunday.ResumeLayout(false);
+            this.gbxEventsAdminToolBox.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -297,5 +322,7 @@
         private System.Windows.Forms.RichTextBox rtbMonday;
         private System.Windows.Forms.GroupBox gbxSunday;
         private System.Windows.Forms.RichTextBox rtbSunday;
+        private System.Windows.Forms.GroupBox gbxEventsAdminToolBox;
+        private System.Windows.Forms.Button btnEditEvents;
     }
 }

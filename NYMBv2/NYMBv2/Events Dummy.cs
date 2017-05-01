@@ -19,14 +19,21 @@ namespace NYMBv2
         public string connectionString = ConfigurationManager.ConnectionStrings["NYMBv2.Properties.Settings.NYMBv2_DBConnectionString"].ConnectionString;
         #endregion
 
+        #region Global Variables for the Events Tab
+
         DateTime today = System.DateTime.Now;
         DateTime BeginningOfWeek;
         DateTime EndOfWeek;
+
+        #endregion
 
         public Events_Dummy()
         {
             InitializeComponent();
 
+            #region Event Initialization
+
+            //sets all of the rich text boxes to a center alignment
             rtbSunday.SelectionAlignment = HorizontalAlignment.Center;
             rtbMonday.SelectionAlignment = HorizontalAlignment.Center;
             rtbTuesday.SelectionAlignment = HorizontalAlignment.Center;
@@ -35,119 +42,17 @@ namespace NYMBv2
             rtbFriday.SelectionAlignment = HorizontalAlignment.Center;
             rtbSaturday.SelectionAlignment = HorizontalAlignment.Center;
 
-
+            //Get the current week
             getCurrentWeek();
-            lblWeekOf.Text = "Week of " + BeginningOfWeek.Date.ToString() +" - " + EndOfWeek.Date.ToString() ;
-            ClearEvents();
+
+            //Get the events from the database and adds them to the 
+            //correct rich text boxes on the form .
             GetEvents();
+
+            #endregion
         }
 
-
-        #region Get Events
-        private void GetEvents()
-        {
-            //Create a connection to the database
-            using (SqlConnection connection = new SqlConnection(connectionString))
-            {
-                //SQL select statement
-                string query = @"SELECT [Name], [EventType], [Description], [Organizer], [StartDate], [StartTime] " + 
-                    @"FROM [dbo].[Events] WHERE ( '" + BeginningOfWeek + "' <= [StartDate]) AND ([StartDate] <= '" + EndOfWeek + "')";
-
-                //Create a SQLCommand, passing the query and the connection
-                SqlCommand cmd = new SqlCommand(query, connection);
-
-                //connecting the SQLCommand Control and the database
-                cmd.Connection.Open();
-
-                //Creating a SQLDataReader to read the results of the query ran by the
-                // SQLCommand ExecuteReader function
-                using (SqlDataReader sql_reader = cmd.ExecuteReader())
-                {
-                    while (sql_reader.Read())
-                    {
-                        AddEvent(new Event(sql_reader["Name"].ToString(), sql_reader["EventType"].ToString(),
-                            sql_reader["Description"].ToString(), sql_reader["Organizer"].ToString(),
-                            DateTime.Parse(sql_reader["StartDate"].ToString()), DateTime.Parse(sql_reader["StartTime"].ToString())));
-                        
-                    }
-                }
-            }
-        }
-        #endregion
-
-        #region add event 
-
-        //adds an event to one of the 
-        private void AddEvent(Event ev)
-        {
-            if (ev._date.DayOfWeek == DayOfWeek.Sunday)
-            {
-                rtbSunday.SelectedText += ev._name + "\n";
-                rtbSunday.SelectedText += ev._type + "\n";
-                rtbSunday.SelectedText += ev._time + "\n";
-                rtbSunday.SelectedText += "Organized by: \n";
-                rtbSunday.SelectedText += ev._organizer + "\n";
-                rtbSunday.SelectedText += ev._description + "\n";
-            }
-            else if (ev._date.DayOfWeek == DayOfWeek.Monday)
-            {
-                rtbMonday.SelectedText += ev._name + "\n";
-                rtbMonday.SelectedText += ev._type + "\n";
-                rtbMonday.SelectedText += ev._time + "\n";
-                rtbMonday.SelectedText += "Organized by: \n";
-                rtbMonday.SelectedText += ev._organizer + "\n";
-                rtbMonday.SelectedText += ev._description + "\n";
-            }
-            else if (ev._date.DayOfWeek == DayOfWeek.Tuesday)
-            {
-                rtbTuesday.SelectedText += ev._name + "\n";
-                rtbTuesday.SelectedText += ev._type + "\n";
-                rtbTuesday.SelectedText += ev._time + "\n";
-                rtbTuesday.SelectedText += "Organized by: \n";
-                rtbTuesday.SelectedText += ev._organizer + "\n";
-                rtbTuesday.SelectedText += ev._description + "\n";
-            }
-            else if (ev._date.DayOfWeek == DayOfWeek.Wednesday)
-            {
-                rtbWednesday.SelectedText += ev._name + "\n";
-                rtbWednesday.SelectedText += ev._type + "\n";
-                rtbWednesday.SelectedText += ev._time + "\n";
-                rtbWednesday.SelectedText += "Organized by: \n";
-                rtbWednesday.SelectedText += ev._organizer + "\n";
-                rtbWednesday.SelectedText += ev._description + "\n";
-            }
-            else if (ev._date.DayOfWeek == DayOfWeek.Thursday)
-            {
-                rtbThursday.SelectedText += ev._name + "\n";
-                rtbThursday.SelectedText += ev._type + "\n";
-                rtbThursday.SelectedText += ev._time + "\n";
-                rtbThursday.SelectedText += "Organized by: \n";
-                rtbThursday.SelectedText += ev._organizer + "\n";
-                rtbThursday.SelectedText += ev._description + "\n";
-            }
-            else if (ev._date.DayOfWeek == DayOfWeek.Friday)
-            {
-                rtbFriday.SelectedText += ev._name + "\n";
-                rtbFriday.SelectedText += ev._type + "\n";
-                rtbFriday.SelectedText += ev._time + "\n";
-                rtbFriday.SelectedText += "Organized by: \n";
-                rtbFriday.SelectedText += ev._organizer + "\n";
-                rtbFriday.SelectedText += ev._description + "\n";
-            }
-            else   //if its saturday
-            {
-                rtbSaturday.SelectedText += ev._name + "\n";
-                rtbSaturday.SelectedText += ev._type + "\n";
-                rtbSaturday.SelectedText += ev._time + "\n";
-                rtbSaturday.SelectedText += "Organized by: \n";
-                rtbSaturday.SelectedText += ev._organizer + "\n";
-                rtbSaturday.SelectedText += ev._description + "\n";
-            }
-        }
-
-        #endregion
-
-        #region Clear event 
+        #region Clear events
         //Clears the events from all the different textboxes in the events tab
         private void ClearEvents()
         {
@@ -163,15 +68,15 @@ namespace NYMBv2
         #endregion
 
         #region get Current Week
-
+        //Using todays date, finds the dates if the begenning
+        //of the week and the end of the week.
         public void getCurrentWeek()
         {
-            //a bunch of if statements to find out the range of the current
-            //week (sunday to saturday).
-            if(today.DayOfWeek == DayOfWeek.Sunday)
+
+            if (today.DayOfWeek == DayOfWeek.Sunday)
             {
                 BeginningOfWeek = today;
-                
+
             }
             else if (today.DayOfWeek == DayOfWeek.Monday)
             {
@@ -207,7 +112,7 @@ namespace NYMBv2
 
         #region Get previous week  
 
-        private void previousWeek()
+        private void PreviousWeek()
         {
             BeginningOfWeek = BeginningOfWeek.AddDays(-7);
             EndOfWeek = EndOfWeek.AddDays(-7);
@@ -217,7 +122,7 @@ namespace NYMBv2
 
         #region Get Next week  
 
-        private void nextWeek()
+        private void NextWeek()
         {
             BeginningOfWeek = BeginningOfWeek.AddDays(7);
             EndOfWeek = EndOfWeek.AddDays(7);
@@ -225,20 +130,152 @@ namespace NYMBv2
 
         #endregion
 
+        #region Update Week of Label
+        //this makes updates the week of label on the form
+        private void UpdateWeekofLbl()
+        {
+            lblWeekOf.Text = "Week of " + BeginningOfWeek.ToShortDateString() + " - " + EndOfWeek.ToShortDateString();
+        }
+
+        #endregion
+
+        #region Get Events
+        private void GetEvents()
+        {
+            //Update the current week of Label
+            UpdateWeekofLbl();
+
+            //Clears the event boxes on the form 
+            ClearEvents();
+
+            //Create a connection to the database
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                //SQL select statement
+                string query = @"SELECT [Name], [EventType], [Description], [Organizer], [StartDate], [StartTime] " +
+                    @"FROM [dbo].[Events] WHERE ( '" + BeginningOfWeek + "' <= [StartDate]) AND ([StartDate] <= '" + EndOfWeek + "')";
+
+                //Create a SQLCommand, passing the query and the connection
+                SqlCommand cmd = new SqlCommand(query, connection);
+
+                //connecting the SQLCommand Control and the database
+                cmd.Connection.Open();
+
+                //Creating a SQLDataReader to read the results of the query ran by the
+                // SQLCommand ExecuteReader function
+                using (SqlDataReader sql_reader = cmd.ExecuteReader())
+                {
+                    while (sql_reader.Read())
+                    {
+                        //reading from the database to create an event item which is passed to the AddEvent 
+                        //method. 
+                        AddEvent(new Event(sql_reader["Name"].ToString(), sql_reader["EventType"].ToString(),
+                            sql_reader["Description"].ToString(), sql_reader["Organizer"].ToString(),
+                            DateTime.Parse(sql_reader["StartDate"].ToString()), DateTime.Parse(sql_reader["StartTime"].ToString())));
+
+                    }
+                }
+            }
+        }
+        #endregion
+
+        #region add event 
+
+        //adds takes an Event object, and adds it to the correct colom 
+        //in the form. 
+        private void AddEvent(Event ev)
+        {
+
+            if (ev._date.DayOfWeek == DayOfWeek.Sunday)
+            {
+                AddToDay(rtbSunday, ev);
+            }
+            else if (ev._date.DayOfWeek == DayOfWeek.Monday)
+            {
+                AddToDay(rtbMonday, ev);
+            }
+            else if (ev._date.DayOfWeek == DayOfWeek.Tuesday)
+            {
+                AddToDay(rtbTuesday, ev);
+            }
+            else if (ev._date.DayOfWeek == DayOfWeek.Wednesday)
+            {
+                AddToDay(rtbWednesday, ev);
+            }
+            else if (ev._date.DayOfWeek == DayOfWeek.Thursday)
+            {
+                AddToDay(rtbThursday, ev);
+            }
+            else if (ev._date.DayOfWeek == DayOfWeek.Friday)
+            {
+                AddToDay(rtbFriday, ev);
+            }
+            else   //if its saturday
+            {
+                AddToDay(rtbSaturday, ev);
+            }
+        }
+
+        #endregion
+
+        #region AddToDay()
+
+        private void AddToDay(RichTextBox Day, Event Event)
+        {
+            Day.SelectedText += Event._name + "\n";
+            Day.SelectedText += Event._type + "\n";
+            Day.SelectedText += Event._time + "\n";
+            Day.SelectedText += "Organized by: \n";
+            Day.SelectedText += Event._organizer + "\n";
+            Day.SelectedText += Event._description + "\n";
+            Day.SelectedText += "\n<><><><><><><>\n";
+        }
+
+        #endregion
+
+        #region Previous Week Button
+
         private void btnPreviousWeek_Click(object sender, EventArgs e)
         {
-            previousWeek();
-            lblWeekOf.Text = "Week of " + BeginningOfWeek.Date.ToString() + " - " + EndOfWeek.Date.ToString();
-            ClearEvents();
+            //Changes the week by moving the dates for beginningofweek
+            //and end of week backward by 7 days
+            PreviousWeek();
+
+            //populates the events on the form based on the current beginningOfWeek and end of Week
+            //Dates. both are global variables
             GetEvents();
         }
 
+        #endregion
+
+        #region Next Week Button
+
         private void btnNextWeek_Click(object sender, EventArgs e)
         {
-            nextWeek();
-            lblWeekOf.Text = "Week of " + BeginningOfWeek.Date.ToString() + " - " + EndOfWeek.Date.ToString();
-            ClearEvents();
+
+            //Changes the week by moving the dates for beginningofweek
+            //and end of week ahead by 7 days
+            NextWeek();
+
+            //populates the events on the form based on the current beginningOfWeek and end of Week
+            //Dates. both are global variables
             GetEvents();
         }
+
+        #endregion
+
+        #region Admin Edit Events
+        private void btnEditEvents_Click(object sender, EventArgs e)
+        {
+            //creates a new Edit Events form and calls it
+            ADMIN_EditEvents adminEditbox = new ADMIN_EditEvents();
+            adminEditbox.ShowDialog();
+
+            //Updates the page
+            GetEvents();
+        }
+
+        #endregion
+
     }
 }
