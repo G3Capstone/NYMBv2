@@ -5,11 +5,11 @@ public class Comic
     private string _title, _publisher;  //holds title and publisher respectively.
     private int _isbn, _issue;          //holds isbn and issue# respectively
 
+#region constructors
 	/// <summary>
-    /// no arg constuctor
-    /// </summary>
-    public Comic()
-        : base ("Item")
+	/// no arg constuctor
+	/// </summary>
+	public Comic() : base()
 	{
 	}
 
@@ -20,17 +20,18 @@ public class Comic
     /// <param name="p"></param>
     /// <param name="isbn"></param>
     /// <param name="issue"></param>
-    public Comic(string t, string p, int isbn, int issue)
-        : base ("Item")
+    public Comic(string t, string p, int isbn, int issue) : base()
     {
         _title = t;
         _publisher = p;
         _isbn = isbn;
         _issue = issue;
     }
+	#endregion
 
-    // get/setters
-    public string Title
+#region get/setters
+	// get/setters
+	public string Title
     {
         get { return _title; }
         set { _title = value; }
@@ -53,4 +54,5 @@ public class Comic
         get { return _issue; }
         set { _issue = value; }
     }
+#endregion
 }

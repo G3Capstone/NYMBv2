@@ -17,18 +17,16 @@ public class Event
     /// constructor to initiate with values 
     /// </summary>
     /// <param name="n"></param>
-    /// <param name="e"></param>
     /// <param name="d"></param>
     /// <param name="o"></param>
     /// <param name="mo"></param>
     /// <param name="d"></param>
     /// <param name="h"></param>
     /// <param name="mi"></param>
-    public Event(string n, string e, string d, string o, int mo, int d, int h, int mi)
+    public Event(string n, string desc, string o, int mo, int d, int h, int mi)
     {
         _name = n;
-        _event = e;
-        _description = d;
+        _description = desc;
         _organizer = o;
         _month = mo;
         _day = d;
@@ -87,7 +85,7 @@ public class Event
 
     public int Minute
     {
-        get { return _mintue; }
+        get { return _minute; }
         set { _minute = value; }
     }
 }

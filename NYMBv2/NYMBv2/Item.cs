@@ -6,6 +6,7 @@ public class Item
     private string _name;   //holds name
     private double _price;  //holds price
 
+	#region constuctors
     /// <summary>
     /// constructor to initiate with values
     /// </summary>
@@ -17,18 +18,19 @@ public class Item
         _price = p;
     }
 
-    
-    /// <summary>
-    /// no arg constuctor
-    /// </summary>
-    public Item()
+	/// <summary>
+	/// no arg constuctor
+	/// </summary>
+	public Item()
 	{
         _name = null;
-        _price = null;
+        _price = 0;
 	}
+#endregion
 
-    //get/setters
-    public string Name
+	#region get/setters
+	//get/setters
+	public string Name
     {
         get { return _name; }
         set { _name = value; }
@@ -39,4 +41,5 @@ public class Item
         get { return _price; }
         set { _price = value; }
     }
+#endregion
 }

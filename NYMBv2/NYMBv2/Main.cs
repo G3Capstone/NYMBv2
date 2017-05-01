@@ -200,7 +200,7 @@ namespace NYMBv2
 				double price = 0;
 
 				//SQL select statement
-				string query = @"SELECT [Name] FROM [dbo].[TradingCards] WHERE [Name] LIKE ('%" + s + "%')";
+				string query = @"SELECT [Name], [Game], [Set], [IsFoil], [Condition], [Price] FROM [dbo].[TradingCards] WHERE [Name] LIKE ('%" + s + "%')";
 
 				//Create a SQLCommand, passing the query and the connection
 				SqlCommand cmd = new SqlCommand(query, connection);
@@ -219,9 +219,8 @@ namespace NYMBv2
 						set = sql_reader["Set"].ToString();
 						isFoil = sql_reader["IsFoil"].ToString();
 						condition = sql_reader["Condition"].ToString();
-						//price = sql_reader["Price"];
 
-						TradingCards card = new TradingCards(game, set, isFoil, condition);	//there is something wrong with TradingCard inhereting from Item.
+						//TradingCards card = new TradingCards(game, set, isFoil, condition);	//there is something wrong with TradingCard inhereting from Item.
 
 
 					}
