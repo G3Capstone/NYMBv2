@@ -31,6 +31,7 @@ namespace NYMBv2
             InitializeComponent();
             tabControl1.DrawItem += new DrawItemEventHandler(tabControl1_DrawItem);
 
+
             //Set the active user as guest so the program starts 
             //with you logged in as a guest
             SetActiveUserAsGuest();

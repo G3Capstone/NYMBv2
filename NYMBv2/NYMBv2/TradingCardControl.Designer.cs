@@ -92,7 +92,7 @@
 			this.Controls.Add(this.labelIsFoil);
 			this.Controls.Add(this.labelCardName);
 			this.Name = "TradingCardControl";
-			this.Size = new System.Drawing.Size(337, 84);
+			this.Size = new System.Drawing.Size(340, 55);
 			this.ResumeLayout(false);
 			this.PerformLayout();
 
