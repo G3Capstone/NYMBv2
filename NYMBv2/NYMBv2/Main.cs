@@ -189,6 +189,7 @@ namespace NYMBv2
 
 		#region Inventory
 
+		#region SearchTradingCards
 		public List<TradingCardControl> SearchTradingCards(string s)
 		{
 			List<TradingCardControl> cards = new List<TradingCardControl>();
@@ -220,61 +221,68 @@ namespace NYMBv2
 						condition = sql_reader["Condition"].ToString();
 						price = sql_reader["Price"].ToString();
 
-						TradingCards card = new TradingCards(game, set, isFoil, condition);	//there is something wrong with TradingCard inhereting from Item.
+						TradingCards card = new TradingCards(game, set, isFoil, condition);
+						card.Name = name;
+						card.Price = price;
 
+						TradingCardControl control = new TradingCardControl(card.Name, card.IsFoil, card.Set, card.Game, card.Price, card.Condition);
 
+						cards.Add(control);
 					}
 				}
 			}
+
+			return cards;
 			
 		}
+#endregion
 
-        #endregion
+		#endregion
 
-        #region Events
-
-
-
-        #endregion
-
-        #region Store Info
+		#region Events
 
 
 
-        #endregion
+		#endregion
 
-        #region Message Box
-
-
-
-        #endregion
-
-        #region Product Manager
+		#region Store Info
 
 
 
-        #endregion
+		#endregion
 
-        #region User Manager
-
-
-
-        #endregion
-
-        #region Settings
+		#region Message Box
 
 
 
-        #endregion
+		#endregion
+
+		#region Product Manager
 
 
-        #endregion
 
-        #region Methods
+		#endregion
+
+		#region User Manager
 
 
-        #region Get Active User Info
-        private void GetActiveUserInfo()
+
+		#endregion
+
+		#region Settings
+
+
+
+		#endregion
+
+
+		#endregion
+
+		#region Methods
+
+
+		#region Get Active User Info
+		private void GetActiveUserInfo()
         {
             //Create a connection to the database
             using (SqlConnection connection = new SqlConnection(connectionString))

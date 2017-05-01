@@ -4,7 +4,7 @@ public class Item
 {
 
     private string _name;   //holds name
-    private double _price;  //holds price
+    private string _price;  //holds price
 
 	#region constuctors
     /// <summary>
@@ -12,7 +12,7 @@ public class Item
     /// </summary>
     /// <param name="n"></param>
     /// <param name="p"></param>
-    public Item(string n, double p)
+    public Item(string n, string p)
     {
         _name = n;
         _price = p;
@@ -24,7 +24,7 @@ public class Item
 	public Item()
 	{
         _name = null;
-        _price = 0;
+        _price = null;
 	}
 #endregion
 
@@ -36,7 +36,7 @@ public class Item
         set { _name = value; }
     }
 
-    public double Price
+    public string Price
     {
         get { return _price; }
         set { _price = value; }
