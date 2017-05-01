@@ -27,11 +27,24 @@ namespace NYMBv2
         {
             InitializeComponent();
 
+            rtbSunday.SelectionAlignment = HorizontalAlignment.Center;
+            rtbMonday.SelectionAlignment = HorizontalAlignment.Center;
+            rtbTuesday.SelectionAlignment = HorizontalAlignment.Center;
+            rtbWednesday.SelectionAlignment = HorizontalAlignment.Center;
+            rtbThursday.SelectionAlignment = HorizontalAlignment.Center;
+            rtbFriday.SelectionAlignment = HorizontalAlignment.Center;
+            rtbSaturday.SelectionAlignment = HorizontalAlignment.Center;
+
+
+            getCurrentWeek();
+
+            ClearEvents();
+            GetEvents();
         }
 
 
         #region Get Events
-        private List<Event> GetEvents(List<Event> EventList)
+        private void GetEvents()
         {
             //Create a connection to the database
             using (SqlConnection connection = new SqlConnection(connectionString))
@@ -52,21 +65,84 @@ namespace NYMBv2
                 {
                     while (sql_reader.Read())
                     {
-                        //EventList.Add();
+                        AddEvent(new Event(sql_reader["Name"].ToString(), sql_reader["EventType"].ToString(),
+                            sql_reader["Description"].ToString(), sql_reader["Organizer"].ToString(),
+                            (DateTime) sql_reader["StartDate"], (DateTime) sql_reader["StartTime"]));
+                        
                     }
                 }
             }
-
-            return EventList;
         }
         #endregion
 
         #region add event 
 
         //adds an event to one of the 
-        private void AddEvent()
+        private void AddEvent(Event ev)
         {
-
+            if (ev._date.DayOfWeek == DayOfWeek.Sunday)
+            {
+                rtbSunday.SelectedText += ev._name + "\n";
+                rtbSunday.SelectedText += ev._type + "\n";
+                rtbSunday.SelectedText += ev._time + "\n";
+                rtbSunday.SelectedText += "Organized by: \n";
+                rtbSunday.SelectedText += ev._organizer + "\n";
+                rtbSunday.SelectedText += ev._description + "\n";
+            }
+            else if (ev._date.DayOfWeek == DayOfWeek.Monday)
+            {
+                rtbMonday.SelectedText += ev._name + "\n";
+                rtbMonday.SelectedText += ev._type + "\n";
+                rtbMonday.SelectedText += ev._time + "\n";
+                rtbMonday.SelectedText += "Organized by: \n";
+                rtbMonday.SelectedText += ev._organizer + "\n";
+                rtbMonday.SelectedText += ev._description + "\n";
+            }
+            else if (ev._date.DayOfWeek == DayOfWeek.Tuesday)
+            {
+                rtbTuesday.SelectedText += ev._name + "\n";
+                rtbTuesday.SelectedText += ev._type + "\n";
+                rtbTuesday.SelectedText += ev._time + "\n";
+                rtbTuesday.SelectedText += "Organized by: \n";
+                rtbTuesday.SelectedText += ev._organizer + "\n";
+                rtbTuesday.SelectedText += ev._description + "\n";
+            }
+            else if (ev._date.DayOfWeek == DayOfWeek.Wednesday)
+            {
+                rtbWednesday.SelectedText += ev._name + "\n";
+                rtbWednesday.SelectedText += ev._type + "\n";
+                rtbWednesday.SelectedText += ev._time + "\n";
+                rtbWednesday.SelectedText += "Organized by: \n";
+                rtbWednesday.SelectedText += ev._organizer + "\n";
+                rtbWednesday.SelectedText += ev._description + "\n";
+            }
+            else if (ev._date.DayOfWeek == DayOfWeek.Thursday)
+            {
+                rtbThursday.SelectedText += ev._name + "\n";
+                rtbThursday.SelectedText += ev._type + "\n";
+                rtbThursday.SelectedText += ev._time + "\n";
+                rtbThursday.SelectedText += "Organized by: \n";
+                rtbThursday.SelectedText += ev._organizer + "\n";
+                rtbThursday.SelectedText += ev._description + "\n";
+            }
+            else if (ev._date.DayOfWeek == DayOfWeek.Friday)
+            {
+                rtbFriday.SelectedText += ev._name + "\n";
+                rtbFriday.SelectedText += ev._type + "\n";
+                rtbFriday.SelectedText += ev._time + "\n";
+                rtbFriday.SelectedText += "Organized by: \n";
+                rtbFriday.SelectedText += ev._organizer + "\n";
+                rtbFriday.SelectedText += ev._description + "\n";
+            }
+            else   //if its saturday
+            {
+                rtbSaturday.SelectedText += ev._name + "\n";
+                rtbSaturday.SelectedText += ev._type + "\n";
+                rtbSaturday.SelectedText += ev._time + "\n";
+                rtbSaturday.SelectedText += "Organized by: \n";
+                rtbSaturday.SelectedText += ev._organizer + "\n";
+                rtbSaturday.SelectedText += ev._description + "\n";
+            }
         }
 
         #endregion
