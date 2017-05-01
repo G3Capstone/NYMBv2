@@ -642,7 +642,7 @@ namespace NYMBv2
 
         #endregion
 
-        #region Methods
+        #region main Methods
 
 
         #region Get Active User Info
@@ -778,9 +778,12 @@ namespace NYMBv2
             // tabs
             if (tabControl1.TabCount == 8)
             { 
-            tabControl1.TabPages.RemoveAt(7);
-            tabControl1.TabPages.RemoveAt(6);
-            tabControl1.TabPages.RemoveAt(5);
+                tabControl1.TabPages.RemoveAt(7);
+                tabControl1.TabPages.RemoveAt(6);
+                tabControl1.TabPages.RemoveAt(5);
+
+                //Hides the gbx for the Events admin toolbox
+                gbxEventsAdminToolBox.Visible = false;
             }
 
             //If the active user has admin rights, 
@@ -791,6 +794,9 @@ namespace NYMBv2
                 tabControl1.TabPages.Add(tpProductManager);
                 tabControl1.TabPages.Add(tpUserManager);
                 tabControl1.TabPages.Add(tpSettings);
+
+                //Shows the gbx for the Events admin toolbox
+                gbxEventsAdminToolBox.Visible = true;
             }
 
 
