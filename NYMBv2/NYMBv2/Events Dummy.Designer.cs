@@ -33,28 +33,28 @@
             this.btnNextWeek = new System.Windows.Forms.Button();
             this.lblWeekOf = new System.Windows.Forms.Label();
             this.gbxEvents = new System.Windows.Forms.GroupBox();
-            this.gbxSunday = new System.Windows.Forms.GroupBox();
-            this.gbxMonday = new System.Windows.Forms.GroupBox();
-            this.gbxTuesday = new System.Windows.Forms.GroupBox();
-            this.gbxWednesday = new System.Windows.Forms.GroupBox();
-            this.gbxThursday = new System.Windows.Forms.GroupBox();
-            this.gbxFriday = new System.Windows.Forms.GroupBox();
             this.gbxSaturday = new System.Windows.Forms.GroupBox();
-            this.rtbSunday = new System.Windows.Forms.RichTextBox();
-            this.rtbMonday = new System.Windows.Forms.RichTextBox();
-            this.rtbTuesday = new System.Windows.Forms.RichTextBox();
-            this.rtbWednesday = new System.Windows.Forms.RichTextBox();
-            this.rtbThursday = new System.Windows.Forms.RichTextBox();
-            this.rtbFriday = new System.Windows.Forms.RichTextBox();
             this.rtbSaturday = new System.Windows.Forms.RichTextBox();
+            this.gbxFriday = new System.Windows.Forms.GroupBox();
+            this.rtbFriday = new System.Windows.Forms.RichTextBox();
+            this.gbxThursday = new System.Windows.Forms.GroupBox();
+            this.rtbThursday = new System.Windows.Forms.RichTextBox();
+            this.gbxWednesday = new System.Windows.Forms.GroupBox();
+            this.rtbWednesday = new System.Windows.Forms.RichTextBox();
+            this.gbxTuesday = new System.Windows.Forms.GroupBox();
+            this.rtbTuesday = new System.Windows.Forms.RichTextBox();
+            this.gbxMonday = new System.Windows.Forms.GroupBox();
+            this.rtbMonday = new System.Windows.Forms.RichTextBox();
+            this.gbxSunday = new System.Windows.Forms.GroupBox();
+            this.rtbSunday = new System.Windows.Forms.RichTextBox();
             this.gbxEvents.SuspendLayout();
-            this.gbxSunday.SuspendLayout();
-            this.gbxMonday.SuspendLayout();
-            this.gbxTuesday.SuspendLayout();
-            this.gbxWednesday.SuspendLayout();
-            this.gbxThursday.SuspendLayout();
-            this.gbxFriday.SuspendLayout();
             this.gbxSaturday.SuspendLayout();
+            this.gbxFriday.SuspendLayout();
+            this.gbxThursday.SuspendLayout();
+            this.gbxWednesday.SuspendLayout();
+            this.gbxTuesday.SuspendLayout();
+            this.gbxMonday.SuspendLayout();
+            this.gbxSunday.SuspendLayout();
             this.SuspendLayout();
             // 
             // lblEvents
@@ -75,6 +75,7 @@
             this.btnPreviousWeek.TabIndex = 3;
             this.btnPreviousWeek.Text = "<- Previous Week";
             this.btnPreviousWeek.UseVisualStyleBackColor = true;
+            this.btnPreviousWeek.Click += new System.EventHandler(this.btnPreviousWeek_Click);
             // 
             // btnNextWeek
             // 
@@ -84,6 +85,7 @@
             this.btnNextWeek.TabIndex = 4;
             this.btnNextWeek.Text = "Next Week ->";
             this.btnNextWeek.UseVisualStyleBackColor = true;
+            this.btnNextWeek.Click += new System.EventHandler(this.btnNextWeek_Click);
             // 
             // lblWeekOf
             // 
@@ -113,66 +115,6 @@
             this.gbxEvents.TabIndex = 5;
             this.gbxEvents.TabStop = false;
             // 
-            // gbxSunday
-            // 
-            this.gbxSunday.Controls.Add(this.rtbSunday);
-            this.gbxSunday.Location = new System.Drawing.Point(6, 114);
-            this.gbxSunday.Name = "gbxSunday";
-            this.gbxSunday.Size = new System.Drawing.Size(177, 581);
-            this.gbxSunday.TabIndex = 6;
-            this.gbxSunday.TabStop = false;
-            this.gbxSunday.Text = "Sunday";
-            // 
-            // gbxMonday
-            // 
-            this.gbxMonday.Controls.Add(this.rtbMonday);
-            this.gbxMonday.Location = new System.Drawing.Point(189, 114);
-            this.gbxMonday.Name = "gbxMonday";
-            this.gbxMonday.Size = new System.Drawing.Size(177, 581);
-            this.gbxMonday.TabIndex = 7;
-            this.gbxMonday.TabStop = false;
-            this.gbxMonday.Text = "Monday";
-            // 
-            // gbxTuesday
-            // 
-            this.gbxTuesday.Controls.Add(this.rtbTuesday);
-            this.gbxTuesday.Location = new System.Drawing.Point(372, 114);
-            this.gbxTuesday.Name = "gbxTuesday";
-            this.gbxTuesday.Size = new System.Drawing.Size(177, 581);
-            this.gbxTuesday.TabIndex = 8;
-            this.gbxTuesday.TabStop = false;
-            this.gbxTuesday.Text = "Tuesday";
-            // 
-            // gbxWednesday
-            // 
-            this.gbxWednesday.Controls.Add(this.rtbWednesday);
-            this.gbxWednesday.Location = new System.Drawing.Point(555, 114);
-            this.gbxWednesday.Name = "gbxWednesday";
-            this.gbxWednesday.Size = new System.Drawing.Size(177, 581);
-            this.gbxWednesday.TabIndex = 9;
-            this.gbxWednesday.TabStop = false;
-            this.gbxWednesday.Text = "Wednesday";
-            // 
-            // gbxThursday
-            // 
-            this.gbxThursday.Controls.Add(this.rtbThursday);
-            this.gbxThursday.Location = new System.Drawing.Point(741, 114);
-            this.gbxThursday.Name = "gbxThursday";
-            this.gbxThursday.Size = new System.Drawing.Size(177, 581);
-            this.gbxThursday.TabIndex = 7;
-            this.gbxThursday.TabStop = false;
-            this.gbxThursday.Text = "Thursday";
-            // 
-            // gbxFriday
-            // 
-            this.gbxFriday.Controls.Add(this.rtbFriday);
-            this.gbxFriday.Location = new System.Drawing.Point(924, 114);
-            this.gbxFriday.Name = "gbxFriday";
-            this.gbxFriday.Size = new System.Drawing.Size(177, 581);
-            this.gbxFriday.TabIndex = 7;
-            this.gbxFriday.TabStop = false;
-            this.gbxFriday.Text = "Friday";
-            // 
             // gbxSaturday
             // 
             this.gbxSaturday.Controls.Add(this.rtbSaturday);
@@ -182,66 +124,6 @@
             this.gbxSaturday.TabIndex = 10;
             this.gbxSaturday.TabStop = false;
             this.gbxSaturday.Text = "Saturday";
-            // 
-            // rtbSunday
-            // 
-            this.rtbSunday.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.rtbSunday.Location = new System.Drawing.Point(6, 19);
-            this.rtbSunday.Name = "rtbSunday";
-            this.rtbSunday.ReadOnly = true;
-            this.rtbSunday.Size = new System.Drawing.Size(165, 558);
-            this.rtbSunday.TabIndex = 0;
-            this.rtbSunday.Text = "";
-            // 
-            // rtbMonday
-            // 
-            this.rtbMonday.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.rtbMonday.Location = new System.Drawing.Point(12, 19);
-            this.rtbMonday.Name = "rtbMonday";
-            this.rtbMonday.ReadOnly = true;
-            this.rtbMonday.Size = new System.Drawing.Size(165, 558);
-            this.rtbMonday.TabIndex = 1;
-            this.rtbMonday.Text = "";
-            // 
-            // rtbTuesday
-            // 
-            this.rtbTuesday.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.rtbTuesday.Location = new System.Drawing.Point(6, 19);
-            this.rtbTuesday.Name = "rtbTuesday";
-            this.rtbTuesday.ReadOnly = true;
-            this.rtbTuesday.Size = new System.Drawing.Size(165, 558);
-            this.rtbTuesday.TabIndex = 1;
-            this.rtbTuesday.Text = "";
-            // 
-            // rtbWednesday
-            // 
-            this.rtbWednesday.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.rtbWednesday.Location = new System.Drawing.Point(6, 19);
-            this.rtbWednesday.Name = "rtbWednesday";
-            this.rtbWednesday.ReadOnly = true;
-            this.rtbWednesday.Size = new System.Drawing.Size(165, 558);
-            this.rtbWednesday.TabIndex = 1;
-            this.rtbWednesday.Text = "";
-            // 
-            // rtbThursday
-            // 
-            this.rtbThursday.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.rtbThursday.Location = new System.Drawing.Point(6, 19);
-            this.rtbThursday.Name = "rtbThursday";
-            this.rtbThursday.ReadOnly = true;
-            this.rtbThursday.Size = new System.Drawing.Size(165, 558);
-            this.rtbThursday.TabIndex = 2;
-            this.rtbThursday.Text = "";
-            // 
-            // rtbFriday
-            // 
-            this.rtbFriday.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.rtbFriday.Location = new System.Drawing.Point(6, 19);
-            this.rtbFriday.Name = "rtbFriday";
-            this.rtbFriday.ReadOnly = true;
-            this.rtbFriday.Size = new System.Drawing.Size(165, 558);
-            this.rtbFriday.TabIndex = 1;
-            this.rtbFriday.Text = "";
             // 
             // rtbSaturday
             // 
@@ -253,6 +135,126 @@
             this.rtbSaturday.TabIndex = 1;
             this.rtbSaturday.Text = "";
             // 
+            // gbxFriday
+            // 
+            this.gbxFriday.Controls.Add(this.rtbFriday);
+            this.gbxFriday.Location = new System.Drawing.Point(924, 114);
+            this.gbxFriday.Name = "gbxFriday";
+            this.gbxFriday.Size = new System.Drawing.Size(177, 581);
+            this.gbxFriday.TabIndex = 7;
+            this.gbxFriday.TabStop = false;
+            this.gbxFriday.Text = "Friday";
+            // 
+            // rtbFriday
+            // 
+            this.rtbFriday.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.rtbFriday.Location = new System.Drawing.Point(6, 19);
+            this.rtbFriday.Name = "rtbFriday";
+            this.rtbFriday.ReadOnly = true;
+            this.rtbFriday.Size = new System.Drawing.Size(165, 558);
+            this.rtbFriday.TabIndex = 1;
+            this.rtbFriday.Text = "";
+            // 
+            // gbxThursday
+            // 
+            this.gbxThursday.Controls.Add(this.rtbThursday);
+            this.gbxThursday.Location = new System.Drawing.Point(741, 114);
+            this.gbxThursday.Name = "gbxThursday";
+            this.gbxThursday.Size = new System.Drawing.Size(177, 581);
+            this.gbxThursday.TabIndex = 7;
+            this.gbxThursday.TabStop = false;
+            this.gbxThursday.Text = "Thursday";
+            // 
+            // rtbThursday
+            // 
+            this.rtbThursday.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.rtbThursday.Location = new System.Drawing.Point(6, 19);
+            this.rtbThursday.Name = "rtbThursday";
+            this.rtbThursday.ReadOnly = true;
+            this.rtbThursday.Size = new System.Drawing.Size(165, 558);
+            this.rtbThursday.TabIndex = 2;
+            this.rtbThursday.Text = "";
+            // 
+            // gbxWednesday
+            // 
+            this.gbxWednesday.Controls.Add(this.rtbWednesday);
+            this.gbxWednesday.Location = new System.Drawing.Point(555, 114);
+            this.gbxWednesday.Name = "gbxWednesday";
+            this.gbxWednesday.Size = new System.Drawing.Size(177, 581);
+            this.gbxWednesday.TabIndex = 9;
+            this.gbxWednesday.TabStop = false;
+            this.gbxWednesday.Text = "Wednesday";
+            // 
+            // rtbWednesday
+            // 
+            this.rtbWednesday.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.rtbWednesday.Location = new System.Drawing.Point(6, 19);
+            this.rtbWednesday.Name = "rtbWednesday";
+            this.rtbWednesday.ReadOnly = true;
+            this.rtbWednesday.Size = new System.Drawing.Size(165, 558);
+            this.rtbWednesday.TabIndex = 1;
+            this.rtbWednesday.Text = "";
+            // 
+            // gbxTuesday
+            // 
+            this.gbxTuesday.Controls.Add(this.rtbTuesday);
+            this.gbxTuesday.Location = new System.Drawing.Point(372, 114);
+            this.gbxTuesday.Name = "gbxTuesday";
+            this.gbxTuesday.Size = new System.Drawing.Size(177, 581);
+            this.gbxTuesday.TabIndex = 8;
+            this.gbxTuesday.TabStop = false;
+            this.gbxTuesday.Text = "Tuesday";
+            // 
+            // rtbTuesday
+            // 
+            this.rtbTuesday.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.rtbTuesday.Location = new System.Drawing.Point(6, 19);
+            this.rtbTuesday.Name = "rtbTuesday";
+            this.rtbTuesday.ReadOnly = true;
+            this.rtbTuesday.Size = new System.Drawing.Size(165, 558);
+            this.rtbTuesday.TabIndex = 1;
+            this.rtbTuesday.Text = "";
+            // 
+            // gbxMonday
+            // 
+            this.gbxMonday.Controls.Add(this.rtbMonday);
+            this.gbxMonday.Location = new System.Drawing.Point(189, 114);
+            this.gbxMonday.Name = "gbxMonday";
+            this.gbxMonday.Size = new System.Drawing.Size(177, 581);
+            this.gbxMonday.TabIndex = 7;
+            this.gbxMonday.TabStop = false;
+            this.gbxMonday.Text = "Monday";
+            // 
+            // rtbMonday
+            // 
+            this.rtbMonday.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.rtbMonday.Location = new System.Drawing.Point(12, 19);
+            this.rtbMonday.Name = "rtbMonday";
+            this.rtbMonday.ReadOnly = true;
+            this.rtbMonday.Size = new System.Drawing.Size(165, 558);
+            this.rtbMonday.TabIndex = 1;
+            this.rtbMonday.Text = "";
+            // 
+            // gbxSunday
+            // 
+            this.gbxSunday.Controls.Add(this.rtbSunday);
+            this.gbxSunday.Location = new System.Drawing.Point(6, 114);
+            this.gbxSunday.Name = "gbxSunday";
+            this.gbxSunday.Size = new System.Drawing.Size(177, 581);
+            this.gbxSunday.TabIndex = 6;
+            this.gbxSunday.TabStop = false;
+            this.gbxSunday.Text = "Sunday";
+            // 
+            // rtbSunday
+            // 
+            this.rtbSunday.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.rtbSunday.Location = new System.Drawing.Point(6, 19);
+            this.rtbSunday.Name = "rtbSunday";
+            this.rtbSunday.ReadOnly = true;
+            this.rtbSunday.Size = new System.Drawing.Size(165, 558);
+            this.rtbSunday.TabIndex = 0;
+            this.rtbSunday.Text = "";
+            // 
             // Events_Dummy
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -263,13 +265,13 @@
             this.Text = "Events_Dummy";
             this.gbxEvents.ResumeLayout(false);
             this.gbxEvents.PerformLayout();
-            this.gbxSunday.ResumeLayout(false);
-            this.gbxMonday.ResumeLayout(false);
-            this.gbxTuesday.ResumeLayout(false);
-            this.gbxWednesday.ResumeLayout(false);
-            this.gbxThursday.ResumeLayout(false);
-            this.gbxFriday.ResumeLayout(false);
             this.gbxSaturday.ResumeLayout(false);
+            this.gbxFriday.ResumeLayout(false);
+            this.gbxThursday.ResumeLayout(false);
+            this.gbxWednesday.ResumeLayout(false);
+            this.gbxTuesday.ResumeLayout(false);
+            this.gbxMonday.ResumeLayout(false);
+            this.gbxSunday.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }

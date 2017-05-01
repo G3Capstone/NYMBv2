@@ -37,7 +37,7 @@ namespace NYMBv2
 
 
             getCurrentWeek();
-
+            lblWeekOf.Text = "Week of " + BeginningOfWeek.Date.ToString() +" - " + EndOfWeek.Date.ToString() ;
             ClearEvents();
             GetEvents();
         }
@@ -67,7 +67,7 @@ namespace NYMBv2
                     {
                         AddEvent(new Event(sql_reader["Name"].ToString(), sql_reader["EventType"].ToString(),
                             sql_reader["Description"].ToString(), sql_reader["Organizer"].ToString(),
-                            (DateTime) sql_reader["StartDate"], (DateTime) sql_reader["StartTime"]));
+                            DateTime.Parse(sql_reader["StartDate"].ToString()), DateTime.Parse(sql_reader["StartTime"].ToString())));
                         
                     }
                 }
@@ -209,8 +209,8 @@ namespace NYMBv2
 
         private void previousWeek()
         {
-            BeginningOfWeek.AddDays(-7);
-            EndOfWeek.AddDays(-7);
+            BeginningOfWeek = BeginningOfWeek.AddDays(-7);
+            EndOfWeek = EndOfWeek.AddDays(-7);
         }
 
         #endregion
@@ -219,11 +219,26 @@ namespace NYMBv2
 
         private void nextWeek()
         {
-            BeginningOfWeek.AddDays(7);
-            EndOfWeek.AddDays(7);
+            BeginningOfWeek = BeginningOfWeek.AddDays(7);
+            EndOfWeek = EndOfWeek.AddDays(7);
         }
 
         #endregion
 
+        private void btnPreviousWeek_Click(object sender, EventArgs e)
+        {
+            previousWeek();
+            lblWeekOf.Text = "Week of " + BeginningOfWeek.Date.ToString() + " - " + EndOfWeek.Date.ToString();
+            ClearEvents();
+            GetEvents();
+        }
+
+        private void btnNextWeek_Click(object sender, EventArgs e)
+        {
+            nextWeek();
+            lblWeekOf.Text = "Week of " + BeginningOfWeek.Date.ToString() + " - " + EndOfWeek.Date.ToString();
+            ClearEvents();
+            GetEvents();
+        }
     }
 }
