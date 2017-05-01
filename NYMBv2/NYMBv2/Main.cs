@@ -191,14 +191,13 @@ namespace NYMBv2
 
 		public List<TradingCardControl> SearchTradingCards(string s)
 		{
-			List<TradingCards> cards = new List<TradingCards>();
+			List<TradingCardControl> cards = new List<TradingCardControl>();
 
+			string name, game, set, isFoil, condition, price;
+			
 			//Create a connection to the database
 			using (SqlConnection connection = new SqlConnection(connectionString))
 			{
-				string name, game, set, isFoil, condition;
-				double price = 0;
-
 				//SQL select statement
 				string query = @"SELECT [Name], [Game], [Set], [IsFoil], [Condition], [Price] FROM [dbo].[TradingCards] WHERE [Name] LIKE ('%" + s + "%')";
 
@@ -219,13 +218,15 @@ namespace NYMBv2
 						set = sql_reader["Set"].ToString();
 						isFoil = sql_reader["IsFoil"].ToString();
 						condition = sql_reader["Condition"].ToString();
+						price = sql_reader["Price"].ToString();
 
-						//TradingCards card = new TradingCards(game, set, isFoil, condition);	//there is something wrong with TradingCard inhereting from Item.
+						TradingCards card = new TradingCards(game, set, isFoil, condition);	//there is something wrong with TradingCard inhereting from Item.
 
 
 					}
 				}
 			}
+			
 		}
 
         #endregion
