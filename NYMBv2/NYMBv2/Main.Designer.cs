@@ -34,6 +34,7 @@
 			this.rtbAnnouncements = new System.Windows.Forms.RichTextBox();
 			this.lblAnnouncements = new System.Windows.Forms.Label();
 			this.tpInventory = new System.Windows.Forms.TabPage();
+			this.button1 = new System.Windows.Forms.Button();
 			this.btnEditBindersTable = new System.Windows.Forms.Button();
 			this.txtbxSearchInventory = new System.Windows.Forms.TextBox();
 			this.lblInventory = new System.Windows.Forms.Label();
@@ -56,7 +57,7 @@
 			this.llblCreateAccount = new System.Windows.Forms.LinkLabel();
 			this.sessonTokensTableAdapter1 = new NYMBv2.NYMBv2_DBDataSetTableAdapters.SessonTokensTableAdapter();
 			this.nymBv2_DBDataSet1 = new NYMBv2.NYMBv2_DBDataSet();
-			this.button1 = new System.Windows.Forms.Button();
+			this.button9 = new System.Windows.Forms.Button();
 			this.tabControl1.SuspendLayout();
 			this.tpAnnouncements.SuspendLayout();
 			this.tpInventory.SuspendLayout();
@@ -150,6 +151,15 @@
 			this.tpInventory.TabIndex = 1;
 			this.tpInventory.Text = "Inventory";
 			// 
+			// button1
+			// 
+			this.button1.Location = new System.Drawing.Point(699, 466);
+			this.button1.Name = "button1";
+			this.button1.Size = new System.Drawing.Size(75, 23);
+			this.button1.TabIndex = 5;
+			this.button1.Text = "button1";
+			this.button1.UseVisualStyleBackColor = true;
+			// 
 			// btnEditBindersTable
 			// 
 			this.btnEditBindersTable.Location = new System.Drawing.Point(376, 141);
@@ -180,6 +190,7 @@
 			// 
 			// tpEvents
 			// 
+			this.tpEvents.Controls.Add(this.button9);
 			this.tpEvents.Controls.Add(this.button3);
 			this.tpEvents.Location = new System.Drawing.Point(149, 4);
 			this.tpEvents.Name = "tpEvents";
@@ -358,14 +369,15 @@
 			this.nymBv2_DBDataSet1.DataSetName = "NYMBv2_DBDataSet";
 			this.nymBv2_DBDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
 			// 
-			// button1
+			// button9
 			// 
-			this.button1.Location = new System.Drawing.Point(699, 466);
-			this.button1.Name = "button1";
-			this.button1.Size = new System.Drawing.Size(75, 23);
-			this.button1.TabIndex = 5;
-			this.button1.Text = "button1";
-			this.button1.UseVisualStyleBackColor = true;
+			this.button9.Location = new System.Drawing.Point(92, 44);
+			this.button9.Name = "button9";
+			this.button9.Size = new System.Drawing.Size(75, 23);
+			this.button9.TabIndex = 1;
+			this.button9.Text = "button9";
+			this.button9.UseVisualStyleBackColor = true;
+			this.button9.Click += new System.EventHandler(this.button9_Click);
 			// 
 			// Main
 			// 
@@ -427,6 +439,7 @@
         private NYMBv2_DBDataSetTableAdapters.SessonTokensTableAdapter sessonTokensTableAdapter1;
         private NYMBv2_DBDataSet nymBv2_DBDataSet1;
 		private System.Windows.Forms.Button button1;
+		private System.Windows.Forms.Button button9;
 	}
 }
 

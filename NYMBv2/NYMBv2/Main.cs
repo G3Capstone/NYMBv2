@@ -242,7 +242,12 @@ namespace NYMBv2
 
 		#region Events
 
+		private void button9_Click(object sender, EventArgs e)
+		{
+			Events_Dummy dummy = new Events_Dummy();
 
+			dummy.ShowDialog();
+		}
 
 		#endregion
 
@@ -475,9 +480,10 @@ namespace NYMBv2
 
 
 
-        #endregion
+		#endregion
 
-        #endregion
+		#endregion
 
-    }
+		
+	}
 }
