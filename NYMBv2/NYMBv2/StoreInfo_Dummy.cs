@@ -16,5 +16,10 @@ namespace NYMBv2
         {
             InitializeComponent();
         }
+
+        private void ownerGrpBox_Enter(object sender, EventArgs e)
+        {
+
+        }
     }
 }

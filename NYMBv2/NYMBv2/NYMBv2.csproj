@@ -236,6 +236,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <EmbeddedResource Include="SleevesControl.resx">
       <DependentUpon>SleevesControl.cs</DependentUpon>
@@ -281,6 +282,8 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       <DependentUpon>NYMBv2_DB.mdf</DependentUpon>
     </Content>
+    <None Include="Resources\Storefront-Glass-Windows-And-Doors1.jpg" />
+    <None Include="Resources\incognito1.png" />
   </ItemGroup>
   <ItemGroup>
     <BootstrapperPackage Include=".NETFramework,Version=v4.5.2">
