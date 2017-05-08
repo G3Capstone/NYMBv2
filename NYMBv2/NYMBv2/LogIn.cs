@@ -37,43 +37,75 @@ namespace NYMBv2
         #region Log in button
         private void btnLogIn_Click(object sender, EventArgs e)
         {
-            String _UserName = txtbxUsername.Text;          //Holds the username
-            String _Password = txtbxPassword.Text;          //Holds the password
-            int _UserLevel;                                 //Holds the rank of user
+            string _UserName = txtbxUsername.Text;          //Holds the username
+            string _Password = txtbxPassword.Text;          //Holds the password
+            string _UserLevel = "";                                 //Holds the rank of user
 
             /**
              * Try statement to catch errors 
              */
             try
             {
-                if (useR_TABLETableAdapter1.IsValid(_UserName, _Password).Equals(1))
+
+                using (SqlConnection connection = new SqlConnection(connectionString))
                 {
-                    //Retrieve the user rank from the database
-                    _UserLevel = (int)useR_TABLETableAdapter1.GetUserLevelByUserName(_UserName);
 
-                    //Holds who is the most current user
-                    using (SqlConnection connection = new SqlConnection(connectionString))
+
+                    //SQL select statement  
+
+                    string query = @"SELECT [UserLevel] FROM [dbo].[USER_TABLE] 
+                            WHERE ([UserName] = '" + _UserName + "') AND ([Password] = '" +  _Password + "')";
+
+                    //Create a SQLCommand, passing the query and the connection
+                    SqlCommand cmd = new SqlCommand(query, connection);
+
+                    //connecting the SQLCommand Control and the database
+                    cmd.Connection.Open();
+
+                    using (SqlDataReader sql_reader = cmd.ExecuteReader())
                     {
-                        string queryClearTokens = @"DELETE FROM [dbo].[SessonTokens] ";
-                        string queryNewToken = @"INSERT INTO [dbo].[SessonTokens] VALUES ( '" + _UserName + "' , '" + _UserLevel + "' , '1' )";
-                        
+                        while (sql_reader.Read())
+                        {
 
-                        SqlCommand command = new SqlCommand(queryClearTokens, connection);
-                        command.Connection.Open();
-                        command.ExecuteNonQuery();
-                        command.Connection.Close();
+                            _UserLevel = sql_reader["UserLevel"].ToString();
 
-
-                        command = new SqlCommand(queryNewToken, connection);
-                        command.Connection.Open();
-                        command.ExecuteNonQuery();
-                        command.Connection.Close();
-
-                        this.Close();
-
+                        }
                     }
+
+                    //closes the connection
+                    cmd.Connection.Close();
+
+                    //if the previous query returned a string of the correct length, then the
+                    //user exists and the password for that user was correct
+                    if (_UserLevel.Length == 5 || _UserLevel.Length == 8)
+                    {
+
+                        //Holds who is the most current user
+                        string queryClearTokens = @"DELETE FROM [dbo].[SessonTokens] ";
+                        string queryNewToken = @"INSERT INTO [dbo].[SessonTokens] VALUES ( '" + 
+                            _UserName + "' , '" + _UserLevel + "' )";
+
+                        //clears the sessontoken table
+                        cmd = new SqlCommand(queryClearTokens, connection);
+                        cmd.Connection.Open();
+                        cmd.ExecuteNonQuery();
+                        cmd.Connection.Close();
+
+                        //creates new sessontoken in the sessontoken table 
+                        cmd = new SqlCommand(queryNewToken, connection);
+                        cmd.Connection.Open();
+                        cmd.ExecuteNonQuery();
+                        cmd.Connection.Close();
+
+                        //close the login form
+                        this.Close();
+                    }
+                    else { MessageBox.Show("Invalid UserName or Password"); }
+
+
                 }
-                else { MessageBox.Show("Invalid UserName or Password"); }
+
+                
 
             } catch (Exception ex) { MessageBox.Show(ex.Message); }
 
@@ -95,7 +127,7 @@ namespace NYMBv2
                 string queryClearTokens = @"DELETE FROM [dbo].[SessonTokens] ";
 
                 //SQL Query that adds the Guest SessonToken to the sessonToken table of the database
-                string queryGuestToken = @"INSERT INTO [dbo].[SessonTokens] VALUES ( 'Guest' , '1' , '1' )";
+                string queryGuestToken = @"INSERT INTO [dbo].[SessonTokens] VALUES ( 'Guest' , 'Guest' )";
 
                 //Creates the SQL Command with the clear query
                 SqlCommand command = new SqlCommand(queryClearTokens, connection);

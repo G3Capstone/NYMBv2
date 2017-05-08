@@ -31,14 +31,14 @@
             this.storeInfoLbl = new System.Windows.Forms.Label();
             this.locationPicBox = new System.Windows.Forms.PictureBox();
             this.ownerGrpBox = new System.Windows.Forms.GroupBox();
-            this.locationGrpBox = new System.Windows.Forms.GroupBox();
-            this.ownerPicBox = new System.Windows.Forms.PictureBox();
-            this.descriptionLbl = new System.Windows.Forms.Label();
             this.locationLbl = new System.Windows.Forms.Label();
+            this.ownerPicBox = new System.Windows.Forms.PictureBox();
+            this.locationGrpBox = new System.Windows.Forms.GroupBox();
+            this.descriptionLbl = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.locationPicBox)).BeginInit();
             this.ownerGrpBox.SuspendLayout();
-            this.locationGrpBox.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ownerPicBox)).BeginInit();
+            this.locationGrpBox.SuspendLayout();
             this.SuspendLayout();
             // 
             // storeInfoLbl
@@ -63,7 +63,7 @@
             // 
             // ownerGrpBox
             // 
-            this.ownerGrpBox.Controls.Add(this.locationLbl);
+            this.ownerGrpBox.Controls.Add(this.descriptionLbl);
             this.ownerGrpBox.Controls.Add(this.ownerPicBox);
             this.ownerGrpBox.Location = new System.Drawing.Point(16, 83);
             this.ownerGrpBox.Name = "ownerGrpBox";
@@ -71,10 +71,29 @@
             this.ownerGrpBox.TabIndex = 3;
             this.ownerGrpBox.TabStop = false;
             // 
+            // locationLbl
+            // 
+            this.locationLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.locationLbl.Location = new System.Drawing.Point(16, 130);
+            this.locationLbl.Name = "locationLbl";
+            this.locationLbl.Size = new System.Drawing.Size(206, 246);
+            this.locationLbl.TabIndex = 4;
+            this.locationLbl.Text = "label2";
+            // 
+            // ownerPicBox
+            // 
+            this.ownerPicBox.Image = global::NYMBv2.Properties.Resources.incognito;
+            this.ownerPicBox.Location = new System.Drawing.Point(17, 19);
+            this.ownerPicBox.Name = "ownerPicBox";
+            this.ownerPicBox.Size = new System.Drawing.Size(126, 123);
+            this.ownerPicBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.ownerPicBox.TabIndex = 2;
+            this.ownerPicBox.TabStop = false;
+            // 
             // locationGrpBox
             // 
-            this.locationGrpBox.Controls.Add(this.descriptionLbl);
             this.locationGrpBox.Controls.Add(this.locationPicBox);
+            this.locationGrpBox.Controls.Add(this.locationLbl);
             this.locationGrpBox.Location = new System.Drawing.Point(551, 83);
             this.locationGrpBox.Name = "locationGrpBox";
             this.locationGrpBox.Size = new System.Drawing.Size(238, 394);
@@ -83,34 +102,15 @@
             this.locationGrpBox.Text = "Location";
             this.locationGrpBox.Enter += new System.EventHandler(this.ownerGrpBox_Enter);
             // 
-            // ownerPicBox
-            // 
-            this.ownerPicBox.Image = global::NYMBv2.Properties.Resources.incognito;
-            this.ownerPicBox.Location = new System.Drawing.Point(6, 19);
-            this.ownerPicBox.Name = "ownerPicBox";
-            this.ownerPicBox.Size = new System.Drawing.Size(126, 123);
-            this.ownerPicBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.ownerPicBox.TabIndex = 2;
-            this.ownerPicBox.TabStop = false;
-            // 
             // descriptionLbl
             // 
             this.descriptionLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.descriptionLbl.Location = new System.Drawing.Point(14, 130);
+            this.descriptionLbl.Location = new System.Drawing.Point(149, 19);
             this.descriptionLbl.Name = "descriptionLbl";
-            this.descriptionLbl.Size = new System.Drawing.Size(208, 249);
+            this.descriptionLbl.Size = new System.Drawing.Size(353, 357);
             this.descriptionLbl.TabIndex = 3;
             this.descriptionLbl.Text = "label1";
             this.descriptionLbl.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            // 
-            // locationLbl
-            // 
-            this.locationLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.locationLbl.Location = new System.Drawing.Point(138, 19);
-            this.locationLbl.Name = "locationLbl";
-            this.locationLbl.Size = new System.Drawing.Size(373, 360);
-            this.locationLbl.TabIndex = 4;
-            this.locationLbl.Text = "label2";
             // 
             // StoreInfo_Dummy
             // 
@@ -124,8 +124,8 @@
             this.Text = "StoreInfo_Dummy";
             ((System.ComponentModel.ISupportInitialize)(this.locationPicBox)).EndInit();
             this.ownerGrpBox.ResumeLayout(false);
-            this.locationGrpBox.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.ownerPicBox)).EndInit();
+            this.locationGrpBox.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 

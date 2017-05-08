@@ -22,7 +22,7 @@ namespace NYMBv2
 
         #region Global variables
         string activeUser;
-        int activeLevel;
+        string activeLevel;
 
         #region Global Variables for the Events Tab
 
@@ -147,12 +147,6 @@ namespace NYMBv2
         {
             var Announcementlist = new List<Announcement>();
 
-
-            //foreach statement that will repeat for the number of announcments in the database.
-            //Announcment entry = new announcment();	//the () will contain headline, content, start and end date for the announcment.
-            //list.Add(entry);
-            //if(entry._start <= currentdate)
-            //add entry to panelAnnouncmentStream
 
             GetAnnouncements(Announcementlist);
 
@@ -671,7 +665,7 @@ namespace NYMBv2
                         //sessonTokens database and stores them in the ActiveUser
                         //and ActiveLevel variables, respectively.
                         activeUser = sql_reader["User"].ToString();
-                        activeLevel = (int)sql_reader["UserLevel"];
+                        activeLevel = sql_reader["UserLevel"].ToString();
                     }
                 }
             }
@@ -691,7 +685,7 @@ namespace NYMBv2
                 String queryClearTokens = @"DELETE FROM [dbo].[SessonTokens] ";
 
                 //SQL Query that adds the Guest SessonToken to the sessonToken table of the database
-                String queryGuestToken = @"INSERT INTO [dbo].[SessonTokens] VALUES ( 'Guest' , '1' , '1' )";
+                String queryGuestToken = @"INSERT INTO [dbo].[SessonTokens] VALUES ( 'Guest' , 'Guest' )";
 
                 //Creates the SQL Command with the clear query
                 SqlCommand command = new SqlCommand(queryClearTokens, connection);
@@ -790,7 +784,7 @@ namespace NYMBv2
             //If the active user has admin rights, 
             // then add the product manager, user manager
             //, and settings tabs
-            if (activeLevel == 4)
+            if (activeLevel == "Admin")
             {
                 tabControl1.TabPages.Add(tpProductManager);
                 tabControl1.TabPages.Add(tpUserManager);

@@ -12,13 +12,9 @@ namespace NYMBv2
 
         public string _owners { get; set; }
 
-        public string _ownerspic { get; set; }
-
         public string _location { get; set; }
 
-        public string _storepic { get; set; }
-
-        public int _phone { get; set; }
+        public string _phone { get; set; }
 
         public string _hours { get; set; }
 
@@ -29,14 +25,12 @@ namespace NYMBv2
         {
         }
 
-        public StoreInfo(string s, string o, string op, string l, string sp,
-                         int p, string h, string d)
+        public StoreInfo(string s, string o, string l,
+                         string p, string h, string d)
         {
             _storename = s;
             _owners = o;
-            _ownerspic = op;
             _location = l;
-            _storepic = sp;
             _phone = p;
             _hours = h;
             _description = d;

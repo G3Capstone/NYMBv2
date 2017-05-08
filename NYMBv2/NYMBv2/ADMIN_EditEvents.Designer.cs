@@ -30,7 +30,6 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ADMIN_EditEvents));
-            System.Windows.Forms.Label eventIdLabel;
             System.Windows.Forms.Label nameLabel;
             System.Windows.Forms.Label eventTypeLabel;
             System.Windows.Forms.Label startDateLabel;
@@ -67,15 +66,14 @@
             this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.eventIdTextBox = new System.Windows.Forms.TextBox();
             this.nameTextBox = new System.Windows.Forms.TextBox();
             this.eventTypeTextBox = new System.Windows.Forms.TextBox();
             this.startDateDateTimePicker = new System.Windows.Forms.DateTimePicker();
             this.startTimeTextBox = new System.Windows.Forms.TextBox();
             this.organizerTextBox = new System.Windows.Forms.TextBox();
-            this.reservedSpaceTextBox = new System.Windows.Forms.TextBox();
             this.descriptionTextBox = new System.Windows.Forms.TextBox();
-            eventIdLabel = new System.Windows.Forms.Label();
+            this.cbx_reservedSpace = new System.Windows.Forms.ComboBox();
+            this.eventsBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             nameLabel = new System.Windows.Forms.Label();
             eventTypeLabel = new System.Windows.Forms.Label();
             startDateLabel = new System.Windows.Forms.Label();
@@ -91,6 +89,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.eventsBindingNavigator)).BeginInit();
             this.eventsBindingNavigator.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.eventsDataGridView)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.eventsBindingSource1)).BeginInit();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -117,8 +116,7 @@
             // 
             // tabPage2
             // 
-            this.tabPage2.Controls.Add(eventIdLabel);
-            this.tabPage2.Controls.Add(this.eventIdTextBox);
+            this.tabPage2.Controls.Add(this.cbx_reservedSpace);
             this.tabPage2.Controls.Add(nameLabel);
             this.tabPage2.Controls.Add(this.nameTextBox);
             this.tabPage2.Controls.Add(eventTypeLabel);
@@ -130,7 +128,6 @@
             this.tabPage2.Controls.Add(organizerLabel);
             this.tabPage2.Controls.Add(this.organizerTextBox);
             this.tabPage2.Controls.Add(reservedSpaceLabel);
-            this.tabPage2.Controls.Add(this.reservedSpaceTextBox);
             this.tabPage2.Controls.Add(descriptionLabel);
             this.tabPage2.Controls.Add(this.descriptionTextBox);
             this.tabPage2.Location = new System.Drawing.Point(4, 22);
@@ -163,13 +160,18 @@
             this.tableAdapterManager.BoardGamesTableAdapter = null;
             this.tableAdapterManager.CardSleevesTableAdapter = null;
             this.tableAdapterManager.ComicBooksTableAdapter = null;
+            this.tableAdapterManager.ConditionsTableAdapter = null;
+            this.tableAdapterManager.DiceTableAdapter = null;
             this.tableAdapterManager.EventSpaceTableAdapter = null;
             this.tableAdapterManager.EventsTableAdapter = this.eventsTableAdapter;
+            this.tableAdapterManager.ManufacturersTableAdapter = null;
             this.tableAdapterManager.MiscTableAdapter = null;
             this.tableAdapterManager.PublisherTableAdapter = null;
             this.tableAdapterManager.SessonTokensTableAdapter = null;
             this.tableAdapterManager.StoreInfoTableAdapter = null;
             this.tableAdapterManager.TabletopGamesTableAdapter = null;
+            this.tableAdapterManager.TCGSetsTableAdapter = null;
+            this.tableAdapterManager.TradingCardGamesTableAdapter = null;
             this.tableAdapterManager.TradingCardsTableAdapter = null;
             this.tableAdapterManager.UpdateOrder = NYMBv2.NYMBv2_DBDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
             this.tableAdapterManager.USER_LEVELSTableAdapter = null;
@@ -201,7 +203,7 @@
             this.eventsBindingNavigator.MovePreviousItem = this.bindingNavigatorMovePreviousItem;
             this.eventsBindingNavigator.Name = "eventsBindingNavigator";
             this.eventsBindingNavigator.PositionItem = this.bindingNavigatorPositionItem;
-            this.eventsBindingNavigator.Size = new System.Drawing.Size(898, 25);
+            this.eventsBindingNavigator.Size = new System.Drawing.Size(887, 25);
             this.eventsBindingNavigator.TabIndex = 1;
             this.eventsBindingNavigator.Text = "bindingNavigator1";
             // 
@@ -240,14 +242,14 @@
             // bindingNavigatorCountItem
             // 
             this.bindingNavigatorCountItem.Name = "bindingNavigatorCountItem";
-            this.bindingNavigatorCountItem.Size = new System.Drawing.Size(35, 15);
+            this.bindingNavigatorCountItem.Size = new System.Drawing.Size(35, 22);
             this.bindingNavigatorCountItem.Text = "of {0}";
             this.bindingNavigatorCountItem.ToolTipText = "Total number of items";
             // 
             // bindingNavigatorSeparator1
             // 
             this.bindingNavigatorSeparator1.Name = "bindingNavigatorSeparator";
-            this.bindingNavigatorSeparator1.Size = new System.Drawing.Size(6, 6);
+            this.bindingNavigatorSeparator1.Size = new System.Drawing.Size(6, 25);
             // 
             // bindingNavigatorMoveNextItem
             // 
@@ -255,7 +257,7 @@
             this.bindingNavigatorMoveNextItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMoveNextItem.Image")));
             this.bindingNavigatorMoveNextItem.Name = "bindingNavigatorMoveNextItem";
             this.bindingNavigatorMoveNextItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorMoveNextItem.Size = new System.Drawing.Size(23, 20);
+            this.bindingNavigatorMoveNextItem.Size = new System.Drawing.Size(23, 22);
             this.bindingNavigatorMoveNextItem.Text = "Move next";
             // 
             // bindingNavigatorMoveLastItem
@@ -264,13 +266,13 @@
             this.bindingNavigatorMoveLastItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMoveLastItem.Image")));
             this.bindingNavigatorMoveLastItem.Name = "bindingNavigatorMoveLastItem";
             this.bindingNavigatorMoveLastItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorMoveLastItem.Size = new System.Drawing.Size(23, 20);
+            this.bindingNavigatorMoveLastItem.Size = new System.Drawing.Size(23, 22);
             this.bindingNavigatorMoveLastItem.Text = "Move last";
             // 
             // bindingNavigatorSeparator2
             // 
             this.bindingNavigatorSeparator2.Name = "bindingNavigatorSeparator";
-            this.bindingNavigatorSeparator2.Size = new System.Drawing.Size(6, 6);
+            this.bindingNavigatorSeparator2.Size = new System.Drawing.Size(6, 25);
             // 
             // bindingNavigatorAddNewItem
             // 
@@ -287,7 +289,7 @@
             this.bindingNavigatorDeleteItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorDeleteItem.Image")));
             this.bindingNavigatorDeleteItem.Name = "bindingNavigatorDeleteItem";
             this.bindingNavigatorDeleteItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorDeleteItem.Size = new System.Drawing.Size(23, 20);
+            this.bindingNavigatorDeleteItem.Size = new System.Drawing.Size(23, 22);
             this.bindingNavigatorDeleteItem.Text = "Delete";
             // 
             // eventsBindingNavigatorSaveItem
@@ -295,9 +297,9 @@
             this.eventsBindingNavigatorSaveItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
             this.eventsBindingNavigatorSaveItem.Image = ((System.Drawing.Image)(resources.GetObject("eventsBindingNavigatorSaveItem.Image")));
             this.eventsBindingNavigatorSaveItem.Name = "eventsBindingNavigatorSaveItem";
-            this.eventsBindingNavigatorSaveItem.Size = new System.Drawing.Size(23, 23);
+            this.eventsBindingNavigatorSaveItem.Size = new System.Drawing.Size(23, 22);
             this.eventsBindingNavigatorSaveItem.Text = "Save Data";
-            this.eventsBindingNavigatorSaveItem.Click += new System.EventHandler(this.eventsBindingNavigatorSaveItem_Click);
+            this.eventsBindingNavigatorSaveItem.Click += new System.EventHandler(this.eventsBindingNavigatorSaveItem_Click_1);
             // 
             // eventsDataGridView
             // 
@@ -313,9 +315,9 @@
             this.dataGridViewTextBoxColumn7,
             this.dataGridViewTextBoxColumn8});
             this.eventsDataGridView.DataSource = this.eventsBindingSource;
-            this.eventsDataGridView.Location = new System.Drawing.Point(6, 3);
+            this.eventsDataGridView.Location = new System.Drawing.Point(3, 6);
             this.eventsDataGridView.Name = "eventsDataGridView";
-            this.eventsDataGridView.Size = new System.Drawing.Size(844, 448);
+            this.eventsDataGridView.Size = new System.Drawing.Size(846, 445);
             this.eventsDataGridView.TabIndex = 0;
             // 
             // dataGridViewTextBoxColumn1
@@ -323,6 +325,7 @@
             this.dataGridViewTextBoxColumn1.DataPropertyName = "EventId";
             this.dataGridViewTextBoxColumn1.HeaderText = "EventId";
             this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            this.dataGridViewTextBoxColumn1.ReadOnly = true;
             // 
             // dataGridViewTextBoxColumn2
             // 
@@ -366,27 +369,10 @@
             this.dataGridViewTextBoxColumn8.HeaderText = "Description";
             this.dataGridViewTextBoxColumn8.Name = "dataGridViewTextBoxColumn8";
             // 
-            // eventIdLabel
-            // 
-            eventIdLabel.AutoSize = true;
-            eventIdLabel.Location = new System.Drawing.Point(121, 128);
-            eventIdLabel.Name = "eventIdLabel";
-            eventIdLabel.Size = new System.Drawing.Size(50, 13);
-            eventIdLabel.TabIndex = 0;
-            eventIdLabel.Text = "Event Id:";
-            // 
-            // eventIdTextBox
-            // 
-            this.eventIdTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.eventsBindingSource, "EventId", true));
-            this.eventIdTextBox.Location = new System.Drawing.Point(217, 125);
-            this.eventIdTextBox.Name = "eventIdTextBox";
-            this.eventIdTextBox.Size = new System.Drawing.Size(200, 20);
-            this.eventIdTextBox.TabIndex = 1;
-            // 
             // nameLabel
             // 
             nameLabel.AutoSize = true;
-            nameLabel.Location = new System.Drawing.Point(121, 154);
+            nameLabel.Location = new System.Drawing.Point(149, 142);
             nameLabel.Name = "nameLabel";
             nameLabel.Size = new System.Drawing.Size(38, 13);
             nameLabel.TabIndex = 2;
@@ -395,7 +381,7 @@
             // nameTextBox
             // 
             this.nameTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.eventsBindingSource, "Name", true));
-            this.nameTextBox.Location = new System.Drawing.Point(217, 151);
+            this.nameTextBox.Location = new System.Drawing.Point(245, 139);
             this.nameTextBox.Name = "nameTextBox";
             this.nameTextBox.Size = new System.Drawing.Size(200, 20);
             this.nameTextBox.TabIndex = 3;
@@ -403,7 +389,7 @@
             // eventTypeLabel
             // 
             eventTypeLabel.AutoSize = true;
-            eventTypeLabel.Location = new System.Drawing.Point(121, 180);
+            eventTypeLabel.Location = new System.Drawing.Point(149, 168);
             eventTypeLabel.Name = "eventTypeLabel";
             eventTypeLabel.Size = new System.Drawing.Size(65, 13);
             eventTypeLabel.TabIndex = 4;
@@ -412,7 +398,7 @@
             // eventTypeTextBox
             // 
             this.eventTypeTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.eventsBindingSource, "EventType", true));
-            this.eventTypeTextBox.Location = new System.Drawing.Point(217, 177);
+            this.eventTypeTextBox.Location = new System.Drawing.Point(245, 165);
             this.eventTypeTextBox.Name = "eventTypeTextBox";
             this.eventTypeTextBox.Size = new System.Drawing.Size(200, 20);
             this.eventTypeTextBox.TabIndex = 5;
@@ -420,7 +406,7 @@
             // startDateLabel
             // 
             startDateLabel.AutoSize = true;
-            startDateLabel.Location = new System.Drawing.Point(121, 207);
+            startDateLabel.Location = new System.Drawing.Point(149, 195);
             startDateLabel.Name = "startDateLabel";
             startDateLabel.Size = new System.Drawing.Size(58, 13);
             startDateLabel.TabIndex = 6;
@@ -429,7 +415,7 @@
             // startDateDateTimePicker
             // 
             this.startDateDateTimePicker.DataBindings.Add(new System.Windows.Forms.Binding("Value", this.eventsBindingSource, "StartDate", true));
-            this.startDateDateTimePicker.Location = new System.Drawing.Point(217, 203);
+            this.startDateDateTimePicker.Location = new System.Drawing.Point(245, 191);
             this.startDateDateTimePicker.Name = "startDateDateTimePicker";
             this.startDateDateTimePicker.Size = new System.Drawing.Size(200, 20);
             this.startDateDateTimePicker.TabIndex = 7;
@@ -437,7 +423,7 @@
             // startTimeLabel
             // 
             startTimeLabel.AutoSize = true;
-            startTimeLabel.Location = new System.Drawing.Point(121, 232);
+            startTimeLabel.Location = new System.Drawing.Point(149, 220);
             startTimeLabel.Name = "startTimeLabel";
             startTimeLabel.Size = new System.Drawing.Size(58, 13);
             startTimeLabel.TabIndex = 8;
@@ -446,7 +432,7 @@
             // startTimeTextBox
             // 
             this.startTimeTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.eventsBindingSource, "StartTime", true));
-            this.startTimeTextBox.Location = new System.Drawing.Point(217, 229);
+            this.startTimeTextBox.Location = new System.Drawing.Point(245, 217);
             this.startTimeTextBox.Name = "startTimeTextBox";
             this.startTimeTextBox.Size = new System.Drawing.Size(200, 20);
             this.startTimeTextBox.TabIndex = 9;
@@ -454,7 +440,7 @@
             // organizerLabel
             // 
             organizerLabel.AutoSize = true;
-            organizerLabel.Location = new System.Drawing.Point(121, 258);
+            organizerLabel.Location = new System.Drawing.Point(149, 246);
             organizerLabel.Name = "organizerLabel";
             organizerLabel.Size = new System.Drawing.Size(55, 13);
             organizerLabel.TabIndex = 10;
@@ -463,7 +449,7 @@
             // organizerTextBox
             // 
             this.organizerTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.eventsBindingSource, "Organizer", true));
-            this.organizerTextBox.Location = new System.Drawing.Point(217, 255);
+            this.organizerTextBox.Location = new System.Drawing.Point(245, 243);
             this.organizerTextBox.Name = "organizerTextBox";
             this.organizerTextBox.Size = new System.Drawing.Size(200, 20);
             this.organizerTextBox.TabIndex = 11;
@@ -471,24 +457,16 @@
             // reservedSpaceLabel
             // 
             reservedSpaceLabel.AutoSize = true;
-            reservedSpaceLabel.Location = new System.Drawing.Point(121, 284);
+            reservedSpaceLabel.Location = new System.Drawing.Point(149, 272);
             reservedSpaceLabel.Name = "reservedSpaceLabel";
             reservedSpaceLabel.Size = new System.Drawing.Size(90, 13);
             reservedSpaceLabel.TabIndex = 12;
             reservedSpaceLabel.Text = "Reserved Space:";
             // 
-            // reservedSpaceTextBox
-            // 
-            this.reservedSpaceTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.eventsBindingSource, "ReservedSpace", true));
-            this.reservedSpaceTextBox.Location = new System.Drawing.Point(217, 281);
-            this.reservedSpaceTextBox.Name = "reservedSpaceTextBox";
-            this.reservedSpaceTextBox.Size = new System.Drawing.Size(200, 20);
-            this.reservedSpaceTextBox.TabIndex = 13;
-            // 
             // descriptionLabel
             // 
             descriptionLabel.AutoSize = true;
-            descriptionLabel.Location = new System.Drawing.Point(438, 128);
+            descriptionLabel.Location = new System.Drawing.Point(149, 298);
             descriptionLabel.Name = "descriptionLabel";
             descriptionLabel.Size = new System.Drawing.Size(63, 13);
             descriptionLabel.TabIndex = 14;
@@ -497,17 +475,30 @@
             // descriptionTextBox
             // 
             this.descriptionTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.eventsBindingSource, "Description", true));
-            this.descriptionTextBox.Location = new System.Drawing.Point(441, 151);
-            this.descriptionTextBox.Multiline = true;
+            this.descriptionTextBox.Location = new System.Drawing.Point(245, 295);
             this.descriptionTextBox.Name = "descriptionTextBox";
-            this.descriptionTextBox.Size = new System.Drawing.Size(317, 150);
+            this.descriptionTextBox.Size = new System.Drawing.Size(200, 20);
             this.descriptionTextBox.TabIndex = 15;
+            // 
+            // cbx_reservedSpace
+            // 
+            this.cbx_reservedSpace.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.eventsBindingSource, "ReservedSpace", true));
+            this.cbx_reservedSpace.FormattingEnabled = true;
+            this.cbx_reservedSpace.Location = new System.Drawing.Point(245, 269);
+            this.cbx_reservedSpace.Name = "cbx_reservedSpace";
+            this.cbx_reservedSpace.Size = new System.Drawing.Size(200, 21);
+            this.cbx_reservedSpace.TabIndex = 16;
+            // 
+            // eventsBindingSource1
+            // 
+            this.eventsBindingSource1.DataMember = "Events";
+            this.eventsBindingSource1.DataSource = this.nYMBv2_DBDataSet;
             // 
             // ADMIN_EditEvents
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(898, 514);
+            this.ClientSize = new System.Drawing.Size(887, 514);
             this.Controls.Add(this.eventsBindingNavigator);
             this.Controls.Add(this.tabControl1);
             this.Name = "ADMIN_EditEvents";
@@ -523,6 +514,7 @@
             this.eventsBindingNavigator.ResumeLayout(false);
             this.eventsBindingNavigator.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.eventsDataGridView)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.eventsBindingSource1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -559,13 +551,13 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn6;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn7;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn8;
-        private System.Windows.Forms.TextBox eventIdTextBox;
+        private System.Windows.Forms.ComboBox cbx_reservedSpace;
         private System.Windows.Forms.TextBox nameTextBox;
         private System.Windows.Forms.TextBox eventTypeTextBox;
         private System.Windows.Forms.DateTimePicker startDateDateTimePicker;
         private System.Windows.Forms.TextBox startTimeTextBox;
         private System.Windows.Forms.TextBox organizerTextBox;
-        private System.Windows.Forms.TextBox reservedSpaceTextBox;
         private System.Windows.Forms.TextBox descriptionTextBox;
+        private System.Windows.Forms.BindingSource eventsBindingSource1;
     }
 }

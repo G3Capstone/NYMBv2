@@ -34,39 +34,81 @@ namespace NYMBv2
 
         private void ReadStoreInfo()
         {
-            string storename;       //Holds the string output of the storename cell.
-            string description;     //Holds the string output of the description cell.
-            string location;        //Holds the string output of the location cell.
 
+            //you had the labels in the wrong places, so i switched them
 
-            var list = new List<StoreInfo>();
-            object info = d.Rows[0].ItemArray[8];
+            // you dont really need these if you were planning on using a storeInfo object
 
+            //string storename;       //Holds the string output of the storename cell.
+            //string description;     //Holds the string output of the description cell.
+            //string location;        //Holds the string output of the location cell.
 
-                GetStoreInfo(list);
+            //why do you have a list? what? 
+            //var list = new List<StoreInfo>();
+            //object info = d.Rows[0].ItemArray[8];
+
+            //instead lets create the storeinfo object
+                StoreInfo myStore = GetStoreInfo();
+
+            // ^this works 
 
                 locationLbl.Text = "" ;
                 locationLbl.TextAlign = ContentAlignment.MiddleCenter;
 
-                foreach (StoreInfo info in list)
-                {
-                    
-                    locationLbl.Text += info._description.ToString();
-                    
-                    
-                }
-                
+            // i can see what you are doing here, but since we changed to using a single
+            // storeinfo object, using a foreach loop would be difficult
+            //foreach (StoreInfo info in list)
+            //{
+
+            //    locationLbl.Text += info._description.ToString();
+
+
+            //}
+
+            //instead, we can add everything with precision since we can call 
+            // what we want from the storeInfo object
+
+
+            //first lets clear out the labels since you have stuff in them already from the start
+            descriptionLbl.Text = "";
+            locationLbl.Text = "";
+
+            //now we can add the information
+
+            descriptionLbl.Text += myStore._storename.ToString() + "/n";
+            descriptionLbl.Text += myStore._owners.ToString() + "/n";
+            descriptionLbl.Text += myStore._description.ToString();
+
+            locationLbl.Text += myStore._location + "/n";
+            locationLbl.Text += myStore._phone + "/n";
+            locationLbl.Text += myStore._hours;
+
         }
         #endregion
 
+        //you dont need to return a list of stores since you are only
+        //going to be storing the info of one store in the database,
+        //so lets make this return a single storeInfo object
+
         #region Get Store Info
-        private List<StoreInfo> GetStoreInfo(List<StoreInfo> StoreInfoList)
+        private StoreInfo GetStoreInfo()
         {
+
+            //lets create a storeInfo object, but not instanchiate it yet
+            StoreInfo store;
+
             //Create a connection to the database
             using (SqlConnection connection = new SqlConnection(connectionString))
             {
-                //SQL select statement
-                string query = @"SELECT [Description], [Location] FROM [dbo].[StoreInfo]";
+
+
+                //SQL select statement  
+                //string query = @"SELECT [Description], [Location] FROM [dbo].[StoreInfo]";
+
+                //we need more than just description and location from the database to make a
+                //storeinfo object, so lets get everything we need.
+                string query = @"SELECT [StoreName], [Owners], [Location], [Phone#], [Hours], " +
+                    "[Discription] FROM [dbo].[StoreInfo]";
 
                 //Create a SQLCommand, passing the query and the connection
                 SqlCommand cmd = new SqlCommand(query, connection);
@@ -78,14 +120,21 @@ namespace NYMBv2
                 // SQLCommand ExecuteReader function
                 using (SqlDataReader sql_reader = cmd.ExecuteReader())
                 {
-                    while (sql_reader.Read())
-                    {
-                        StoreInfoList.Add(new StoreInfo(sql_reader["Description"].ToString(), sql_reader["Location"].ToString()));
-                    }
+                 
+                    //since there is only one entry in the database, we dont need a loop to retrieve
+                    // multiple rows
+                 
+                    store = new StoreInfo(sql_reader["StoreName"].ToString(), sql_reader["Owners"].ToString(),
+                            sql_reader["Location"].ToString(), sql_reader["Phone"].ToString(), sql_reader["Hours"].ToString(),
+                            sql_reader["Description"].ToString());
+                 
+                    //returning the store
+                    return store;
+
                 }
             }
 
-            return StoreInfoList;
+            
         }
         #endregion
 
