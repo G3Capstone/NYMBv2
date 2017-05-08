@@ -45,8 +45,8 @@ namespace NYMBv2
 
                 GetStoreInfo(list);
 
-                locationLbl.Clear();
-                locationLbl.SelectionAlignment = HorizontalAlignment.Center;
+                locationLbl.Text = "" ;
+                locationLbl.TextAlign = ContentAlignment.MiddleCenter;
 
                 foreach (StoreInfo info in list)
                 {
@@ -60,7 +60,7 @@ namespace NYMBv2
         #endregion
 
         #region Get Store Info
-        private List<StoreInfo> GetAnnouncements(List<StoreInfo> StoreInfoList)
+        private List<StoreInfo> GetStoreInfo(List<StoreInfo> StoreInfoList)
         {
             //Create a connection to the database
             using (SqlConnection connection = new SqlConnection(connectionString))
