@@ -103,6 +103,11 @@ namespace NYMBv2
                             if (ch == ',')
                             {
                                 special++;
+
+                                if (ch == '\'')
+                                {
+                                    special++;
+                                }
                             }
                         }
                     }
