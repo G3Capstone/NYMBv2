@@ -21,6 +21,7 @@ namespace NYMBv2
         public StoreInfo_Dummy()
         {
             InitializeComponent();
+            ReadStoreInfo();
         }
 
         private void ownerGrpBox_Enter(object sender, EventArgs e)
@@ -75,12 +76,12 @@ namespace NYMBv2
 
             //now we can add the information
 
-            descriptionLbl.Text += myStore._storename.ToString() + "/n";
-            descriptionLbl.Text += myStore._owners.ToString() + "/n";
+            descriptionLbl.Text += myStore._storename.ToString() + "\n";
+            descriptionLbl.Text += myStore._owners.ToString() + "\n";
             descriptionLbl.Text += myStore._description.ToString();
 
-            locationLbl.Text += myStore._location + "/n";
-            locationLbl.Text += myStore._phone + "/n";
+            locationLbl.Text += myStore._location + "\n";
+            locationLbl.Text += myStore._phone + "\n";
             locationLbl.Text += myStore._hours;
 
         }
@@ -120,13 +121,14 @@ namespace NYMBv2
                 // SQLCommand ExecuteReader function
                 using (SqlDataReader sql_reader = cmd.ExecuteReader())
                 {
-                 
+
                     //since there is only one entry in the database, we dont need a loop to retrieve
                     // multiple rows
-                 
+                    sql_reader.Read();
+
                     store = new StoreInfo(sql_reader["StoreName"].ToString(), sql_reader["Owners"].ToString(),
-                            sql_reader["Location"].ToString(), sql_reader["Phone"].ToString(), sql_reader["Hours"].ToString(),
-                            sql_reader["Description"].ToString());
+                            sql_reader["Location"].ToString(), sql_reader["Phone#"].ToString(), sql_reader["Hours"].ToString(),
+                            sql_reader["Discription"].ToString());
                  
                     //returning the store
                     return store;
