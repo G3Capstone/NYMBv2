@@ -163,7 +163,7 @@
             this.tabControl1.Multiline = true;
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(1070, 678);
+            this.tabControl1.Size = new System.Drawing.Size(1449, 678);
             this.tabControl1.SizeMode = System.Windows.Forms.TabSizeMode.Fixed;
             this.tabControl1.TabIndex = 0;
             this.tabControl1.DrawItem += new System.Windows.Forms.DrawItemEventHandler(this.tabControl1_DrawItem);
@@ -176,7 +176,7 @@
             this.tpAnnouncements.ForeColor = System.Drawing.SystemColors.ControlText;
             this.tpAnnouncements.Location = new System.Drawing.Point(149, 4);
             this.tpAnnouncements.Name = "tpAnnouncements";
-            this.tpAnnouncements.Size = new System.Drawing.Size(917, 670);
+            this.tpAnnouncements.Size = new System.Drawing.Size(1296, 670);
             this.tpAnnouncements.TabIndex = 0;
             this.tpAnnouncements.Text = "Announcements";
             // 
@@ -184,10 +184,10 @@
             // 
             this.rtbAnnouncements.BackColor = System.Drawing.Color.LightBlue;
             this.rtbAnnouncements.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.rtbAnnouncements.Location = new System.Drawing.Point(6, 25);
+            this.rtbAnnouncements.Location = new System.Drawing.Point(6, 15);
             this.rtbAnnouncements.Name = "rtbAnnouncements";
             this.rtbAnnouncements.ReadOnly = true;
-            this.rtbAnnouncements.Size = new System.Drawing.Size(888, 581);
+            this.rtbAnnouncements.Size = new System.Drawing.Size(888, 591);
             this.rtbAnnouncements.TabIndex = 1;
             this.rtbAnnouncements.Text = "";
             // 
@@ -196,7 +196,7 @@
             this.lblAnnouncements.Font = new System.Drawing.Font("Arial", 24F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblAnnouncements.Location = new System.Drawing.Point(3, 13);
             this.lblAnnouncements.Name = "lblAnnouncements";
-            this.lblAnnouncements.Size = new System.Drawing.Size(906, 35);
+            this.lblAnnouncements.Size = new System.Drawing.Size(1290, 35);
             this.lblAnnouncements.TabIndex = 0;
             this.lblAnnouncements.Text = "Announcements";
             this.lblAnnouncements.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -210,7 +210,7 @@
             this.tpInventory.Controls.Add(this.lblInventory);
             this.tpInventory.Location = new System.Drawing.Point(149, 4);
             this.tpInventory.Name = "tpInventory";
-            this.tpInventory.Size = new System.Drawing.Size(917, 670);
+            this.tpInventory.Size = new System.Drawing.Size(1296, 670);
             this.tpInventory.TabIndex = 1;
             this.tpInventory.Text = "Inventory";
             // 
@@ -247,7 +247,7 @@
             this.lblInventory.Font = new System.Drawing.Font("Arial", 24F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblInventory.Location = new System.Drawing.Point(3, 0);
             this.lblInventory.Name = "lblInventory";
-            this.lblInventory.Size = new System.Drawing.Size(906, 35);
+            this.lblInventory.Size = new System.Drawing.Size(1290, 35);
             this.lblInventory.TabIndex = 1;
             this.lblInventory.Text = "Inventory";
             this.lblInventory.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -263,7 +263,7 @@
             this.tpEvents.Controls.Add(this.lblWeekOf);
             this.tpEvents.Location = new System.Drawing.Point(149, 4);
             this.tpEvents.Name = "tpEvents";
-            this.tpEvents.Size = new System.Drawing.Size(917, 670);
+            this.tpEvents.Size = new System.Drawing.Size(1296, 670);
             this.tpEvents.TabIndex = 2;
             this.tpEvents.Text = "Events";
             // 
@@ -279,7 +279,7 @@
             this.pnlWeek.Controls.Add(this.gbxWednesday);
             this.pnlWeek.Location = new System.Drawing.Point(0, 104);
             this.pnlWeek.Name = "pnlWeek";
-            this.pnlWeek.Size = new System.Drawing.Size(917, 566);
+            this.pnlWeek.Size = new System.Drawing.Size(1293, 566);
             this.pnlWeek.TabIndex = 12;
             // 
             // gbxSaturday
@@ -425,7 +425,7 @@
             // gbxEventsAdminToolBox
             // 
             this.gbxEventsAdminToolBox.Controls.Add(this.btnEditEvents);
-            this.gbxEventsAdminToolBox.Location = new System.Drawing.Point(733, 3);
+            this.gbxEventsAdminToolBox.Location = new System.Drawing.Point(10, 37);
             this.gbxEventsAdminToolBox.Name = "gbxEventsAdminToolBox";
             this.gbxEventsAdminToolBox.Size = new System.Drawing.Size(176, 53);
             this.gbxEventsAdminToolBox.TabIndex = 11;
@@ -445,16 +445,16 @@
             // lblEvents
             // 
             this.lblEvents.Font = new System.Drawing.Font("Arial", 24F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblEvents.Location = new System.Drawing.Point(369, 0);
+            this.lblEvents.Location = new System.Drawing.Point(558, 9);
             this.lblEvents.Name = "lblEvents";
-            this.lblEvents.Size = new System.Drawing.Size(177, 35);
+            this.lblEvents.Size = new System.Drawing.Size(165, 35);
             this.lblEvents.TabIndex = 0;
             this.lblEvents.Text = "Events";
             this.lblEvents.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // btnPreviousWeek
             // 
-            this.btnPreviousWeek.Location = new System.Drawing.Point(192, 64);
+            this.btnPreviousWeek.Location = new System.Drawing.Point(369, 56);
             this.btnPreviousWeek.Name = "btnPreviousWeek";
             this.btnPreviousWeek.Size = new System.Drawing.Size(119, 34);
             this.btnPreviousWeek.TabIndex = 3;
@@ -464,7 +464,7 @@
             // 
             // btnNextWeek
             // 
-            this.btnNextWeek.Location = new System.Drawing.Point(604, 64);
+            this.btnNextWeek.Location = new System.Drawing.Point(796, 56);
             this.btnNextWeek.Name = "btnNextWeek";
             this.btnNextWeek.Size = new System.Drawing.Size(119, 34);
             this.btnNextWeek.TabIndex = 4;
@@ -474,9 +474,9 @@
             // 
             // lblWeekOf
             // 
-            this.lblWeekOf.Location = new System.Drawing.Point(317, 72);
+            this.lblWeekOf.Location = new System.Drawing.Point(494, 64);
             this.lblWeekOf.Name = "lblWeekOf";
-            this.lblWeekOf.Size = new System.Drawing.Size(281, 18);
+            this.lblWeekOf.Size = new System.Drawing.Size(296, 18);
             this.lblWeekOf.TabIndex = 5;
             this.lblWeekOf.Text = "[Week Of [Date]]";
             this.lblWeekOf.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -489,7 +489,7 @@
             this.tpStoreInfo.Controls.Add(this.storeInfoLbl);
             this.tpStoreInfo.Location = new System.Drawing.Point(149, 4);
             this.tpStoreInfo.Name = "tpStoreInfo";
-            this.tpStoreInfo.Size = new System.Drawing.Size(917, 670);
+            this.tpStoreInfo.Size = new System.Drawing.Size(1296, 670);
             this.tpStoreInfo.TabIndex = 3;
             this.tpStoreInfo.Text = "Store Info";
             // 
@@ -497,7 +497,7 @@
             // 
             this.locationGrpBox.Controls.Add(this.locationPicBox);
             this.locationGrpBox.Controls.Add(this.locationLbl);
-            this.locationGrpBox.Location = new System.Drawing.Point(671, 52);
+            this.locationGrpBox.Location = new System.Drawing.Point(1047, 52);
             this.locationGrpBox.Name = "locationGrpBox";
             this.locationGrpBox.Size = new System.Drawing.Size(238, 611);
             this.locationGrpBox.TabIndex = 7;
@@ -507,7 +507,7 @@
             // locationPicBox
             // 
             this.locationPicBox.Image = global::NYMBv2.Properties.Resources.Storefront_Glass_Windows_And_Doors;
-            this.locationPicBox.Location = new System.Drawing.Point(19, 19);
+            this.locationPicBox.Location = new System.Drawing.Point(19, 25);
             this.locationPicBox.Name = "locationPicBox";
             this.locationPicBox.Size = new System.Drawing.Size(203, 95);
             this.locationPicBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -529,7 +529,7 @@
             this.ownerGrpBox.Controls.Add(this.ownerPicBox);
             this.ownerGrpBox.Location = new System.Drawing.Point(12, 52);
             this.ownerGrpBox.Name = "ownerGrpBox";
-            this.ownerGrpBox.Size = new System.Drawing.Size(653, 611);
+            this.ownerGrpBox.Size = new System.Drawing.Size(1029, 611);
             this.ownerGrpBox.TabIndex = 6;
             this.ownerGrpBox.TabStop = false;
             // 
@@ -538,7 +538,7 @@
             this.descriptionLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.descriptionLbl.Location = new System.Drawing.Point(149, 19);
             this.descriptionLbl.Name = "descriptionLbl";
-            this.descriptionLbl.Size = new System.Drawing.Size(498, 589);
+            this.descriptionLbl.Size = new System.Drawing.Size(874, 589);
             this.descriptionLbl.TabIndex = 3;
             this.descriptionLbl.Text = "label1";
             this.descriptionLbl.TextAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -555,13 +555,13 @@
             // 
             // storeInfoLbl
             // 
-            this.storeInfoLbl.AutoSize = true;
             this.storeInfoLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.storeInfoLbl.Location = new System.Drawing.Point(369, 0);
+            this.storeInfoLbl.Location = new System.Drawing.Point(3, 7);
             this.storeInfoLbl.Name = "storeInfoLbl";
-            this.storeInfoLbl.Size = new System.Drawing.Size(188, 42);
+            this.storeInfoLbl.Size = new System.Drawing.Size(1290, 42);
             this.storeInfoLbl.TabIndex = 5;
             this.storeInfoLbl.Text = "Store Info";
+            this.storeInfoLbl.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // tpMessagebox
             // 
@@ -571,7 +571,7 @@
             this.tpMessagebox.Controls.Add(this.lblMessagebox);
             this.tpMessagebox.Location = new System.Drawing.Point(149, 4);
             this.tpMessagebox.Name = "tpMessagebox";
-            this.tpMessagebox.Size = new System.Drawing.Size(917, 670);
+            this.tpMessagebox.Size = new System.Drawing.Size(1296, 670);
             this.tpMessagebox.TabIndex = 4;
             this.tpMessagebox.Text = "Message Box";
             // 
@@ -583,7 +583,7 @@
             this.tpInbox.Controls.Add(this.button6);
             this.tpInbox.Location = new System.Drawing.Point(149, 4);
             this.tpInbox.Name = "tpInbox";
-            this.tpInbox.Size = new System.Drawing.Size(917, 670);
+            this.tpInbox.Size = new System.Drawing.Size(1296, 670);
             this.tpInbox.TabIndex = 5;
             this.tpInbox.Text = "Inbox";
             // 
@@ -604,7 +604,7 @@
             this.tpSystemManagement.Controls.Add(this.button7);
             this.tpSystemManagement.Location = new System.Drawing.Point(149, 4);
             this.tpSystemManagement.Name = "tpSystemManagement";
-            this.tpSystemManagement.Size = new System.Drawing.Size(917, 670);
+            this.tpSystemManagement.Size = new System.Drawing.Size(1296, 670);
             this.tpSystemManagement.TabIndex = 6;
             this.tpSystemManagement.Text = "System Management";
             // 
@@ -626,7 +626,7 @@
             this.tpTransactions.Controls.Add(this.button8);
             this.tpTransactions.Location = new System.Drawing.Point(149, 4);
             this.tpTransactions.Name = "tpTransactions";
-            this.tpTransactions.Size = new System.Drawing.Size(917, 670);
+            this.tpTransactions.Size = new System.Drawing.Size(1296, 670);
             this.tpTransactions.TabIndex = 7;
             this.tpTransactions.Text = "Transactions";
             // 
@@ -654,7 +654,7 @@
             // 
             this.lblUserText.AutoSize = true;
             this.lblUserText.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblUserText.Location = new System.Drawing.Point(745, 12);
+            this.lblUserText.Location = new System.Drawing.Point(997, 8);
             this.lblUserText.Name = "lblUserText";
             this.lblUserText.Size = new System.Drawing.Size(40, 16);
             this.lblUserText.TabIndex = 2;
@@ -664,7 +664,7 @@
             // 
             this.lblActiveUser.AutoSize = true;
             this.lblActiveUser.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblActiveUser.Location = new System.Drawing.Point(783, 12);
+            this.lblActiveUser.Location = new System.Drawing.Point(1035, 8);
             this.lblActiveUser.Name = "lblActiveUser";
             this.lblActiveUser.Size = new System.Drawing.Size(112, 16);
             this.lblActiveUser.TabIndex = 3;
@@ -673,7 +673,7 @@
             // btnLogInAndOut
             // 
             this.btnLogInAndOut.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnLogInAndOut.Location = new System.Drawing.Point(950, 20);
+            this.btnLogInAndOut.Location = new System.Drawing.Point(1318, 20);
             this.btnLogInAndOut.Name = "btnLogInAndOut";
             this.btnLogInAndOut.Size = new System.Drawing.Size(117, 23);
             this.btnLogInAndOut.TabIndex = 4;
@@ -684,7 +684,7 @@
             // llblCreateAccount
             // 
             this.llblCreateAccount.AutoSize = true;
-            this.llblCreateAccount.Location = new System.Drawing.Point(745, 34);
+            this.llblCreateAccount.Location = new System.Drawing.Point(997, 30);
             this.llblCreateAccount.Name = "llblCreateAccount";
             this.llblCreateAccount.Size = new System.Drawing.Size(180, 13);
             this.llblCreateAccount.TabIndex = 5;
@@ -735,7 +735,7 @@
             this.lblSysManagement.Font = new System.Drawing.Font("Arial", 24F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblSysManagement.Location = new System.Drawing.Point(3, 0);
             this.lblSysManagement.Name = "lblSysManagement";
-            this.lblSysManagement.Size = new System.Drawing.Size(906, 35);
+            this.lblSysManagement.Size = new System.Drawing.Size(1290, 35);
             this.lblSysManagement.TabIndex = 1;
             this.lblSysManagement.Text = "System Management";
             this.lblSysManagement.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -743,7 +743,7 @@
             // gbxAnnouncements
             // 
             this.gbxAnnouncements.Controls.Add(this.rtbAnnouncements);
-            this.gbxAnnouncements.Location = new System.Drawing.Point(9, 51);
+            this.gbxAnnouncements.Location = new System.Drawing.Point(201, 51);
             this.gbxAnnouncements.Name = "gbxAnnouncements";
             this.gbxAnnouncements.Size = new System.Drawing.Size(900, 612);
             this.gbxAnnouncements.TabIndex = 2;
@@ -1071,7 +1071,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.InactiveCaption;
-            this.ClientSize = new System.Drawing.Size(1071, 733);
+            this.ClientSize = new System.Drawing.Size(1447, 733);
             this.Controls.Add(this.llblCreateAccount);
             this.Controls.Add(this.btnLogInAndOut);
             this.Controls.Add(this.lblActiveUser);
@@ -1095,7 +1095,6 @@
             this.gbxWednesday.ResumeLayout(false);
             this.gbxEventsAdminToolBox.ResumeLayout(false);
             this.tpStoreInfo.ResumeLayout(false);
-            this.tpStoreInfo.PerformLayout();
             this.locationGrpBox.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.locationPicBox)).EndInit();
             this.ownerGrpBox.ResumeLayout(false);
