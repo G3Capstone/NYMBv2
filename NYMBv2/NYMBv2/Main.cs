@@ -112,17 +112,6 @@ namespace NYMBv2
 
         }
 
-        private void button4_Click(object sender, EventArgs e)
-        {
-            StoreInfo_Dummy mystoreinfo = new StoreInfo_Dummy();
-            mystoreinfo.ShowDialog();
-        }
-
-        private void button5_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void button6_Click(object sender, EventArgs e)
         {
 
@@ -871,9 +860,10 @@ namespace NYMBv2
             //, and settings tabs
             if (activeLevel == "Admin")
             {
-                tabControl1.TabPages.Add(tpProductManager);
-                tabControl1.TabPages.Add(tpUserManager);
-                tabControl1.TabPages.Add(tpSettings);
+                tabControl1.TabPages.Add(tpTransactions);
+                tabControl1.TabPages.Add(tpInbox);
+                tabControl1.TabPages.Add(tpSystemManagement);
+                
 
                 //Shows the gbx for the Events admin toolbox
                 gbxEventsAdminToolBox.Visible = true;
