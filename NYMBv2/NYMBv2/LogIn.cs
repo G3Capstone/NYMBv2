@@ -75,9 +75,10 @@ namespace NYMBv2
                     //closes the connection
                     cmd.Connection.Close();
 
-                    //if the previous query returned a string of the correct length, then the
+                    //if the previous query returned a string with a correct user level, then the
                     //user exists and the password for that user was correct
-                    if (_UserLevel.Length == 5 || _UserLevel.Length == 8)
+                    if (_UserLevel == "Guest" || _UserLevel == "Customer" ||
+                        _UserLevel == "Employee" || _UserLevel == "Admin")
                     {
 
                         //Holds who is the most current user

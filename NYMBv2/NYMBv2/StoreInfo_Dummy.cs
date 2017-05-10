@@ -21,7 +21,11 @@ namespace NYMBv2
         public StoreInfo_Dummy()
         {
             InitializeComponent();
+
+            #region StoreInfo tab initilizion stuff
             ReadStoreInfo();
+            #endregion
+
         }
 
         private void ownerGrpBox_Enter(object sender, EventArgs e)
@@ -29,55 +33,29 @@ namespace NYMBv2
 
         }
 
+#region StoreInfo Methods
 
-        #region read from the database table.
+        #region read from the StoreInfo table in the database.
 
 
         private void ReadStoreInfo()
         {
 
-            //you had the labels in the wrong places, so i switched them
+            //create the storeinfo object
+            StoreInfo myStore = GetStoreInfo();
 
-            // you dont really need these if you were planning on using a storeInfo object
+            //clear out the labels
 
-            //string storename;       //Holds the string output of the storename cell.
-            //string description;     //Holds the string output of the description cell.
-            //string location;        //Holds the string output of the location cell.
-
-            //why do you have a list? what? 
-            //var list = new List<StoreInfo>();
-            //object info = d.Rows[0].ItemArray[8];
-
-            //instead lets create the storeinfo object
-                StoreInfo myStore = GetStoreInfo();
-
-            // ^this works 
-
-                locationLbl.Text = "" ;
-                locationLbl.TextAlign = ContentAlignment.MiddleCenter;
-
-            // i can see what you are doing here, but since we changed to using a single
-            // storeinfo object, using a foreach loop would be difficult
-            //foreach (StoreInfo info in list)
-            //{
-
-            //    locationLbl.Text += info._description.ToString();
-
-
-            //}
-
-            //instead, we can add everything with precision since we can call 
-            // what we want from the storeInfo object
-
-
-            //first lets clear out the labels since you have stuff in them already from the start
             descriptionLbl.Text = "";
-            locationLbl.Text = "";
+            locationLbl.Text = "" ;
+
+            //Align the text in the location label to the venter
+            locationLbl.TextAlign = ContentAlignment.TopCenter;
 
             //now we can add the information
 
             descriptionLbl.Text += myStore._storename.ToString() + "\n";
-            descriptionLbl.Text += myStore._owners.ToString() + "\n";
+            descriptionLbl.Text += "Owner/s: " + myStore._owners.ToString() + "\n";
             descriptionLbl.Text += myStore._description.ToString();
 
             locationLbl.Text += myStore._location + "\n";
@@ -86,10 +64,6 @@ namespace NYMBv2
 
         }
         #endregion
-
-        //you dont need to return a list of stores since you are only
-        //going to be storing the info of one store in the database,
-        //so lets make this return a single storeInfo object
 
         #region Get Store Info
         private StoreInfo GetStoreInfo()
@@ -109,7 +83,7 @@ namespace NYMBv2
                 //we need more than just description and location from the database to make a
                 //storeinfo object, so lets get everything we need.
                 string query = @"SELECT [StoreName], [Owners], [Location], [Phone#], [Hours], " +
-                    "[Discription] FROM [dbo].[StoreInfo]";
+                    "[Description] FROM [dbo].[StoreInfo]";
 
                 //Create a SQLCommand, passing the query and the connection
                 SqlCommand cmd = new SqlCommand(query, connection);
@@ -128,17 +102,16 @@ namespace NYMBv2
 
                     store = new StoreInfo(sql_reader["StoreName"].ToString(), sql_reader["Owners"].ToString(),
                             sql_reader["Location"].ToString(), sql_reader["Phone#"].ToString(), sql_reader["Hours"].ToString(),
-                            sql_reader["Discription"].ToString());
+                            sql_reader["Description"].ToString());
                  
                     //returning the store
                     return store;
 
                 }
-            }
-
-            
+            }           
         }
         #endregion
 
+#endregion
     }
 }

@@ -76,6 +76,13 @@
             this.llblCreateAccount = new System.Windows.Forms.LinkLabel();
             this.sessonTokensTableAdapter1 = new NYMBv2.NYMBv2_DBDataSetTableAdapters.SessonTokensTableAdapter();
             this.nymBv2_DBDataSet1 = new NYMBv2.NYMBv2_DBDataSet();
+            this.locationGrpBox = new System.Windows.Forms.GroupBox();
+            this.locationPicBox = new System.Windows.Forms.PictureBox();
+            this.locationLbl = new System.Windows.Forms.Label();
+            this.ownerGrpBox = new System.Windows.Forms.GroupBox();
+            this.descriptionLbl = new System.Windows.Forms.Label();
+            this.ownerPicBox = new System.Windows.Forms.PictureBox();
+            this.storeInfoLbl = new System.Windows.Forms.Label();
             this.tabControl1.SuspendLayout();
             this.tpAnnouncements.SuspendLayout();
             this.tpInventory.SuspendLayout();
@@ -95,6 +102,10 @@
             this.tpUserManager.SuspendLayout();
             this.tpSettings.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nymBv2_DBDataSet1)).BeginInit();
+            this.locationGrpBox.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.locationPicBox)).BeginInit();
+            this.ownerGrpBox.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.ownerPicBox)).BeginInit();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -436,6 +447,9 @@
             // 
             // tpStoreInfo
             // 
+            this.tpStoreInfo.Controls.Add(this.locationGrpBox);
+            this.tpStoreInfo.Controls.Add(this.ownerGrpBox);
+            this.tpStoreInfo.Controls.Add(this.storeInfoLbl);
             this.tpStoreInfo.Controls.Add(this.button4);
             this.tpStoreInfo.Location = new System.Drawing.Point(149, 4);
             this.tpStoreInfo.Name = "tpStoreInfo";
@@ -446,7 +460,7 @@
             // 
             // button4
             // 
-            this.button4.Location = new System.Drawing.Point(229, 266);
+            this.button4.Location = new System.Drawing.Point(24, 15);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(75, 23);
             this.button4.TabIndex = 0;
@@ -594,6 +608,76 @@
             this.nymBv2_DBDataSet1.DataSetName = "NYMBv2_DBDataSet";
             this.nymBv2_DBDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
+            // locationGrpBox
+            // 
+            this.locationGrpBox.Controls.Add(this.locationPicBox);
+            this.locationGrpBox.Controls.Add(this.locationLbl);
+            this.locationGrpBox.Location = new System.Drawing.Point(609, 70);
+            this.locationGrpBox.Name = "locationGrpBox";
+            this.locationGrpBox.Size = new System.Drawing.Size(238, 394);
+            this.locationGrpBox.TabIndex = 7;
+            this.locationGrpBox.TabStop = false;
+            this.locationGrpBox.Text = "Location";
+            // 
+            // locationPicBox
+            // 
+            this.locationPicBox.Image = global::NYMBv2.Properties.Resources.Storefront_Glass_Windows_And_Doors;
+            this.locationPicBox.Location = new System.Drawing.Point(19, 19);
+            this.locationPicBox.Name = "locationPicBox";
+            this.locationPicBox.Size = new System.Drawing.Size(203, 95);
+            this.locationPicBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.locationPicBox.TabIndex = 2;
+            this.locationPicBox.TabStop = false;
+            // 
+            // locationLbl
+            // 
+            this.locationLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.locationLbl.Location = new System.Drawing.Point(16, 130);
+            this.locationLbl.Name = "locationLbl";
+            this.locationLbl.Size = new System.Drawing.Size(206, 246);
+            this.locationLbl.TabIndex = 4;
+            this.locationLbl.Text = "label2";
+            // 
+            // ownerGrpBox
+            // 
+            this.ownerGrpBox.Controls.Add(this.descriptionLbl);
+            this.ownerGrpBox.Controls.Add(this.ownerPicBox);
+            this.ownerGrpBox.Location = new System.Drawing.Point(74, 70);
+            this.ownerGrpBox.Name = "ownerGrpBox";
+            this.ownerGrpBox.Size = new System.Drawing.Size(517, 394);
+            this.ownerGrpBox.TabIndex = 6;
+            this.ownerGrpBox.TabStop = false;
+            // 
+            // descriptionLbl
+            // 
+            this.descriptionLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.descriptionLbl.Location = new System.Drawing.Point(149, 19);
+            this.descriptionLbl.Name = "descriptionLbl";
+            this.descriptionLbl.Size = new System.Drawing.Size(353, 357);
+            this.descriptionLbl.TabIndex = 3;
+            this.descriptionLbl.Text = "label1";
+            this.descriptionLbl.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            // 
+            // ownerPicBox
+            // 
+            this.ownerPicBox.Image = global::NYMBv2.Properties.Resources.incognito;
+            this.ownerPicBox.Location = new System.Drawing.Point(17, 19);
+            this.ownerPicBox.Name = "ownerPicBox";
+            this.ownerPicBox.Size = new System.Drawing.Size(126, 123);
+            this.ownerPicBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.ownerPicBox.TabIndex = 2;
+            this.ownerPicBox.TabStop = false;
+            // 
+            // storeInfoLbl
+            // 
+            this.storeInfoLbl.AutoSize = true;
+            this.storeInfoLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.storeInfoLbl.Location = new System.Drawing.Point(369, 0);
+            this.storeInfoLbl.Name = "storeInfoLbl";
+            this.storeInfoLbl.Size = new System.Drawing.Size(188, 42);
+            this.storeInfoLbl.TabIndex = 5;
+            this.storeInfoLbl.Text = "Store Info";
+            // 
             // Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -623,11 +707,16 @@
             this.gbxWednesday.ResumeLayout(false);
             this.gbxEventsAdminToolBox.ResumeLayout(false);
             this.tpStoreInfo.ResumeLayout(false);
+            this.tpStoreInfo.PerformLayout();
             this.tpMessagebox.ResumeLayout(false);
             this.tpProductManager.ResumeLayout(false);
             this.tpUserManager.ResumeLayout(false);
             this.tpSettings.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.nymBv2_DBDataSet1)).EndInit();
+            this.locationGrpBox.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.locationPicBox)).EndInit();
+            this.ownerGrpBox.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.ownerPicBox)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -682,6 +771,13 @@
         private System.Windows.Forms.Button btnPreviousWeek;
         private System.Windows.Forms.Button btnNextWeek;
         private System.Windows.Forms.Label lblWeekOf;
+        private System.Windows.Forms.GroupBox locationGrpBox;
+        private System.Windows.Forms.PictureBox locationPicBox;
+        private System.Windows.Forms.Label locationLbl;
+        private System.Windows.Forms.GroupBox ownerGrpBox;
+        private System.Windows.Forms.Label descriptionLbl;
+        private System.Windows.Forms.PictureBox ownerPicBox;
+        private System.Windows.Forms.Label storeInfoLbl;
     }
 }
 

@@ -52,7 +52,7 @@ namespace NYMBv2
 
             //limits the date time picker to not allow any dates more than
             // one month from now
-            startDateDateTimePicker.MaxDate = DateTime.Now.AddMonths(1);
+            startDateDateTimePicker.MaxDate = DateTime.Now.AddMonths(6);
 
         }
 
