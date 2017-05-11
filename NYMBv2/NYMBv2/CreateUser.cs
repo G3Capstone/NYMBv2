@@ -22,8 +22,6 @@ namespace NYMBv2
         /**
          * This class validates the password the user wants to create 
          */
-        
-
         private void CreateUser_Load(object sender, EventArgs e)
         {
 
@@ -33,7 +31,36 @@ namespace NYMBv2
         {
 
         }
-        
+
+
+        #region Create User Constructors
+
+
+        public string _username { get; set; }
+
+        public string _password { get; set; }
+
+        public string _confirmPassword { get; set; }
+
+        public string _firstName { get; set; }
+
+        public string _lastName { get; set; }
+
+        public string _email { get; set; }
+
+
+        public CreateUser(string u, string p, string cp,
+                           string f, string l, string e)
+        {
+            _username = u;
+            _password = p;
+            _confirmPassword = cp;
+            _firstName = f;
+            _lastName = l;
+            _email = e;
+        }
+
+        #endregion
 
         #region Username Validation Methods
 
@@ -123,13 +150,13 @@ namespace NYMBv2
             }
             else
             {
-                //flag that the password does not meet the necessary requirements.
+                //flag that the username does not meet the necessary requirements.
                 valid = false;
 
-                //Show the error message below the password textbox.
+                //Show the error message below the username textbox.
                 lblUsernameErrMsg.Visible = true;
 
-                //Change the text to inform the user of the password error.
+                //Change the text to inform the user of the username error.
                 lblPasswordErrMsg.Text = "Username can't contain that character";
 
             }
@@ -394,6 +421,75 @@ namespace NYMBv2
         }
         #endregion
 
+        #region Password shouldn't contain certain special characters
+
+        /*
+         * The CheckIllegal method takes a string arguement
+         * and checks if there are any certain special characters, 
+         * that shouldn't be in a password,such as (') and (").
+         */
+
+        private bool CheckIllegalChar(string password)
+        {
+            int special = 0;        //Counts the number of unacceptable characters
+            bool valid;             //Flags the validity of the password.
+
+            //A password can't contain ('), ("), (/), (\), or (,).
+            //Count each char for every instance of the special characters.
+            foreach (char ch in password)
+            {
+                if (ch == '"')
+                {
+                    special++;
+
+                    if (ch == '/')
+                    {
+                        special++;
+
+                        if (ch == '\\')
+                        {
+                            special++;
+
+                            if (ch == ',')
+                            {
+                                special++;
+
+                                if (ch == '\'')
+                                {
+                                    special++;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+
+            //Check if there are any unacceptable special characters in the password.
+            //If there are no forbidden characters in the password, return value is 
+            //true.
+            if (special == 0)
+            {
+                valid = true;
+            }
+            else
+            {
+                //flag that the password does not meet the necessary requirements.
+                valid = false;
+
+                //Show the error message below the password textbox.
+                lblPasswordErrMsg.Visible = true;
+
+                //Change the text to inform the user of the password error.
+                lblPasswordErrMsg.Text = "Password can't contain that character";
+
+            }
+
+            return valid;
+        }
+
+        #endregion
+
+
         #region First Validation
 
         /**
@@ -470,6 +566,279 @@ namespace NYMBv2
 
         #endregion
 
+        #region First Name Validation Methods
+
+        #region First Name Length of 1-20 Characters
+
+        /**
+        * The CheckLength method takes a string arugement and
+        * checks if the username is within the character range.
+        */
+        private bool CheckFirstLength(string password)
+        {
+            const int MIN_LENGTH = 1;       //minimum number of characters allowed in the name
+            const int MAX_LENGTH = 20;      //maximum number of characters allowed in the name
+            bool valid = false;             //Flags verification of category
+
+            if (password.Length >= MIN_LENGTH && password.Length <= MAX_LENGTH)
+            {
+                valid = true;
+            }
+            else
+            {
+                //flag that the password does not meet the necessary requirements.
+                valid = false;
+
+                //Show the error message below the password textbox.
+                lblUsernameErrMsg.Visible = true;
+
+                //Change the text to inform the user of the password error.
+                lblUsernameErrMsg.Text = "First name must be 1-20 characters long.";
+            }
+
+            return valid;
+
+        }
+
+        #endregion
+
+        #region Password shouldn't contain certain special characters
+
+        /*
+         * The CheckFirstSpecial method takes a string arguement
+         * and checks if there are any certain special characters, 
+         * that shouldn't be in a password,such as (') and (").
+         */
+
+        private bool CheckFirstSpecial(string password)
+        {
+            int special = 0;        //Counts the number of unacceptable characters
+            bool valid;             //Flags the validity of the password.
+
+            //A password can't contain ('), ("), (/), (\), (,), or (&).
+            //Count each char for every instance of the special characters.
+            foreach (char ch in password)
+            {
+                if (ch == '"')
+                {
+                    special++;
+
+                    if (ch == '/')
+                    {
+                        special++;
+
+                        if (ch == '\\')
+                        {
+                            special++;
+
+                            if (ch == ',')
+                            {
+                                special++;
+
+                                if (ch == '\'')
+                                {
+                                    special++;
+
+                                    if (ch == '&')
+                                    {
+                                        special++;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+
+            //Check if there are any unacceptable special characters in the name.
+            //If there are no forbidden characters in the name, return value is 
+            //true.
+            if (special == 0)
+            {
+                valid = true;
+            }
+            else
+            {
+                //flag that the name does not meet the necessary requirements.
+                valid = false;
+
+                //Show the error message below the first name textbox.
+                lblPasswordErrMsg.Visible = true;
+
+                //Change the text to inform the user of the name error.
+                lblPasswordErrMsg.Text = "Your name can't contain that character";
+
+            }
+
+            return valid;
+        }
+
+        #endregion
+
+
+        #endregion
+
+        #region Last Name Validation Methods
+
+        #region Last Name Length of 1-20 Characters
+
+        /**
+        * The CheckLastLength method takes a string arugement and
+        * checks if the username is within the character range.
+        */
+        private bool CheckLastLength(string password)
+        {
+            const int MIN_LENGTH = 1;       //minimum number of characters allowed in the name
+            const int MAX_LENGTH = 20;      //maximum number of characters allowed in the name
+            bool valid = false;             //Flags verification of category
+
+            if (password.Length >= MIN_LENGTH && password.Length <= MAX_LENGTH)
+            {
+                valid = true;
+            }
+            else
+            {
+                //flag that the password does not meet the necessary requirements.
+                valid = false;
+
+                //Show the error message below the password textbox.
+                lblUsernameErrMsg.Visible = true;
+
+                //Change the text to inform the user of the password error.
+                lblUsernameErrMsg.Text = "First name must be 1-20 characters long.";
+            }
+
+            return valid;
+
+        }
+
+        #endregion
+
+        #region Last Name shouldn't contain certain special characters
+
+        /*
+         * The CheckFirstSpecial method takes a string arguement
+         * and checks if there are any certain special characters, 
+         * that shouldn't be in a password,such as (') and (").
+         */
+
+        private bool CheckLastSpecial(string password)
+        {
+            int special = 0;        //Counts the number of unacceptable characters
+            bool valid;             //Flags the validity of the password.
+
+            //A password can't contain ('), ("), (/), (\), (,), or (&).
+            //Count each char for every instance of the special characters.
+            foreach (char ch in password)
+            {
+                if (ch == '"')
+                {
+                    special++;
+
+                    if (ch == '/')
+                    {
+                        special++;
+
+                        if (ch == '\\')
+                        {
+                            special++;
+
+                            if (ch == ',')
+                            {
+                                special++;
+
+                                if (ch == '\'')
+                                {
+                                    special++;
+
+                                    if (ch == '&')
+                                    {
+                                        special++;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+
+            //Check if there are any unacceptable special characters in the name.
+            //If there are no forbidden characters in the name, return value is 
+            //true.
+            if (special == 0)
+            {
+                valid = true;
+            }
+            else
+            {
+                //flag that the name does not meet the necessary requirements.
+                valid = false;
+
+                //Show the error message below the last name textbox.
+                lblPasswordErrMsg.Visible = true;
+
+                //Change the text to inform the user of the name error.
+                lblPasswordErrMsg.Text = "Your name can't contain that character";
+
+            }
+
+            return valid;
+        }
+
+        #endregion
+
+
+        #endregion
+
+        #region Email Validation Methods
+
+        #region Email needs a "@"
+
+        /**
+         * The CheckEmail method takes a string argument and checks
+         * if that string has a "@" in it.
+         */
+        private bool CheckEmail(string password)
+        {
+            int special = 0;        //The number of special characters in the password.
+            bool valid = false;     //Flags verification of category 
+
+            //Count the special characters in the password.
+            foreach (char ch in password)
+            {
+                if (ch == '@')
+                {
+                    special++;
+                }
+            }
+
+            //Check if there is only 1 '@' in the password.
+            if (special == 1)
+            {
+                valid = true;
+            }
+            else
+            {
+                //flag that the email does not meet the necessary requirements.
+                valid = false;
+
+                //Show the error message below the password textbox.
+                lblEmailErrMsg.Visible = true;
+
+                //Change the text to inform the user of the password error.
+                lblEmailErrMsg.Text = "Password must have a '@' character.";
+
+            }
+
+            return valid;
+        }
+
+
+        #endregion
+
+        
+
+        #endregion
 
 
     }
