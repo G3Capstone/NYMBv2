@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
 using System.Configuration;
+using System.Security.Cryptography;
 
 namespace NYMBv2
 {
@@ -37,6 +38,9 @@ namespace NYMBv2
         #region Log in button
         private void btnLogIn_Click(object sender, EventArgs e)
         {
+            //RNGCryptoServiceProvider saltShaker = new RNGCryptoServiceProvider();
+
+
             string _UserName = txtbxUsername.Text;          //Holds the username
             string _Password = txtbxPassword.Text;          //Holds the password
             string _UserLevel = "";                                 //Holds the rank of user
