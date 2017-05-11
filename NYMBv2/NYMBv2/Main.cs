@@ -736,7 +736,7 @@ namespace NYMBv2
             MailMessage mail = new MailMessage(new MailAddress(ActiveSesson._Email, ActiveSesson._FirstName + " " + ActiveSesson._LastName + " / " + ActiveSesson._Email),
                                                 new MailAddress("notyourmothersbasementG3@gmail.com", "Admin"));
             SmtpClient client = new SmtpClient();
-            client.Port = 25;
+            client.Port = 587;
             client.Host = "smtp.gmail.com";
             client.EnableSsl = true;
             client.Timeout = 10000;
