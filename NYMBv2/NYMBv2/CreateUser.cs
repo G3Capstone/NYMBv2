@@ -48,11 +48,6 @@ namespace NYMBv2
 
         public string _email { get; set; }
 
-        public CreateUser()
-        {
-
-        }
-
 
         public CreateUser(string u, string p, string cp,
                            string f, string l, string e)
