@@ -152,9 +152,6 @@
     <Compile Include="Main.Designer.cs">
       <DependentUpon>Main.cs</DependentUpon>
     </Compile>
-    <Compile Include="NYMBv2_DBDataSet.cs">
-      <DependentUpon>NYMBv2_DBDataSet.xsd</DependentUpon>
-    </Compile>
     <Compile Include="NYMBv2_DBDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>

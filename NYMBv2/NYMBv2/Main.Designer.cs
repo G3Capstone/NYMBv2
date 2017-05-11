@@ -71,8 +71,20 @@
             this.tpMessagebox = new System.Windows.Forms.TabPage();
             this.lblMessagesFootnote = new System.Windows.Forms.Label();
             this.tabMessageBox = new System.Windows.Forms.TabControl();
-            this.tpRequestMerch = new System.Windows.Forms.TabPage();
-            this.tpOrganizeAnEvent = new System.Windows.Forms.TabPage();
+            this.tpMBRequestMerch = new System.Windows.Forms.TabPage();
+            this.btnReqMerchSend = new System.Windows.Forms.Button();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.lblReqMerchDisplayEmail = new System.Windows.Forms.Label();
+            this.lblReqMerchEmail = new System.Windows.Forms.Label();
+            this.lblReqMerchDisplayUser = new System.Windows.Forms.Label();
+            this.lblReqMerchFrom = new System.Windows.Forms.Label();
+            this.lblReqMerchDesc = new System.Windows.Forms.Label();
+            this.lblReqMerchQty = new System.Windows.Forms.Label();
+            this.lblReqMerchItem = new System.Windows.Forms.Label();
+            this.tpMBOrganizeAnEvent = new System.Windows.Forms.TabPage();
+            this.btnOrgSend = new System.Windows.Forms.Button();
             this.txtOrgName = new System.Windows.Forms.TextBox();
             this.cbxTime = new System.Windows.Forms.ComboBox();
             this.txtOrgGrpSize = new System.Windows.Forms.TextBox();
@@ -87,7 +99,7 @@
             this.lblOrgDate = new System.Windows.Forms.Label();
             this.lblOrgEventType = new System.Windows.Forms.Label();
             this.lblOrgName = new System.Windows.Forms.Label();
-            this.tpComments = new System.Windows.Forms.TabPage();
+            this.tpMBComments = new System.Windows.Forms.TabPage();
             this.lblCommentDisplayEmail = new System.Windows.Forms.Label();
             this.lblCommentUserEmail = new System.Windows.Forms.Label();
             this.lblCommentDisplayUser = new System.Windows.Forms.Label();
@@ -109,20 +121,6 @@
             this.lblActiveUser = new System.Windows.Forms.Label();
             this.btnLogInAndOut = new System.Windows.Forms.Button();
             this.llblCreateAccount = new System.Windows.Forms.LinkLabel();
-            this.sessonTokensTableAdapter1 = new NYMBv2.NYMBv2_DBDataSetTableAdapters.SessonTokensTableAdapter();
-            this.nymBv2_DBDataSet1 = new NYMBv2.NYMBv2_DBDataSet();
-            this.lblReqMerchItem = new System.Windows.Forms.Label();
-            this.lblReqMerchQty = new System.Windows.Forms.Label();
-            this.lblReqMerchDesc = new System.Windows.Forms.Label();
-            this.lblReqMerchDisplayEmail = new System.Windows.Forms.Label();
-            this.lblReqMerchEmail = new System.Windows.Forms.Label();
-            this.lblReqMerchDisplayUser = new System.Windows.Forms.Label();
-            this.lblReqMerchFrom = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.btnOrgSend = new System.Windows.Forms.Button();
-            this.btnReqMerchSend = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
             this.tpAnnouncements.SuspendLayout();
             this.gbxAnnouncements.SuspendLayout();
@@ -144,12 +142,11 @@
             ((System.ComponentModel.ISupportInitialize)(this.ownerPicBox)).BeginInit();
             this.tpMessagebox.SuspendLayout();
             this.tabMessageBox.SuspendLayout();
-            this.tpRequestMerch.SuspendLayout();
-            this.tpOrganizeAnEvent.SuspendLayout();
-            this.tpComments.SuspendLayout();
+            this.tpMBRequestMerch.SuspendLayout();
+            this.tpMBOrganizeAnEvent.SuspendLayout();
+            this.tpMBComments.SuspendLayout();
             this.tpTransactions.SuspendLayout();
             this.tpSystemManagement.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.nymBv2_DBDataSet1)).BeginInit();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -602,59 +599,194 @@
             // 
             // tabMessageBox
             // 
-            this.tabMessageBox.Controls.Add(this.tpRequestMerch);
-            this.tabMessageBox.Controls.Add(this.tpOrganizeAnEvent);
-            this.tabMessageBox.Controls.Add(this.tpComments);
+            this.tabMessageBox.Controls.Add(this.tpMBRequestMerch);
+            this.tabMessageBox.Controls.Add(this.tpMBOrganizeAnEvent);
+            this.tabMessageBox.Controls.Add(this.tpMBComments);
             this.tabMessageBox.Location = new System.Drawing.Point(294, 69);
             this.tabMessageBox.Name = "tabMessageBox";
             this.tabMessageBox.SelectedIndex = 0;
             this.tabMessageBox.Size = new System.Drawing.Size(733, 558);
             this.tabMessageBox.TabIndex = 4;
             // 
-            // tpRequestMerch
+            // tpMBRequestMerch
             // 
-            this.tpRequestMerch.BackColor = System.Drawing.Color.LavenderBlush;
-            this.tpRequestMerch.Controls.Add(this.btnReqMerchSend);
-            this.tpRequestMerch.Controls.Add(this.comboBox1);
-            this.tpRequestMerch.Controls.Add(this.textBox3);
-            this.tpRequestMerch.Controls.Add(this.textBox1);
-            this.tpRequestMerch.Controls.Add(this.lblReqMerchDisplayEmail);
-            this.tpRequestMerch.Controls.Add(this.lblReqMerchEmail);
-            this.tpRequestMerch.Controls.Add(this.lblReqMerchDisplayUser);
-            this.tpRequestMerch.Controls.Add(this.lblReqMerchFrom);
-            this.tpRequestMerch.Controls.Add(this.lblReqMerchDesc);
-            this.tpRequestMerch.Controls.Add(this.lblReqMerchQty);
-            this.tpRequestMerch.Controls.Add(this.lblReqMerchItem);
-            this.tpRequestMerch.Location = new System.Drawing.Point(4, 27);
-            this.tpRequestMerch.Name = "tpRequestMerch";
-            this.tpRequestMerch.Padding = new System.Windows.Forms.Padding(3);
-            this.tpRequestMerch.Size = new System.Drawing.Size(725, 527);
-            this.tpRequestMerch.TabIndex = 0;
-            this.tpRequestMerch.Text = "Request Merchendise";
+            this.tpMBRequestMerch.BackColor = System.Drawing.Color.LavenderBlush;
+            this.tpMBRequestMerch.Controls.Add(this.btnReqMerchSend);
+            this.tpMBRequestMerch.Controls.Add(this.comboBox1);
+            this.tpMBRequestMerch.Controls.Add(this.textBox3);
+            this.tpMBRequestMerch.Controls.Add(this.textBox1);
+            this.tpMBRequestMerch.Controls.Add(this.lblReqMerchDisplayEmail);
+            this.tpMBRequestMerch.Controls.Add(this.lblReqMerchEmail);
+            this.tpMBRequestMerch.Controls.Add(this.lblReqMerchDisplayUser);
+            this.tpMBRequestMerch.Controls.Add(this.lblReqMerchFrom);
+            this.tpMBRequestMerch.Controls.Add(this.lblReqMerchDesc);
+            this.tpMBRequestMerch.Controls.Add(this.lblReqMerchQty);
+            this.tpMBRequestMerch.Controls.Add(this.lblReqMerchItem);
+            this.tpMBRequestMerch.Location = new System.Drawing.Point(4, 27);
+            this.tpMBRequestMerch.Name = "tpMBRequestMerch";
+            this.tpMBRequestMerch.Padding = new System.Windows.Forms.Padding(3);
+            this.tpMBRequestMerch.Size = new System.Drawing.Size(725, 527);
+            this.tpMBRequestMerch.TabIndex = 0;
+            this.tpMBRequestMerch.Text = "Request Merchendise";
             // 
-            // tpOrganizeAnEvent
+            // btnReqMerchSend
             // 
-            this.tpOrganizeAnEvent.BackColor = System.Drawing.Color.LavenderBlush;
-            this.tpOrganizeAnEvent.Controls.Add(this.btnOrgSend);
-            this.tpOrganizeAnEvent.Controls.Add(this.txtOrgName);
-            this.tpOrganizeAnEvent.Controls.Add(this.cbxTime);
-            this.tpOrganizeAnEvent.Controls.Add(this.txtOrgGrpSize);
-            this.tpOrganizeAnEvent.Controls.Add(this.txtOrgDescription);
-            this.tpOrganizeAnEvent.Controls.Add(this.cbxOrgEventType);
-            this.tpOrganizeAnEvent.Controls.Add(this.dtpOrgDate);
-            this.tpOrganizeAnEvent.Controls.Add(this.cbxOrgRequestedSpace);
-            this.tpOrganizeAnEvent.Controls.Add(this.lblOrgGrpSize);
-            this.tpOrganizeAnEvent.Controls.Add(this.lblOrgDesc);
-            this.tpOrganizeAnEvent.Controls.Add(this.lblOrgRequestedSpace);
-            this.tpOrganizeAnEvent.Controls.Add(this.lblOrgTime);
-            this.tpOrganizeAnEvent.Controls.Add(this.lblOrgDate);
-            this.tpOrganizeAnEvent.Controls.Add(this.lblOrgEventType);
-            this.tpOrganizeAnEvent.Controls.Add(this.lblOrgName);
-            this.tpOrganizeAnEvent.Location = new System.Drawing.Point(4, 27);
-            this.tpOrganizeAnEvent.Name = "tpOrganizeAnEvent";
-            this.tpOrganizeAnEvent.Size = new System.Drawing.Size(725, 527);
-            this.tpOrganizeAnEvent.TabIndex = 2;
-            this.tpOrganizeAnEvent.Text = "Organize an event/Reserve Space";
+            this.btnReqMerchSend.Location = new System.Drawing.Point(629, 487);
+            this.btnReqMerchSend.Name = "btnReqMerchSend";
+            this.btnReqMerchSend.Size = new System.Drawing.Size(75, 23);
+            this.btnReqMerchSend.TabIndex = 16;
+            this.btnReqMerchSend.Text = "Send";
+            this.btnReqMerchSend.UseVisualStyleBackColor = true;
+            // 
+            // comboBox1
+            // 
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Items.AddRange(new object[] {
+            "1",
+            "2",
+            "3",
+            "4",
+            "5",
+            "6",
+            "7",
+            "8",
+            "9",
+            "10",
+            "11",
+            "12",
+            "13",
+            "14",
+            "15",
+            "16",
+            "17",
+            "18",
+            "19",
+            "20",
+            "21",
+            "22",
+            "23",
+            "24",
+            "25",
+            "26",
+            "27",
+            "28",
+            "29",
+            "30"});
+            this.comboBox1.Location = new System.Drawing.Point(115, 111);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(200, 26);
+            this.comboBox1.TabIndex = 15;
+            // 
+            // textBox3
+            // 
+            this.textBox3.Location = new System.Drawing.Point(115, 143);
+            this.textBox3.Multiline = true;
+            this.textBox3.Name = "textBox3";
+            this.textBox3.Size = new System.Drawing.Size(589, 338);
+            this.textBox3.TabIndex = 14;
+            // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(115, 79);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(589, 26);
+            this.textBox1.TabIndex = 12;
+            // 
+            // lblReqMerchDisplayEmail
+            // 
+            this.lblReqMerchDisplayEmail.AutoSize = true;
+            this.lblReqMerchDisplayEmail.Location = new System.Drawing.Point(120, 50);
+            this.lblReqMerchDisplayEmail.Name = "lblReqMerchDisplayEmail";
+            this.lblReqMerchDisplayEmail.Size = new System.Drawing.Size(123, 18);
+            this.lblReqMerchDisplayEmail.TabIndex = 11;
+            this.lblReqMerchDisplayEmail.Text = "[E-Mail Address]";
+            // 
+            // lblReqMerchEmail
+            // 
+            this.lblReqMerchEmail.AutoSize = true;
+            this.lblReqMerchEmail.Location = new System.Drawing.Point(22, 50);
+            this.lblReqMerchEmail.Name = "lblReqMerchEmail";
+            this.lblReqMerchEmail.Size = new System.Drawing.Size(89, 18);
+            this.lblReqMerchEmail.TabIndex = 10;
+            this.lblReqMerchEmail.Text = "User Email:";
+            // 
+            // lblReqMerchDisplayUser
+            // 
+            this.lblReqMerchDisplayUser.AutoSize = true;
+            this.lblReqMerchDisplayUser.Location = new System.Drawing.Point(120, 20);
+            this.lblReqMerchDisplayUser.Name = "lblReqMerchDisplayUser";
+            this.lblReqMerchDisplayUser.Size = new System.Drawing.Size(49, 18);
+            this.lblReqMerchDisplayUser.TabIndex = 9;
+            this.lblReqMerchDisplayUser.Text = "[User]";
+            // 
+            // lblReqMerchFrom
+            // 
+            this.lblReqMerchFrom.AutoSize = true;
+            this.lblReqMerchFrom.Location = new System.Drawing.Point(22, 20);
+            this.lblReqMerchFrom.Name = "lblReqMerchFrom";
+            this.lblReqMerchFrom.Size = new System.Drawing.Size(49, 18);
+            this.lblReqMerchFrom.TabIndex = 8;
+            this.lblReqMerchFrom.Text = "From:";
+            // 
+            // lblReqMerchDesc
+            // 
+            this.lblReqMerchDesc.AutoSize = true;
+            this.lblReqMerchDesc.Location = new System.Drawing.Point(22, 146);
+            this.lblReqMerchDesc.Name = "lblReqMerchDesc";
+            this.lblReqMerchDesc.Size = new System.Drawing.Size(92, 18);
+            this.lblReqMerchDesc.TabIndex = 2;
+            this.lblReqMerchDesc.Text = "Description:";
+            // 
+            // lblReqMerchQty
+            // 
+            this.lblReqMerchQty.AutoSize = true;
+            this.lblReqMerchQty.Location = new System.Drawing.Point(22, 114);
+            this.lblReqMerchQty.Name = "lblReqMerchQty";
+            this.lblReqMerchQty.Size = new System.Drawing.Size(68, 18);
+            this.lblReqMerchQty.TabIndex = 1;
+            this.lblReqMerchQty.Text = "Quantity:";
+            // 
+            // lblReqMerchItem
+            // 
+            this.lblReqMerchItem.AutoSize = true;
+            this.lblReqMerchItem.Location = new System.Drawing.Point(22, 82);
+            this.lblReqMerchItem.Name = "lblReqMerchItem";
+            this.lblReqMerchItem.Size = new System.Drawing.Size(87, 18);
+            this.lblReqMerchItem.TabIndex = 0;
+            this.lblReqMerchItem.Text = "Item Name:";
+            // 
+            // tpMBOrganizeAnEvent
+            // 
+            this.tpMBOrganizeAnEvent.BackColor = System.Drawing.Color.LavenderBlush;
+            this.tpMBOrganizeAnEvent.Controls.Add(this.btnOrgSend);
+            this.tpMBOrganizeAnEvent.Controls.Add(this.txtOrgName);
+            this.tpMBOrganizeAnEvent.Controls.Add(this.cbxTime);
+            this.tpMBOrganizeAnEvent.Controls.Add(this.txtOrgGrpSize);
+            this.tpMBOrganizeAnEvent.Controls.Add(this.txtOrgDescription);
+            this.tpMBOrganizeAnEvent.Controls.Add(this.cbxOrgEventType);
+            this.tpMBOrganizeAnEvent.Controls.Add(this.dtpOrgDate);
+            this.tpMBOrganizeAnEvent.Controls.Add(this.cbxOrgRequestedSpace);
+            this.tpMBOrganizeAnEvent.Controls.Add(this.lblOrgGrpSize);
+            this.tpMBOrganizeAnEvent.Controls.Add(this.lblOrgDesc);
+            this.tpMBOrganizeAnEvent.Controls.Add(this.lblOrgRequestedSpace);
+            this.tpMBOrganizeAnEvent.Controls.Add(this.lblOrgTime);
+            this.tpMBOrganizeAnEvent.Controls.Add(this.lblOrgDate);
+            this.tpMBOrganizeAnEvent.Controls.Add(this.lblOrgEventType);
+            this.tpMBOrganizeAnEvent.Controls.Add(this.lblOrgName);
+            this.tpMBOrganizeAnEvent.Location = new System.Drawing.Point(4, 27);
+            this.tpMBOrganizeAnEvent.Name = "tpMBOrganizeAnEvent";
+            this.tpMBOrganizeAnEvent.Size = new System.Drawing.Size(725, 527);
+            this.tpMBOrganizeAnEvent.TabIndex = 2;
+            this.tpMBOrganizeAnEvent.Text = "Organize an event/Reserve Space";
+            // 
+            // btnOrgSend
+            // 
+            this.btnOrgSend.Location = new System.Drawing.Point(636, 490);
+            this.btnOrgSend.Name = "btnOrgSend";
+            this.btnOrgSend.Size = new System.Drawing.Size(75, 23);
+            this.btnOrgSend.TabIndex = 14;
+            this.btnOrgSend.Text = "Send";
+            this.btnOrgSend.UseVisualStyleBackColor = true;
             // 
             // txtOrgName
             // 
@@ -813,22 +945,22 @@
             this.lblOrgName.TabIndex = 0;
             this.lblOrgName.Text = "Organizer Name:";
             // 
-            // tpComments
+            // tpMBComments
             // 
-            this.tpComments.BackColor = System.Drawing.Color.LavenderBlush;
-            this.tpComments.Controls.Add(this.lblCommentDisplayEmail);
-            this.tpComments.Controls.Add(this.lblCommentUserEmail);
-            this.tpComments.Controls.Add(this.lblCommentDisplayUser);
-            this.tpComments.Controls.Add(this.lblCommentFrom);
-            this.tpComments.Controls.Add(this.btnCommentSend);
-            this.tpComments.Controls.Add(this.txtCommentMessage);
-            this.tpComments.Controls.Add(this.txtCommentSubject);
-            this.tpComments.Controls.Add(this.lblCommentSubject);
-            this.tpComments.Location = new System.Drawing.Point(4, 27);
-            this.tpComments.Name = "tpComments";
-            this.tpComments.Size = new System.Drawing.Size(725, 527);
-            this.tpComments.TabIndex = 3;
-            this.tpComments.Text = "Comments/Suggestions";
+            this.tpMBComments.BackColor = System.Drawing.Color.LavenderBlush;
+            this.tpMBComments.Controls.Add(this.lblCommentDisplayEmail);
+            this.tpMBComments.Controls.Add(this.lblCommentUserEmail);
+            this.tpMBComments.Controls.Add(this.lblCommentDisplayUser);
+            this.tpMBComments.Controls.Add(this.lblCommentFrom);
+            this.tpMBComments.Controls.Add(this.btnCommentSend);
+            this.tpMBComments.Controls.Add(this.txtCommentMessage);
+            this.tpMBComments.Controls.Add(this.txtCommentSubject);
+            this.tpMBComments.Controls.Add(this.lblCommentSubject);
+            this.tpMBComments.Location = new System.Drawing.Point(4, 27);
+            this.tpMBComments.Name = "tpMBComments";
+            this.tpMBComments.Size = new System.Drawing.Size(725, 527);
+            this.tpMBComments.TabIndex = 3;
+            this.tpMBComments.Text = "Comments/Suggestions";
             // 
             // lblCommentDisplayEmail
             // 
@@ -874,6 +1006,7 @@
             this.btnCommentSend.TabIndex = 3;
             this.btnCommentSend.Text = "Send";
             this.btnCommentSend.UseVisualStyleBackColor = true;
+            this.btnCommentSend.Click += new System.EventHandler(this.btnCommentSend_Click);
             // 
             // txtCommentMessage
             // 
@@ -1034,150 +1167,6 @@
             this.llblCreateAccount.TabStop = true;
             this.llblCreateAccount.Text = "Don\'t have an account? Create one.";
             // 
-            // sessonTokensTableAdapter1
-            // 
-            this.sessonTokensTableAdapter1.ClearBeforeFill = true;
-            // 
-            // nymBv2_DBDataSet1
-            // 
-            this.nymBv2_DBDataSet1.DataSetName = "NYMBv2_DBDataSet";
-            this.nymBv2_DBDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // lblReqMerchItem
-            // 
-            this.lblReqMerchItem.AutoSize = true;
-            this.lblReqMerchItem.Location = new System.Drawing.Point(22, 82);
-            this.lblReqMerchItem.Name = "lblReqMerchItem";
-            this.lblReqMerchItem.Size = new System.Drawing.Size(87, 18);
-            this.lblReqMerchItem.TabIndex = 0;
-            this.lblReqMerchItem.Text = "Item Name:";
-            // 
-            // lblReqMerchQty
-            // 
-            this.lblReqMerchQty.AutoSize = true;
-            this.lblReqMerchQty.Location = new System.Drawing.Point(22, 114);
-            this.lblReqMerchQty.Name = "lblReqMerchQty";
-            this.lblReqMerchQty.Size = new System.Drawing.Size(68, 18);
-            this.lblReqMerchQty.TabIndex = 1;
-            this.lblReqMerchQty.Text = "Quantity:";
-            // 
-            // lblReqMerchDesc
-            // 
-            this.lblReqMerchDesc.AutoSize = true;
-            this.lblReqMerchDesc.Location = new System.Drawing.Point(22, 146);
-            this.lblReqMerchDesc.Name = "lblReqMerchDesc";
-            this.lblReqMerchDesc.Size = new System.Drawing.Size(92, 18);
-            this.lblReqMerchDesc.TabIndex = 2;
-            this.lblReqMerchDesc.Text = "Description:";
-            // 
-            // lblReqMerchDisplayEmail
-            // 
-            this.lblReqMerchDisplayEmail.AutoSize = true;
-            this.lblReqMerchDisplayEmail.Location = new System.Drawing.Point(120, 50);
-            this.lblReqMerchDisplayEmail.Name = "lblReqMerchDisplayEmail";
-            this.lblReqMerchDisplayEmail.Size = new System.Drawing.Size(123, 18);
-            this.lblReqMerchDisplayEmail.TabIndex = 11;
-            this.lblReqMerchDisplayEmail.Text = "[E-Mail Address]";
-            // 
-            // lblReqMerchEmail
-            // 
-            this.lblReqMerchEmail.AutoSize = true;
-            this.lblReqMerchEmail.Location = new System.Drawing.Point(22, 50);
-            this.lblReqMerchEmail.Name = "lblReqMerchEmail";
-            this.lblReqMerchEmail.Size = new System.Drawing.Size(89, 18);
-            this.lblReqMerchEmail.TabIndex = 10;
-            this.lblReqMerchEmail.Text = "User Email:";
-            // 
-            // lblReqMerchDisplayUser
-            // 
-            this.lblReqMerchDisplayUser.AutoSize = true;
-            this.lblReqMerchDisplayUser.Location = new System.Drawing.Point(120, 20);
-            this.lblReqMerchDisplayUser.Name = "lblReqMerchDisplayUser";
-            this.lblReqMerchDisplayUser.Size = new System.Drawing.Size(49, 18);
-            this.lblReqMerchDisplayUser.TabIndex = 9;
-            this.lblReqMerchDisplayUser.Text = "[User]";
-            // 
-            // lblReqMerchFrom
-            // 
-            this.lblReqMerchFrom.AutoSize = true;
-            this.lblReqMerchFrom.Location = new System.Drawing.Point(22, 20);
-            this.lblReqMerchFrom.Name = "lblReqMerchFrom";
-            this.lblReqMerchFrom.Size = new System.Drawing.Size(49, 18);
-            this.lblReqMerchFrom.TabIndex = 8;
-            this.lblReqMerchFrom.Text = "From:";
-            // 
-            // textBox1
-            // 
-            this.textBox1.Location = new System.Drawing.Point(115, 79);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(589, 26);
-            this.textBox1.TabIndex = 12;
-            // 
-            // textBox3
-            // 
-            this.textBox3.Location = new System.Drawing.Point(115, 143);
-            this.textBox3.Multiline = true;
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(589, 338);
-            this.textBox3.TabIndex = 14;
-            // 
-            // comboBox1
-            // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Items.AddRange(new object[] {
-            "1",
-            "2",
-            "3",
-            "4",
-            "5",
-            "6",
-            "7",
-            "8",
-            "9",
-            "10",
-            "11",
-            "12",
-            "13",
-            "14",
-            "15",
-            "16",
-            "17",
-            "18",
-            "19",
-            "20",
-            "21",
-            "22",
-            "23",
-            "24",
-            "25",
-            "26",
-            "27",
-            "28",
-            "29",
-            "30"});
-            this.comboBox1.Location = new System.Drawing.Point(115, 111);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(200, 26);
-            this.comboBox1.TabIndex = 15;
-            // 
-            // btnOrgSend
-            // 
-            this.btnOrgSend.Location = new System.Drawing.Point(636, 490);
-            this.btnOrgSend.Name = "btnOrgSend";
-            this.btnOrgSend.Size = new System.Drawing.Size(75, 23);
-            this.btnOrgSend.TabIndex = 14;
-            this.btnOrgSend.Text = "Send";
-            this.btnOrgSend.UseVisualStyleBackColor = true;
-            // 
-            // btnReqMerchSend
-            // 
-            this.btnReqMerchSend.Location = new System.Drawing.Point(629, 487);
-            this.btnReqMerchSend.Name = "btnReqMerchSend";
-            this.btnReqMerchSend.Size = new System.Drawing.Size(75, 23);
-            this.btnReqMerchSend.TabIndex = 16;
-            this.btnReqMerchSend.Text = "Send";
-            this.btnReqMerchSend.UseVisualStyleBackColor = true;
-            // 
             // Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1215,15 +1204,14 @@
             this.tpMessagebox.ResumeLayout(false);
             this.tpMessagebox.PerformLayout();
             this.tabMessageBox.ResumeLayout(false);
-            this.tpRequestMerch.ResumeLayout(false);
-            this.tpRequestMerch.PerformLayout();
-            this.tpOrganizeAnEvent.ResumeLayout(false);
-            this.tpOrganizeAnEvent.PerformLayout();
-            this.tpComments.ResumeLayout(false);
-            this.tpComments.PerformLayout();
+            this.tpMBRequestMerch.ResumeLayout(false);
+            this.tpMBRequestMerch.PerformLayout();
+            this.tpMBOrganizeAnEvent.ResumeLayout(false);
+            this.tpMBOrganizeAnEvent.PerformLayout();
+            this.tpMBComments.ResumeLayout(false);
+            this.tpMBComments.PerformLayout();
             this.tpTransactions.ResumeLayout(false);
             this.tpSystemManagement.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.nymBv2_DBDataSet1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1251,7 +1239,6 @@
 		private System.Windows.Forms.Button button8;
 		private System.Windows.Forms.Button btnEditBindersTable;
         private NYMBv2_DBDataSetTableAdapters.SessonTokensTableAdapter sessonTokensTableAdapter1;
-        private NYMBv2_DBDataSet nymBv2_DBDataSet1;
 		private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Panel pnlWeek;
         private System.Windows.Forms.GroupBox gbxSaturday;
@@ -1287,8 +1274,8 @@
         private System.Windows.Forms.Label lblSysManagement;
         private System.Windows.Forms.Label lblMessagesFootnote;
         private System.Windows.Forms.TabControl tabMessageBox;
-        private System.Windows.Forms.TabPage tpRequestMerch;
-        private System.Windows.Forms.TabPage tpOrganizeAnEvent;
+        private System.Windows.Forms.TabPage tpMBRequestMerch;
+        private System.Windows.Forms.TabPage tpMBOrganizeAnEvent;
         private System.Windows.Forms.TextBox txtOrgName;
         private System.Windows.Forms.ComboBox cbxTime;
         private System.Windows.Forms.TextBox txtOrgGrpSize;
@@ -1303,7 +1290,7 @@
         private System.Windows.Forms.Label lblOrgDate;
         private System.Windows.Forms.Label lblOrgEventType;
         private System.Windows.Forms.Label lblOrgName;
-        private System.Windows.Forms.TabPage tpComments;
+        private System.Windows.Forms.TabPage tpMBComments;
         private System.Windows.Forms.Label lblCommentDisplayEmail;
         private System.Windows.Forms.Label lblCommentUserEmail;
         private System.Windows.Forms.Label lblCommentDisplayUser;

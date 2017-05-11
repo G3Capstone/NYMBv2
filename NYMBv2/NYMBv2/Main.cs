@@ -9,6 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Configuration;
+using System.Net.Mail;
 
 namespace NYMBv2
 {
@@ -29,6 +30,13 @@ namespace NYMBv2
         DateTime today = System.DateTime.Now;
         DateTime BeginningOfWeek;
         DateTime EndOfWeek;
+
+        #endregion
+
+        #region Global Variables for the MessageBox Tab
+
+        List<string> eventSpaceList;
+
 
         #endregion
 
@@ -74,6 +82,14 @@ namespace NYMBv2
 
             #region StoreInfo initilizion
             ReadStoreInfo();
+            #endregion
+
+            #region MessageBox Initialization
+
+            dtpOrgDate.MinDate = DateTime.Now;
+            dtpOrgDate.MaxDate = DateTime.Now.AddMonths(6);
+            eventSpaceList = GetEventSpaces();
+
             #endregion
 
         }
@@ -600,9 +616,6 @@ namespace NYMBv2
 
         #region Store Info
 
-
-        #region StoreInfo Methods
-
         #region read from the StoreInfo table in the database.
 
 
@@ -682,31 +695,74 @@ namespace NYMBv2
 
         #endregion
 
-        #endregion
-
         #region Message Box
 
+        private List<string> GetEventSpaces()
+        {
+            List<string> spaces = new List<string>();
+
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+
+
+                //SQL select statement  
+                string query = @"SELECT [Name] from [dbo].[EventSpace]";
+
+                //Create a SQLCommand, passing the query and the connection
+                SqlCommand cmd = new SqlCommand(query, connection);
+
+                //connecting the SQLCommand Control and the database
+                cmd.Connection.Open();
+
+                //Creating a SQLDataReader to read the results of the query ran by the
+                // SQLCommand ExecuteReader function
+                using (SqlDataReader sql_reader = cmd.ExecuteReader())
+                {
+                    while (sql_reader.Read())
+                    {
+                        spaces.Add(sql_reader["Name"].ToString());
+                    }
+                    //returning the store
+                    return spaces;
+
+                }
+            }
+
+        }
+
+        private void SendComment()
+        {
+
+            MailMessage mail = new MailMessage(new MailAddress(ActiveSesson._Email, ActiveSesson._FirstName + " " + ActiveSesson._LastName + " / " + ActiveSesson._Email),
+                                                new MailAddress("notyourmothersbasementG3@gmail.com", "Admin"));
+            SmtpClient client = new SmtpClient();
+            client.Port = 25;
+            client.Host = "smtp.gmail.com";
+            client.EnableSsl = true;
+            client.Timeout = 10000;
+            client.DeliveryMethod = SmtpDeliveryMethod.Network;
+            client.UseDefaultCredentials = false;
+            client.Credentials = new System.Net.NetworkCredential("notyourmothersbasementG3@gmail.com", "capstoneG3");
+
+            mail.Subject = txtCommentSubject.Text;
+            mail.Body = txtCommentMessage.Text;
+            client.Send(mail);
+        }
+
+        #endregion
+
+        #region Transactions
+
 
 
         #endregion
 
-        #region Product Manager
+        #region System Management
 
 
 
         #endregion
-
-        #region User Manager
-
-
-
-        #endregion
-
-        #region Settings
-
-
-
-        #endregion
+    
 
 
         #endregion
@@ -947,6 +1003,11 @@ namespace NYMBv2
         private void gbxEvents_Enter(object sender, EventArgs e)
         {
 
+        }
+
+        private void btnCommentSend_Click(object sender, EventArgs e)
+        {
+            SendComment();
         }
     }
 }

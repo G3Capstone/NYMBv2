@@ -164,7 +164,6 @@
             this.tableAdapterManager.DiceTableAdapter = null;
             this.tableAdapterManager.EventSpaceTableAdapter = null;
             this.tableAdapterManager.EventsTableAdapter = this.eventsTableAdapter;
-            this.tableAdapterManager.ManufacturersTableAdapter = null;
             this.tableAdapterManager.MiscTableAdapter = null;
             this.tableAdapterManager.PublisherTableAdapter = null;
             this.tableAdapterManager.SessonTokensTableAdapter = null;
