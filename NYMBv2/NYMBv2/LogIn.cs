@@ -40,10 +40,9 @@ namespace NYMBv2
         {
             //RNGCryptoServiceProvider saltShaker = new RNGCryptoServiceProvider();
 
-
+            SessonToken newSesson;
             string _UserName = txtbxUsername.Text;          //Holds the username
-            string _Password = txtbxPassword.Text;          //Holds the password
-            string _UserLevel = "";                                 //Holds the rank of user
+            string _Password = txtbxPassword.Text;          //Holds the password 
 
             /**
              * Try statement to catch errors 
@@ -57,7 +56,7 @@ namespace NYMBv2
 
                     //SQL select statement  
 
-                    string query = @"SELECT [UserLevel] FROM [dbo].[USER_TABLE] 
+                    string query = @"SELECT [UserLevel], [FirstName], [LastName], [Email] FROM [dbo].[USER_TABLE] 
                             WHERE ([UserName] = '" + _UserName + "') AND ([Password] = '" +  _Password + "')";
 
                     //Create a SQLCommand, passing the query and the connection
@@ -68,12 +67,10 @@ namespace NYMBv2
 
                     using (SqlDataReader sql_reader = cmd.ExecuteReader())
                     {
-                        while (sql_reader.Read())
-                        {
-
-                            _UserLevel = sql_reader["UserLevel"].ToString();
-
-                        }
+                        sql_reader.Read();
+                        newSesson = new SessonToken(_UserName, sql_reader["UserLevel"].ToString(), sql_reader["Email"].ToString(),
+                                                     sql_reader["FirstName"].ToString(), sql_reader["LastName"].ToString());
+                        
                     }
 
                     //closes the connection
@@ -81,14 +78,15 @@ namespace NYMBv2
 
                     //if the previous query returned a string with a correct user level, then the
                     //user exists and the password for that user was correct
-                    if (_UserLevel == "Guest" || _UserLevel == "Customer" ||
-                        _UserLevel == "Employee" || _UserLevel == "Admin")
+                    if (newSesson._UserLevel == "Guest" || newSesson._UserLevel == "Customer" ||
+                        newSesson._UserLevel == "Employee" || newSesson._UserLevel == "Admin")
                     {
 
                         //Holds who is the most current user
                         string queryClearTokens = @"DELETE FROM [dbo].[SessonTokens] ";
-                        string queryNewToken = @"INSERT INTO [dbo].[SessonTokens] VALUES ( '" + 
-                            _UserName + "' , '" + _UserLevel + "' )";
+                        string queryNewToken = @"INSERT INTO [dbo].[SessonTokens] VALUES ( '" +
+                            newSesson._UserName + "' , '" + newSesson._UserLevel + "', '" + newSesson._FirstName + "', '" + 
+                            newSesson._LastName + "', '" + newSesson._Email + "' )";
 
                         //clears the sessontoken table
                         cmd = new SqlCommand(queryClearTokens, connection);
@@ -132,7 +130,7 @@ namespace NYMBv2
                 string queryClearTokens = @"DELETE FROM [dbo].[SessonTokens] ";
 
                 //SQL Query that adds the Guest SessonToken to the sessonToken table of the database
-                string queryGuestToken = @"INSERT INTO [dbo].[SessonTokens] VALUES ( 'Guest' , 'Guest' )";
+                string queryGuestToken = @"INSERT INTO [dbo].[SessonTokens] VALUES ( 'Guest' , 'Guest' , 'NA', 'NA', 'NA')";
 
                 //Creates the SQL Command with the clear query
                 SqlCommand command = new SqlCommand(queryClearTokens, connection);

@@ -21,8 +21,8 @@ namespace NYMBv2
 
 
         #region Global variables
-        string activeUser;
-        string activeLevel;
+        SessonToken ActiveSesson;
+
 
         #region Global Variables for the Events Tab
 
@@ -85,7 +85,7 @@ namespace NYMBv2
             //If the Active user is a guest then it opens the 
             //Log in popup. If the user is not a guest then
             //It logs the user out and logs in the guest.
-            if (activeUser == "Guest")
+            if (ActiveSesson._UserLevel == "Guest")
             {
                 LogIn mylogin = new LogIn();
                 mylogin.ShowDialog();
@@ -721,7 +721,7 @@ namespace NYMBv2
             using (SqlConnection connection = new SqlConnection(connectionString))
             {
                 //SQL select statement
-                String query = @"SELECT [User], [UserLevel] FROM [dbo].[SessonTokens] ";
+                String query = @"SELECT [User], [UserLevel],[FirstName], [LastName], [Email] FROM [dbo].[SessonTokens] ";
 
                 //Create a SQLCommand, passing the query and the connection
                 SqlCommand cmd = new SqlCommand(query, connection);
@@ -735,11 +735,12 @@ namespace NYMBv2
                 {
                     while (sql_reader.Read())
                     {
-                        //gets the active user and their user level from the 
-                        //sessonTokens database and stores them in the ActiveUser
-                        //and ActiveLevel variables, respectively.
-                        activeUser = sql_reader["User"].ToString();
-                        activeLevel = sql_reader["UserLevel"].ToString();
+                        //gets the active user and their user Info from the 
+                        //sessonTokens database and stores them in the Active Sesson
+                        //SessonToken
+                        ActiveSesson = new SessonToken(sql_reader["User"].ToString(), sql_reader["UserLevel"].ToString(),
+                            sql_reader["Email"].ToString(), sql_reader["FirstName"].ToString(), sql_reader["LastName"].ToString());
+
                     }
                 }
             }
@@ -759,7 +760,7 @@ namespace NYMBv2
                 String queryClearTokens = @"DELETE FROM [dbo].[SessonTokens] ";
 
                 //SQL Query that adds the Guest SessonToken to the sessonToken table of the database
-                String queryGuestToken = @"INSERT INTO [dbo].[SessonTokens] VALUES ( 'Guest' , 'Guest' )";
+                String queryGuestToken = @"INSERT INTO [dbo].[SessonTokens] VALUES ( 'Guest' , 'Guest' , 'NA', 'NA', 'NA')";
 
                 //Creates the SQL Command with the clear query
                 SqlCommand command = new SqlCommand(queryClearTokens, connection);
@@ -801,13 +802,13 @@ namespace NYMBv2
             GetActiveUserInfo();
 
             //Displays the current user on the form
-            lblActiveUser.Text = activeUser;
+            lblActiveUser.Text = ActiveSesson._UserName;
 
             //If the active user is guest
             //then it changes the button to say
             //Log In. Otherwise it sets it
             //to Log Out
-            if (activeUser == "Guest")
+            if (ActiveSesson._UserLevel == "Guest")
             {
                 btnLogInAndOut.Text = "Log In";
             }
@@ -845,30 +846,47 @@ namespace NYMBv2
             // If all the tabs are showing, remove the 
             //product manager, user manager, and settings
             // tabs
-            if (tabControl1.TabCount == 8)
+            if (tabControl1.TabCount == 7)
             { 
-                tabControl1.TabPages.RemoveAt(7);
                 tabControl1.TabPages.RemoveAt(6);
                 tabControl1.TabPages.RemoveAt(5);
+                tabControl1.TabPages.RemoveAt(4);
 
                 //Hides the gbx for the Events admin toolbox
                 gbxEventsAdminToolBox.Visible = false;
+            }
+            else if (tabControl1.TabCount == 6)
+            {
+                tabControl1.TabPages.RemoveAt(5);
+                tabControl1.TabPages.RemoveAt(4);
+            }
+            else if (tabControl1.TabCount == 5)
+            {
+                tabControl1.TabPages.RemoveAt(4);
             }
 
             //If the active user has admin rights, 
             // then add the product manager, user manager
             //, and settings tabs
-            if (activeLevel == "Admin")
+            if (ActiveSesson._UserLevel == "Admin")
             {
+                tabControl1.TabPages.Add(tpMessagebox);
                 tabControl1.TabPages.Add(tpTransactions);
-                tabControl1.TabPages.Add(tpInbox);
                 tabControl1.TabPages.Add(tpSystemManagement);
                 
 
                 //Shows the gbx for the Events admin toolbox
                 gbxEventsAdminToolBox.Visible = true;
             }
-
+            else if (ActiveSesson._UserLevel == "Employee")
+            {
+                tabControl1.TabPages.Add(tpMessagebox);
+                tabControl1.TabPages.Add(tpTransactions);
+            }
+            else if (ActiveSesson._UserLevel == "Customer")
+            {
+                tabControl1.TabPages.Add(tpMessagebox);
+            }
 
         }
 
