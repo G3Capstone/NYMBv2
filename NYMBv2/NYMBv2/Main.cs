@@ -793,7 +793,7 @@ namespace NYMBv2
 
                 formattedMessage += "Requested Item:\t\t\t\t" + txtReqMerchItemName.Text + "\n";
                 formattedMessage += "Qty Requested:\t\t\t\t" + cbxReqMerchQty.SelectedItem.ToString() + "\n";
-                formattedMessage += "Item Desc:\t\t\t\t" + txtReqMerchDesc.Text + "\n\n\n\n\n";
+                formattedMessage += "Item Desc:\t\t\t\t\t" + txtReqMerchDesc.Text + "\n\n\n\n\n";
                 formattedMessage += "This is sent using the NYMBv2 Content Management Application. DO NOT REPLY to this eMail";
                 formattedMessage += "Send all Replies to this message to the email address in this message.";
             }
@@ -803,15 +803,15 @@ namespace NYMBv2
                 DateTime tempDate = dtpOrgDate.Value;
 
                 formattedMessage += "Space Reservation/Event Form \n\n\n";
-                formattedMessage += "From:\t\t\t\t" + ActiveSesson._FirstName + ActiveSesson._LastName + "\n";
-                formattedMessage += "Email:\t\t\t\t" + ActiveSesson._Email + "\n\n";
+                formattedMessage += "From:\t\t\t\t\t" + ActiveSesson._FirstName + ActiveSesson._LastName + "\n";
+                formattedMessage += "Email:\t\t\t\t\t" + ActiveSesson._Email + "\n\n";
 
                 formattedMessage += "Event Type:\t\t\t\t" + cbxOrgEventType.SelectedItem.ToString() + "\n";
-                formattedMessage += "Date:\t\t\t\t" + tempDate.ToShortDateString() + "\n";
-                formattedMessage += "Time:\t\t\t\t" + cbxTime.SelectedItem.ToString() + "\n";
+                formattedMessage += "Date:\t\t\t\t\t" + tempDate.ToShortDateString() + "\n";
+                formattedMessage += "Time:\t\t\t\t\t" + cbxTime.SelectedItem.ToString() + "\n";
                 formattedMessage += "Requested Space:\t\t\t\t" + cbxOrgRequestedSpace.SelectedItem.ToString() + "\n";
                 formattedMessage += "Estimated Group Size:\t\t\t\t" + txtOrgGrpSize.Text + "\n";
-                formattedMessage += "Item Description:\t\t\t\t" + txtOrgDescription.Text + "\n\n\n\n\n";
+                formattedMessage += "Item Description:\t\t\t\t\t" + txtOrgDescription.Text + "\n\n\n\n\n";
                 formattedMessage += "This is sent using the NYMBv2 Content Management Application. DO NOT REPLY to this eMail";
                 formattedMessage += "Send all Replies to this message to the email address in this message.";
 
@@ -823,7 +823,7 @@ namespace NYMBv2
                 formattedMessage += "Email:\t\t\t\t" + ActiveSesson._Email + "\n\n";
 
                 formattedMessage += "Subject:\t\t\t" + txtCommentSubject.Text + "\n";
-                formattedMessage += "Body:\t\t\t\t" + txtCommentMessage.Text + "\n\n\n\n\n";
+                formattedMessage += "Body:\t\t\t\t " + txtCommentMessage.Text + "\n\n\n\n\n";
                 formattedMessage += "This is sent using the NYMBv2 Content Management Application. DO NOT REPLY to this eMail";
                 formattedMessage += "Send all Replies to this message to the email address in this message.";
 
@@ -875,9 +875,15 @@ namespace NYMBv2
             {
                 try
                 {
-                    MailMessage mail = new MailMessage(new MailAddress(ActiveSesson._Email, ActiveSesson._FirstName +
-                                                        "  " + ActiveSesson._LastName),
-                                                        new MailAddress("notyourmothersbasementG3@gmail.com", "Admin"));
+                    //the current user is who is sending the message.
+                    MailAddress From = new MailAddress(ActiveSesson._Email, ActiveSesson._FirstName +
+                                                        "  " + ActiveSesson._LastName);
+
+                    //the admin account is who is receiveing the message
+                    MailAddress to = new MailAddress("notyourmothersbasementG3@gmail.com", "Admin");
+
+
+                    MailMessage mail = new MailMessage(From,to);
                     SmtpClient client = new SmtpClient();
                     client.Port = 587;
                     client.Host = "smtp.gmail.com";
@@ -904,6 +910,7 @@ namespace NYMBv2
                     mail.Body = FormatMessage(messageType);
                     client.Send(mail);
                     mail.Dispose();
+                    client.Dispose();
 
                     MessageBox.Show("Message Sent!");
 
@@ -1208,5 +1215,10 @@ namespace NYMBv2
 
         }
 
+        private void button7_Click_1(object sender, EventArgs e)
+        {
+            SystemManager_Dummy myManager = new SystemManager_Dummy();
+            myManager.ShowDialog();
+        }
     }
 }

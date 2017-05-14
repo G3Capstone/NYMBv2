@@ -117,7 +117,6 @@
             this.button8 = new System.Windows.Forms.Button();
             this.tpSystemManagement = new System.Windows.Forms.TabPage();
             this.lblSysManagement = new System.Windows.Forms.Label();
-            this.button7 = new System.Windows.Forms.Button();
             this.lblTitle = new System.Windows.Forms.Label();
             this.lblUserText = new System.Windows.Forms.Label();
             this.lblActiveUser = new System.Windows.Forms.Label();
@@ -126,6 +125,7 @@
             this.btnReqMerchClear = new System.Windows.Forms.Button();
             this.btnOrgClear = new System.Windows.Forms.Button();
             this.btnCommentClear = new System.Windows.Forms.Button();
+            this.button7 = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
             this.tpAnnouncements.SuspendLayout();
             this.gbxAnnouncements.SuspendLayout();
@@ -180,6 +180,7 @@
             // tpAnnouncements
             // 
             this.tpAnnouncements.BackColor = System.Drawing.Color.LightBlue;
+            this.tpAnnouncements.Controls.Add(this.button7);
             this.tpAnnouncements.Controls.Add(this.gbxAnnouncements);
             this.tpAnnouncements.Controls.Add(this.lblAnnouncements);
             this.tpAnnouncements.ForeColor = System.Drawing.SystemColors.ControlText;
@@ -1121,7 +1122,6 @@
             // 
             this.tpSystemManagement.BackColor = System.Drawing.Color.GhostWhite;
             this.tpSystemManagement.Controls.Add(this.lblSysManagement);
-            this.tpSystemManagement.Controls.Add(this.button7);
             this.tpSystemManagement.Location = new System.Drawing.Point(149, 4);
             this.tpSystemManagement.Name = "tpSystemManagement";
             this.tpSystemManagement.Size = new System.Drawing.Size(1296, 670);
@@ -1137,16 +1137,6 @@
             this.lblSysManagement.TabIndex = 1;
             this.lblSysManagement.Text = "System Management";
             this.lblSysManagement.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // button7
-            // 
-            this.button7.Location = new System.Drawing.Point(832, 625);
-            this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(75, 23);
-            this.button7.TabIndex = 0;
-            this.button7.Text = "button7";
-            this.button7.UseVisualStyleBackColor = true;
-            this.button7.Click += new System.EventHandler(this.button7_Click);
             // 
             // lblTitle
             // 
@@ -1229,6 +1219,16 @@
             this.btnCommentClear.UseVisualStyleBackColor = true;
             this.btnCommentClear.Click += new System.EventHandler(this.btnCommentClear_Click);
             // 
+            // button7
+            // 
+            this.button7.Location = new System.Drawing.Point(37, 112);
+            this.button7.Name = "button7";
+            this.button7.Size = new System.Drawing.Size(75, 23);
+            this.button7.TabIndex = 3;
+            this.button7.Text = "button7";
+            this.button7.UseVisualStyleBackColor = true;
+            this.button7.Click += new System.EventHandler(this.button7_Click_1);
+            // 
             // Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1297,7 +1297,6 @@
         private System.Windows.Forms.Label lblAnnouncements;
 		private System.Windows.Forms.TextBox txtbxSearchInventory;
 		private System.Windows.Forms.Label lblInventory;
-		private System.Windows.Forms.Button button7;
 		private System.Windows.Forms.Button button8;
 		private System.Windows.Forms.Button btnEditBindersTable;
         private NYMBv2_DBDataSetTableAdapters.SessonTokensTableAdapter sessonTokensTableAdapter1;
@@ -1379,6 +1378,7 @@
         private System.Windows.Forms.Button btnReqMerchClear;
         private System.Windows.Forms.Button btnOrgClear;
         private System.Windows.Forms.Button btnCommentClear;
+        private System.Windows.Forms.Button button7;
     }
 }
 
