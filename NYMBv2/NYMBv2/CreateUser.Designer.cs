@@ -52,6 +52,8 @@
             this.btnCreate = new System.Windows.Forms.Button();
             this.btnCancel = new System.Windows.Forms.Button();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
+            this.lblLastErrMsg = new System.Windows.Forms.Label();
+            this.lblFirstErrMsg = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pbxUsernameWarning)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbxPasswordWarning)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbxConfirmPasswordWarning)).BeginInit();
@@ -164,9 +166,9 @@
             // lblUsernameErrMsg
             // 
             this.lblUsernameErrMsg.ForeColor = System.Drawing.Color.IndianRed;
-            this.lblUsernameErrMsg.Location = new System.Drawing.Point(217, 46);
+            this.lblUsernameErrMsg.Location = new System.Drawing.Point(146, 46);
             this.lblUsernameErrMsg.Name = "lblUsernameErrMsg";
-            this.lblUsernameErrMsg.Size = new System.Drawing.Size(144, 23);
+            this.lblUsernameErrMsg.Size = new System.Drawing.Size(215, 23);
             this.lblUsernameErrMsg.TabIndex = 12;
             this.lblUsernameErrMsg.Text = "Error Text";
             this.lblUsernameErrMsg.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -174,9 +176,9 @@
             // lblPasswordErrMsg
             // 
             this.lblPasswordErrMsg.ForeColor = System.Drawing.Color.IndianRed;
-            this.lblPasswordErrMsg.Location = new System.Drawing.Point(217, 93);
+            this.lblPasswordErrMsg.Location = new System.Drawing.Point(146, 93);
             this.lblPasswordErrMsg.Name = "lblPasswordErrMsg";
-            this.lblPasswordErrMsg.Size = new System.Drawing.Size(144, 23);
+            this.lblPasswordErrMsg.Size = new System.Drawing.Size(215, 23);
             this.lblPasswordErrMsg.TabIndex = 13;
             this.lblPasswordErrMsg.Text = "Error Text";
             this.lblPasswordErrMsg.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -184,9 +186,9 @@
             // lblConfirmPasswordErrMsg
             // 
             this.lblConfirmPasswordErrMsg.ForeColor = System.Drawing.Color.IndianRed;
-            this.lblConfirmPasswordErrMsg.Location = new System.Drawing.Point(217, 140);
+            this.lblConfirmPasswordErrMsg.Location = new System.Drawing.Point(143, 140);
             this.lblConfirmPasswordErrMsg.Name = "lblConfirmPasswordErrMsg";
-            this.lblConfirmPasswordErrMsg.Size = new System.Drawing.Size(144, 23);
+            this.lblConfirmPasswordErrMsg.Size = new System.Drawing.Size(218, 23);
             this.lblConfirmPasswordErrMsg.TabIndex = 14;
             this.lblConfirmPasswordErrMsg.Text = "Error Text";
             this.lblConfirmPasswordErrMsg.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -194,9 +196,9 @@
             // lblEmailErrMsg
             // 
             this.lblEmailErrMsg.ForeColor = System.Drawing.Color.IndianRed;
-            this.lblEmailErrMsg.Location = new System.Drawing.Point(217, 278);
+            this.lblEmailErrMsg.Location = new System.Drawing.Point(149, 278);
             this.lblEmailErrMsg.Name = "lblEmailErrMsg";
-            this.lblEmailErrMsg.Size = new System.Drawing.Size(144, 23);
+            this.lblEmailErrMsg.Size = new System.Drawing.Size(212, 23);
             this.lblEmailErrMsg.TabIndex = 15;
             this.lblEmailErrMsg.Text = "Error Text";
             this.lblEmailErrMsg.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -258,12 +260,34 @@
             // 
             this.errorProvider1.ContainerControl = this;
             // 
+            // lblLastErrMsg
+            // 
+            this.lblLastErrMsg.ForeColor = System.Drawing.Color.IndianRed;
+            this.lblLastErrMsg.Location = new System.Drawing.Point(148, 231);
+            this.lblLastErrMsg.Name = "lblLastErrMsg";
+            this.lblLastErrMsg.Size = new System.Drawing.Size(212, 23);
+            this.lblLastErrMsg.TabIndex = 22;
+            this.lblLastErrMsg.Text = "Error Text";
+            this.lblLastErrMsg.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // lblFirstErrMsg
+            // 
+            this.lblFirstErrMsg.ForeColor = System.Drawing.Color.IndianRed;
+            this.lblFirstErrMsg.Location = new System.Drawing.Point(148, 186);
+            this.lblFirstErrMsg.Name = "lblFirstErrMsg";
+            this.lblFirstErrMsg.Size = new System.Drawing.Size(212, 23);
+            this.lblFirstErrMsg.TabIndex = 23;
+            this.lblFirstErrMsg.Text = "Error Text";
+            this.lblFirstErrMsg.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
             // CreateUser
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.ClientSize = new System.Drawing.Size(375, 367);
+            this.Controls.Add(this.lblFirstErrMsg);
+            this.Controls.Add(this.lblLastErrMsg);
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.btnCreate);
             this.Controls.Add(this.pbxEmail);
@@ -324,5 +348,7 @@
         private System.Windows.Forms.Button btnCreate;
         private System.Windows.Forms.Button btnCancel;
         private System.Windows.Forms.ErrorProvider errorProvider1;
+        private System.Windows.Forms.Label lblFirstErrMsg;
+        private System.Windows.Forms.Label lblLastErrMsg;
     }
 }

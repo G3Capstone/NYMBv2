@@ -76,7 +76,8 @@ namespace NYMBv2
                    ValidatePassword(password) == true &&
                    ValidateFirstName(firstname) == true &&
                    ValidateLastName(lastname) == true &&
-                   ValidateEmail(email) == true)
+                   ValidateEmail(email) == true &&
+                   password == confirm)
                 {
                     CreateUserAccount(username, password, firstname, lastname, email);
 
@@ -153,6 +154,8 @@ namespace NYMBv2
             if (password.Length >= MIN_LENGTH && password.Length <= MAX_LENGTH)
             {
                 valid = true;
+
+                lblUsernameErrMsg.Visible = false;
             }
             else
             {
@@ -221,6 +224,8 @@ namespace NYMBv2
             if (special == 0)
             {
                 valid = true;
+
+                lblUsernameErrMsg.Visible = false;
             }
             else
             {
@@ -286,6 +291,9 @@ namespace NYMBv2
             if (password.Length >= MIN_LENGTH && password.Length <= MAX_LENGTH)
             {
                 valid = true;
+
+                lblPasswordErrMsg.Visible = false;
+
             }
             else
             {
@@ -329,6 +337,8 @@ namespace NYMBv2
             if (whitespace == 0)
             {
                 valid = true;
+
+                lblPasswordErrMsg.Visible = false;
             }
             else
             {
@@ -373,6 +383,9 @@ namespace NYMBv2
                 if (uppercase >= 1)
                 {
                     valid = true;
+
+                   lblPasswordErrMsg.Visible = false;
+
                 }
                 else
                 {
@@ -416,6 +429,9 @@ namespace NYMBv2
             if (lowercase >= 1)
             {
                 valid = true;
+
+                lblPasswordErrMsg.Visible = false;
+
             }
             else
             {
@@ -459,6 +475,9 @@ namespace NYMBv2
             if (digit >= 1)
             {
                 valid = true;
+
+                lblPasswordErrMsg.Visible = false;
+
             }
             else
             {
@@ -502,6 +521,9 @@ namespace NYMBv2
             if (special >= 1)
             {
                 valid = true;
+
+                lblPasswordErrMsg.Visible = false;
+
             }
             else
             {
@@ -569,6 +591,9 @@ namespace NYMBv2
             if (special == 0)
             {
                 valid = true;
+
+                lblPasswordErrMsg.Visible = false;
+
             }
             else
             {
@@ -659,9 +684,6 @@ namespace NYMBv2
         }
         #endregion
 
-
-
-
         #endregion
 
         #region First Name Validation Methods
@@ -681,6 +703,9 @@ namespace NYMBv2
             if (first.Length >= MIN_LENGTH && first.Length <= MAX_LENGTH)
             {
                 valid = true;
+
+                lblFirstErrMsg.Visible = false;
+
             }
             else
             {
@@ -688,10 +713,10 @@ namespace NYMBv2
                 valid = false;
 
                 //Show the error message below the password textbox.
-                lblUsernameErrMsg.Visible = true;
+                lblFirstErrMsg.Visible = true;
 
                 //Change the text to inform the user of the password error.
-                lblUsernameErrMsg.Text = "First name must be 1-20 characters long.";
+                lblFirstErrMsg.Text = "First name must be 1-20 characters long.";
             }
 
             return valid;
@@ -754,6 +779,9 @@ namespace NYMBv2
             if (special == 0)
             {
                 valid = true;
+
+                lblFirstErrMsg.Visible = false;
+
             }
             else
             {
@@ -761,10 +789,10 @@ namespace NYMBv2
                 valid = false;
 
                 //Show the error message below the first name textbox.
-                lblPasswordErrMsg.Visible = true;
+                lblFirstErrMsg.Visible = true;
 
                 //Change the text to inform the user of the name error.
-                lblPasswordErrMsg.Text = "Your name can't contain that character";
+                lblFirstErrMsg.Text = "Your name can't contain that character";
 
             }
 
@@ -825,10 +853,10 @@ namespace NYMBv2
                 valid = false;
 
                 //Show the error message below the password textbox.
-                lblUsernameErrMsg.Visible = true;
+                lblLastErrMsg.Visible = true;
 
                 //Change the text to inform the user of the password error.
-                lblUsernameErrMsg.Text = "First name must be 1-20 characters long.";
+                lblLastErrMsg.Text = "First name must be 1-20 characters long.";
             }
 
             return valid;
@@ -891,6 +919,8 @@ namespace NYMBv2
             if (special == 0)
             {
                 valid = true;
+
+                lblLastErrMsg.Visible = false;
             }
             else
             {
@@ -898,10 +928,10 @@ namespace NYMBv2
                 valid = false;
 
                 //Show the error message below the last name textbox.
-                lblPasswordErrMsg.Visible = true;
+                lblLastErrMsg.Visible = true;
 
                 //Change the text to inform the user of the name error.
-                lblPasswordErrMsg.Text = "Your name can't contain that character";
+                lblLastErrMsg.Text = "Your name can't contain that character";
 
             }
 
@@ -951,6 +981,8 @@ namespace NYMBv2
             {
                 var addr = new System.Net.Mail.MailAddress(email);
                 return addr.Address == email;
+
+                lblEmailErrMsg.Visible = false;
             }
             catch
             {
