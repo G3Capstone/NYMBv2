@@ -30,6 +30,7 @@
         {
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tpAnnouncements = new System.Windows.Forms.TabPage();
+            this.button7 = new System.Windows.Forms.Button();
             this.gbxAnnouncements = new System.Windows.Forms.GroupBox();
             this.rtbAnnouncements = new System.Windows.Forms.RichTextBox();
             this.lblAnnouncements = new System.Windows.Forms.Label();
@@ -72,6 +73,7 @@
             this.lblMessagesFootnote = new System.Windows.Forms.Label();
             this.tabMessageBox = new System.Windows.Forms.TabControl();
             this.tpMBRequestMerch = new System.Windows.Forms.TabPage();
+            this.btnReqMerchClear = new System.Windows.Forms.Button();
             this.btnReqMerchSend = new System.Windows.Forms.Button();
             this.cbxReqMerchQty = new System.Windows.Forms.ComboBox();
             this.txtReqMerchDesc = new System.Windows.Forms.TextBox();
@@ -84,6 +86,7 @@
             this.lblReqMerchQty = new System.Windows.Forms.Label();
             this.lblReqMerchItem = new System.Windows.Forms.Label();
             this.tpMBOrganizeAnEvent = new System.Windows.Forms.TabPage();
+            this.btnOrgClear = new System.Windows.Forms.Button();
             this.lblOrgDisplayEmail = new System.Windows.Forms.Label();
             this.lblOrgEmail = new System.Windows.Forms.Label();
             this.lblOrgDisplayUser = new System.Windows.Forms.Label();
@@ -102,6 +105,7 @@
             this.lblOrgDate = new System.Windows.Forms.Label();
             this.lblOrgEventType = new System.Windows.Forms.Label();
             this.tpMBComments = new System.Windows.Forms.TabPage();
+            this.btnCommentClear = new System.Windows.Forms.Button();
             this.lblCommentDisplayEmail = new System.Windows.Forms.Label();
             this.lblCommentUserEmail = new System.Windows.Forms.Label();
             this.lblCommentDisplayUser = new System.Windows.Forms.Label();
@@ -122,10 +126,6 @@
             this.lblActiveUser = new System.Windows.Forms.Label();
             this.btnLogInAndOut = new System.Windows.Forms.Button();
             this.llblCreateAccount = new System.Windows.Forms.LinkLabel();
-            this.btnReqMerchClear = new System.Windows.Forms.Button();
-            this.btnOrgClear = new System.Windows.Forms.Button();
-            this.btnCommentClear = new System.Windows.Forms.Button();
-            this.button7 = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
             this.tpAnnouncements.SuspendLayout();
             this.gbxAnnouncements.SuspendLayout();
@@ -189,6 +189,16 @@
             this.tpAnnouncements.Size = new System.Drawing.Size(1296, 670);
             this.tpAnnouncements.TabIndex = 0;
             this.tpAnnouncements.Text = "Announcements";
+            // 
+            // button7
+            // 
+            this.button7.Location = new System.Drawing.Point(37, 112);
+            this.button7.Name = "button7";
+            this.button7.Size = new System.Drawing.Size(75, 23);
+            this.button7.TabIndex = 3;
+            this.button7.Text = "button7";
+            this.button7.UseVisualStyleBackColor = true;
+            this.button7.Click += new System.EventHandler(this.button7_Click_1);
             // 
             // gbxAnnouncements
             // 
@@ -636,6 +646,16 @@
             this.tpMBRequestMerch.TabIndex = 0;
             this.tpMBRequestMerch.Text = "Request Merchendise";
             // 
+            // btnReqMerchClear
+            // 
+            this.btnReqMerchClear.Location = new System.Drawing.Point(548, 487);
+            this.btnReqMerchClear.Name = "btnReqMerchClear";
+            this.btnReqMerchClear.Size = new System.Drawing.Size(75, 23);
+            this.btnReqMerchClear.TabIndex = 17;
+            this.btnReqMerchClear.Text = "Clear";
+            this.btnReqMerchClear.UseVisualStyleBackColor = true;
+            this.btnReqMerchClear.Click += new System.EventHandler(this.btnReqMerchClear_Click);
+            // 
             // btnReqMerchSend
             // 
             this.btnReqMerchSend.Location = new System.Drawing.Point(629, 487);
@@ -789,6 +809,16 @@
             this.tpMBOrganizeAnEvent.Size = new System.Drawing.Size(725, 527);
             this.tpMBOrganizeAnEvent.TabIndex = 2;
             this.tpMBOrganizeAnEvent.Text = "Organize an event/Reserve Space";
+            // 
+            // btnOrgClear
+            // 
+            this.btnOrgClear.Location = new System.Drawing.Point(555, 490);
+            this.btnOrgClear.Name = "btnOrgClear";
+            this.btnOrgClear.Size = new System.Drawing.Size(75, 23);
+            this.btnOrgClear.TabIndex = 19;
+            this.btnOrgClear.Text = "Clear";
+            this.btnOrgClear.UseVisualStyleBackColor = true;
+            this.btnOrgClear.Click += new System.EventHandler(this.btnOrgClear_Click);
             // 
             // lblOrgDisplayEmail
             // 
@@ -995,6 +1025,16 @@
             this.tpMBComments.TabIndex = 3;
             this.tpMBComments.Text = "Comments/Suggestions";
             // 
+            // btnCommentClear
+            // 
+            this.btnCommentClear.Location = new System.Drawing.Point(539, 475);
+            this.btnCommentClear.Name = "btnCommentClear";
+            this.btnCommentClear.Size = new System.Drawing.Size(75, 23);
+            this.btnCommentClear.TabIndex = 18;
+            this.btnCommentClear.Text = "Clear";
+            this.btnCommentClear.UseVisualStyleBackColor = true;
+            this.btnCommentClear.Click += new System.EventHandler(this.btnCommentClear_Click);
+            // 
             // lblCommentDisplayEmail
             // 
             this.lblCommentDisplayEmail.AutoSize = true;
@@ -1188,46 +1228,7 @@
             this.llblCreateAccount.TabIndex = 5;
             this.llblCreateAccount.TabStop = true;
             this.llblCreateAccount.Text = "Don\'t have an account? Create one.";
-            // 
-            // btnReqMerchClear
-            // 
-            this.btnReqMerchClear.Location = new System.Drawing.Point(548, 487);
-            this.btnReqMerchClear.Name = "btnReqMerchClear";
-            this.btnReqMerchClear.Size = new System.Drawing.Size(75, 23);
-            this.btnReqMerchClear.TabIndex = 17;
-            this.btnReqMerchClear.Text = "Clear";
-            this.btnReqMerchClear.UseVisualStyleBackColor = true;
-            this.btnReqMerchClear.Click += new System.EventHandler(this.btnReqMerchClear_Click);
-            // 
-            // btnOrgClear
-            // 
-            this.btnOrgClear.Location = new System.Drawing.Point(555, 490);
-            this.btnOrgClear.Name = "btnOrgClear";
-            this.btnOrgClear.Size = new System.Drawing.Size(75, 23);
-            this.btnOrgClear.TabIndex = 19;
-            this.btnOrgClear.Text = "Clear";
-            this.btnOrgClear.UseVisualStyleBackColor = true;
-            this.btnOrgClear.Click += new System.EventHandler(this.btnOrgClear_Click);
-            // 
-            // btnCommentClear
-            // 
-            this.btnCommentClear.Location = new System.Drawing.Point(539, 475);
-            this.btnCommentClear.Name = "btnCommentClear";
-            this.btnCommentClear.Size = new System.Drawing.Size(75, 23);
-            this.btnCommentClear.TabIndex = 18;
-            this.btnCommentClear.Text = "Clear";
-            this.btnCommentClear.UseVisualStyleBackColor = true;
-            this.btnCommentClear.Click += new System.EventHandler(this.btnCommentClear_Click);
-            // 
-            // button7
-            // 
-            this.button7.Location = new System.Drawing.Point(37, 112);
-            this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(75, 23);
-            this.button7.TabIndex = 3;
-            this.button7.Text = "button7";
-            this.button7.UseVisualStyleBackColor = true;
-            this.button7.Click += new System.EventHandler(this.button7_Click_1);
+            this.llblCreateAccount.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.llblCreateAccount_LinkClicked);
             // 
             // Main
             // 

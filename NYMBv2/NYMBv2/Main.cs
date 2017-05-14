@@ -1220,5 +1220,11 @@ namespace NYMBv2
             SystemManager_Dummy myManager = new SystemManager_Dummy();
             myManager.ShowDialog();
         }
+
+        private void llblCreateAccount_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            CreateUser myCreateUser = new CreateUser();
+            myCreateUser.ShowDialog();
+        }
     }
 }
