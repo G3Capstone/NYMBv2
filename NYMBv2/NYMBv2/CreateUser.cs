@@ -7,6 +7,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Data.SqlClient;
+using System.Configuration;
+
 
 namespace NYMBv2
 {
@@ -17,28 +20,11 @@ namespace NYMBv2
             InitializeComponent();
         }
 
-        private void CreateUser_Load(object sender, EventArgs e)
-        {
+        #region Connection String
+        public string connectionString = ConfigurationManager.ConnectionStrings["NYMBv2.Properties.Settings.NYMBv2_DBConnectionString"].ConnectionString;
 
-        }
-
-        private void btnCreate_Click(object sender, EventArgs e)
-        {
-            string username;        //Holds the username
-            string password;        //Holds the password
-            string confirm;         //Holds the confirm password
-            string firstname;       //Holds the first name
-            string lastname;        //Holds the last name
-            string email;           //Holds the email address
-
-
-            #region commit new user information to the User database.
-            
-
-
-            #endregion
-        }
-
+        private string queryCreateUser;
+        #endregion
 
         #region Create User Constructors
 
@@ -69,6 +55,87 @@ namespace NYMBv2
 
         #endregion
 
+
+        private void CreateUser_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnCreate_Click(object sender, EventArgs e)
+        {
+            string username = txtBxUsername.Text;         //Holds the username
+            string password = txtBxPassword.Text;         //Holds the password
+            string confirm = txtBxConfirm.Text;           //Holds the confirm password
+            string firstname = txtBxFirstName.Text;       //Holds the first name
+            string lastname = txtBxLastName.Text;         //Holds the last name
+            string email = txtBxEmail.Text;               //Holds the email address
+
+            try
+            {
+               if( ValidateUsername(username) == true &&
+                   ValidatePassword(password) == true &&
+                   ValidateFirstName(firstname) == true &&
+                   ValidateLastName(lastname) == true &&
+                   ValidateEmail(email) == true)
+                {
+                    CreateUserAccount(username, password, firstname, lastname, email);
+
+                }
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+
+    }
+
+        #region commit new user information to the User database.
+
+
+        private void CreateUserAccount(string username, string password, string firstname,
+                                          string lastname, string email)
+        {
+
+            try
+            {
+
+                //Create a connection to the database
+                using (SqlConnection connection = new SqlConnection(connectionString))
+                {
+
+                    //SQL Query that adds the Guest SessonToken to the sessonToken table of the database
+                    string query = @"INSERT INTO [dbo].[USER_TABLE] VALUES ('"+username+"', '"+password+"', NULL, NULL, '"+email+"', '"+firstname+"', '"+lastname+"', 'Customer')";
+
+                    //Creates the SQL Command with the clear query
+                    SqlCommand command = new SqlCommand(queryCreateUser, connection);
+
+                    //Connects the database with the command
+                    command.Connection.Open();
+
+                    //Runs the query
+                    command.ExecuteNonQuery();
+
+                    //Closes the connection
+                    command.Connection.Close();
+
+                    //Sets the Command to run the query guest Token 
+                    command = new SqlCommand(queryCreateUser, connection);
+
+                    //Connects the database with the command
+                    command.Connection.Open();
+
+                    //Runs the query
+                    command.ExecuteNonQuery();
+
+                    //Closes the connection
+                    command.Connection.Close();
+                }
+
+            }
+            catch (Exception ex) { MessageBox.Show(ex.Message); }
+        }
+        #endregion
+
         #region Username Validation Methods
 
         #region Username Length of 3-16 Characters
@@ -77,7 +144,7 @@ namespace NYMBv2
          * The CheckLength method takes a string arugement and
          * checks if the username is within the character range.
          */
-        private bool CheckUsernameLength(string password)
+        public bool CheckUsernameLength(string password)
         {
             const int MIN_LENGTH = 3;       //minimum number of characters allowed in the username
             const int MAX_LENGTH = 16;      //maximum number of characters allowed in the username
@@ -878,7 +945,7 @@ namespace NYMBv2
          * The IsValidEmail method takes a string argument and checks
          * if it's an acceptable email address.
          */
-        bool IsValidEmail(string email)
+        bool ValidateEmail(string email)
         {
             try
             {

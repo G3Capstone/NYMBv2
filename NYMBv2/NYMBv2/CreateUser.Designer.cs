@@ -35,12 +35,12 @@
             this.lblFirst = new System.Windows.Forms.Label();
             this.lblLast = new System.Windows.Forms.Label();
             this.lblEmail = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.textBox5 = new System.Windows.Forms.TextBox();
-            this.textBox6 = new System.Windows.Forms.TextBox();
+            this.txtBxUsername = new System.Windows.Forms.TextBox();
+            this.txtBxPassword = new System.Windows.Forms.TextBox();
+            this.txtBxConfirm = new System.Windows.Forms.TextBox();
+            this.txtBxFirstName = new System.Windows.Forms.TextBox();
+            this.txtBxLastName = new System.Windows.Forms.TextBox();
+            this.txtBxEmail = new System.Windows.Forms.TextBox();
             this.lblUsernameErrMsg = new System.Windows.Forms.Label();
             this.lblPasswordErrMsg = new System.Windows.Forms.Label();
             this.lblConfirmPasswordErrMsg = new System.Windows.Forms.Label();
@@ -119,47 +119,47 @@
             this.lblEmail.TabIndex = 5;
             this.lblEmail.Text = "Email (Not Required)";
             // 
-            // textBox1
+            // txtBxUsername
             // 
-            this.textBox1.Location = new System.Drawing.Point(193, 23);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(168, 20);
-            this.textBox1.TabIndex = 6;
+            this.txtBxUsername.Location = new System.Drawing.Point(193, 23);
+            this.txtBxUsername.Name = "txtBxUsername";
+            this.txtBxUsername.Size = new System.Drawing.Size(168, 20);
+            this.txtBxUsername.TabIndex = 6;
             // 
-            // textBox2
+            // txtBxPassword
             // 
-            this.textBox2.Location = new System.Drawing.Point(193, 70);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(168, 20);
-            this.textBox2.TabIndex = 7;
+            this.txtBxPassword.Location = new System.Drawing.Point(193, 70);
+            this.txtBxPassword.Name = "txtBxPassword";
+            this.txtBxPassword.Size = new System.Drawing.Size(168, 20);
+            this.txtBxPassword.TabIndex = 7;
             // 
-            // textBox3
+            // txtBxConfirm
             // 
-            this.textBox3.Location = new System.Drawing.Point(193, 117);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(168, 20);
-            this.textBox3.TabIndex = 8;
+            this.txtBxConfirm.Location = new System.Drawing.Point(193, 117);
+            this.txtBxConfirm.Name = "txtBxConfirm";
+            this.txtBxConfirm.Size = new System.Drawing.Size(168, 20);
+            this.txtBxConfirm.TabIndex = 8;
             // 
-            // textBox4
+            // txtBxFirstName
             // 
-            this.textBox4.Location = new System.Drawing.Point(193, 163);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(168, 20);
-            this.textBox4.TabIndex = 9;
+            this.txtBxFirstName.Location = new System.Drawing.Point(193, 163);
+            this.txtBxFirstName.Name = "txtBxFirstName";
+            this.txtBxFirstName.Size = new System.Drawing.Size(168, 20);
+            this.txtBxFirstName.TabIndex = 9;
             // 
-            // textBox5
+            // txtBxLastName
             // 
-            this.textBox5.Location = new System.Drawing.Point(193, 209);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(168, 20);
-            this.textBox5.TabIndex = 10;
+            this.txtBxLastName.Location = new System.Drawing.Point(193, 209);
+            this.txtBxLastName.Name = "txtBxLastName";
+            this.txtBxLastName.Size = new System.Drawing.Size(168, 20);
+            this.txtBxLastName.TabIndex = 10;
             // 
-            // textBox6
+            // txtBxEmail
             // 
-            this.textBox6.Location = new System.Drawing.Point(193, 255);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(168, 20);
-            this.textBox6.TabIndex = 11;
+            this.txtBxEmail.Location = new System.Drawing.Point(193, 255);
+            this.txtBxEmail.Name = "txtBxEmail";
+            this.txtBxEmail.Size = new System.Drawing.Size(168, 20);
+            this.txtBxEmail.TabIndex = 11;
             // 
             // lblUsernameErrMsg
             // 
@@ -274,12 +274,12 @@
             this.Controls.Add(this.lblConfirmPasswordErrMsg);
             this.Controls.Add(this.lblPasswordErrMsg);
             this.Controls.Add(this.lblUsernameErrMsg);
-            this.Controls.Add(this.textBox6);
-            this.Controls.Add(this.textBox5);
-            this.Controls.Add(this.textBox4);
-            this.Controls.Add(this.textBox3);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.txtBxEmail);
+            this.Controls.Add(this.txtBxLastName);
+            this.Controls.Add(this.txtBxFirstName);
+            this.Controls.Add(this.txtBxConfirm);
+            this.Controls.Add(this.txtBxPassword);
+            this.Controls.Add(this.txtBxUsername);
             this.Controls.Add(this.lblEmail);
             this.Controls.Add(this.lblLast);
             this.Controls.Add(this.lblFirst);
@@ -307,12 +307,12 @@
         private System.Windows.Forms.Label lblFirst;
         private System.Windows.Forms.Label lblLast;
         private System.Windows.Forms.Label lblEmail;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.TextBox textBox5;
-        private System.Windows.Forms.TextBox textBox6;
+        private System.Windows.Forms.TextBox txtBxUsername;
+        private System.Windows.Forms.TextBox txtBxPassword;
+        private System.Windows.Forms.TextBox txtBxConfirm;
+        private System.Windows.Forms.TextBox txtBxFirstName;
+        private System.Windows.Forms.TextBox txtBxLastName;
+        private System.Windows.Forms.TextBox txtBxEmail;
         private System.Windows.Forms.Label lblUsernameErrMsg;
         private System.Windows.Forms.Label lblPasswordErrMsg;
         private System.Windows.Forms.Label lblConfirmPasswordErrMsg;
