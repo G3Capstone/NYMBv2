@@ -17,11 +17,6 @@ namespace NYMBv2
             InitializeComponent();
         }
 
-
-
-        /**
-         * This class validates the password the user wants to create 
-         */
         private void CreateUser_Load(object sender, EventArgs e)
         {
 
@@ -29,7 +24,19 @@ namespace NYMBv2
 
         private void btnCreate_Click(object sender, EventArgs e)
         {
+            string username;        //Holds the username
+            string password;        //Holds the password
+            string confirm;         //Holds the confirm password
+            string firstname;       //Holds the first name
+            string lastname;        //Holds the last name
+            string email;           //Holds the email address
 
+
+            #region commit new user information to the User database.
+            
+
+
+            #endregion
         }
 
 
@@ -166,6 +173,31 @@ namespace NYMBv2
 
         #endregion
 
+        #region Validate Username
+        /**
+         * The first validation checks the password string to see if it meets
+         * all the set requirements.
+         */
+        private bool ValidateUsername(string user)
+        {
+            bool flag = false;           //Counts the number of false returns this method receives.
+            string username = user;      //Holds the first name.
+
+            //Check if the username meets all of the requirements.
+            if (CheckUsernameLength(user) == true &&
+                CheckUsernameSpecial(user) == true)
+            {
+                flag = true;
+            }
+            else
+            {
+                username = "";
+            }
+
+
+            return flag;
+        }
+        #endregion
 
         #endregion
 
@@ -489,7 +521,6 @@ namespace NYMBv2
 
         #endregion
 
-
         #region First Validation
 
         /**
@@ -574,13 +605,13 @@ namespace NYMBv2
         * The CheckLength method takes a string arugement and
         * checks if the username is within the character range.
         */
-        private bool CheckFirstLength(string password)
+        private bool CheckFirstLength(string first)
         {
             const int MIN_LENGTH = 1;       //minimum number of characters allowed in the name
             const int MAX_LENGTH = 20;      //maximum number of characters allowed in the name
             bool valid = false;             //Flags verification of category
 
-            if (password.Length >= MIN_LENGTH && password.Length <= MAX_LENGTH)
+            if (first.Length >= MIN_LENGTH && first.Length <= MAX_LENGTH)
             {
                 valid = true;
             }
@@ -602,7 +633,7 @@ namespace NYMBv2
 
         #endregion
 
-        #region Password shouldn't contain certain special characters
+        #region First Name shouldn't contain certain special characters
 
         /*
          * The CheckFirstSpecial method takes a string arguement
@@ -610,14 +641,14 @@ namespace NYMBv2
          * that shouldn't be in a password,such as (') and (").
          */
 
-        private bool CheckFirstSpecial(string password)
+        private bool CheckFirstSpecial(string first)
         {
             int special = 0;        //Counts the number of unacceptable characters
             bool valid;             //Flags the validity of the password.
 
             //A password can't contain ('), ("), (/), (\), (,), or (&).
             //Count each char for every instance of the special characters.
-            foreach (char ch in password)
+            foreach (char ch in first)
             {
                 if (ch == '"')
                 {
@@ -675,6 +706,31 @@ namespace NYMBv2
 
         #endregion
 
+        #region Validate First Name
+        /**
+         * The first validation checks the password string to see if it meets
+         * all the set requirements.
+         */
+        private bool ValidateFirstName(string first)
+        {
+            bool flag = false;           //Counts the number of false returns this method receives.
+            string firstname = first;      //Holds the first name.
+
+            //Check if the username meets all of the requirements.
+            if (CheckUsernameLength(first) == true &&
+                CheckUsernameSpecial(first) == true)
+            {
+                flag = true;
+            }
+            else
+            {
+                firstname = "";
+            }
+
+
+            return flag;
+        }
+        #endregion
 
         #endregion
 
@@ -787,17 +843,62 @@ namespace NYMBv2
 
         #endregion
 
+        #region Validate LastName
+        /**
+         * The first validation checks the last string to see if it meets
+         * all the set requirements.
+         */
+        private bool ValidateLastName(string last)
+        {
+            bool flag = false;           //Counts the number of false returns this method receives.
+            string lastname = last;      //Holds the last name.
+
+            //Check if the username meets all of the requirements.
+            if (CheckUsernameLength(last) == true &&
+                CheckUsernameSpecial(last) == true)
+            {
+                flag = true;
+            }
+            else
+            {
+                lastname = "";
+            }
+
+
+            return flag;
+        }
+        #endregion
+
 
         #endregion
 
         #region Email Validation Methods
 
-        #region Email needs a "@"
-
         /**
-         * The CheckEmail method takes a string argument and checks
-         * if that string has a "@" in it.
+         * The IsValidEmail method takes a string argument and checks
+         * if it's an acceptable email address.
          */
+        bool IsValidEmail(string email)
+        {
+            try
+            {
+                var addr = new System.Net.Mail.MailAddress(email);
+                return addr.Address == email;
+            }
+            catch
+            {
+                return false;
+
+                //Show the error message below the password textbox.
+                lblEmailErrMsg.Visible = true;
+
+                //Change the text to inform the user of the password error.
+                lblEmailErrMsg.Text = "This email address is invalid or does not exist.";
+            }
+        }
+
+        #region Alternative Email Validation Code
+        /*
         private bool CheckEmail(string password)
         {
             int special = 0;        //The number of special characters in the password.
@@ -833,10 +934,8 @@ namespace NYMBv2
             return valid;
         }
 
-
+    */
         #endregion
-
-        
 
         #endregion
 
