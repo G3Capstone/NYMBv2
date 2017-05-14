@@ -9,6 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Configuration;
+using System.Net.Mail;
 
 namespace NYMBv2
 {
@@ -21,14 +22,21 @@ namespace NYMBv2
 
 
         #region Global variables
-        string activeUser;
-        string activeLevel;
+        SessonToken ActiveSesson;
+
 
         #region Global Variables for the Events Tab
 
         DateTime today = System.DateTime.Now;
         DateTime BeginningOfWeek;
         DateTime EndOfWeek;
+
+        #endregion
+
+        #region Global Variables for the MessageBox Tab
+
+       
+
 
         #endregion
 
@@ -76,6 +84,15 @@ namespace NYMBv2
             ReadStoreInfo();
             #endregion
 
+            #region MessageBox Initialization
+
+            dtpOrgDate.MinDate = DateTime.Now;
+            dtpOrgDate.MaxDate = DateTime.Now.AddMonths(6);
+            cbxOrgRequestedSpace.DataSource = GetEventSpaces();
+            SetMessageboxDisplayToActiveUser();
+
+            #endregion
+
         }
 
         #region Log in/out button
@@ -85,11 +102,12 @@ namespace NYMBv2
             //If the Active user is a guest then it opens the 
             //Log in popup. If the user is not a guest then
             //It logs the user out and logs in the guest.
-            if (activeUser == "Guest")
+            if (ActiveSesson._UserLevel == "Guest")
             {
                 LogIn mylogin = new LogIn();
                 mylogin.ShowDialog();
                 UpdateActiveUser();
+
             }
             else
             {
@@ -600,9 +618,6 @@ namespace NYMBv2
 
         #region Store Info
 
-
-        #region StoreInfo Methods
-
         #region read from the StoreInfo table in the database.
 
 
@@ -682,31 +697,281 @@ namespace NYMBv2
 
         #endregion
 
-        #endregion
-
         #region Message Box
 
+        private void SetMessageboxDisplayToActiveUser()
+        {
+            lblReqMerchDisplayUser.Text = ActiveSesson._FirstName + " " + ActiveSesson._LastName;
+            lblReqMerchDisplayEmail.Text = ActiveSesson._Email;
+
+            lblOrgDisplayUser.Text = ActiveSesson._FirstName + " " + ActiveSesson._LastName;
+            lblOrgDisplayEmail.Text = ActiveSesson._Email;
+
+            lblCommentDisplayUser.Text = ActiveSesson._FirstName + " " + ActiveSesson._LastName;
+            lblCommentDisplayEmail.Text = ActiveSesson._Email;
+        }
+
+        private void ClearMessageboxes()
+        {
+            //clear the fields in the request merchendise messagebox tab
+            txtReqMerchItemName.Text = "";
+            cbxReqMerchQty.Text = "";
+            txtReqMerchDesc.Text = "";
+
+            //clear the fields in the organize events messagebox tab
+            cbxOrgEventType.Text = "";
+            cbxOrgRequestedSpace.Text = "";
+            cbxReqMerchQty.Text = "";
+            dtpOrgDate.ResetText();
+            cbxTime.Text = "";
+            txtOrgDescription.Text = "";
+            txtOrgGrpSize.Text = "";
+
+            //clear the fields in the Comments/Suggestions messagebox tab
+            txtCommentSubject.Text = "";
+            txtCommentMessage.Text = "";
+
+        }
+
+
+        //checks to make sure that the message being sent isnt missing any data
+        private bool MessageExists(string WhichMessagebox)
+        {
+            bool allThere = true;
+
+            if (WhichMessagebox == "request")
+            {
+
+                if (txtReqMerchItemName.Text == "" ||
+                      cbxReqMerchQty.Text == "" ||
+                      txtReqMerchDesc.Text == "" )
+                {
+                    allThere = false;
+                }
+
+            }
+            else if (WhichMessagebox == "reserve")
+            {
+
+               
+                if (dtpOrgDate.Value == System.DateTime.Now ||
+                    cbxTime.Text == "" ||
+                    cbxOrgEventType.Text == "" ||
+                    cbxOrgRequestedSpace.Text == "" ||
+                    txtOrgGrpSize.Text == "" ||
+                    txtOrgDescription.Text == "")
+                {
+                    allThere = false;
+                }
+
+
+            }
+            else if (WhichMessagebox == "comments")
+            {
+
+                if (txtCommentSubject.Text == "" ||
+                      txtCommentMessage.Text == "" )
+                {
+                    allThere = false;
+                }
+
+            }
+
+            return allThere;
+
+        }
+
+            private string FormatMessage(string WhichMessagebox)
+        {
+            string formattedMessage = "";
+
+            if (WhichMessagebox == "request")
+            {
+                formattedMessage += "Item Request Form \n\n\n";
+                formattedMessage += "From:\t\t\t\t" + ActiveSesson._FirstName + ActiveSesson._LastName + "\n";
+                formattedMessage += "Email:\t\t\t\t" + ActiveSesson._Email + "\n\n";
+
+                formattedMessage += "Requested Item:\t\t\t\t" + txtReqMerchItemName.Text + "\n";
+                formattedMessage += "Qty Requested:\t\t\t\t" + cbxReqMerchQty.SelectedItem.ToString() + "\n";
+                formattedMessage += "Item Desc:\t\t\t\t\t" + txtReqMerchDesc.Text + "\n\n\n\n\n";
+                formattedMessage += "This is sent using the NYMBv2 Content Management Application. DO NOT REPLY to this eMail";
+                formattedMessage += "Send all Replies to this message to the email address in this message.";
+            }
+            else if (WhichMessagebox == "reserve")
+            {
+
+                DateTime tempDate = dtpOrgDate.Value;
+
+                formattedMessage += "Space Reservation/Event Form \n\n\n";
+                formattedMessage += "From:\t\t\t\t\t" + ActiveSesson._FirstName + ActiveSesson._LastName + "\n";
+                formattedMessage += "Email:\t\t\t\t\t" + ActiveSesson._Email + "\n\n";
+
+                formattedMessage += "Event Type:\t\t\t\t" + cbxOrgEventType.SelectedItem.ToString() + "\n";
+                formattedMessage += "Date:\t\t\t\t\t" + tempDate.ToShortDateString() + "\n";
+                formattedMessage += "Time:\t\t\t\t\t" + cbxTime.SelectedItem.ToString() + "\n";
+                formattedMessage += "Requested Space:\t\t\t\t" + cbxOrgRequestedSpace.SelectedItem.ToString() + "\n";
+                formattedMessage += "Estimated Group Size:\t\t\t\t" + txtOrgGrpSize.Text + "\n";
+                formattedMessage += "Item Description:\t\t\t\t\t" + txtOrgDescription.Text + "\n\n\n\n\n";
+                formattedMessage += "This is sent using the NYMBv2 Content Management Application. DO NOT REPLY to this eMail";
+                formattedMessage += "Send all Replies to this message to the email address in this message.";
+
+            }
+            else if (WhichMessagebox == "comments")
+            {
+                formattedMessage += "Comments/Suggestions Form \n\n\n";
+                formattedMessage += "From:\t\t\t\t" + ActiveSesson._FirstName + ActiveSesson._LastName + "\n";
+                formattedMessage += "Email:\t\t\t\t" + ActiveSesson._Email + "\n\n";
+
+                formattedMessage += "Subject:\t\t\t" + txtCommentSubject.Text + "\n";
+                formattedMessage += "Body:\t\t\t\t " + txtCommentMessage.Text + "\n\n\n\n\n";
+                formattedMessage += "This is sent using the NYMBv2 Content Management Application. DO NOT REPLY to this eMail";
+                formattedMessage += "Send all Replies to this message to the email address in this message.";
+
+            }
+
+
+            return formattedMessage;
+
+        }
+
+        private List<string> GetEventSpaces()
+        {
+
+            List<string> spaces = new List<string>();
+
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+
+
+                //SQL select statement  
+                string query = @"SELECT [Name] from [dbo].[EventSpace]";
+
+                //Create a SQLCommand, passing the query and the connection
+                SqlCommand cmd = new SqlCommand(query, connection);
+
+                //connecting the SQLCommand Control and the database
+                cmd.Connection.Open();
+
+                //Creating a SQLDataReader to read the results of the query ran by the
+                // SQLCommand ExecuteReader function
+                using (SqlDataReader sql_reader = cmd.ExecuteReader())
+                {
+                    while (sql_reader.Read())
+                    {
+                        spaces.Add(sql_reader["Name"].ToString());
+                    }
+                    //returning the store
+                    return spaces;
+
+                }
+            }
+
+        }
+
+        private void SendMessage(string messageType)
+        {
+
+            if (MessageExists(messageType))
+            {
+                try
+                {
+                    //the current user is who is sending the message.
+                    MailAddress From = new MailAddress(ActiveSesson._Email, ActiveSesson._FirstName +
+                                                        "  " + ActiveSesson._LastName);
+
+                    //the admin account is who is receiveing the message
+                    MailAddress to = new MailAddress("notyourmothersbasementG3@gmail.com", "Admin");
+
+
+                    MailMessage mail = new MailMessage(From,to);
+                    SmtpClient client = new SmtpClient();
+                    client.Port = 587;
+                    client.Host = "smtp.gmail.com";
+                    client.EnableSsl = true;
+                    client.Timeout = 10000;
+                    client.DeliveryMethod = SmtpDeliveryMethod.Network;
+                    client.UseDefaultCredentials = false;
+                    client.Credentials = new System.Net.NetworkCredential("notyourmothersbasementG3@gmail.com", "capstoneG3");
+
+                    if (messageType == "request")
+                    {
+                        mail.Subject = "NYMB Request Merchandise Form";
+                    }
+                    else if (messageType == "reserve")
+                    {
+                        mail.Subject = "NYMB Reserve Space/Organize Event Form";
+                    }
+                    else if (messageType == "comments")
+                    {
+                        mail.Subject = "NYMB Comment/Suggestion Form";
+                    }
+
+
+                    mail.Body = FormatMessage(messageType);
+                    client.Send(mail);
+                    mail.Dispose();
+                    client.Dispose();
+
+                    MessageBox.Show("Message Sent!");
+
+                    ClearMessageboxes();
+
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Message not Sent\nError:" + ex.Message);
+                }
+            }
+            else
+            {
+                MessageBox.Show("Missing Fields.");
+            }
+        }
+
+        private void btnCommentSend_Click(object sender, EventArgs e)
+        {
+            SendMessage("comments");
+        }
+
+        private void btnOrgSend_Click(object sender, EventArgs e)
+        {
+            SendMessage("reserve");
+        }
+
+        private void btnReqMerchSend_Click(object sender, EventArgs e)
+        {
+            SendMessage("request");
+        }
+
+        private void btnReqMerchClear_Click(object sender, EventArgs e)
+        {
+            ClearMessageboxes();
+        }
+
+        private void btnOrgClear_Click(object sender, EventArgs e)
+        {
+            ClearMessageboxes();
+        }
+
+        private void btnCommentClear_Click(object sender, EventArgs e)
+        {
+            ClearMessageboxes();
+        }
+
+        #endregion
+
+        #region Transactions
+
 
 
         #endregion
 
-        #region Product Manager
+        #region System Management
 
 
 
         #endregion
 
-        #region User Manager
-
-
-
-        #endregion
-
-        #region Settings
-
-
-
-        #endregion
 
 
         #endregion
@@ -721,7 +986,7 @@ namespace NYMBv2
             using (SqlConnection connection = new SqlConnection(connectionString))
             {
                 //SQL select statement
-                String query = @"SELECT [User], [UserLevel] FROM [dbo].[SessonTokens] ";
+                String query = @"SELECT [User], [UserLevel],[FirstName], [LastName], [Email] FROM [dbo].[SessonTokens] ";
 
                 //Create a SQLCommand, passing the query and the connection
                 SqlCommand cmd = new SqlCommand(query, connection);
@@ -735,11 +1000,12 @@ namespace NYMBv2
                 {
                     while (sql_reader.Read())
                     {
-                        //gets the active user and their user level from the 
-                        //sessonTokens database and stores them in the ActiveUser
-                        //and ActiveLevel variables, respectively.
-                        activeUser = sql_reader["User"].ToString();
-                        activeLevel = sql_reader["UserLevel"].ToString();
+                        //gets the active user and their user Info from the 
+                        //sessonTokens database and stores them in the Active Sesson
+                        //SessonToken
+                        ActiveSesson = new SessonToken(sql_reader["User"].ToString(), sql_reader["UserLevel"].ToString(),
+                            sql_reader["Email"].ToString(), sql_reader["FirstName"].ToString(), sql_reader["LastName"].ToString());
+
                     }
                 }
             }
@@ -759,7 +1025,7 @@ namespace NYMBv2
                 String queryClearTokens = @"DELETE FROM [dbo].[SessonTokens] ";
 
                 //SQL Query that adds the Guest SessonToken to the sessonToken table of the database
-                String queryGuestToken = @"INSERT INTO [dbo].[SessonTokens] VALUES ( 'Guest' , 'Guest' )";
+                String queryGuestToken = @"INSERT INTO [dbo].[SessonTokens] VALUES ( 'Guest' , 'Guest' , 'NA', 'NA', 'NA')";
 
                 //Creates the SQL Command with the clear query
                 SqlCommand command = new SqlCommand(queryClearTokens, connection);
@@ -801,13 +1067,13 @@ namespace NYMBv2
             GetActiveUserInfo();
 
             //Displays the current user on the form
-            lblActiveUser.Text = activeUser;
+            lblActiveUser.Text = ActiveSesson._UserName;
 
             //If the active user is guest
             //then it changes the button to say
             //Log In. Otherwise it sets it
             //to Log Out
-            if (activeUser == "Guest")
+            if (ActiveSesson._UserLevel == "Guest")
             {
                 btnLogInAndOut.Text = "Log In";
             }
@@ -817,6 +1083,7 @@ namespace NYMBv2
             }
 
             DisplayAvailableTabs();
+            SetMessageboxDisplayToActiveUser();
 
 
         }
@@ -845,30 +1112,47 @@ namespace NYMBv2
             // If all the tabs are showing, remove the 
             //product manager, user manager, and settings
             // tabs
-            if (tabControl1.TabCount == 8)
+            if (tabControl1.TabCount == 7)
             { 
-                tabControl1.TabPages.RemoveAt(7);
                 tabControl1.TabPages.RemoveAt(6);
                 tabControl1.TabPages.RemoveAt(5);
+                tabControl1.TabPages.RemoveAt(4);
 
                 //Hides the gbx for the Events admin toolbox
                 gbxEventsAdminToolBox.Visible = false;
+            }
+            else if (tabControl1.TabCount == 6)
+            {
+                tabControl1.TabPages.RemoveAt(5);
+                tabControl1.TabPages.RemoveAt(4);
+            }
+            else if (tabControl1.TabCount == 5)
+            {
+                tabControl1.TabPages.RemoveAt(4);
             }
 
             //If the active user has admin rights, 
             // then add the product manager, user manager
             //, and settings tabs
-            if (activeLevel == "Admin")
+            if (ActiveSesson._UserLevel == "Admin")
             {
+                tabControl1.TabPages.Add(tpMessagebox);
                 tabControl1.TabPages.Add(tpTransactions);
-                tabControl1.TabPages.Add(tpInbox);
                 tabControl1.TabPages.Add(tpSystemManagement);
                 
 
                 //Shows the gbx for the Events admin toolbox
                 gbxEventsAdminToolBox.Visible = true;
             }
-
+            else if (ActiveSesson._UserLevel == "Employee")
+            {
+                tabControl1.TabPages.Add(tpMessagebox);
+                tabControl1.TabPages.Add(tpTransactions);
+            }
+            else if (ActiveSesson._UserLevel == "Customer")
+            {
+                tabControl1.TabPages.Add(tpMessagebox);
+            }
 
         }
 
@@ -929,6 +1213,12 @@ namespace NYMBv2
         private void gbxEvents_Enter(object sender, EventArgs e)
         {
 
+        }
+
+        private void button7_Click_1(object sender, EventArgs e)
+        {
+            SystemManager_Dummy myManager = new SystemManager_Dummy();
+            myManager.ShowDialog();
         }
     }
 }

@@ -30,6 +30,7 @@
         {
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tpAnnouncements = new System.Windows.Forms.TabPage();
+            this.gbxAnnouncements = new System.Windows.Forms.GroupBox();
             this.rtbAnnouncements = new System.Windows.Forms.RichTextBox();
             this.lblAnnouncements = new System.Windows.Forms.Label();
             this.tpInventory = new System.Windows.Forms.TabPage();
@@ -68,55 +69,66 @@
             this.ownerPicBox = new System.Windows.Forms.PictureBox();
             this.storeInfoLbl = new System.Windows.Forms.Label();
             this.tpMessagebox = new System.Windows.Forms.TabPage();
-            this.tpInbox = new System.Windows.Forms.TabPage();
-            this.button6 = new System.Windows.Forms.Button();
-            this.tpSystemManagement = new System.Windows.Forms.TabPage();
-            this.button7 = new System.Windows.Forms.Button();
+            this.lblMessagesFootnote = new System.Windows.Forms.Label();
+            this.tabMessageBox = new System.Windows.Forms.TabControl();
+            this.tpMBRequestMerch = new System.Windows.Forms.TabPage();
+            this.btnReqMerchSend = new System.Windows.Forms.Button();
+            this.cbxReqMerchQty = new System.Windows.Forms.ComboBox();
+            this.txtReqMerchDesc = new System.Windows.Forms.TextBox();
+            this.txtReqMerchItemName = new System.Windows.Forms.TextBox();
+            this.lblReqMerchDisplayEmail = new System.Windows.Forms.Label();
+            this.lblReqMerchEmail = new System.Windows.Forms.Label();
+            this.lblReqMerchDisplayUser = new System.Windows.Forms.Label();
+            this.lblReqMerchFrom = new System.Windows.Forms.Label();
+            this.lblReqMerchDesc = new System.Windows.Forms.Label();
+            this.lblReqMerchQty = new System.Windows.Forms.Label();
+            this.lblReqMerchItem = new System.Windows.Forms.Label();
+            this.tpMBOrganizeAnEvent = new System.Windows.Forms.TabPage();
+            this.lblOrgDisplayEmail = new System.Windows.Forms.Label();
+            this.lblOrgEmail = new System.Windows.Forms.Label();
+            this.lblOrgDisplayUser = new System.Windows.Forms.Label();
+            this.lblOrgfrom = new System.Windows.Forms.Label();
+            this.btnOrgSend = new System.Windows.Forms.Button();
+            this.cbxTime = new System.Windows.Forms.ComboBox();
+            this.txtOrgGrpSize = new System.Windows.Forms.TextBox();
+            this.txtOrgDescription = new System.Windows.Forms.TextBox();
+            this.cbxOrgEventType = new System.Windows.Forms.ComboBox();
+            this.dtpOrgDate = new System.Windows.Forms.DateTimePicker();
+            this.cbxOrgRequestedSpace = new System.Windows.Forms.ComboBox();
+            this.lblOrgGrpSize = new System.Windows.Forms.Label();
+            this.lblOrgDesc = new System.Windows.Forms.Label();
+            this.lblOrgRequestedSpace = new System.Windows.Forms.Label();
+            this.lblOrgTime = new System.Windows.Forms.Label();
+            this.lblOrgDate = new System.Windows.Forms.Label();
+            this.lblOrgEventType = new System.Windows.Forms.Label();
+            this.tpMBComments = new System.Windows.Forms.TabPage();
+            this.lblCommentDisplayEmail = new System.Windows.Forms.Label();
+            this.lblCommentUserEmail = new System.Windows.Forms.Label();
+            this.lblCommentDisplayUser = new System.Windows.Forms.Label();
+            this.lblCommentFrom = new System.Windows.Forms.Label();
+            this.btnCommentSend = new System.Windows.Forms.Button();
+            this.txtCommentMessage = new System.Windows.Forms.TextBox();
+            this.txtCommentSubject = new System.Windows.Forms.TextBox();
+            this.lblCommentSubject = new System.Windows.Forms.Label();
+            this.lblMessagebox = new System.Windows.Forms.Label();
             this.tpTransactions = new System.Windows.Forms.TabPage();
+            this.lblTransactionsDesc = new System.Windows.Forms.Label();
+            this.transactionslbl = new System.Windows.Forms.Label();
             this.button8 = new System.Windows.Forms.Button();
+            this.tpSystemManagement = new System.Windows.Forms.TabPage();
+            this.lblSysManagement = new System.Windows.Forms.Label();
             this.lblTitle = new System.Windows.Forms.Label();
             this.lblUserText = new System.Windows.Forms.Label();
             this.lblActiveUser = new System.Windows.Forms.Label();
             this.btnLogInAndOut = new System.Windows.Forms.Button();
             this.llblCreateAccount = new System.Windows.Forms.LinkLabel();
-            this.sessonTokensTableAdapter1 = new NYMBv2.NYMBv2_DBDataSetTableAdapters.SessonTokensTableAdapter();
-            this.nymBv2_DBDataSet1 = new NYMBv2.NYMBv2_DBDataSet();
-            this.lblMessagebox = new System.Windows.Forms.Label();
-            this.lblInbox = new System.Windows.Forms.Label();
-            this.transactionslbl = new System.Windows.Forms.Label();
-            this.lblSysManagement = new System.Windows.Forms.Label();
-            this.gbxAnnouncements = new System.Windows.Forms.GroupBox();
-            this.tabMessageBox = new System.Windows.Forms.TabControl();
-            this.tpRequestMerch = new System.Windows.Forms.TabPage();
-            this.tpOrganizeAnEvent = new System.Windows.Forms.TabPage();
-            this.tpComments = new System.Windows.Forms.TabPage();
-            this.lblCommentSubject = new System.Windows.Forms.Label();
-            this.txtCommentSubject = new System.Windows.Forms.TextBox();
-            this.txtCommentMessage = new System.Windows.Forms.TextBox();
-            this.btnCommentSend = new System.Windows.Forms.Button();
-            this.lblCommentFrom = new System.Windows.Forms.Label();
-            this.lblCommentDisplayUser = new System.Windows.Forms.Label();
-            this.lblCommentDisplayEmail = new System.Windows.Forms.Label();
-            this.lblCommentUserEmail = new System.Windows.Forms.Label();
-            this.lblMessagesFootnote = new System.Windows.Forms.Label();
-            this.lblOrgName = new System.Windows.Forms.Label();
-            this.lblOrgEventType = new System.Windows.Forms.Label();
-            this.lblOrgDate = new System.Windows.Forms.Label();
-            this.lblOrgTime = new System.Windows.Forms.Label();
-            this.lblOrgRequestedSpace = new System.Windows.Forms.Label();
-            this.lblOrgDesc = new System.Windows.Forms.Label();
-            this.lblOrgGrpSize = new System.Windows.Forms.Label();
-            this.cbxOrgRequestedSpace = new System.Windows.Forms.ComboBox();
-            this.dtpOrgDate = new System.Windows.Forms.DateTimePicker();
-            this.cbxOrgEventType = new System.Windows.Forms.ComboBox();
-            this.txtOrgDescription = new System.Windows.Forms.TextBox();
-            this.txtOrgGrpSize = new System.Windows.Forms.TextBox();
-            this.cbxTime = new System.Windows.Forms.ComboBox();
-            this.txtOrgName = new System.Windows.Forms.TextBox();
-            this.lblRemove1331 = new System.Windows.Forms.Label();
-            this.lblTransactionsDesc = new System.Windows.Forms.Label();
+            this.btnReqMerchClear = new System.Windows.Forms.Button();
+            this.btnOrgClear = new System.Windows.Forms.Button();
+            this.btnCommentClear = new System.Windows.Forms.Button();
+            this.button7 = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
             this.tpAnnouncements.SuspendLayout();
+            this.gbxAnnouncements.SuspendLayout();
             this.tpInventory.SuspendLayout();
             this.tpEvents.SuspendLayout();
             this.pnlWeek.SuspendLayout();
@@ -134,14 +146,12 @@
             this.ownerGrpBox.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ownerPicBox)).BeginInit();
             this.tpMessagebox.SuspendLayout();
-            this.tpInbox.SuspendLayout();
-            this.tpSystemManagement.SuspendLayout();
-            this.tpTransactions.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.nymBv2_DBDataSet1)).BeginInit();
-            this.gbxAnnouncements.SuspendLayout();
             this.tabMessageBox.SuspendLayout();
-            this.tpOrganizeAnEvent.SuspendLayout();
-            this.tpComments.SuspendLayout();
+            this.tpMBRequestMerch.SuspendLayout();
+            this.tpMBOrganizeAnEvent.SuspendLayout();
+            this.tpMBComments.SuspendLayout();
+            this.tpTransactions.SuspendLayout();
+            this.tpSystemManagement.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -153,7 +163,6 @@
             this.tabControl1.Controls.Add(this.tpStoreInfo);
             this.tabControl1.Controls.Add(this.tpMessagebox);
             this.tabControl1.Controls.Add(this.tpTransactions);
-            this.tabControl1.Controls.Add(this.tpInbox);
             this.tabControl1.Controls.Add(this.tpSystemManagement);
             this.tabControl1.DrawMode = System.Windows.Forms.TabDrawMode.OwnerDrawFixed;
             this.tabControl1.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -171,6 +180,7 @@
             // tpAnnouncements
             // 
             this.tpAnnouncements.BackColor = System.Drawing.Color.LightBlue;
+            this.tpAnnouncements.Controls.Add(this.button7);
             this.tpAnnouncements.Controls.Add(this.gbxAnnouncements);
             this.tpAnnouncements.Controls.Add(this.lblAnnouncements);
             this.tpAnnouncements.ForeColor = System.Drawing.SystemColors.ControlText;
@@ -179,6 +189,15 @@
             this.tpAnnouncements.Size = new System.Drawing.Size(1296, 670);
             this.tpAnnouncements.TabIndex = 0;
             this.tpAnnouncements.Text = "Announcements";
+            // 
+            // gbxAnnouncements
+            // 
+            this.gbxAnnouncements.Controls.Add(this.rtbAnnouncements);
+            this.gbxAnnouncements.Location = new System.Drawing.Point(201, 51);
+            this.gbxAnnouncements.Name = "gbxAnnouncements";
+            this.gbxAnnouncements.Size = new System.Drawing.Size(900, 612);
+            this.gbxAnnouncements.TabIndex = 2;
+            this.gbxAnnouncements.TabStop = false;
             // 
             // rtbAnnouncements
             // 
@@ -575,48 +594,486 @@
             this.tpMessagebox.TabIndex = 4;
             this.tpMessagebox.Text = "Message Box";
             // 
-            // tpInbox
+            // lblMessagesFootnote
             // 
-            this.tpInbox.BackColor = System.Drawing.Color.LemonChiffon;
-            this.tpInbox.Controls.Add(this.lblRemove1331);
-            this.tpInbox.Controls.Add(this.lblInbox);
-            this.tpInbox.Controls.Add(this.button6);
-            this.tpInbox.Location = new System.Drawing.Point(149, 4);
-            this.tpInbox.Name = "tpInbox";
-            this.tpInbox.Size = new System.Drawing.Size(1296, 670);
-            this.tpInbox.TabIndex = 5;
-            this.tpInbox.Text = "Inbox";
+            this.lblMessagesFootnote.AutoSize = true;
+            this.lblMessagesFootnote.Location = new System.Drawing.Point(123, 630);
+            this.lblMessagesFootnote.Name = "lblMessagesFootnote";
+            this.lblMessagesFootnote.Size = new System.Drawing.Size(455, 18);
+            this.lblMessagesFootnote.TabIndex = 8;
+            this.lblMessagesFootnote.Text = "*Responses to any messages will be sent to your E-Mail address\r\n";
             // 
-            // button6
+            // tabMessageBox
             // 
-            this.button6.Location = new System.Drawing.Point(829, 618);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(75, 23);
-            this.button6.TabIndex = 0;
-            this.button6.Text = "button6";
-            this.button6.UseVisualStyleBackColor = true;
-            this.button6.Click += new System.EventHandler(this.button6_Click);
+            this.tabMessageBox.Controls.Add(this.tpMBRequestMerch);
+            this.tabMessageBox.Controls.Add(this.tpMBOrganizeAnEvent);
+            this.tabMessageBox.Controls.Add(this.tpMBComments);
+            this.tabMessageBox.Location = new System.Drawing.Point(294, 69);
+            this.tabMessageBox.Name = "tabMessageBox";
+            this.tabMessageBox.SelectedIndex = 0;
+            this.tabMessageBox.Size = new System.Drawing.Size(733, 558);
+            this.tabMessageBox.TabIndex = 4;
             // 
-            // tpSystemManagement
+            // tpMBRequestMerch
             // 
-            this.tpSystemManagement.BackColor = System.Drawing.Color.GhostWhite;
-            this.tpSystemManagement.Controls.Add(this.lblSysManagement);
-            this.tpSystemManagement.Controls.Add(this.button7);
-            this.tpSystemManagement.Location = new System.Drawing.Point(149, 4);
-            this.tpSystemManagement.Name = "tpSystemManagement";
-            this.tpSystemManagement.Size = new System.Drawing.Size(1296, 670);
-            this.tpSystemManagement.TabIndex = 6;
-            this.tpSystemManagement.Text = "System Management";
+            this.tpMBRequestMerch.BackColor = System.Drawing.Color.LavenderBlush;
+            this.tpMBRequestMerch.Controls.Add(this.btnReqMerchClear);
+            this.tpMBRequestMerch.Controls.Add(this.btnReqMerchSend);
+            this.tpMBRequestMerch.Controls.Add(this.cbxReqMerchQty);
+            this.tpMBRequestMerch.Controls.Add(this.txtReqMerchDesc);
+            this.tpMBRequestMerch.Controls.Add(this.txtReqMerchItemName);
+            this.tpMBRequestMerch.Controls.Add(this.lblReqMerchDisplayEmail);
+            this.tpMBRequestMerch.Controls.Add(this.lblReqMerchEmail);
+            this.tpMBRequestMerch.Controls.Add(this.lblReqMerchDisplayUser);
+            this.tpMBRequestMerch.Controls.Add(this.lblReqMerchFrom);
+            this.tpMBRequestMerch.Controls.Add(this.lblReqMerchDesc);
+            this.tpMBRequestMerch.Controls.Add(this.lblReqMerchQty);
+            this.tpMBRequestMerch.Controls.Add(this.lblReqMerchItem);
+            this.tpMBRequestMerch.Location = new System.Drawing.Point(4, 27);
+            this.tpMBRequestMerch.Name = "tpMBRequestMerch";
+            this.tpMBRequestMerch.Padding = new System.Windows.Forms.Padding(3);
+            this.tpMBRequestMerch.Size = new System.Drawing.Size(725, 527);
+            this.tpMBRequestMerch.TabIndex = 0;
+            this.tpMBRequestMerch.Text = "Request Merchendise";
             // 
-            // button7
+            // btnReqMerchSend
             // 
-            this.button7.Location = new System.Drawing.Point(832, 625);
-            this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(75, 23);
-            this.button7.TabIndex = 0;
-            this.button7.Text = "button7";
-            this.button7.UseVisualStyleBackColor = true;
-            this.button7.Click += new System.EventHandler(this.button7_Click);
+            this.btnReqMerchSend.Location = new System.Drawing.Point(629, 487);
+            this.btnReqMerchSend.Name = "btnReqMerchSend";
+            this.btnReqMerchSend.Size = new System.Drawing.Size(75, 23);
+            this.btnReqMerchSend.TabIndex = 16;
+            this.btnReqMerchSend.Text = "Send";
+            this.btnReqMerchSend.UseVisualStyleBackColor = true;
+            this.btnReqMerchSend.Click += new System.EventHandler(this.btnReqMerchSend_Click);
+            // 
+            // cbxReqMerchQty
+            // 
+            this.cbxReqMerchQty.FormattingEnabled = true;
+            this.cbxReqMerchQty.Items.AddRange(new object[] {
+            "1",
+            "2",
+            "3",
+            "4",
+            "5",
+            "6",
+            "7",
+            "8",
+            "9",
+            "10",
+            "11",
+            "12",
+            "13",
+            "14",
+            "15",
+            "16",
+            "17",
+            "18",
+            "19",
+            "20",
+            "21",
+            "22",
+            "23",
+            "24",
+            "25",
+            "26",
+            "27",
+            "28",
+            "29",
+            "30"});
+            this.cbxReqMerchQty.Location = new System.Drawing.Point(115, 111);
+            this.cbxReqMerchQty.Name = "cbxReqMerchQty";
+            this.cbxReqMerchQty.Size = new System.Drawing.Size(200, 26);
+            this.cbxReqMerchQty.TabIndex = 15;
+            // 
+            // txtReqMerchDesc
+            // 
+            this.txtReqMerchDesc.Location = new System.Drawing.Point(115, 143);
+            this.txtReqMerchDesc.Multiline = true;
+            this.txtReqMerchDesc.Name = "txtReqMerchDesc";
+            this.txtReqMerchDesc.Size = new System.Drawing.Size(589, 338);
+            this.txtReqMerchDesc.TabIndex = 14;
+            // 
+            // txtReqMerchItemName
+            // 
+            this.txtReqMerchItemName.Location = new System.Drawing.Point(115, 79);
+            this.txtReqMerchItemName.Name = "txtReqMerchItemName";
+            this.txtReqMerchItemName.Size = new System.Drawing.Size(589, 26);
+            this.txtReqMerchItemName.TabIndex = 12;
+            // 
+            // lblReqMerchDisplayEmail
+            // 
+            this.lblReqMerchDisplayEmail.AutoSize = true;
+            this.lblReqMerchDisplayEmail.Location = new System.Drawing.Point(120, 50);
+            this.lblReqMerchDisplayEmail.Name = "lblReqMerchDisplayEmail";
+            this.lblReqMerchDisplayEmail.Size = new System.Drawing.Size(123, 18);
+            this.lblReqMerchDisplayEmail.TabIndex = 11;
+            this.lblReqMerchDisplayEmail.Text = "[E-Mail Address]";
+            // 
+            // lblReqMerchEmail
+            // 
+            this.lblReqMerchEmail.AutoSize = true;
+            this.lblReqMerchEmail.Location = new System.Drawing.Point(22, 50);
+            this.lblReqMerchEmail.Name = "lblReqMerchEmail";
+            this.lblReqMerchEmail.Size = new System.Drawing.Size(89, 18);
+            this.lblReqMerchEmail.TabIndex = 10;
+            this.lblReqMerchEmail.Text = "User Email:";
+            // 
+            // lblReqMerchDisplayUser
+            // 
+            this.lblReqMerchDisplayUser.AutoSize = true;
+            this.lblReqMerchDisplayUser.Location = new System.Drawing.Point(120, 20);
+            this.lblReqMerchDisplayUser.Name = "lblReqMerchDisplayUser";
+            this.lblReqMerchDisplayUser.Size = new System.Drawing.Size(49, 18);
+            this.lblReqMerchDisplayUser.TabIndex = 9;
+            this.lblReqMerchDisplayUser.Text = "[User]";
+            // 
+            // lblReqMerchFrom
+            // 
+            this.lblReqMerchFrom.AutoSize = true;
+            this.lblReqMerchFrom.Location = new System.Drawing.Point(22, 20);
+            this.lblReqMerchFrom.Name = "lblReqMerchFrom";
+            this.lblReqMerchFrom.Size = new System.Drawing.Size(49, 18);
+            this.lblReqMerchFrom.TabIndex = 8;
+            this.lblReqMerchFrom.Text = "From:";
+            // 
+            // lblReqMerchDesc
+            // 
+            this.lblReqMerchDesc.AutoSize = true;
+            this.lblReqMerchDesc.Location = new System.Drawing.Point(22, 146);
+            this.lblReqMerchDesc.Name = "lblReqMerchDesc";
+            this.lblReqMerchDesc.Size = new System.Drawing.Size(92, 18);
+            this.lblReqMerchDesc.TabIndex = 2;
+            this.lblReqMerchDesc.Text = "Description:";
+            // 
+            // lblReqMerchQty
+            // 
+            this.lblReqMerchQty.AutoSize = true;
+            this.lblReqMerchQty.Location = new System.Drawing.Point(22, 114);
+            this.lblReqMerchQty.Name = "lblReqMerchQty";
+            this.lblReqMerchQty.Size = new System.Drawing.Size(68, 18);
+            this.lblReqMerchQty.TabIndex = 1;
+            this.lblReqMerchQty.Text = "Quantity:";
+            // 
+            // lblReqMerchItem
+            // 
+            this.lblReqMerchItem.AutoSize = true;
+            this.lblReqMerchItem.Location = new System.Drawing.Point(22, 82);
+            this.lblReqMerchItem.Name = "lblReqMerchItem";
+            this.lblReqMerchItem.Size = new System.Drawing.Size(87, 18);
+            this.lblReqMerchItem.TabIndex = 0;
+            this.lblReqMerchItem.Text = "Item Name:";
+            // 
+            // tpMBOrganizeAnEvent
+            // 
+            this.tpMBOrganizeAnEvent.BackColor = System.Drawing.Color.LavenderBlush;
+            this.tpMBOrganizeAnEvent.Controls.Add(this.btnOrgClear);
+            this.tpMBOrganizeAnEvent.Controls.Add(this.lblOrgDisplayEmail);
+            this.tpMBOrganizeAnEvent.Controls.Add(this.lblOrgEmail);
+            this.tpMBOrganizeAnEvent.Controls.Add(this.lblOrgDisplayUser);
+            this.tpMBOrganizeAnEvent.Controls.Add(this.lblOrgfrom);
+            this.tpMBOrganizeAnEvent.Controls.Add(this.btnOrgSend);
+            this.tpMBOrganizeAnEvent.Controls.Add(this.cbxTime);
+            this.tpMBOrganizeAnEvent.Controls.Add(this.txtOrgGrpSize);
+            this.tpMBOrganizeAnEvent.Controls.Add(this.txtOrgDescription);
+            this.tpMBOrganizeAnEvent.Controls.Add(this.cbxOrgEventType);
+            this.tpMBOrganizeAnEvent.Controls.Add(this.dtpOrgDate);
+            this.tpMBOrganizeAnEvent.Controls.Add(this.cbxOrgRequestedSpace);
+            this.tpMBOrganizeAnEvent.Controls.Add(this.lblOrgGrpSize);
+            this.tpMBOrganizeAnEvent.Controls.Add(this.lblOrgDesc);
+            this.tpMBOrganizeAnEvent.Controls.Add(this.lblOrgRequestedSpace);
+            this.tpMBOrganizeAnEvent.Controls.Add(this.lblOrgTime);
+            this.tpMBOrganizeAnEvent.Controls.Add(this.lblOrgDate);
+            this.tpMBOrganizeAnEvent.Controls.Add(this.lblOrgEventType);
+            this.tpMBOrganizeAnEvent.Location = new System.Drawing.Point(4, 27);
+            this.tpMBOrganizeAnEvent.Name = "tpMBOrganizeAnEvent";
+            this.tpMBOrganizeAnEvent.Size = new System.Drawing.Size(725, 527);
+            this.tpMBOrganizeAnEvent.TabIndex = 2;
+            this.tpMBOrganizeAnEvent.Text = "Organize an event/Reserve Space";
+            // 
+            // lblOrgDisplayEmail
+            // 
+            this.lblOrgDisplayEmail.AutoSize = true;
+            this.lblOrgDisplayEmail.Location = new System.Drawing.Point(175, 57);
+            this.lblOrgDisplayEmail.Name = "lblOrgDisplayEmail";
+            this.lblOrgDisplayEmail.Size = new System.Drawing.Size(123, 18);
+            this.lblOrgDisplayEmail.TabIndex = 18;
+            this.lblOrgDisplayEmail.Text = "[E-Mail Address]";
+            // 
+            // lblOrgEmail
+            // 
+            this.lblOrgEmail.AutoSize = true;
+            this.lblOrgEmail.Location = new System.Drawing.Point(7, 57);
+            this.lblOrgEmail.Name = "lblOrgEmail";
+            this.lblOrgEmail.Size = new System.Drawing.Size(89, 18);
+            this.lblOrgEmail.TabIndex = 17;
+            this.lblOrgEmail.Text = "User Email:";
+            // 
+            // lblOrgDisplayUser
+            // 
+            this.lblOrgDisplayUser.AutoSize = true;
+            this.lblOrgDisplayUser.Location = new System.Drawing.Point(175, 27);
+            this.lblOrgDisplayUser.Name = "lblOrgDisplayUser";
+            this.lblOrgDisplayUser.Size = new System.Drawing.Size(49, 18);
+            this.lblOrgDisplayUser.TabIndex = 16;
+            this.lblOrgDisplayUser.Text = "[User]";
+            // 
+            // lblOrgfrom
+            // 
+            this.lblOrgfrom.AutoSize = true;
+            this.lblOrgfrom.Location = new System.Drawing.Point(7, 27);
+            this.lblOrgfrom.Name = "lblOrgfrom";
+            this.lblOrgfrom.Size = new System.Drawing.Size(49, 18);
+            this.lblOrgfrom.TabIndex = 15;
+            this.lblOrgfrom.Text = "From:";
+            // 
+            // btnOrgSend
+            // 
+            this.btnOrgSend.Location = new System.Drawing.Point(636, 490);
+            this.btnOrgSend.Name = "btnOrgSend";
+            this.btnOrgSend.Size = new System.Drawing.Size(75, 23);
+            this.btnOrgSend.TabIndex = 14;
+            this.btnOrgSend.Text = "Send";
+            this.btnOrgSend.UseVisualStyleBackColor = true;
+            this.btnOrgSend.Click += new System.EventHandler(this.btnOrgSend_Click);
+            // 
+            // cbxTime
+            // 
+            this.cbxTime.FormattingEnabled = true;
+            this.cbxTime.Items.AddRange(new object[] {
+            "8:00 AM",
+            "8:30 AM",
+            "9:00 AM",
+            "9:30 AM",
+            "10:00 AM",
+            "10:30 AM",
+            "11:00 AM",
+            "11:30 AM",
+            "12:00 PM",
+            "12:30 PM",
+            "1:00 PM",
+            "1:30 PM",
+            "2:00 PM",
+            "2:30 PM",
+            "3:00 PM",
+            "3:30 PM",
+            "4:00 PM",
+            "4:30 PM",
+            "5:00 PM",
+            "5:30 PM",
+            "6:00 PM",
+            "6:30 PM",
+            "7:00 PM",
+            "7:30 PM",
+            "8:00 PM",
+            "8:30 PM",
+            "9:00 PM",
+            "9:30 PM",
+            "10:00 PM",
+            "10:30 PM",
+            "11:00 PM",
+            "11:30 PM"});
+            this.cbxTime.Location = new System.Drawing.Point(178, 151);
+            this.cbxTime.Name = "cbxTime";
+            this.cbxTime.Size = new System.Drawing.Size(200, 26);
+            this.cbxTime.TabIndex = 12;
+            // 
+            // txtOrgGrpSize
+            // 
+            this.txtOrgGrpSize.Location = new System.Drawing.Point(178, 215);
+            this.txtOrgGrpSize.Name = "txtOrgGrpSize";
+            this.txtOrgGrpSize.Size = new System.Drawing.Size(200, 26);
+            this.txtOrgGrpSize.TabIndex = 11;
+            // 
+            // txtOrgDescription
+            // 
+            this.txtOrgDescription.Location = new System.Drawing.Point(178, 247);
+            this.txtOrgDescription.Multiline = true;
+            this.txtOrgDescription.Name = "txtOrgDescription";
+            this.txtOrgDescription.Size = new System.Drawing.Size(533, 235);
+            this.txtOrgDescription.TabIndex = 10;
+            // 
+            // cbxOrgEventType
+            // 
+            this.cbxOrgEventType.FormattingEnabled = true;
+            this.cbxOrgEventType.Items.AddRange(new object[] {
+            "D&D Campign",
+            "Other RPG",
+            "TableTop Game",
+            "Game Night",
+            "Tournament",
+            "Party",
+            "Other"});
+            this.cbxOrgEventType.Location = new System.Drawing.Point(178, 87);
+            this.cbxOrgEventType.Name = "cbxOrgEventType";
+            this.cbxOrgEventType.Size = new System.Drawing.Size(198, 26);
+            this.cbxOrgEventType.TabIndex = 9;
+            // 
+            // dtpOrgDate
+            // 
+            this.dtpOrgDate.Location = new System.Drawing.Point(178, 119);
+            this.dtpOrgDate.Name = "dtpOrgDate";
+            this.dtpOrgDate.Size = new System.Drawing.Size(200, 26);
+            this.dtpOrgDate.TabIndex = 8;
+            // 
+            // cbxOrgRequestedSpace
+            // 
+            this.cbxOrgRequestedSpace.FormattingEnabled = true;
+            this.cbxOrgRequestedSpace.Location = new System.Drawing.Point(178, 183);
+            this.cbxOrgRequestedSpace.Name = "cbxOrgRequestedSpace";
+            this.cbxOrgRequestedSpace.Size = new System.Drawing.Size(200, 26);
+            this.cbxOrgRequestedSpace.TabIndex = 7;
+            // 
+            // lblOrgGrpSize
+            // 
+            this.lblOrgGrpSize.AutoSize = true;
+            this.lblOrgGrpSize.Location = new System.Drawing.Point(7, 218);
+            this.lblOrgGrpSize.Name = "lblOrgGrpSize";
+            this.lblOrgGrpSize.Size = new System.Drawing.Size(165, 18);
+            this.lblOrgGrpSize.TabIndex = 6;
+            this.lblOrgGrpSize.Text = "Estimated Group Size:";
+            // 
+            // lblOrgDesc
+            // 
+            this.lblOrgDesc.AutoSize = true;
+            this.lblOrgDesc.Location = new System.Drawing.Point(7, 250);
+            this.lblOrgDesc.Name = "lblOrgDesc";
+            this.lblOrgDesc.Size = new System.Drawing.Size(92, 18);
+            this.lblOrgDesc.TabIndex = 5;
+            this.lblOrgDesc.Text = "Description:";
+            // 
+            // lblOrgRequestedSpace
+            // 
+            this.lblOrgRequestedSpace.AutoSize = true;
+            this.lblOrgRequestedSpace.Location = new System.Drawing.Point(7, 186);
+            this.lblOrgRequestedSpace.Name = "lblOrgRequestedSpace";
+            this.lblOrgRequestedSpace.Size = new System.Drawing.Size(138, 18);
+            this.lblOrgRequestedSpace.TabIndex = 4;
+            this.lblOrgRequestedSpace.Text = "Requested Space:";
+            // 
+            // lblOrgTime
+            // 
+            this.lblOrgTime.AutoSize = true;
+            this.lblOrgTime.Location = new System.Drawing.Point(7, 154);
+            this.lblOrgTime.Name = "lblOrgTime";
+            this.lblOrgTime.Size = new System.Drawing.Size(46, 18);
+            this.lblOrgTime.TabIndex = 3;
+            this.lblOrgTime.Text = "Time:";
+            // 
+            // lblOrgDate
+            // 
+            this.lblOrgDate.AutoSize = true;
+            this.lblOrgDate.Location = new System.Drawing.Point(7, 125);
+            this.lblOrgDate.Name = "lblOrgDate";
+            this.lblOrgDate.Size = new System.Drawing.Size(46, 18);
+            this.lblOrgDate.TabIndex = 2;
+            this.lblOrgDate.Text = "Date:";
+            // 
+            // lblOrgEventType
+            // 
+            this.lblOrgEventType.AutoSize = true;
+            this.lblOrgEventType.Location = new System.Drawing.Point(7, 90);
+            this.lblOrgEventType.Name = "lblOrgEventType";
+            this.lblOrgEventType.Size = new System.Drawing.Size(88, 18);
+            this.lblOrgEventType.TabIndex = 1;
+            this.lblOrgEventType.Text = "Event Type:";
+            // 
+            // tpMBComments
+            // 
+            this.tpMBComments.BackColor = System.Drawing.Color.LavenderBlush;
+            this.tpMBComments.Controls.Add(this.btnCommentClear);
+            this.tpMBComments.Controls.Add(this.lblCommentDisplayEmail);
+            this.tpMBComments.Controls.Add(this.lblCommentUserEmail);
+            this.tpMBComments.Controls.Add(this.lblCommentDisplayUser);
+            this.tpMBComments.Controls.Add(this.lblCommentFrom);
+            this.tpMBComments.Controls.Add(this.btnCommentSend);
+            this.tpMBComments.Controls.Add(this.txtCommentMessage);
+            this.tpMBComments.Controls.Add(this.txtCommentSubject);
+            this.tpMBComments.Controls.Add(this.lblCommentSubject);
+            this.tpMBComments.Location = new System.Drawing.Point(4, 27);
+            this.tpMBComments.Name = "tpMBComments";
+            this.tpMBComments.Size = new System.Drawing.Size(725, 527);
+            this.tpMBComments.TabIndex = 3;
+            this.tpMBComments.Text = "Comments/Suggestions";
+            // 
+            // lblCommentDisplayEmail
+            // 
+            this.lblCommentDisplayEmail.AutoSize = true;
+            this.lblCommentDisplayEmail.Location = new System.Drawing.Point(115, 45);
+            this.lblCommentDisplayEmail.Name = "lblCommentDisplayEmail";
+            this.lblCommentDisplayEmail.Size = new System.Drawing.Size(123, 18);
+            this.lblCommentDisplayEmail.TabIndex = 7;
+            this.lblCommentDisplayEmail.Text = "[E-Mail Address]";
+            // 
+            // lblCommentUserEmail
+            // 
+            this.lblCommentUserEmail.AutoSize = true;
+            this.lblCommentUserEmail.Location = new System.Drawing.Point(17, 45);
+            this.lblCommentUserEmail.Name = "lblCommentUserEmail";
+            this.lblCommentUserEmail.Size = new System.Drawing.Size(89, 18);
+            this.lblCommentUserEmail.TabIndex = 6;
+            this.lblCommentUserEmail.Text = "User Email:";
+            // 
+            // lblCommentDisplayUser
+            // 
+            this.lblCommentDisplayUser.AutoSize = true;
+            this.lblCommentDisplayUser.Location = new System.Drawing.Point(115, 15);
+            this.lblCommentDisplayUser.Name = "lblCommentDisplayUser";
+            this.lblCommentDisplayUser.Size = new System.Drawing.Size(49, 18);
+            this.lblCommentDisplayUser.TabIndex = 5;
+            this.lblCommentDisplayUser.Text = "[User]";
+            // 
+            // lblCommentFrom
+            // 
+            this.lblCommentFrom.AutoSize = true;
+            this.lblCommentFrom.Location = new System.Drawing.Point(17, 15);
+            this.lblCommentFrom.Name = "lblCommentFrom";
+            this.lblCommentFrom.Size = new System.Drawing.Size(49, 18);
+            this.lblCommentFrom.TabIndex = 4;
+            this.lblCommentFrom.Text = "From:";
+            // 
+            // btnCommentSend
+            // 
+            this.btnCommentSend.Location = new System.Drawing.Point(620, 475);
+            this.btnCommentSend.Name = "btnCommentSend";
+            this.btnCommentSend.Size = new System.Drawing.Size(75, 23);
+            this.btnCommentSend.TabIndex = 3;
+            this.btnCommentSend.Text = "Send";
+            this.btnCommentSend.UseVisualStyleBackColor = true;
+            this.btnCommentSend.Click += new System.EventHandler(this.btnCommentSend_Click);
+            // 
+            // txtCommentMessage
+            // 
+            this.txtCommentMessage.Location = new System.Drawing.Point(118, 110);
+            this.txtCommentMessage.Multiline = true;
+            this.txtCommentMessage.Name = "txtCommentMessage";
+            this.txtCommentMessage.Size = new System.Drawing.Size(577, 359);
+            this.txtCommentMessage.TabIndex = 2;
+            // 
+            // txtCommentSubject
+            // 
+            this.txtCommentSubject.Location = new System.Drawing.Point(118, 78);
+            this.txtCommentSubject.Name = "txtCommentSubject";
+            this.txtCommentSubject.Size = new System.Drawing.Size(577, 26);
+            this.txtCommentSubject.TabIndex = 1;
+            // 
+            // lblCommentSubject
+            // 
+            this.lblCommentSubject.AutoSize = true;
+            this.lblCommentSubject.Location = new System.Drawing.Point(17, 81);
+            this.lblCommentSubject.Name = "lblCommentSubject";
+            this.lblCommentSubject.Size = new System.Drawing.Size(64, 18);
+            this.lblCommentSubject.TabIndex = 0;
+            this.lblCommentSubject.Text = "Subject:";
+            // 
+            // lblMessagebox
+            // 
+            this.lblMessagebox.Font = new System.Drawing.Font("Arial", 24F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblMessagebox.Location = new System.Drawing.Point(3, 0);
+            this.lblMessagebox.Name = "lblMessagebox";
+            this.lblMessagebox.Size = new System.Drawing.Size(1290, 35);
+            this.lblMessagebox.TabIndex = 1;
+            this.lblMessagebox.Text = "Message Box";
+            this.lblMessagebox.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // tpTransactions
             // 
@@ -630,6 +1087,27 @@
             this.tpTransactions.TabIndex = 7;
             this.tpTransactions.Text = "Transactions";
             // 
+            // lblTransactionsDesc
+            // 
+            this.lblTransactionsDesc.Font = new System.Drawing.Font("Arial", 24F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTransactionsDesc.Location = new System.Drawing.Point(5, 318);
+            this.lblTransactionsDesc.Name = "lblTransactionsDesc";
+            this.lblTransactionsDesc.Size = new System.Drawing.Size(906, 132);
+            this.lblTransactionsDesc.TabIndex = 2;
+            this.lblTransactionsDesc.Text = "This is eventually where an employee will be able to create transactions. IE. Sel" +
+    "ling cards, buying cards, adding stock, etc";
+            this.lblTransactionsDesc.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // transactionslbl
+            // 
+            this.transactionslbl.Font = new System.Drawing.Font("Arial", 24F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.transactionslbl.Location = new System.Drawing.Point(3, 0);
+            this.transactionslbl.Name = "transactionslbl";
+            this.transactionslbl.Size = new System.Drawing.Size(906, 35);
+            this.transactionslbl.TabIndex = 1;
+            this.transactionslbl.Text = "Transactions";
+            this.transactionslbl.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
             // button8
             // 
             this.button8.Location = new System.Drawing.Point(826, 623);
@@ -639,6 +1117,26 @@
             this.button8.Text = "button8";
             this.button8.UseVisualStyleBackColor = true;
             this.button8.Click += new System.EventHandler(this.button8_Click);
+            // 
+            // tpSystemManagement
+            // 
+            this.tpSystemManagement.BackColor = System.Drawing.Color.GhostWhite;
+            this.tpSystemManagement.Controls.Add(this.lblSysManagement);
+            this.tpSystemManagement.Location = new System.Drawing.Point(149, 4);
+            this.tpSystemManagement.Name = "tpSystemManagement";
+            this.tpSystemManagement.Size = new System.Drawing.Size(1296, 670);
+            this.tpSystemManagement.TabIndex = 6;
+            this.tpSystemManagement.Text = "System Management";
+            // 
+            // lblSysManagement
+            // 
+            this.lblSysManagement.Font = new System.Drawing.Font("Arial", 24F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblSysManagement.Location = new System.Drawing.Point(3, 0);
+            this.lblSysManagement.Name = "lblSysManagement";
+            this.lblSysManagement.Size = new System.Drawing.Size(1290, 35);
+            this.lblSysManagement.TabIndex = 1;
+            this.lblSysManagement.Text = "System Management";
+            this.lblSysManagement.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // lblTitle
             // 
@@ -691,380 +1189,45 @@
             this.llblCreateAccount.TabStop = true;
             this.llblCreateAccount.Text = "Don\'t have an account? Create one.";
             // 
-            // sessonTokensTableAdapter1
-            // 
-            this.sessonTokensTableAdapter1.ClearBeforeFill = true;
-            // 
-            // nymBv2_DBDataSet1
-            // 
-            this.nymBv2_DBDataSet1.DataSetName = "NYMBv2_DBDataSet";
-            this.nymBv2_DBDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // lblMessagebox
-            // 
-            this.lblMessagebox.Font = new System.Drawing.Font("Arial", 24F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblMessagebox.Location = new System.Drawing.Point(3, 0);
-            this.lblMessagebox.Name = "lblMessagebox";
-            this.lblMessagebox.Size = new System.Drawing.Size(906, 35);
-            this.lblMessagebox.TabIndex = 1;
-            this.lblMessagebox.Text = "Message Box";
-            this.lblMessagebox.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // lblInbox
-            // 
-            this.lblInbox.Font = new System.Drawing.Font("Arial", 24F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblInbox.Location = new System.Drawing.Point(-2, 0);
-            this.lblInbox.Name = "lblInbox";
-            this.lblInbox.Size = new System.Drawing.Size(906, 35);
-            this.lblInbox.TabIndex = 1;
-            this.lblInbox.Text = "Inbox";
-            this.lblInbox.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // transactionslbl
-            // 
-            this.transactionslbl.Font = new System.Drawing.Font("Arial", 24F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.transactionslbl.Location = new System.Drawing.Point(3, 0);
-            this.transactionslbl.Name = "transactionslbl";
-            this.transactionslbl.Size = new System.Drawing.Size(906, 35);
-            this.transactionslbl.TabIndex = 1;
-            this.transactionslbl.Text = "Transactions";
-            this.transactionslbl.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // lblSysManagement
-            // 
-            this.lblSysManagement.Font = new System.Drawing.Font("Arial", 24F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblSysManagement.Location = new System.Drawing.Point(3, 0);
-            this.lblSysManagement.Name = "lblSysManagement";
-            this.lblSysManagement.Size = new System.Drawing.Size(1290, 35);
-            this.lblSysManagement.TabIndex = 1;
-            this.lblSysManagement.Text = "System Management";
-            this.lblSysManagement.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // gbxAnnouncements
-            // 
-            this.gbxAnnouncements.Controls.Add(this.rtbAnnouncements);
-            this.gbxAnnouncements.Location = new System.Drawing.Point(201, 51);
-            this.gbxAnnouncements.Name = "gbxAnnouncements";
-            this.gbxAnnouncements.Size = new System.Drawing.Size(900, 612);
-            this.gbxAnnouncements.TabIndex = 2;
-            this.gbxAnnouncements.TabStop = false;
-            // 
-            // tabMessageBox
-            // 
-            this.tabMessageBox.Controls.Add(this.tpRequestMerch);
-            this.tabMessageBox.Controls.Add(this.tpOrganizeAnEvent);
-            this.tabMessageBox.Controls.Add(this.tpComments);
-            this.tabMessageBox.Location = new System.Drawing.Point(102, 69);
-            this.tabMessageBox.Name = "tabMessageBox";
-            this.tabMessageBox.SelectedIndex = 0;
-            this.tabMessageBox.Size = new System.Drawing.Size(733, 558);
-            this.tabMessageBox.TabIndex = 4;
-            // 
-            // tpRequestMerch
-            // 
-            this.tpRequestMerch.BackColor = System.Drawing.Color.LavenderBlush;
-            this.tpRequestMerch.Location = new System.Drawing.Point(4, 27);
-            this.tpRequestMerch.Name = "tpRequestMerch";
-            this.tpRequestMerch.Padding = new System.Windows.Forms.Padding(3);
-            this.tpRequestMerch.Size = new System.Drawing.Size(725, 527);
-            this.tpRequestMerch.TabIndex = 0;
-            this.tpRequestMerch.Text = "Request Merchendise";
-            // 
-            // tpOrganizeAnEvent
-            // 
-            this.tpOrganizeAnEvent.BackColor = System.Drawing.Color.LavenderBlush;
-            this.tpOrganizeAnEvent.Controls.Add(this.txtOrgName);
-            this.tpOrganizeAnEvent.Controls.Add(this.cbxTime);
-            this.tpOrganizeAnEvent.Controls.Add(this.txtOrgGrpSize);
-            this.tpOrganizeAnEvent.Controls.Add(this.txtOrgDescription);
-            this.tpOrganizeAnEvent.Controls.Add(this.cbxOrgEventType);
-            this.tpOrganizeAnEvent.Controls.Add(this.dtpOrgDate);
-            this.tpOrganizeAnEvent.Controls.Add(this.cbxOrgRequestedSpace);
-            this.tpOrganizeAnEvent.Controls.Add(this.lblOrgGrpSize);
-            this.tpOrganizeAnEvent.Controls.Add(this.lblOrgDesc);
-            this.tpOrganizeAnEvent.Controls.Add(this.lblOrgRequestedSpace);
-            this.tpOrganizeAnEvent.Controls.Add(this.lblOrgTime);
-            this.tpOrganizeAnEvent.Controls.Add(this.lblOrgDate);
-            this.tpOrganizeAnEvent.Controls.Add(this.lblOrgEventType);
-            this.tpOrganizeAnEvent.Controls.Add(this.lblOrgName);
-            this.tpOrganizeAnEvent.Location = new System.Drawing.Point(4, 27);
-            this.tpOrganizeAnEvent.Name = "tpOrganizeAnEvent";
-            this.tpOrganizeAnEvent.Size = new System.Drawing.Size(725, 527);
-            this.tpOrganizeAnEvent.TabIndex = 2;
-            this.tpOrganizeAnEvent.Text = "Organize an event/Reserve Space";
-            // 
-            // tpComments
-            // 
-            this.tpComments.BackColor = System.Drawing.Color.LavenderBlush;
-            this.tpComments.Controls.Add(this.lblCommentDisplayEmail);
-            this.tpComments.Controls.Add(this.lblCommentUserEmail);
-            this.tpComments.Controls.Add(this.lblCommentDisplayUser);
-            this.tpComments.Controls.Add(this.lblCommentFrom);
-            this.tpComments.Controls.Add(this.btnCommentSend);
-            this.tpComments.Controls.Add(this.txtCommentMessage);
-            this.tpComments.Controls.Add(this.txtCommentSubject);
-            this.tpComments.Controls.Add(this.lblCommentSubject);
-            this.tpComments.Location = new System.Drawing.Point(4, 27);
-            this.tpComments.Name = "tpComments";
-            this.tpComments.Size = new System.Drawing.Size(725, 527);
-            this.tpComments.TabIndex = 3;
-            this.tpComments.Text = "Comments/Suggestions";
-            // 
-            // lblCommentSubject
-            // 
-            this.lblCommentSubject.AutoSize = true;
-            this.lblCommentSubject.Location = new System.Drawing.Point(17, 81);
-            this.lblCommentSubject.Name = "lblCommentSubject";
-            this.lblCommentSubject.Size = new System.Drawing.Size(64, 18);
-            this.lblCommentSubject.TabIndex = 0;
-            this.lblCommentSubject.Text = "Subject:";
-            // 
-            // txtCommentSubject
-            // 
-            this.txtCommentSubject.Location = new System.Drawing.Point(118, 78);
-            this.txtCommentSubject.Name = "txtCommentSubject";
-            this.txtCommentSubject.Size = new System.Drawing.Size(577, 26);
-            this.txtCommentSubject.TabIndex = 1;
-            // 
-            // txtCommentMessage
-            // 
-            this.txtCommentMessage.Location = new System.Drawing.Point(118, 110);
-            this.txtCommentMessage.Multiline = true;
-            this.txtCommentMessage.Name = "txtCommentMessage";
-            this.txtCommentMessage.Size = new System.Drawing.Size(577, 235);
-            this.txtCommentMessage.TabIndex = 2;
-            // 
-            // btnCommentSend
-            // 
-            this.btnCommentSend.Location = new System.Drawing.Point(620, 351);
-            this.btnCommentSend.Name = "btnCommentSend";
-            this.btnCommentSend.Size = new System.Drawing.Size(75, 23);
-            this.btnCommentSend.TabIndex = 3;
-            this.btnCommentSend.Text = "Send";
-            this.btnCommentSend.UseVisualStyleBackColor = true;
-            // 
-            // lblCommentFrom
-            // 
-            this.lblCommentFrom.AutoSize = true;
-            this.lblCommentFrom.Location = new System.Drawing.Point(17, 15);
-            this.lblCommentFrom.Name = "lblCommentFrom";
-            this.lblCommentFrom.Size = new System.Drawing.Size(49, 18);
-            this.lblCommentFrom.TabIndex = 4;
-            this.lblCommentFrom.Text = "From:";
-            // 
-            // lblCommentDisplayUser
-            // 
-            this.lblCommentDisplayUser.AutoSize = true;
-            this.lblCommentDisplayUser.Location = new System.Drawing.Point(115, 15);
-            this.lblCommentDisplayUser.Name = "lblCommentDisplayUser";
-            this.lblCommentDisplayUser.Size = new System.Drawing.Size(49, 18);
-            this.lblCommentDisplayUser.TabIndex = 5;
-            this.lblCommentDisplayUser.Text = "[User]";
-            // 
-            // lblCommentDisplayEmail
-            // 
-            this.lblCommentDisplayEmail.AutoSize = true;
-            this.lblCommentDisplayEmail.Location = new System.Drawing.Point(115, 45);
-            this.lblCommentDisplayEmail.Name = "lblCommentDisplayEmail";
-            this.lblCommentDisplayEmail.Size = new System.Drawing.Size(123, 18);
-            this.lblCommentDisplayEmail.TabIndex = 7;
-            this.lblCommentDisplayEmail.Text = "[E-Mail Address]";
-            // 
-            // lblCommentUserEmail
-            // 
-            this.lblCommentUserEmail.AutoSize = true;
-            this.lblCommentUserEmail.Location = new System.Drawing.Point(17, 45);
-            this.lblCommentUserEmail.Name = "lblCommentUserEmail";
-            this.lblCommentUserEmail.Size = new System.Drawing.Size(89, 18);
-            this.lblCommentUserEmail.TabIndex = 6;
-            this.lblCommentUserEmail.Text = "User Email:";
-            // 
-            // lblMessagesFootnote
-            // 
-            this.lblMessagesFootnote.AutoSize = true;
-            this.lblMessagesFootnote.Location = new System.Drawing.Point(123, 630);
-            this.lblMessagesFootnote.Name = "lblMessagesFootnote";
-            this.lblMessagesFootnote.Size = new System.Drawing.Size(455, 18);
-            this.lblMessagesFootnote.TabIndex = 8;
-            this.lblMessagesFootnote.Text = "*Responses to any messages will be sent to your E-Mail address\r\n";
-            // 
-            // lblOrgName
-            // 
-            this.lblOrgName.AutoSize = true;
-            this.lblOrgName.Location = new System.Drawing.Point(46, 15);
-            this.lblOrgName.Name = "lblOrgName";
-            this.lblOrgName.Size = new System.Drawing.Size(126, 18);
-            this.lblOrgName.TabIndex = 0;
-            this.lblOrgName.Text = "Organizer Name:";
-            // 
-            // lblOrgEventType
-            // 
-            this.lblOrgEventType.AutoSize = true;
-            this.lblOrgEventType.Location = new System.Drawing.Point(86, 47);
-            this.lblOrgEventType.Name = "lblOrgEventType";
-            this.lblOrgEventType.Size = new System.Drawing.Size(88, 18);
-            this.lblOrgEventType.TabIndex = 1;
-            this.lblOrgEventType.Text = "Event Type:";
-            // 
-            // lblOrgDate
-            // 
-            this.lblOrgDate.AutoSize = true;
-            this.lblOrgDate.Location = new System.Drawing.Point(126, 82);
-            this.lblOrgDate.Name = "lblOrgDate";
-            this.lblOrgDate.Size = new System.Drawing.Size(46, 18);
-            this.lblOrgDate.TabIndex = 2;
-            this.lblOrgDate.Text = "Date:";
-            // 
-            // lblOrgTime
-            // 
-            this.lblOrgTime.AutoSize = true;
-            this.lblOrgTime.Location = new System.Drawing.Point(128, 111);
-            this.lblOrgTime.Name = "lblOrgTime";
-            this.lblOrgTime.Size = new System.Drawing.Size(46, 18);
-            this.lblOrgTime.TabIndex = 3;
-            this.lblOrgTime.Text = "Time:";
-            // 
-            // lblOrgRequestedSpace
-            // 
-            this.lblOrgRequestedSpace.AutoSize = true;
-            this.lblOrgRequestedSpace.Location = new System.Drawing.Point(36, 143);
-            this.lblOrgRequestedSpace.Name = "lblOrgRequestedSpace";
-            this.lblOrgRequestedSpace.Size = new System.Drawing.Size(138, 18);
-            this.lblOrgRequestedSpace.TabIndex = 4;
-            this.lblOrgRequestedSpace.Text = "Requested Space:";
-            // 
-            // lblOrgDesc
-            // 
-            this.lblOrgDesc.AutoSize = true;
-            this.lblOrgDesc.Location = new System.Drawing.Point(82, 207);
-            this.lblOrgDesc.Name = "lblOrgDesc";
-            this.lblOrgDesc.Size = new System.Drawing.Size(92, 18);
-            this.lblOrgDesc.TabIndex = 5;
-            this.lblOrgDesc.Text = "Description:";
-            // 
-            // lblOrgGrpSize
-            // 
-            this.lblOrgGrpSize.AutoSize = true;
-            this.lblOrgGrpSize.Location = new System.Drawing.Point(7, 175);
-            this.lblOrgGrpSize.Name = "lblOrgGrpSize";
-            this.lblOrgGrpSize.Size = new System.Drawing.Size(165, 18);
-            this.lblOrgGrpSize.TabIndex = 6;
-            this.lblOrgGrpSize.Text = "Estimated Group Size:";
-            // 
-            // cbxOrgRequestedSpace
-            // 
-            this.cbxOrgRequestedSpace.FormattingEnabled = true;
-            this.cbxOrgRequestedSpace.Location = new System.Drawing.Point(178, 140);
-            this.cbxOrgRequestedSpace.Name = "cbxOrgRequestedSpace";
-            this.cbxOrgRequestedSpace.Size = new System.Drawing.Size(200, 26);
-            this.cbxOrgRequestedSpace.TabIndex = 7;
-            // 
-            // dtpOrgDate
-            // 
-            this.dtpOrgDate.Location = new System.Drawing.Point(178, 76);
-            this.dtpOrgDate.Name = "dtpOrgDate";
-            this.dtpOrgDate.Size = new System.Drawing.Size(200, 26);
-            this.dtpOrgDate.TabIndex = 8;
-            // 
-            // cbxOrgEventType
-            // 
-            this.cbxOrgEventType.FormattingEnabled = true;
-            this.cbxOrgEventType.Items.AddRange(new object[] {
-            "D&D Campign",
-            "Other RPG",
-            "TableTop Game",
-            "Game Night",
-            "Tournament",
-            "Party",
-            "Other"});
-            this.cbxOrgEventType.Location = new System.Drawing.Point(180, 44);
-            this.cbxOrgEventType.Name = "cbxOrgEventType";
-            this.cbxOrgEventType.Size = new System.Drawing.Size(198, 26);
-            this.cbxOrgEventType.TabIndex = 9;
-            // 
-            // txtOrgDescription
-            // 
-            this.txtOrgDescription.Location = new System.Drawing.Point(178, 204);
-            this.txtOrgDescription.Multiline = true;
-            this.txtOrgDescription.Name = "txtOrgDescription";
-            this.txtOrgDescription.Size = new System.Drawing.Size(533, 311);
-            this.txtOrgDescription.TabIndex = 10;
-            // 
-            // txtOrgGrpSize
-            // 
-            this.txtOrgGrpSize.Location = new System.Drawing.Point(178, 172);
-            this.txtOrgGrpSize.Name = "txtOrgGrpSize";
-            this.txtOrgGrpSize.Size = new System.Drawing.Size(200, 26);
-            this.txtOrgGrpSize.TabIndex = 11;
-            // 
-            // cbxTime
-            // 
-            this.cbxTime.FormattingEnabled = true;
-            this.cbxTime.Items.AddRange(new object[] {
-            "8:00 AM",
-            "8:30 AM",
-            "9:00 AM",
-            "9:30 AM",
-            "10:00 AM",
-            "10:30 AM",
-            "11:00 AM",
-            "11:30 AM",
-            "12:00 PM",
-            "12:30 PM",
-            "1:00 PM",
-            "1:30 PM",
-            "2:00 PM",
-            "2:30 PM",
-            "3:00 PM",
-            "3:30 PM",
-            "4:00 PM",
-            "4:30 PM",
-            "5:00 PM",
-            "5:30 PM",
-            "6:00 PM",
-            "6:30 PM",
-            "7:00 PM",
-            "7:30 PM",
-            "8:00 PM",
-            "8:30 PM",
-            "9:00 PM",
-            "9:30 PM",
-            "10:00 PM",
-            "10:30 PM",
-            "11:00 PM",
-            "11:30 PM"});
-            this.cbxTime.Location = new System.Drawing.Point(178, 108);
-            this.cbxTime.Name = "cbxTime";
-            this.cbxTime.Size = new System.Drawing.Size(200, 26);
-            this.cbxTime.TabIndex = 12;
-            // 
-            // txtOrgName
-            // 
-            this.txtOrgName.Location = new System.Drawing.Point(180, 12);
-            this.txtOrgName.Name = "txtOrgName";
-            this.txtOrgName.Size = new System.Drawing.Size(198, 26);
-            this.txtOrgName.TabIndex = 13;
-            // 
-            // lblRemove1331
-            // 
-            this.lblRemove1331.Font = new System.Drawing.Font("Arial", 24F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblRemove1331.Location = new System.Drawing.Point(5, 318);
-            this.lblRemove1331.Name = "lblRemove1331";
-            this.lblRemove1331.Size = new System.Drawing.Size(906, 35);
-            this.lblRemove1331.TabIndex = 2;
-            this.lblRemove1331.Text = "Remove this tab";
-            this.lblRemove1331.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // lblTransactionsDesc
-            // 
-            this.lblTransactionsDesc.Font = new System.Drawing.Font("Arial", 24F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTransactionsDesc.Location = new System.Drawing.Point(5, 318);
-            this.lblTransactionsDesc.Name = "lblTransactionsDesc";
-            this.lblTransactionsDesc.Size = new System.Drawing.Size(906, 132);
-            this.lblTransactionsDesc.TabIndex = 2;
-            this.lblTransactionsDesc.Text = "This is eventually where an employee will be able to create transactions. IE. Sel" +
-    "ling cards, buying cards, adding stock, etc";
-            this.lblTransactionsDesc.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // btnReqMerchClear
+            // 
+            this.btnReqMerchClear.Location = new System.Drawing.Point(548, 487);
+            this.btnReqMerchClear.Name = "btnReqMerchClear";
+            this.btnReqMerchClear.Size = new System.Drawing.Size(75, 23);
+            this.btnReqMerchClear.TabIndex = 17;
+            this.btnReqMerchClear.Text = "Clear";
+            this.btnReqMerchClear.UseVisualStyleBackColor = true;
+            this.btnReqMerchClear.Click += new System.EventHandler(this.btnReqMerchClear_Click);
+            // 
+            // btnOrgClear
+            // 
+            this.btnOrgClear.Location = new System.Drawing.Point(555, 490);
+            this.btnOrgClear.Name = "btnOrgClear";
+            this.btnOrgClear.Size = new System.Drawing.Size(75, 23);
+            this.btnOrgClear.TabIndex = 19;
+            this.btnOrgClear.Text = "Clear";
+            this.btnOrgClear.UseVisualStyleBackColor = true;
+            this.btnOrgClear.Click += new System.EventHandler(this.btnOrgClear_Click);
+            // 
+            // btnCommentClear
+            // 
+            this.btnCommentClear.Location = new System.Drawing.Point(539, 475);
+            this.btnCommentClear.Name = "btnCommentClear";
+            this.btnCommentClear.Size = new System.Drawing.Size(75, 23);
+            this.btnCommentClear.TabIndex = 18;
+            this.btnCommentClear.Text = "Clear";
+            this.btnCommentClear.UseVisualStyleBackColor = true;
+            this.btnCommentClear.Click += new System.EventHandler(this.btnCommentClear_Click);
+            // 
+            // button7
+            // 
+            this.button7.Location = new System.Drawing.Point(37, 112);
+            this.button7.Name = "button7";
+            this.button7.Size = new System.Drawing.Size(75, 23);
+            this.button7.TabIndex = 3;
+            this.button7.Text = "button7";
+            this.button7.UseVisualStyleBackColor = true;
+            this.button7.Click += new System.EventHandler(this.button7_Click_1);
             // 
             // Main
             // 
@@ -1082,6 +1245,7 @@
             this.Text = "Main";
             this.tabControl1.ResumeLayout(false);
             this.tpAnnouncements.ResumeLayout(false);
+            this.gbxAnnouncements.ResumeLayout(false);
             this.tpInventory.ResumeLayout(false);
             this.tpInventory.PerformLayout();
             this.tpEvents.ResumeLayout(false);
@@ -1101,16 +1265,15 @@
             ((System.ComponentModel.ISupportInitialize)(this.ownerPicBox)).EndInit();
             this.tpMessagebox.ResumeLayout(false);
             this.tpMessagebox.PerformLayout();
-            this.tpInbox.ResumeLayout(false);
-            this.tpSystemManagement.ResumeLayout(false);
-            this.tpTransactions.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.nymBv2_DBDataSet1)).EndInit();
-            this.gbxAnnouncements.ResumeLayout(false);
             this.tabMessageBox.ResumeLayout(false);
-            this.tpOrganizeAnEvent.ResumeLayout(false);
-            this.tpOrganizeAnEvent.PerformLayout();
-            this.tpComments.ResumeLayout(false);
-            this.tpComments.PerformLayout();
+            this.tpMBRequestMerch.ResumeLayout(false);
+            this.tpMBRequestMerch.PerformLayout();
+            this.tpMBOrganizeAnEvent.ResumeLayout(false);
+            this.tpMBOrganizeAnEvent.PerformLayout();
+            this.tpMBComments.ResumeLayout(false);
+            this.tpMBComments.PerformLayout();
+            this.tpTransactions.ResumeLayout(false);
+            this.tpSystemManagement.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1123,7 +1286,6 @@
         private System.Windows.Forms.TabPage tpEvents;
         private System.Windows.Forms.TabPage tpStoreInfo;
         private System.Windows.Forms.TabPage tpMessagebox;
-        private System.Windows.Forms.TabPage tpInbox;
         private System.Windows.Forms.TabPage tpSystemManagement;
         private System.Windows.Forms.TabPage tpTransactions;
         private System.Windows.Forms.Label lblTitle;
@@ -1135,12 +1297,9 @@
         private System.Windows.Forms.Label lblAnnouncements;
 		private System.Windows.Forms.TextBox txtbxSearchInventory;
 		private System.Windows.Forms.Label lblInventory;
-		private System.Windows.Forms.Button button6;
-		private System.Windows.Forms.Button button7;
 		private System.Windows.Forms.Button button8;
 		private System.Windows.Forms.Button btnEditBindersTable;
         private NYMBv2_DBDataSetTableAdapters.SessonTokensTableAdapter sessonTokensTableAdapter1;
-        private NYMBv2_DBDataSet nymBv2_DBDataSet1;
 		private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Panel pnlWeek;
         private System.Windows.Forms.GroupBox gbxSaturday;
@@ -1173,13 +1332,11 @@
         private System.Windows.Forms.GroupBox gbxAnnouncements;
         private System.Windows.Forms.Label lblMessagebox;
         private System.Windows.Forms.Label transactionslbl;
-        private System.Windows.Forms.Label lblInbox;
         private System.Windows.Forms.Label lblSysManagement;
         private System.Windows.Forms.Label lblMessagesFootnote;
         private System.Windows.Forms.TabControl tabMessageBox;
-        private System.Windows.Forms.TabPage tpRequestMerch;
-        private System.Windows.Forms.TabPage tpOrganizeAnEvent;
-        private System.Windows.Forms.TextBox txtOrgName;
+        private System.Windows.Forms.TabPage tpMBRequestMerch;
+        private System.Windows.Forms.TabPage tpMBOrganizeAnEvent;
         private System.Windows.Forms.ComboBox cbxTime;
         private System.Windows.Forms.TextBox txtOrgGrpSize;
         private System.Windows.Forms.TextBox txtOrgDescription;
@@ -1192,8 +1349,7 @@
         private System.Windows.Forms.Label lblOrgTime;
         private System.Windows.Forms.Label lblOrgDate;
         private System.Windows.Forms.Label lblOrgEventType;
-        private System.Windows.Forms.Label lblOrgName;
-        private System.Windows.Forms.TabPage tpComments;
+        private System.Windows.Forms.TabPage tpMBComments;
         private System.Windows.Forms.Label lblCommentDisplayEmail;
         private System.Windows.Forms.Label lblCommentUserEmail;
         private System.Windows.Forms.Label lblCommentDisplayUser;
@@ -1203,7 +1359,26 @@
         private System.Windows.Forms.TextBox txtCommentSubject;
         private System.Windows.Forms.Label lblCommentSubject;
         private System.Windows.Forms.Label lblTransactionsDesc;
-        private System.Windows.Forms.Label lblRemove1331;
+        private System.Windows.Forms.Button btnReqMerchSend;
+        private System.Windows.Forms.ComboBox cbxReqMerchQty;
+        private System.Windows.Forms.TextBox txtReqMerchDesc;
+        private System.Windows.Forms.TextBox txtReqMerchItemName;
+        private System.Windows.Forms.Label lblReqMerchDisplayEmail;
+        private System.Windows.Forms.Label lblReqMerchEmail;
+        private System.Windows.Forms.Label lblReqMerchDisplayUser;
+        private System.Windows.Forms.Label lblReqMerchFrom;
+        private System.Windows.Forms.Label lblReqMerchDesc;
+        private System.Windows.Forms.Label lblReqMerchQty;
+        private System.Windows.Forms.Label lblReqMerchItem;
+        private System.Windows.Forms.Button btnOrgSend;
+        private System.Windows.Forms.Label lblOrgDisplayEmail;
+        private System.Windows.Forms.Label lblOrgEmail;
+        private System.Windows.Forms.Label lblOrgDisplayUser;
+        private System.Windows.Forms.Label lblOrgfrom;
+        private System.Windows.Forms.Button btnReqMerchClear;
+        private System.Windows.Forms.Button btnOrgClear;
+        private System.Windows.Forms.Button btnCommentClear;
+        private System.Windows.Forms.Button button7;
     }
 }
 
