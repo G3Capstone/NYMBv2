@@ -144,12 +144,6 @@
       <DependentUpon>Events Dummy.cs</DependentUpon>
     </Compile>
     <Compile Include="Hashing.cs" />
-    <Compile Include="Inventory Dummy.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Inventory Dummy.Designer.cs">
-      <DependentUpon>Inventory Dummy.cs</DependentUpon>
-    </Compile>
     <Compile Include="Item.cs" />
     <Compile Include="LogIn.cs">
       <SubType>Form</SubType>
@@ -170,6 +164,12 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Second_Manager_dummy.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Second_Manager_dummy.Designer.cs">
+      <DependentUpon>Second_Manager_dummy.cs</DependentUpon>
+    </Compile>
     <Compile Include="SessonToken.cs" />
     <Compile Include="Sleeves.cs" />
     <Compile Include="SleevesControl.cs">
@@ -185,11 +185,11 @@
     <Compile Include="StoreInfo_Dummy.Designer.cs">
       <DependentUpon>StoreInfo_Dummy.cs</DependentUpon>
     </Compile>
-    <Compile Include="SystemManager_Dummy.cs">
+    <Compile Include="Edit_Inventory.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="SystemManager_Dummy.Designer.cs">
-      <DependentUpon>SystemManager_Dummy.cs</DependentUpon>
+    <Compile Include="Edit_Inventory.Designer.cs">
+      <DependentUpon>Edit_Inventory.cs</DependentUpon>
     </Compile>
     <Compile Include="TabletopGame.cs" />
     <Compile Include="TabletopGameControl.cs">
@@ -254,14 +254,17 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="Second_Manager_dummy.resx">
+      <DependentUpon>Second_Manager_dummy.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="SleevesControl.resx">
       <DependentUpon>SleevesControl.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="StoreInfo_Dummy.resx">
       <DependentUpon>StoreInfo_Dummy.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="SystemManager_Dummy.resx">
-      <DependentUpon>SystemManager_Dummy.cs</DependentUpon>
+    <EmbeddedResource Include="Edit_Inventory.resx">
+      <DependentUpon>Edit_Inventory.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="TabletopGameControl.resx">
       <DependentUpon>TabletopGameControl.cs</DependentUpon>
@@ -292,7 +295,9 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <None Include="App.config" />
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <Content Include="LICENSE.txt" />

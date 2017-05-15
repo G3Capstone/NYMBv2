@@ -69,5 +69,17 @@ namespace NYMBv2.Properties {
                 return ((int)(this["smtp_Port"]));
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("True")]
+        public bool generateColumns {
+            get {
+                return ((bool)(this["generateColumns"]));
+            }
+            set {
+                this["generateColumns"] = value;
+            }
+        }
     }
 }
