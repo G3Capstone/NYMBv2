@@ -2,14 +2,6 @@
 <SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="NYMBv2.Properties" GeneratedClassName="Settings">
   <Profiles />
   <Settings>
-    <Setting Name="NYMB_DBConnectionString" Type="(Connection string)" Scope="Application">
-      <DesignTimeValue Profile="(Default)">&lt;?xml version="1.0" encoding="utf-16"?&gt;
-&lt;SerializableConnectionString xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&gt;
-  &lt;ConnectionString&gt;Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\NYMB_DB.mdf;Integrated Security=True;Connect Timeout=30&lt;/ConnectionString&gt;
-  &lt;ProviderName&gt;System.Data.SqlClient&lt;/ProviderName&gt;
-&lt;/SerializableConnectionString&gt;</DesignTimeValue>
-      <Value Profile="(Default)">Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\NYMB_DB.mdf;Integrated Security=True;Connect Timeout=30</Value>
-    </Setting>
     <Setting Name="NYMBv2_DBConnectionString" Type="(Connection string)" Scope="Application">
       <DesignTimeValue Profile="(Default)">&lt;?xml version="1.0" encoding="utf-16"?&gt;
 &lt;SerializableConnectionString xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&gt;
@@ -17,6 +9,18 @@
   &lt;ProviderName&gt;System.Data.SqlClient&lt;/ProviderName&gt;
 &lt;/SerializableConnectionString&gt;</DesignTimeValue>
       <Value Profile="(Default)">Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\NYMBv2_DB.mdf;Integrated Security=True</Value>
+    </Setting>
+    <Setting Name="smtp_Credentials_Email" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">notyourmothersbasementG3@gmail.com</Value>
+    </Setting>
+    <Setting Name="smtp_Credentials_Password" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">capstoneG3</Value>
+    </Setting>
+    <Setting Name="smtp_Host" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">smtp.gmail.com</Value>
+    </Setting>
+    <Setting Name="smtp_Port" Type="System.Int32" Scope="Application">
+      <Value Profile="(Default)">587</Value>
     </Setting>
   </Settings>
 </SettingsFile>

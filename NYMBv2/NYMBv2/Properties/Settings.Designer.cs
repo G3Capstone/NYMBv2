@@ -26,22 +26,47 @@ namespace NYMBv2.Properties {
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
-        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\\NYMB_DB.mdf;I" +
-            "ntegrated Security=True;Connect Timeout=30")]
-        public string NYMB_DBConnectionString {
-            get {
-                return ((string)(this["NYMB_DBConnectionString"]));
-            }
-        }
-        
-        [global::System.Configuration.ApplicationScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
         [global::System.Configuration.DefaultSettingValueAttribute("Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\\NYMBv2_DB.mdf" +
             ";Integrated Security=True")]
         public string NYMBv2_DBConnectionString {
             get {
                 return ((string)(this["NYMBv2_DBConnectionString"]));
+            }
+        }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("notyourmothersbasementG3@gmail.com")]
+        public string smtp_Credentials_Email {
+            get {
+                return ((string)(this["smtp_Credentials_Email"]));
+            }
+        }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("capstoneG3")]
+        public string smtp_Credentials_Password {
+            get {
+                return ((string)(this["smtp_Credentials_Password"]));
+            }
+        }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("smtp.gmail.com")]
+        public string smtp_Host {
+            get {
+                return ((string)(this["smtp_Host"]));
+            }
+        }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("587")]
+        public int smtp_Port {
+            get {
+                return ((int)(this["smtp_Port"]));
             }
         }
     }

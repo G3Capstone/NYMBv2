@@ -23,7 +23,7 @@ namespace NYMBv2
         public SystemManager_Dummy()
         {
             InitializeComponent();
-            cbxSysManAdmins.DataSource = GetAdminUSers();
+
         }
 
 
@@ -57,6 +57,41 @@ namespace NYMBv2
                     return Admins;
                 }
             }
+        }
+
+        private void btnAddStuff_Click(object sender, EventArgs e)
+        {
+
+            Configuration config = ConfigurationManager.OpenExeConfiguration(Application.ExecutablePath);
+
+            //string email = ConfigurationManager.AppSettings.Get("smtp_Credentials_Email");
+            //string pass = ConfigurationManager.AppSettings.Get("smtp_Credentials_Password");
+            //string port = ConfigurationManager.AppSettings.Get("smtp_Port");
+            //string host = ConfigurationManager.AppSettings.Get("smtp_Host");
+
+
+            ////string email = 
+            //    config.AppSettings.Settings.Add("smtp_Credentials_Email", "notyourmothersbasementG3@gmail.com");
+            //config.Save();
+            //config.AppSettings.SectionInformation.
+            ////string pass = ConfigurationManager.AppSettings.Get("smtp_Credentials_Password");
+            //string port = ConfigurationManager.AppSettings.Get("smtp_Port");
+            //string host = ConfigurationManager.AppSettings.Get("smtp_Host");
+
+            //txtSmtpSettingemail.Text = email;
+            //txtSmtpSettingPassword.Text = pass;
+            //txtSmtpSettingPort.Text = port;
+            //txtSmtpSettingHost.Text = host;
+        }
+
+        public static void AddValue(string key, string value)
+        {
+            Configuration config = ConfigurationManager.OpenExeConfiguration(Application.ExecutablePath);
+
+            
+
+            config.AppSettings.Settings.Add(key, value);
+            config.Save(ConfigurationSaveMode.Minimal);
         }
 
     }

@@ -29,27 +29,24 @@
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.lblSysManEmail = new System.Windows.Forms.Label();
-            this.lblSysManPassword = new System.Windows.Forms.Label();
-            this.lblSysManPortNumber = new System.Windows.Forms.Label();
+            this.txtSmtpSettingHost = new System.Windows.Forms.TextBox();
+            this.txtSmtpSettingPort = new System.Windows.Forms.TextBox();
+            this.txtSmtpSettingPassword = new System.Windows.Forms.TextBox();
+            this.txtSmtpSettingemail = new System.Windows.Forms.TextBox();
             this.lblSysManHost = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.lblSysManAdmin = new System.Windows.Forms.Label();
-            this.cbxSysManAdmins = new System.Windows.Forms.ComboBox();
+            this.lblSysManPortNumber = new System.Windows.Forms.Label();
+            this.lblSysManPassword = new System.Windows.Forms.Label();
+            this.lblSysManEmail = new System.Windows.Forms.Label();
+            this.btnAddStuff = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.cbxSysManAdmins);
-            this.groupBox1.Controls.Add(this.lblSysManAdmin);
-            this.groupBox1.Controls.Add(this.textBox4);
-            this.groupBox1.Controls.Add(this.textBox3);
-            this.groupBox1.Controls.Add(this.textBox2);
-            this.groupBox1.Controls.Add(this.textBox1);
+            this.groupBox1.Controls.Add(this.txtSmtpSettingHost);
+            this.groupBox1.Controls.Add(this.txtSmtpSettingPort);
+            this.groupBox1.Controls.Add(this.txtSmtpSettingPassword);
+            this.groupBox1.Controls.Add(this.txtSmtpSettingemail);
             this.groupBox1.Controls.Add(this.lblSysManHost);
             this.groupBox1.Controls.Add(this.lblSysManPortNumber);
             this.groupBox1.Controls.Add(this.lblSysManPassword);
@@ -61,32 +58,33 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Smtp Settings";
             // 
-            // lblSysManEmail
+            // txtSmtpSettingHost
             // 
-            this.lblSysManEmail.AutoSize = true;
-            this.lblSysManEmail.Location = new System.Drawing.Point(46, 31);
-            this.lblSysManEmail.Name = "lblSysManEmail";
-            this.lblSysManEmail.Size = new System.Drawing.Size(76, 13);
-            this.lblSysManEmail.TabIndex = 0;
-            this.lblSysManEmail.Text = "Email Address:";
+            this.txtSmtpSettingHost.Location = new System.Drawing.Point(128, 106);
+            this.txtSmtpSettingHost.Name = "txtSmtpSettingHost";
+            this.txtSmtpSettingHost.Size = new System.Drawing.Size(219, 20);
+            this.txtSmtpSettingHost.TabIndex = 8;
             // 
-            // lblSysManPassword
+            // txtSmtpSettingPort
             // 
-            this.lblSysManPassword.AutoSize = true;
-            this.lblSysManPassword.Location = new System.Drawing.Point(66, 57);
-            this.lblSysManPassword.Name = "lblSysManPassword";
-            this.lblSysManPassword.Size = new System.Drawing.Size(56, 13);
-            this.lblSysManPassword.TabIndex = 1;
-            this.lblSysManPassword.Text = "Password:";
+            this.txtSmtpSettingPort.Location = new System.Drawing.Point(128, 80);
+            this.txtSmtpSettingPort.Name = "txtSmtpSettingPort";
+            this.txtSmtpSettingPort.Size = new System.Drawing.Size(219, 20);
+            this.txtSmtpSettingPort.TabIndex = 7;
             // 
-            // lblSysManPortNumber
+            // txtSmtpSettingPassword
             // 
-            this.lblSysManPortNumber.AutoSize = true;
-            this.lblSysManPortNumber.Location = new System.Drawing.Point(93, 83);
-            this.lblSysManPortNumber.Name = "lblSysManPortNumber";
-            this.lblSysManPortNumber.Size = new System.Drawing.Size(29, 13);
-            this.lblSysManPortNumber.TabIndex = 2;
-            this.lblSysManPortNumber.Text = "Port:";
+            this.txtSmtpSettingPassword.Location = new System.Drawing.Point(128, 54);
+            this.txtSmtpSettingPassword.Name = "txtSmtpSettingPassword";
+            this.txtSmtpSettingPassword.Size = new System.Drawing.Size(219, 20);
+            this.txtSmtpSettingPassword.TabIndex = 6;
+            // 
+            // txtSmtpSettingemail
+            // 
+            this.txtSmtpSettingemail.Location = new System.Drawing.Point(128, 28);
+            this.txtSmtpSettingemail.Name = "txtSmtpSettingemail";
+            this.txtSmtpSettingemail.Size = new System.Drawing.Size(219, 20);
+            this.txtSmtpSettingemail.TabIndex = 5;
             // 
             // lblSysManHost
             // 
@@ -97,56 +95,49 @@
             this.lblSysManHost.TabIndex = 3;
             this.lblSysManHost.Text = "Host:";
             // 
-            // textBox1
+            // lblSysManPortNumber
             // 
-            this.textBox1.Location = new System.Drawing.Point(128, 28);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(219, 20);
-            this.textBox1.TabIndex = 5;
+            this.lblSysManPortNumber.AutoSize = true;
+            this.lblSysManPortNumber.Location = new System.Drawing.Point(93, 83);
+            this.lblSysManPortNumber.Name = "lblSysManPortNumber";
+            this.lblSysManPortNumber.Size = new System.Drawing.Size(29, 13);
+            this.lblSysManPortNumber.TabIndex = 2;
+            this.lblSysManPortNumber.Text = "Port:";
             // 
-            // textBox2
+            // lblSysManPassword
             // 
-            this.textBox2.Location = new System.Drawing.Point(128, 54);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(219, 20);
-            this.textBox2.TabIndex = 6;
+            this.lblSysManPassword.AutoSize = true;
+            this.lblSysManPassword.Location = new System.Drawing.Point(66, 57);
+            this.lblSysManPassword.Name = "lblSysManPassword";
+            this.lblSysManPassword.Size = new System.Drawing.Size(56, 13);
+            this.lblSysManPassword.TabIndex = 1;
+            this.lblSysManPassword.Text = "Password:";
             // 
-            // textBox3
+            // lblSysManEmail
             // 
-            this.textBox3.Location = new System.Drawing.Point(128, 80);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(219, 20);
-            this.textBox3.TabIndex = 7;
+            this.lblSysManEmail.AutoSize = true;
+            this.lblSysManEmail.Location = new System.Drawing.Point(46, 31);
+            this.lblSysManEmail.Name = "lblSysManEmail";
+            this.lblSysManEmail.Size = new System.Drawing.Size(76, 13);
+            this.lblSysManEmail.TabIndex = 0;
+            this.lblSysManEmail.Text = "Email Address:";
             // 
-            // textBox4
+            // btnAddStuff
             // 
-            this.textBox4.Location = new System.Drawing.Point(128, 106);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(219, 20);
-            this.textBox4.TabIndex = 8;
-            // 
-            // lblSysManAdmin
-            // 
-            this.lblSysManAdmin.AutoSize = true;
-            this.lblSysManAdmin.Location = new System.Drawing.Point(40, 135);
-            this.lblSysManAdmin.Name = "lblSysManAdmin";
-            this.lblSysManAdmin.Size = new System.Drawing.Size(82, 13);
-            this.lblSysManAdmin.TabIndex = 9;
-            this.lblSysManAdmin.Text = "Admin Account:";
-            // 
-            // cbxSysManAdmins
-            // 
-            this.cbxSysManAdmins.FormattingEnabled = true;
-            this.cbxSysManAdmins.Location = new System.Drawing.Point(128, 132);
-            this.cbxSysManAdmins.Name = "cbxSysManAdmins";
-            this.cbxSysManAdmins.Size = new System.Drawing.Size(219, 21);
-            this.cbxSysManAdmins.TabIndex = 10;
+            this.btnAddStuff.Location = new System.Drawing.Point(208, 307);
+            this.btnAddStuff.Name = "btnAddStuff";
+            this.btnAddStuff.Size = new System.Drawing.Size(219, 59);
+            this.btnAddStuff.TabIndex = 1;
+            this.btnAddStuff.Text = " Add to the config file";
+            this.btnAddStuff.UseVisualStyleBackColor = true;
+            this.btnAddStuff.Click += new System.EventHandler(this.btnAddStuff_Click);
             // 
             // SystemManager_Dummy
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1216, 631);
+            this.Controls.Add(this.btnAddStuff);
             this.Controls.Add(this.groupBox1);
             this.Name = "SystemManager_Dummy";
             this.Text = "SystemManager_Dummy";
@@ -159,15 +150,14 @@
         #endregion
 
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtSmtpSettingHost;
+        private System.Windows.Forms.TextBox txtSmtpSettingPort;
+        private System.Windows.Forms.TextBox txtSmtpSettingPassword;
+        private System.Windows.Forms.TextBox txtSmtpSettingemail;
         private System.Windows.Forms.Label lblSysManHost;
         private System.Windows.Forms.Label lblSysManPortNumber;
         private System.Windows.Forms.Label lblSysManPassword;
         private System.Windows.Forms.Label lblSysManEmail;
-        private System.Windows.Forms.ComboBox cbxSysManAdmins;
-        private System.Windows.Forms.Label lblSysManAdmin;
+        private System.Windows.Forms.Button btnAddStuff;
     }
 }

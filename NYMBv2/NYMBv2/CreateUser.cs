@@ -76,8 +76,7 @@ namespace NYMBv2
             string lastname = txtBxLastName.Text;         //Holds the last name
             string email = txtBxEmail.Text;               //Holds the email address
 
-            //Login Page object.
-            LogIn myLogin = new LogIn();
+
 
             try
             {
@@ -95,8 +94,7 @@ namespace NYMBv2
                     //Create a dialog box that tells the user that the account has been put into the database.
                     MessageBox.Show("Your account has been created.");
 
-                    //Take the user back to the login screen.
-                    myLogin.ShowDialog();
+                    this.DialogResult = DialogResult.OK;
 
                     //Close the CreateUser tab.
                     this.Close();
@@ -107,7 +105,10 @@ namespace NYMBv2
             }
             catch(Exception ex)
             {
+                this.DialogResult = DialogResult.No;
+
                 MessageBox.Show(ex.Message);
+
             }
 
     }
@@ -1014,6 +1015,7 @@ namespace NYMBv2
 
         private void btnCancel_Click(object sender, EventArgs e)
         {
+            this.DialogResult = DialogResult.Cancel;
             this.Close();
         }
     }
