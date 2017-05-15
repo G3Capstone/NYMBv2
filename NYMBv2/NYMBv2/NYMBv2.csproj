@@ -70,17 +70,23 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Admin_EditAnnouncements.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Admin_EditAnnouncements.Designer.cs">
+      <DependentUpon>Admin_EditAnnouncements.cs</DependentUpon>
+    </Compile>
     <Compile Include="ADMIN_EditEvents.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="ADMIN_EditEvents.Designer.cs">
       <DependentUpon>ADMIN_EditEvents.cs</DependentUpon>
     </Compile>
-    <Compile Include="ADMIN_EDIT_Binders.cs">
+    <Compile Include="ADMIN_EDITStoreInfo.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ADMIN_EDIT_Binders.Designer.cs">
-      <DependentUpon>ADMIN_EDIT_Binders.cs</DependentUpon>
+    <Compile Include="ADMIN_EDITStoreInfo.Designer.cs">
+      <DependentUpon>ADMIN_EDITStoreInfo.cs</DependentUpon>
     </Compile>
     <Compile Include="ADMIN_EDIT_INVENTORY.cs">
       <SubType>Form</SubType>
@@ -148,21 +154,7 @@
     <Compile Include="Edit_Store_Info.Designer.cs">
       <DependentUpon>Edit_Store_Info.cs</DependentUpon>
     </Compile>
-    <Compile Include="Edit_Supporting_Data.cs">
-      <SubType>Form</SubType>
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Compile>
-    <Compile Include="Edit_Supporting_Data.Designer.cs">
-      <DependentUpon>Edit_Supporting_Data.cs</DependentUpon>
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Compile>
     <Compile Include="Event.cs" />
-    <Compile Include="Events Dummy.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Events Dummy.Designer.cs">
-      <DependentUpon>Events Dummy.cs</DependentUpon>
-    </Compile>
     <Compile Include="Hashing.cs" />
     <Compile Include="Item.cs" />
     <Compile Include="LogIn.cs">
@@ -199,12 +191,6 @@
       <DependentUpon>SleevesControl.cs</DependentUpon>
     </Compile>
     <Compile Include="StoreInfo.cs" />
-    <Compile Include="StoreInfo_Dummy.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="StoreInfo_Dummy.Designer.cs">
-      <DependentUpon>StoreInfo_Dummy.cs</DependentUpon>
-    </Compile>
     <Compile Include="TabletopGame.cs" />
     <Compile Include="TabletopGameControl.cs">
       <SubType>UserControl</SubType>
@@ -225,11 +211,14 @@
     <Compile Include="Transactions_Dummy.Designer.cs">
       <DependentUpon>Transactions_Dummy.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Admin_EditAnnouncements.resx">
+      <DependentUpon>Admin_EditAnnouncements.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="ADMIN_EditEvents.resx">
       <DependentUpon>ADMIN_EditEvents.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ADMIN_EDIT_Binders.resx">
-      <DependentUpon>ADMIN_EDIT_Binders.cs</DependentUpon>
+    <EmbeddedResource Include="ADMIN_EDITStoreInfo.resx">
+      <DependentUpon>ADMIN_EDITStoreInfo.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ADMIN_EDIT_INVENTORY.resx">
       <DependentUpon>ADMIN_EDIT_INVENTORY.cs</DependentUpon>
@@ -261,13 +250,6 @@
     <EmbeddedResource Include="Edit_Store_Info.resx">
       <DependentUpon>Edit_Store_Info.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Edit_Supporting_Data.resx">
-      <DependentUpon>Edit_Supporting_Data.cs</DependentUpon>
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Events Dummy.resx">
-      <DependentUpon>Events Dummy.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="LogIn.resx">
       <DependentUpon>LogIn.cs</DependentUpon>
     </EmbeddedResource>
@@ -289,9 +271,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="SleevesControl.resx">
       <DependentUpon>SleevesControl.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="StoreInfo_Dummy.resx">
-      <DependentUpon>StoreInfo_Dummy.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="TabletopGameControl.resx">
       <DependentUpon>TabletopGameControl.cs</DependentUpon>

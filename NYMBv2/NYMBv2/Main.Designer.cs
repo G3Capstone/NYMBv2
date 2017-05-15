@@ -30,7 +30,6 @@
         {
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tpAnnouncements = new System.Windows.Forms.TabPage();
-            this.button7 = new System.Windows.Forms.Button();
             this.gbxAnnouncements = new System.Windows.Forms.GroupBox();
             this.rtbAnnouncements = new System.Windows.Forms.RichTextBox();
             this.lblAnnouncements = new System.Windows.Forms.Label();
@@ -63,11 +62,9 @@
             this.lblWeekOf = new System.Windows.Forms.Label();
             this.tpStoreInfo = new System.Windows.Forms.TabPage();
             this.locationGrpBox = new System.Windows.Forms.GroupBox();
-            this.locationPicBox = new System.Windows.Forms.PictureBox();
             this.locationLbl = new System.Windows.Forms.Label();
             this.ownerGrpBox = new System.Windows.Forms.GroupBox();
             this.descriptionLbl = new System.Windows.Forms.Label();
-            this.ownerPicBox = new System.Windows.Forms.PictureBox();
             this.storeInfoLbl = new System.Windows.Forms.Label();
             this.tpMessagebox = new System.Windows.Forms.TabPage();
             this.lblMessagesFootnote = new System.Windows.Forms.Label();
@@ -126,8 +123,14 @@
             this.lblActiveUser = new System.Windows.Forms.Label();
             this.btnLogInAndOut = new System.Windows.Forms.Button();
             this.llblCreateAccount = new System.Windows.Forms.LinkLabel();
-            this.gbxEventAdminToolbox = new System.Windows.Forms.GroupBox();
+            this.gbxInventoryAdminToolbox = new System.Windows.Forms.GroupBox();
             this.btnEditInventory = new System.Windows.Forms.Button();
+            this.gbxAdminAnnouncementsToolbox = new System.Windows.Forms.GroupBox();
+            this.btnEditAnnouncements = new System.Windows.Forms.Button();
+            this.locationPicBox = new System.Windows.Forms.PictureBox();
+            this.ownerPicBox = new System.Windows.Forms.PictureBox();
+            this.gbxStoreInfoAdminToolbox = new System.Windows.Forms.GroupBox();
+            this.btnEditStoreInfo = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
             this.tpAnnouncements.SuspendLayout();
             this.gbxAnnouncements.SuspendLayout();
@@ -144,9 +147,7 @@
             this.gbxEventsAdminToolBox.SuspendLayout();
             this.tpStoreInfo.SuspendLayout();
             this.locationGrpBox.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.locationPicBox)).BeginInit();
             this.ownerGrpBox.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.ownerPicBox)).BeginInit();
             this.tpMessagebox.SuspendLayout();
             this.tabMessageBox.SuspendLayout();
             this.tpMBRequestMerch.SuspendLayout();
@@ -154,7 +155,11 @@
             this.tpMBComments.SuspendLayout();
             this.tpTransactions.SuspendLayout();
             this.tpSystemManagement.SuspendLayout();
-            this.gbxEventAdminToolbox.SuspendLayout();
+            this.gbxInventoryAdminToolbox.SuspendLayout();
+            this.gbxAdminAnnouncementsToolbox.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.locationPicBox)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ownerPicBox)).BeginInit();
+            this.gbxStoreInfoAdminToolbox.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -183,7 +188,7 @@
             // tpAnnouncements
             // 
             this.tpAnnouncements.BackColor = System.Drawing.Color.LightBlue;
-            this.tpAnnouncements.Controls.Add(this.button7);
+            this.tpAnnouncements.Controls.Add(this.gbxAdminAnnouncementsToolbox);
             this.tpAnnouncements.Controls.Add(this.gbxAnnouncements);
             this.tpAnnouncements.Controls.Add(this.lblAnnouncements);
             this.tpAnnouncements.ForeColor = System.Drawing.SystemColors.ControlText;
@@ -192,16 +197,6 @@
             this.tpAnnouncements.Size = new System.Drawing.Size(1296, 670);
             this.tpAnnouncements.TabIndex = 0;
             this.tpAnnouncements.Text = "Announcements";
-            // 
-            // button7
-            // 
-            this.button7.Location = new System.Drawing.Point(37, 112);
-            this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(75, 23);
-            this.button7.TabIndex = 3;
-            this.button7.Text = "button7";
-            this.button7.UseVisualStyleBackColor = true;
-            this.button7.Click += new System.EventHandler(this.button7_Click_1);
             // 
             // gbxAnnouncements
             // 
@@ -236,7 +231,7 @@
             // tpInventory
             // 
             this.tpInventory.BackColor = System.Drawing.Color.PaleGreen;
-            this.tpInventory.Controls.Add(this.gbxEventAdminToolbox);
+            this.tpInventory.Controls.Add(this.gbxInventoryAdminToolbox);
             this.tpInventory.Controls.Add(this.flowLayoutPanelResults);
             this.tpInventory.Controls.Add(this.buttonSearch);
             this.tpInventory.Controls.Add(this.textBoxSearch);
@@ -515,6 +510,7 @@
             // tpStoreInfo
             // 
             this.tpStoreInfo.BackColor = System.Drawing.Color.LightYellow;
+            this.tpStoreInfo.Controls.Add(this.gbxStoreInfoAdminToolbox);
             this.tpStoreInfo.Controls.Add(this.locationGrpBox);
             this.tpStoreInfo.Controls.Add(this.ownerGrpBox);
             this.tpStoreInfo.Controls.Add(this.storeInfoLbl);
@@ -534,16 +530,6 @@
             this.locationGrpBox.TabIndex = 7;
             this.locationGrpBox.TabStop = false;
             this.locationGrpBox.Text = "Location";
-            // 
-            // locationPicBox
-            // 
-            this.locationPicBox.Image = global::NYMBv2.Properties.Resources.Storefront_Glass_Windows_And_Doors;
-            this.locationPicBox.Location = new System.Drawing.Point(19, 25);
-            this.locationPicBox.Name = "locationPicBox";
-            this.locationPicBox.Size = new System.Drawing.Size(203, 95);
-            this.locationPicBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.locationPicBox.TabIndex = 2;
-            this.locationPicBox.TabStop = false;
             // 
             // locationLbl
             // 
@@ -573,16 +559,6 @@
             this.descriptionLbl.TabIndex = 3;
             this.descriptionLbl.Text = "label1";
             this.descriptionLbl.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            // 
-            // ownerPicBox
-            // 
-            this.ownerPicBox.Image = global::NYMBv2.Properties.Resources.incognito;
-            this.ownerPicBox.Location = new System.Drawing.Point(17, 19);
-            this.ownerPicBox.Name = "ownerPicBox";
-            this.ownerPicBox.Size = new System.Drawing.Size(126, 123);
-            this.ownerPicBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.ownerPicBox.TabIndex = 2;
-            this.ownerPicBox.TabStop = false;
             // 
             // storeInfoLbl
             // 
@@ -1232,25 +1208,85 @@
             this.llblCreateAccount.Text = "Don\'t have an account? Create one.";
             this.llblCreateAccount.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.llblCreateAccount_LinkClicked);
             // 
-            // gbxEventAdminToolbox
+            // gbxInventoryAdminToolbox
             // 
-            this.gbxEventAdminToolbox.Controls.Add(this.btnEditInventory);
-            this.gbxEventAdminToolbox.Location = new System.Drawing.Point(32, 27);
-            this.gbxEventAdminToolbox.Name = "gbxEventAdminToolbox";
-            this.gbxEventAdminToolbox.Size = new System.Drawing.Size(176, 53);
-            this.gbxEventAdminToolbox.TabIndex = 12;
-            this.gbxEventAdminToolbox.TabStop = false;
-            this.gbxEventAdminToolbox.Text = "Event Admin ToolBox";
+            this.gbxInventoryAdminToolbox.Controls.Add(this.btnEditInventory);
+            this.gbxInventoryAdminToolbox.Location = new System.Drawing.Point(32, 27);
+            this.gbxInventoryAdminToolbox.Name = "gbxInventoryAdminToolbox";
+            this.gbxInventoryAdminToolbox.Size = new System.Drawing.Size(215, 62);
+            this.gbxInventoryAdminToolbox.TabIndex = 12;
+            this.gbxInventoryAdminToolbox.TabStop = false;
+            this.gbxInventoryAdminToolbox.Text = "Inventory Admin ToolBox";
             // 
             // btnEditInventory
             // 
-            this.btnEditInventory.Location = new System.Drawing.Point(7, 20);
+            this.btnEditInventory.Location = new System.Drawing.Point(30, 25);
             this.btnEditInventory.Name = "btnEditInventory";
-            this.btnEditInventory.Size = new System.Drawing.Size(163, 23);
+            this.btnEditInventory.Size = new System.Drawing.Size(163, 28);
             this.btnEditInventory.TabIndex = 0;
             this.btnEditInventory.Text = "Edit Inventory";
             this.btnEditInventory.UseVisualStyleBackColor = true;
             this.btnEditInventory.Click += new System.EventHandler(this.btnEditInventory_Click);
+            // 
+            // gbxAdminAnnouncementsToolbox
+            // 
+            this.gbxAdminAnnouncementsToolbox.Controls.Add(this.btnEditAnnouncements);
+            this.gbxAdminAnnouncementsToolbox.Location = new System.Drawing.Point(9, 13);
+            this.gbxAdminAnnouncementsToolbox.Name = "gbxAdminAnnouncementsToolbox";
+            this.gbxAdminAnnouncementsToolbox.Size = new System.Drawing.Size(254, 62);
+            this.gbxAdminAnnouncementsToolbox.TabIndex = 13;
+            this.gbxAdminAnnouncementsToolbox.TabStop = false;
+            this.gbxAdminAnnouncementsToolbox.Text = "Announcements Admin ToolBox";
+            // 
+            // btnEditAnnouncements
+            // 
+            this.btnEditAnnouncements.Location = new System.Drawing.Point(46, 25);
+            this.btnEditAnnouncements.Name = "btnEditAnnouncements";
+            this.btnEditAnnouncements.Size = new System.Drawing.Size(163, 28);
+            this.btnEditAnnouncements.TabIndex = 0;
+            this.btnEditAnnouncements.Text = "Edit Announcements";
+            this.btnEditAnnouncements.UseVisualStyleBackColor = true;
+            this.btnEditAnnouncements.Click += new System.EventHandler(this.btnEditAnnouncements_Click);
+            // 
+            // locationPicBox
+            // 
+            this.locationPicBox.Image = global::NYMBv2.Properties.Resources.Storefront_Glass_Windows_And_Doors;
+            this.locationPicBox.Location = new System.Drawing.Point(19, 25);
+            this.locationPicBox.Name = "locationPicBox";
+            this.locationPicBox.Size = new System.Drawing.Size(203, 95);
+            this.locationPicBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.locationPicBox.TabIndex = 2;
+            this.locationPicBox.TabStop = false;
+            // 
+            // ownerPicBox
+            // 
+            this.ownerPicBox.Image = global::NYMBv2.Properties.Resources.incognito;
+            this.ownerPicBox.Location = new System.Drawing.Point(17, 19);
+            this.ownerPicBox.Name = "ownerPicBox";
+            this.ownerPicBox.Size = new System.Drawing.Size(126, 123);
+            this.ownerPicBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.ownerPicBox.TabIndex = 2;
+            this.ownerPicBox.TabStop = false;
+            // 
+            // gbxStoreInfoAdminToolbox
+            // 
+            this.gbxStoreInfoAdminToolbox.Controls.Add(this.btnEditStoreInfo);
+            this.gbxStoreInfoAdminToolbox.Location = new System.Drawing.Point(12, 0);
+            this.gbxStoreInfoAdminToolbox.Name = "gbxStoreInfoAdminToolbox";
+            this.gbxStoreInfoAdminToolbox.Size = new System.Drawing.Size(254, 62);
+            this.gbxStoreInfoAdminToolbox.TabIndex = 14;
+            this.gbxStoreInfoAdminToolbox.TabStop = false;
+            this.gbxStoreInfoAdminToolbox.Text = "Store Info Admin ToolBox";
+            // 
+            // btnEditStoreInfo
+            // 
+            this.btnEditStoreInfo.Location = new System.Drawing.Point(46, 25);
+            this.btnEditStoreInfo.Name = "btnEditStoreInfo";
+            this.btnEditStoreInfo.Size = new System.Drawing.Size(163, 28);
+            this.btnEditStoreInfo.TabIndex = 0;
+            this.btnEditStoreInfo.Text = "Edit Store Info";
+            this.btnEditStoreInfo.UseVisualStyleBackColor = true;
+            this.btnEditStoreInfo.Click += new System.EventHandler(this.btnEditStoreInfo_Click);
             // 
             // Main
             // 
@@ -1283,9 +1319,7 @@
             this.gbxEventsAdminToolBox.ResumeLayout(false);
             this.tpStoreInfo.ResumeLayout(false);
             this.locationGrpBox.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.locationPicBox)).EndInit();
             this.ownerGrpBox.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.ownerPicBox)).EndInit();
             this.tpMessagebox.ResumeLayout(false);
             this.tpMessagebox.PerformLayout();
             this.tabMessageBox.ResumeLayout(false);
@@ -1297,7 +1331,11 @@
             this.tpMBComments.PerformLayout();
             this.tpTransactions.ResumeLayout(false);
             this.tpSystemManagement.ResumeLayout(false);
-            this.gbxEventAdminToolbox.ResumeLayout(false);
+            this.gbxInventoryAdminToolbox.ResumeLayout(false);
+            this.gbxAdminAnnouncementsToolbox.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.locationPicBox)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ownerPicBox)).EndInit();
+            this.gbxStoreInfoAdminToolbox.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1400,11 +1438,14 @@
         private System.Windows.Forms.Button btnReqMerchClear;
         private System.Windows.Forms.Button btnOrgClear;
         private System.Windows.Forms.Button btnCommentClear;
-        private System.Windows.Forms.Button button7;
 		private System.Windows.Forms.Button buttonSearch;
 		private System.Windows.Forms.FlowLayoutPanel flowLayoutPanelResults;
-        private System.Windows.Forms.GroupBox gbxEventAdminToolbox;
+        private System.Windows.Forms.GroupBox gbxInventoryAdminToolbox;
         private System.Windows.Forms.Button btnEditInventory;
+        private System.Windows.Forms.GroupBox gbxAdminAnnouncementsToolbox;
+        private System.Windows.Forms.Button btnEditAnnouncements;
+        private System.Windows.Forms.GroupBox gbxStoreInfoAdminToolbox;
+        private System.Windows.Forms.Button btnEditStoreInfo;
     }
 }
 

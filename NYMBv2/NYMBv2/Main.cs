@@ -47,7 +47,8 @@ namespace NYMBv2
         {
             InitializeComponent();
             tabControl1.DrawItem += new DrawItemEventHandler(tabControl1_DrawItem);
-
+            tabControl1.TabPages.RemoveAt(6);
+            tabControl1.TabPages.RemoveAt(5);
 
             //Set the active user as guest so the program starts 
             //with you logged in as a guest
@@ -1367,24 +1368,29 @@ namespace NYMBv2
             // If all the tabs are showing, remove the 
             //product manager, user manager, and settings
             // tabs
-            if (tabControl1.TabCount == 7)
+
+
+            if (tabControl1.TabCount == 5 )
             { 
-                tabControl1.TabPages.RemoveAt(6);
-                tabControl1.TabPages.RemoveAt(5);
+                //tabControl1.TabPages.RemoveAt(6);
+                //tabControl1.TabPages.RemoveAt(5);
                 tabControl1.TabPages.RemoveAt(4);
 
                 //Hides the gbx for the Events admin toolbox
                 gbxEventsAdminToolBox.Visible = false;
+                gbxInventoryAdminToolbox.Visible = false;
+                gbxAdminAnnouncementsToolbox.Visible = false;
+                gbxStoreInfoAdminToolbox.Visible = false;
             }
-            else if (tabControl1.TabCount == 6)
-            {
-                tabControl1.TabPages.RemoveAt(5);
-                tabControl1.TabPages.RemoveAt(4);
-            }
-            else if (tabControl1.TabCount == 5)
-            {
-                tabControl1.TabPages.RemoveAt(4);
-            }
+            //else if (tabControl1.TabCount == 6)
+            //{
+            //    tabControl1.TabPages.RemoveAt(5);
+            //    tabControl1.TabPages.RemoveAt(4);
+            //}
+            //else if (tabControl1.TabCount == 5)
+            //{
+            //    tabControl1.TabPages.RemoveAt(4);
+            //}
 
             //If the active user has admin rights, 
             // then add the product manager, user manager
@@ -1392,17 +1398,21 @@ namespace NYMBv2
             if (ActiveSesson._UserLevel == "Admin")
             {
                 tabControl1.TabPages.Add(tpMessagebox);
-                tabControl1.TabPages.Add(tpTransactions);
-                tabControl1.TabPages.Add(tpSystemManagement);
+                //tabControl1.TabPages.Add(tpTransactions);
+                //tabControl1.TabPages.Add(tpSystemManagement);
                 
 
                 //Shows the gbx for the Events admin toolbox
                 gbxEventsAdminToolBox.Visible = true;
+                gbxInventoryAdminToolbox.Visible = true;
+                gbxAdminAnnouncementsToolbox.Visible = true;
+                gbxStoreInfoAdminToolbox.Visible = true;
+
             }
             else if (ActiveSesson._UserLevel == "Employee")
             {
                 tabControl1.TabPages.Add(tpMessagebox);
-                tabControl1.TabPages.Add(tpTransactions);
+                //tabControl1.TabPages.Add(tpTransactions);
             }
             else if (ActiveSesson._UserLevel == "Customer")
             {
@@ -1463,15 +1473,6 @@ namespace NYMBv2
 
         }
 
-        private void button7_Click_1(object sender, EventArgs e)
-        {
-            //Edit_Supporting_Data supportEditor = new Edit_Supporting_Data();
-            //supportEditor.ShowDialog();
-
-            ADMIN_EDIT_Binders editBinders = new ADMIN_EDIT_Binders();
-            editBinders.ShowDialog();
-                
-        }
 
         private void llblCreateAccount_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
@@ -1503,6 +1504,21 @@ namespace NYMBv2
         {
             ADMIN_EDIT_INVENTORY editInv = new ADMIN_EDIT_INVENTORY();
             editInv.ShowDialog();
+        }
+
+        private void btnEditAnnouncements_Click(object sender, EventArgs e)
+        {
+            Admin_EditAnnouncements editAnn = new Admin_EditAnnouncements();
+            editAnn.ShowDialog();
+            DisplayAnnouncements();
+
+        }
+
+        private void btnEditStoreInfo_Click(object sender, EventArgs e)
+        {
+            ADMIN_EDITStoreInfo editStoreInfo = new ADMIN_EDITStoreInfo();
+            editStoreInfo.ShowDialog();
+            ReadStoreInfo();
         }
     }
 }
