@@ -1063,6 +1063,26 @@ namespace NYMBv2
         {
             CreateUser myCreateUser = new CreateUser();
             myCreateUser.ShowDialog();
+
+
+            if (myCreateUser.DialogResult == DialogResult.OK)
+            {
+                //If the Active user is a guest then it opens the 
+                //Log in popup. If the user is not a guest then
+                //It logs the user out and logs in the guest.
+                if (ActiveSesson._UserLevel == "Guest")
+                {
+                    LogIn mylogin = new LogIn();
+                    mylogin.ShowDialog();
+                    UpdateActiveUser();
+
+                }
+                else
+                {
+                    SetActiveUserAsGuest();
+                    UpdateActiveUser();
+                }
+            }
         }
     }
 }

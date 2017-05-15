@@ -38,7 +38,10 @@
             this.lblSysManPassword = new System.Windows.Forms.Label();
             this.lblSysManEmail = new System.Windows.Forms.Label();
             this.btnAddStuff = new System.Windows.Forms.Button();
+            this.btnViewUsers = new System.Windows.Forms.Button();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox1
@@ -132,17 +135,41 @@
             this.btnAddStuff.UseVisualStyleBackColor = true;
             this.btnAddStuff.Click += new System.EventHandler(this.btnAddStuff_Click);
             // 
+            // btnViewUsers
+            // 
+            this.btnViewUsers.Location = new System.Drawing.Point(475, 529);
+            this.btnViewUsers.Name = "btnViewUsers";
+            this.btnViewUsers.Size = new System.Drawing.Size(219, 59);
+            this.btnViewUsers.TabIndex = 2;
+            this.btnViewUsers.Text = "ViewUsers";
+            this.btnViewUsers.UseVisualStyleBackColor = true;
+            this.btnViewUsers.Click += new System.EventHandler(this.btnViewUsers_Click);
+            // 
+            // dataGridView1
+            // 
+            this.dataGridView1.AllowUserToAddRows = false;
+            this.dataGridView1.AllowUserToDeleteRows = false;
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Location = new System.Drawing.Point(497, 124);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.ReadOnly = true;
+            this.dataGridView1.Size = new System.Drawing.Size(629, 332);
+            this.dataGridView1.TabIndex = 3;
+            // 
             // SystemManager_Dummy
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1216, 631);
+            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.btnViewUsers);
             this.Controls.Add(this.btnAddStuff);
             this.Controls.Add(this.groupBox1);
             this.Name = "SystemManager_Dummy";
-            this.Text = "SystemManager_Dummy";
+            this.Text = "View Users";
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -159,5 +186,7 @@
         private System.Windows.Forms.Label lblSysManPassword;
         private System.Windows.Forms.Label lblSysManEmail;
         private System.Windows.Forms.Button btnAddStuff;
+        private System.Windows.Forms.Button btnViewUsers;
+        private System.Windows.Forms.DataGridView dataGridView1;
     }
 }

@@ -27,16 +27,17 @@ namespace NYMBv2
         }
 
 
-        private List<string> GetAdminUSers()
+        private DataTable GetUsers()
         {
-            List<string> Admins = new List<string>();
+            DataTable users = new DataTable();
 
+           
 
             //Create a connection to the database
             using (SqlConnection connection = new SqlConnection(connectionString))
             {
                 //SQL select statement
-                String query = @"SELECT [UserName] FROM [dbo].[USER_TABLE] WHERE [UserLevel] LIKE 'Admin' ";
+                String query = @"SELECT * FROM [dbo].[USER_TABLE]";
 
                 //Create a SQLCommand, passing the query and the connection
                 SqlCommand cmd = new SqlCommand(query, connection);
@@ -48,13 +49,23 @@ namespace NYMBv2
                 // SQLCommand ExecuteReader function
                 using (SqlDataReader sql_reader = cmd.ExecuteReader())
                 {
+                    users.Columns.Add("UserName");
+                    users.Columns.Add("Password");
+                    users.Columns.Add("Email");
+                    users.Columns.Add("FirstName");
+                    users.Columns.Add("LastName");
+                    users.Columns.Add("UserLevel");
+
                     while (sql_reader.Read())
                     {
-                        //gets the list of admin users
-                        Admins.Add(sql_reader["UserName"].ToString());
+                       
+
+                        users.Rows.Add(new object[] { sql_reader["UserName"].ToString() , sql_reader["Password"].ToString(), sql_reader["Email"].ToString(),
+                           sql_reader["FirstName"].ToString(), sql_reader["LastName"].ToString(), sql_reader["UserLevel"].ToString() });
+
                     }
 
-                    return Admins;
+                    return users;
                 }
             }
         }
@@ -70,7 +81,6 @@ namespace NYMBv2
             //string host = ConfigurationManager.AppSettings.Get("smtp_Host");
 
 
-            ////string email = 
             //    config.AppSettings.Settings.Add("smtp_Credentials_Email", "notyourmothersbasementG3@gmail.com");
             //config.Save();
             //config.AppSettings.SectionInformation.
@@ -94,5 +104,9 @@ namespace NYMBv2
             config.Save(ConfigurationSaveMode.Minimal);
         }
 
+        private void btnViewUsers_Click(object sender, EventArgs e)
+        {
+            dataGridView1.DataSource = GetUsers();
+        }
     }
 }
