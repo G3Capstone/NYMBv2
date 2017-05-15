@@ -12,7 +12,7 @@ namespace NYMBv2
 {
 	public partial class SleevesControl : UserControl
 	{
-		string name, type, size, color, manufacturer, price;
+		string name, price, qty, color, publisher;
 
 		#region constructors
 		public SleevesControl()
@@ -20,27 +20,28 @@ namespace NYMBv2
 			InitializeComponent();
 		}
 
-		public SleevesControl(string n, string t, string s, string c, string m, string p)
+		public SleevesControl(string n, string p, string q, string c, string pu)
 		{
 			InitializeComponent();
 
 			//set values
 			name = n;
-			type = t;
-			size = s;
-			color = c;
-			manufacturer = m;
 			price = p;
-
-			//populate labels
-			labelName.Text = name;
-			labelType.Text = type;
-			labelSize.Text = size;
-			labelColor.Text = color;
-			labelManufacturer.Text = manufacturer;
-			labelPrice.Text = price;
+			qty = q;
+			color = c;
+			publisher = pu;
 		}
 		#endregion
+
+		public void PopulateLabels()
+		{
+			//populate labels
+			labelName.Text = name;
+			labelPrice.Text = price;
+			labelColor.Text = color;
+			labelManufacturer.Text = publisher;
+			labelQty.Text = qty;
+		}
 
 		#region get/setters
 		public string Name
@@ -49,16 +50,10 @@ namespace NYMBv2
 			set { name = value; }
 		}
 
-		public string Type
+		public string Price
 		{
-			get { return type; }
-			set { type = value; }
-		}
-
-		public string CardSize
-		{
-			get { return size; }
-			set { size = value; }
+			get { return price; }
+			set { price = value; }
 		}
 
 		public string Color
@@ -67,16 +62,16 @@ namespace NYMBv2
 			set { color = value; }
 		}
 
-		public string Manufacturer
+		public string Publisher
 		{
-			get { return manufacturer; }
-			set { manufacturer = value; }
+			get { return publisher; }
+			set { publisher = value; }
 		}
 
-		public string Price
+		public string Qty
 		{
-			get { return price; }
-			set { price = value; }
+			get { return qty; }
+			set { qty = value; }
 		}
 		#endregion
 	}

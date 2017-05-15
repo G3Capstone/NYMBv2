@@ -12,7 +12,7 @@ namespace NYMBv2
 {
 	public partial class TradingCardControl : UserControl
 	{
-		string name, foil, set, game, price, condition;
+		string name, price, qty, game, set, foil, condition;
 
 #region constructors
 		public TradingCardControl()
@@ -20,18 +20,23 @@ namespace NYMBv2
 			InitializeComponent();
 		}
 
-		public TradingCardControl(string n, string f, string s, string g, string p, string c)
+		public TradingCardControl(string n, string p, string q, string g, string s, string f, string c)
 		{
 			InitializeComponent();
 
 			//set values
 			name = n;
-			foil = f;
-			set = s;
-			game = g;
 			price = p;
-			condition = c;
+			qty = q;
+			game = g;
+			set = s;
+			foil = f;			
+			condition = c;			
+		}
+#endregion
 
+		public void PopulateLabels()
+		{
 			//populate labels
 			labelCardName.Text = name;
 			labelIsFoil.Text = foil;
@@ -40,7 +45,6 @@ namespace NYMBv2
 			labelPrice.Text = price;
 			labelCondition.Text = condition;
 		}
-#endregion
 
 		#region get/setters
 		public string Name
@@ -77,6 +81,12 @@ namespace NYMBv2
 		{
 			get { return condition; }
 			set { condition = value; }
+		}
+
+		public string Qty
+		{
+			get { return qty; }
+			set { qty = value; }
 		}
 #endregion
 	}

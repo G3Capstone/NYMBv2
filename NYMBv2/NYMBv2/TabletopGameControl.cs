@@ -12,7 +12,7 @@ namespace NYMBv2
 {
 	public partial class TabletopGameControl : UserControl
 	{
-		string name, game, publisher, price;
+		string name, price, qty, game, publisher;
 
 		#region constructors
 		public TabletopGameControl()
@@ -20,7 +20,7 @@ namespace NYMBv2
 			InitializeComponent();
 		}
 
-		public TabletopGameControl(string n, string g, string pub, string pr)
+		public TabletopGameControl(string n, string pr, string q, string g, string pub)
 		{
 			InitializeComponent();
 
@@ -29,14 +29,19 @@ namespace NYMBv2
 			game = g;
 			publisher = pub;
 			price = pr;
+			qty = q;
 
+		}
+		#endregion
+
+		public void PopulateLabels()
+		{
 			//populate labels
 			labelName.Text = name;
 			labelGame.Text = game;
 			labelPublisher.Text = publisher;
 			labelPrice.Text = price;
 		}
-		#endregion
 
 		#region get/setters
 		public string Name
@@ -61,6 +66,12 @@ namespace NYMBv2
 		{
 			get { return price; }
 			set { price = value; }
+		}
+
+		public string Qty
+		{
+			get { return qty; }
+			set { qty = value; }
 		}
 		#endregion
 	}

@@ -261,7 +261,6 @@
             this.btnEditBindersTable.TabIndex = 4;
             this.btnEditBindersTable.Text = "Edit binder table";
             this.btnEditBindersTable.UseVisualStyleBackColor = true;
-            this.btnEditBindersTable.Click += new System.EventHandler(this.btnEditBindersTable_Click);
             // 
             // txtbxSearchInventory
             // 

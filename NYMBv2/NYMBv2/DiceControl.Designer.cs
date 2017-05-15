@@ -32,6 +32,7 @@
 			this.labelColor = new System.Windows.Forms.Label();
 			this.labelManufacturer = new System.Windows.Forms.Label();
 			this.labelPrice = new System.Windows.Forms.Label();
+			this.labelQty = new System.Windows.Forms.Label();
 			this.SuspendLayout();
 			// 
 			// labelName
@@ -62,10 +63,18 @@
 			this.labelPrice.Size = new System.Drawing.Size(100, 15);
 			this.labelPrice.TabIndex = 3;
 			// 
+			// labelQty
+			// 
+			this.labelQty.Location = new System.Drawing.Point(216, 30);
+			this.labelQty.Name = "labelQty";
+			this.labelQty.Size = new System.Drawing.Size(42, 15);
+			this.labelQty.TabIndex = 4;
+			// 
 			// DiceControl
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+			this.Controls.Add(this.labelQty);
 			this.Controls.Add(this.labelPrice);
 			this.Controls.Add(this.labelManufacturer);
 			this.Controls.Add(this.labelColor);
@@ -82,5 +91,6 @@
 		private System.Windows.Forms.Label labelColor;
 		private System.Windows.Forms.Label labelManufacturer;
 		private System.Windows.Forms.Label labelPrice;
+		private System.Windows.Forms.Label labelQty;
 	}
 }

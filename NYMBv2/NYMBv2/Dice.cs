@@ -2,7 +2,7 @@
 
 public class Dice : Item
 {
-    private string _color, _manufacturer, _description; //holds color, manufactuerer, and description respectively.
+    private string color, publisher; //holds color, manufactuerer, and description respectively.
 
 	#region constructors
 	/// <summary>
@@ -17,12 +17,11 @@ public class Dice : Item
     /// </summary>
     /// <param name="c"></param>
     /// <param name="m"></param>
-    /// <param name="d"></param>
-    public Dice(string c, string m, string d) : base()
+    public Dice(string c, string p) : base()
     {
-        _color = c;
-        _manufacturer = m;
-        _description = d;
+        color = c;
+		publisher = p;		
+        ;
     }
 	#endregion
 
@@ -30,20 +29,14 @@ public class Dice : Item
 	//get/setters
 	public string Color
     {
-        get { return _color; }
-        set { _color = value; }
+        get { return color; }
+        set { color = value; }
     }
 
-    public string Manufaturer
+    public string Publisher
     {
-        get { return _manufacturer; }
-        set { _manufacturer = value; }
-    }
-
-    public string Description
-    {
-        get { return _description; }
-        set { _description = value; }
+        get { return publisher; }
+        set { publisher = value; }
     }
 #endregion
 }
