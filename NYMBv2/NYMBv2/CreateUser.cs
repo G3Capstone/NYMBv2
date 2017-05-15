@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
 using System.Configuration;
+using System.Security.Cryptography;
 
 
 namespace NYMBv2
@@ -505,6 +506,103 @@ namespace NYMBv2
             return valid;
         }
         #endregion
+
+        #region Salt and Hash
+
+        public static string ComputeHash(string text, string hash,
+                                          byte[] saltbytes)
+        {
+            //If salt isn't specified, generate it.
+            if (saltbytes == null)
+            {
+                //define minimum and maximum salt sizes.
+                int minsalt = 6;
+                int maxsalt = 15;
+
+                //Generate a random number for the size of the salt.
+                Random random = new Random();
+                int saltSize = random.Next(minsalt, maxsalt);
+
+                //Allocate a byte array to hold the salt.
+                saltbytes = new byte[saltSize];
+
+                //Initialize a random number generator.
+                RNGCryptoServiceProvider rng = new RNGCryptoServiceProvider();
+
+                //Fill the salt with cryptographically strong byte values.
+                rng.GetNonZeroBytes(saltbytes);
+                
+            }
+
+            //Convert palin text into a byte array.
+            byte[] plainTextBytes = Encoding.UTF8.GetBytes(text);
+
+            //Allocate aray, which will hold plain text and salt.
+            byte[] plainTextWithSaltBytes = new byte[plainTextBytes.Length + saltbytes.Length];
+
+            //Copy plain text bytes into resulting array.
+            // Copy plain text bytes into resulting array.
+            for (int i = 0; i < plainTextBytes.Length; i++)
+                plainTextWithSaltBytes[i] = plainTextBytes[i];
+
+            // Append salt bytes to the resulting array.
+            for (int i = 0; i < saltbytes.Length; i++)
+                plainTextWithSaltBytes[plainTextBytes.Length + i] = saltbytes[i];
+
+            // Because we support multiple hashing algorithms, we must define
+            // hash object as a common (abstract) base class. We will specify the
+            // actual hashing algorithm class later during object creation.
+            HashAlgorithm hashing;
+
+            // Make sure hashing algorithm name is specified.
+            if (hash == null)
+                hash = "";
+
+            // Initialize appropriate hashing algorithm class.
+            switch (hash.ToUpper())
+            {
+                case "SHA1":
+                    hash = new SHA1Managed();
+                    break;
+
+                case "SHA256":
+                    hash = new SHA256Managed();
+                    break;
+
+                case "SHA384":
+                    hash = new SHA384Managed();
+                    break;
+
+                case "SHA512":
+                    hash = new SHA512Managed();
+                    break;
+
+                default:
+                    hash = new MD5CryptoServiceProvider();
+                    break;
+            }
+
+            // Compute hash value of our plain text with appended salt.
+            byte[] hashBytes = hash.ComputeHash(plainTextWithSaltBytes);
+
+            // Create array which will hold hash and original salt bytes.
+            byte[] hashWithSaltBytes = new byte[hashBytes.Length +
+                                                saltbytes.Length];
+
+            // Copy hash bytes into resulting array.
+            for (int i = 0; i < hashBytes.Length; i++)
+                hashWithSaltBytes[i] = hashBytes[i];
+
+            // Append salt bytes to the result.
+            for (int i = 0; i < saltbytes.Length; i++)
+                hashWithSaltBytes[hashBytes.Length + i] = saltbytes[i];
+
+            // Convert result into a base64-encoded string.
+            string hashValue = Convert.ToBase64String(hashWithSaltBytes);
+
+            // Return the result.
+            return hashValue;
+        }
 
 
         #region Password shouldn't contain certain special characters

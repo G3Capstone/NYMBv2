@@ -134,6 +134,7 @@
             this.txtBxPassword.Name = "txtBxPassword";
             this.txtBxPassword.Size = new System.Drawing.Size(168, 20);
             this.txtBxPassword.TabIndex = 7;
+            this.txtBxPassword.UseSystemPasswordChar = true;
             // 
             // txtBxConfirm
             // 
@@ -141,6 +142,7 @@
             this.txtBxConfirm.Name = "txtBxConfirm";
             this.txtBxConfirm.Size = new System.Drawing.Size(168, 20);
             this.txtBxConfirm.TabIndex = 8;
+            this.txtBxConfirm.UseSystemPasswordChar = true;
             // 
             // txtBxFirstName
             // 
