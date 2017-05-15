@@ -69,6 +69,7 @@
 			// 
 			// flowLayoutPanelResults
 			// 
+			this.flowLayoutPanelResults.AutoScroll = true;
 			this.flowLayoutPanelResults.Location = new System.Drawing.Point(75, 76);
 			this.flowLayoutPanelResults.Name = "flowLayoutPanelResults";
 			this.flowLayoutPanelResults.Size = new System.Drawing.Size(510, 518);

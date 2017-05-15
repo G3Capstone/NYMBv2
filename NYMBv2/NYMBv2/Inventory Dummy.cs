@@ -30,7 +30,7 @@ namespace NYMBv2
 			//Clear old search results
 			foreach (Control control in flowLayoutPanelResults.Controls)
 			{
-				flowLayoutPanelResults.Controls.Remove(control);
+				flowLayoutPanelResults.Controls.Clear();
 			}
 
 			//SQL select statement
@@ -84,7 +84,7 @@ namespace NYMBv2
 								flowLayoutPanelResults.Controls.Add(binderControl);
 								break;
 
-							case "Board Game":
+							case "BoardGames":
 								//Create board game control
 								BoardGameControl bgControl = MakeBoardGameControl(itemNum, type, name, price, qty);
 
@@ -98,7 +98,7 @@ namespace NYMBv2
 								flowLayoutPanelResults.Controls.Add(bgControl);
 								break;
 
-							case "Comic":
+							case "ComicBooks":
 								//Create comic control
 								ComicControl cControl = MakeComicControl(itemNum, type, name, price, qty);
 
@@ -126,7 +126,7 @@ namespace NYMBv2
 								flowLayoutPanelResults.Controls.Add(dControl);
 								break;
 
-							case "Sleeves":
+							case "CardSleeves":
 								//Create sleeves control
 								SleevesControl sControl = MakeSleevesControl(itemNum, type, name, price, qty);
 
@@ -140,7 +140,7 @@ namespace NYMBv2
 								flowLayoutPanelResults.Controls.Add(sControl);
 								break;
 
-							case "Tabletop Game":
+							case "TabletopGames":
 								//Create tabletop control
 								TabletopGameControl tControl = MakeTabletopGameControl(itemNum, type, name, price, qty);
 
@@ -154,7 +154,7 @@ namespace NYMBv2
 								flowLayoutPanelResults.Controls.Add(tControl);
 								break;
 
-							case "Trading Card":
+							case "TradingCards":
 								//Create comic control
 								TradingCardControl tcControl = MakeTradingCardControl(itemNum, type, name, price, qty);
 

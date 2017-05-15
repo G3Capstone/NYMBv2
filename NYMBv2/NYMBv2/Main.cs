@@ -1055,8 +1055,8 @@ namespace NYMBv2
 
         private void button7_Click_1(object sender, EventArgs e)
         {
-            SystemManager_Dummy myManager = new SystemManager_Dummy();
-            myManager.ShowDialog();
+            //SystemManager_Dummy myManager = new SystemManager_Dummy();
+            //myManager.ShowDialog();
         }
 
         private void llblCreateAccount_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
