@@ -41,6 +41,7 @@ namespace NYMBv2
 			labelGame.Text = game;
 			labelPublisher.Text = publisher;
 			labelPrice.Text = price;
+			labelQty.Text = qty;
 		}
 
 		#region get/setters
