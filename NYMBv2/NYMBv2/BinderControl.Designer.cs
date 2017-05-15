@@ -31,42 +31,42 @@
 			this.labelQty = new System.Windows.Forms.Label();
 			this.labelPrice = new System.Windows.Forms.Label();
 			this.labelBinderSize = new System.Windows.Forms.Label();
-			this.labelColor = new System.Windows.Forms.Label();			
+			this.labelColor = new System.Windows.Forms.Label();
 			this.labelPublisher = new System.Windows.Forms.Label();
 			this.labelName = new System.Windows.Forms.Label();
 			this.SuspendLayout();
 			// 
 			// labelQty
 			// 
-			this.labelQty.Location = new System.Drawing.Point(223, 35);
+			this.labelQty.Location = new System.Drawing.Point(223, 64);
 			this.labelQty.Name = "labelQty";
 			this.labelQty.Size = new System.Drawing.Size(43, 15);
 			this.labelQty.TabIndex = 11;
 			// 
 			// labelPrice
 			// 
-			this.labelPrice.Location = new System.Drawing.Point(117, 35);
+			this.labelPrice.Location = new System.Drawing.Point(117, 64);
 			this.labelPrice.Name = "labelPrice";
 			this.labelPrice.Size = new System.Drawing.Size(100, 15);
 			this.labelPrice.TabIndex = 10;
 			// 
 			// labelBinderSize
 			// 
-			this.labelBinderSize.Location = new System.Drawing.Point(111, 9);
+			this.labelBinderSize.Location = new System.Drawing.Point(5, 34);
 			this.labelBinderSize.Name = "labelBinderSize";
 			this.labelBinderSize.Size = new System.Drawing.Size(50, 15);
 			this.labelBinderSize.TabIndex = 9;
 			// 
 			// labelColor
 			// 
-			this.labelColor.Location = new System.Drawing.Point(167, 9);
+			this.labelColor.Location = new System.Drawing.Point(61, 34);
 			this.labelColor.Name = "labelColor";
 			this.labelColor.Size = new System.Drawing.Size(50, 15);
 			this.labelColor.TabIndex = 8;
 			// 
 			// labelPublisher
 			// 
-			this.labelPublisher.Location = new System.Drawing.Point(5, 35);
+			this.labelPublisher.Location = new System.Drawing.Point(5, 64);
 			this.labelPublisher.Name = "labelPublisher";
 			this.labelPublisher.Size = new System.Drawing.Size(100, 15);
 			this.labelPublisher.TabIndex = 7;
@@ -89,7 +89,7 @@
 			this.Controls.Add(this.labelPublisher);
 			this.Controls.Add(this.labelName);
 			this.Name = "BinderControl";
-			this.Size = new System.Drawing.Size(340, 55);
+			this.Size = new System.Drawing.Size(700, 90);
 			this.ResumeLayout(false);
 
 		}

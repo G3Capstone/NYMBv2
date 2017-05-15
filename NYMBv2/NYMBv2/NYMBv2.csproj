@@ -238,9 +238,6 @@
     <EmbeddedResource Include="Events Dummy.resx">
       <DependentUpon>Events Dummy.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Inventory Dummy.resx">
-      <DependentUpon>Inventory Dummy.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="LogIn.resx">
       <DependentUpon>LogIn.cs</DependentUpon>
     </EmbeddedResource>
