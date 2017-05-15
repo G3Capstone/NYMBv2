@@ -17,44 +17,17 @@ namespace NYMBv2
 {
     public partial class CreateUser : Form
     {
-        public CreateUser()
-        {
-            InitializeComponent();
-        }
 
         #region Connection String
         public string connectionString = ConfigurationManager.ConnectionStrings["NYMBv2.Properties.Settings.NYMBv2_DBConnectionString"].ConnectionString;
 
         #endregion
 
-        #region Create User Constructors
-
-
-        public string _username { get; set; }
-
-        public string _password { get; set; }
-
-        public string _confirmPassword { get; set; }
-
-        public string _firstName { get; set; }
-
-        public string _lastName { get; set; }
-
-        public string _email { get; set; }
-
-
-        public CreateUser(string u, string p, string cp,
-                           string f, string l, string e)
+        public CreateUser()
         {
-            _username = u;
-            _password = p;
-            _confirmPassword = cp;
-            _firstName = f;
-            _lastName = l;
-            _email = e;
+            InitializeComponent();
         }
 
-        #endregion
 
         #region MessageForm object
 
@@ -121,15 +94,14 @@ namespace NYMBv2
                                           string lastname, string email)
         {
 
-            string startPath = Application.StartupPath;
-            string filepath = startPath + @"\\NYMBv2\\" + "NYMBv2.mdf";
-            string connString = (@"Data Source=" + filepath + "");
+
+            Hashing.HashPassword(password);
 
             try
             {
 
                 //Create a connection to the database
-                using (SqlConnection connection = new SqlConnection(connString))
+                using (SqlConnection connection = new SqlConnection(connectionString))
                 {
 
                     //SQL Query that adds the Guest SessonToken to the sessonToken table of the database
