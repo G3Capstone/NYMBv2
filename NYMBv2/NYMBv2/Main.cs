@@ -34,7 +34,10 @@ namespace NYMBv2
         #endregion
 
         #region Global Variables for the MessageBox Tab
-
+        string _smtp_email;
+        string _smtp_password;
+        int _smtp_port;
+        string _smtp_host;
        
 
 
@@ -91,6 +94,7 @@ namespace NYMBv2
             dtpOrgDate.MaxDate = DateTime.Now.AddMonths(6);
             cbxOrgRequestedSpace.DataSource = GetEventSpaces();
             SetMessageboxDisplayToActiveUser();
+            GetSmtpSettings();
 
             #endregion
 
@@ -1131,18 +1135,18 @@ namespace NYMBv2
                                                         "  " + ActiveSesson._LastName);
 
                     //the admin account is who is receiveing the message
-                    MailAddress to = new MailAddress("notyourmothersbasementG3@gmail.com", "Admin");
+                    MailAddress to = new MailAddress(_smtp_email, "Admin");
 
 
                     MailMessage mail = new MailMessage(From,to);
                     SmtpClient client = new SmtpClient();
-                    client.Port = 587;
-                    client.Host = "smtp.gmail.com";
+                    client.Port = _smtp_port;
+                    client.Host = _smtp_host;
                     client.EnableSsl = true;
                     client.Timeout = 10000;
                     client.DeliveryMethod = SmtpDeliveryMethod.Network;
                     client.UseDefaultCredentials = false;
-                    client.Credentials = new System.Net.NetworkCredential("notyourmothersbasementG3@gmail.com", "capstoneG3");
+                    client.Credentials = new System.Net.NetworkCredential(_smtp_email, _smtp_password);
 
                     if (messageType == "request")
                     {
@@ -1209,11 +1213,64 @@ namespace NYMBv2
             ClearMessageboxes();
         }
 
+
+        private void btnSaveSmtpSettings_Click(object sender, EventArgs e)
+        {
+            SaveSmtpSettings();
+            GetSmtpSettings();
+        }
+
+        //updates the smtp mail settings from the settings
+        private void GetSmtpSettings()
+        {
+            //updates the global variables
+            _smtp_email = Properties.Settings.Default.smtp_Credentials_Email; ;
+            _smtp_password = Properties.Settings.Default.smtp_Credentials_Password; ;
+            _smtp_port = Properties.Settings.Default.smtp_Port;
+            _smtp_host = Properties.Settings.Default.smtp_Host;
+
+            //updates the settings textboxes in the messagebox Admin Toolbox
+            txtSmtpSettingemail.Text = _smtp_email;
+            txtSmtpSettingPassword.Text = _smtp_password;
+            txtSmtpSettingPort.Text = _smtp_port.ToString();
+            txtSmtpSettingHost.Text = _smtp_host;
+        }
+
+        private void SaveSmtpSettings()
+        {
+            if (txtSmtpSettingemail.Text != _smtp_email)
+            {
+                Properties.Settings.Default.smtp_Credentials_Email = txtSmtpSettingemail.Text;
+                Properties.Settings.Default.Save();
+            }
+
+            if (txtSmtpSettingPassword.Text != _smtp_password)
+            {
+                Properties.Settings.Default.smtp_Credentials_Password = txtSmtpSettingPassword.Text;
+                Properties.Settings.Default.Save();
+            }
+
+            if (txtSmtpSettingPort.Text != _smtp_port.ToString())
+            {
+                int tempPort;
+                int.TryParse(txtSmtpSettingPort.Text, out tempPort);
+                Properties.Settings.Default.smtp_Port = tempPort;
+                Properties.Settings.Default.Save();
+            }
+
+            if (txtSmtpSettingHost.Text != _smtp_host)
+            {
+                Properties.Settings.Default.smtp_Host = txtSmtpSettingHost.Text;
+                Properties.Settings.Default.Save();
+            }
+
+        }
+
         #endregion
 
         #region Transactions
 
-		private void button8_Click(object sender, EventArgs e)
+        private void button8_Click(object sender, EventArgs e)
         {
 			Transactions_Dummy dummy = new Transactions_Dummy();
 
@@ -1381,6 +1438,7 @@ namespace NYMBv2
                 gbxInventoryAdminToolbox.Visible = false;
                 gbxAdminAnnouncementsToolbox.Visible = false;
                 gbxStoreInfoAdminToolbox.Visible = false;
+                gbxMessageboxAdminToolbox.Visible = false;
             }
             //else if (tabControl1.TabCount == 6)
             //{
@@ -1407,6 +1465,7 @@ namespace NYMBv2
                 gbxInventoryAdminToolbox.Visible = true;
                 gbxAdminAnnouncementsToolbox.Visible = true;
                 gbxStoreInfoAdminToolbox.Visible = true;
+                gbxMessageboxAdminToolbox.Visible = true;
 
             }
             else if (ActiveSesson._UserLevel == "Employee")
@@ -1520,5 +1579,7 @@ namespace NYMBv2
             editStoreInfo.ShowDialog();
             ReadStoreInfo();
         }
-    }
+
+
+     }
 }

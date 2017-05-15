@@ -95,18 +95,6 @@
       <DependentUpon>ADMIN_EDIT_INVENTORY.cs</DependentUpon>
     </Compile>
     <Compile Include="Announcement.cs" />
-    <Compile Include="Announcements Dummy.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Announcements Dummy.Designer.cs">
-      <DependentUpon>Announcements Dummy.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Announcements Wizard.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Announcements Wizard.Designer.cs">
-      <DependentUpon>Announcements Wizard.cs</DependentUpon>
-    </Compile>
     <Compile Include="Binder.cs" />
     <Compile Include="BinderControl.cs">
       <SubType>UserControl</SubType>
@@ -141,12 +129,6 @@
     </Compile>
     <Compile Include="DiceControl.Designer.cs">
       <DependentUpon>DiceControl.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Edit_DB_Binders_Table.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Edit_DB_Binders_Table.Designer.cs">
-      <DependentUpon>Edit_DB_Binders_Table.cs</DependentUpon>
     </Compile>
     <Compile Include="Edit_Store_Info.cs">
       <SubType>Form</SubType>
@@ -223,12 +205,6 @@
     <EmbeddedResource Include="ADMIN_EDIT_INVENTORY.resx">
       <DependentUpon>ADMIN_EDIT_INVENTORY.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Announcements Dummy.resx">
-      <DependentUpon>Announcements Dummy.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Announcements Wizard.resx">
-      <DependentUpon>Announcements Wizard.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="BinderControl.resx">
       <DependentUpon>BinderControl.cs</DependentUpon>
     </EmbeddedResource>
@@ -243,9 +219,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="DiceControl.resx">
       <DependentUpon>DiceControl.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Edit_DB_Binders_Table.resx">
-      <DependentUpon>Edit_DB_Binders_Table.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Edit_Store_Info.resx">
       <DependentUpon>Edit_Store_Info.cs</DependentUpon>

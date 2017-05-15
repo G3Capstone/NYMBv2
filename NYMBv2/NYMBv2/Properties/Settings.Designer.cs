@@ -34,39 +34,51 @@ namespace NYMBv2.Properties {
             }
         }
         
-        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("notyourmothersbasementG3@gmail.com")]
         public string smtp_Credentials_Email {
             get {
                 return ((string)(this["smtp_Credentials_Email"]));
             }
+            set {
+                this["smtp_Credentials_Email"] = value;
+            }
         }
         
-        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("capstoneG3")]
         public string smtp_Credentials_Password {
             get {
                 return ((string)(this["smtp_Credentials_Password"]));
             }
+            set {
+                this["smtp_Credentials_Password"] = value;
+            }
         }
         
-        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("smtp.gmail.com")]
         public string smtp_Host {
             get {
                 return ((string)(this["smtp_Host"]));
             }
+            set {
+                this["smtp_Host"] = value;
+            }
         }
         
-        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("587")]
         public int smtp_Port {
             get {
                 return ((int)(this["smtp_Port"]));
+            }
+            set {
+                this["smtp_Port"] = value;
             }
         }
         

@@ -52,7 +52,7 @@
             this.groupBox1.Controls.Add(this.lblSysManEmail);
             this.groupBox1.Location = new System.Drawing.Point(25, 30);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(353, 177);
+            this.groupBox1.Size = new System.Drawing.Size(353, 142);
             this.groupBox1.TabIndex = 1;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Smtp Settings";
@@ -125,7 +125,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(438, 348);
+            this.ClientSize = new System.Drawing.Size(404, 200);
             this.Controls.Add(this.groupBox1);
             this.Name = "Second_Manager_dummy";
             this.Text = "Second_Manager_dummy";

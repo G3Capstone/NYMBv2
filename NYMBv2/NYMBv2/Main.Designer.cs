@@ -131,6 +131,17 @@
             this.ownerPicBox = new System.Windows.Forms.PictureBox();
             this.gbxStoreInfoAdminToolbox = new System.Windows.Forms.GroupBox();
             this.btnEditStoreInfo = new System.Windows.Forms.Button();
+            this.gbxMessageboxAdminToolbox = new System.Windows.Forms.GroupBox();
+            this.btnSaveSmtpSettings = new System.Windows.Forms.Button();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.txtSmtpSettingHost = new System.Windows.Forms.TextBox();
+            this.txtSmtpSettingPort = new System.Windows.Forms.TextBox();
+            this.txtSmtpSettingPassword = new System.Windows.Forms.TextBox();
+            this.txtSmtpSettingemail = new System.Windows.Forms.TextBox();
+            this.lblSysManHost = new System.Windows.Forms.Label();
+            this.lblSysManPortNumber = new System.Windows.Forms.Label();
+            this.lblSysManPassword = new System.Windows.Forms.Label();
+            this.lblSysManEmail = new System.Windows.Forms.Label();
             this.tabControl1.SuspendLayout();
             this.tpAnnouncements.SuspendLayout();
             this.gbxAnnouncements.SuspendLayout();
@@ -160,6 +171,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.locationPicBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ownerPicBox)).BeginInit();
             this.gbxStoreInfoAdminToolbox.SuspendLayout();
+            this.gbxMessageboxAdminToolbox.SuspendLayout();
+            this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -524,9 +537,9 @@
             // 
             this.locationGrpBox.Controls.Add(this.locationPicBox);
             this.locationGrpBox.Controls.Add(this.locationLbl);
-            this.locationGrpBox.Location = new System.Drawing.Point(1047, 52);
+            this.locationGrpBox.Location = new System.Drawing.Point(861, 80);
             this.locationGrpBox.Name = "locationGrpBox";
-            this.locationGrpBox.Size = new System.Drawing.Size(238, 611);
+            this.locationGrpBox.Size = new System.Drawing.Size(238, 561);
             this.locationGrpBox.TabIndex = 7;
             this.locationGrpBox.TabStop = false;
             this.locationGrpBox.Text = "Location";
@@ -536,7 +549,7 @@
             this.locationLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.locationLbl.Location = new System.Drawing.Point(16, 130);
             this.locationLbl.Name = "locationLbl";
-            this.locationLbl.Size = new System.Drawing.Size(206, 246);
+            this.locationLbl.Size = new System.Drawing.Size(206, 418);
             this.locationLbl.TabIndex = 4;
             this.locationLbl.Text = "label2";
             // 
@@ -544,18 +557,18 @@
             // 
             this.ownerGrpBox.Controls.Add(this.descriptionLbl);
             this.ownerGrpBox.Controls.Add(this.ownerPicBox);
-            this.ownerGrpBox.Location = new System.Drawing.Point(12, 52);
+            this.ownerGrpBox.Location = new System.Drawing.Point(185, 80);
             this.ownerGrpBox.Name = "ownerGrpBox";
-            this.ownerGrpBox.Size = new System.Drawing.Size(1029, 611);
+            this.ownerGrpBox.Size = new System.Drawing.Size(670, 561);
             this.ownerGrpBox.TabIndex = 6;
             this.ownerGrpBox.TabStop = false;
             // 
             // descriptionLbl
             // 
             this.descriptionLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.descriptionLbl.Location = new System.Drawing.Point(149, 19);
+            this.descriptionLbl.Location = new System.Drawing.Point(141, 25);
             this.descriptionLbl.Name = "descriptionLbl";
-            this.descriptionLbl.Size = new System.Drawing.Size(874, 589);
+            this.descriptionLbl.Size = new System.Drawing.Size(501, 523);
             this.descriptionLbl.TabIndex = 3;
             this.descriptionLbl.Text = "label1";
             this.descriptionLbl.TextAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -573,6 +586,7 @@
             // tpMessagebox
             // 
             this.tpMessagebox.BackColor = System.Drawing.Color.LavenderBlush;
+            this.tpMessagebox.Controls.Add(this.gbxMessageboxAdminToolbox);
             this.tpMessagebox.Controls.Add(this.lblMessagesFootnote);
             this.tpMessagebox.Controls.Add(this.tabMessageBox);
             this.tpMessagebox.Controls.Add(this.lblMessagebox);
@@ -1261,7 +1275,7 @@
             // ownerPicBox
             // 
             this.ownerPicBox.Image = global::NYMBv2.Properties.Resources.incognito;
-            this.ownerPicBox.Location = new System.Drawing.Point(17, 19);
+            this.ownerPicBox.Location = new System.Drawing.Point(9, 25);
             this.ownerPicBox.Name = "ownerPicBox";
             this.ownerPicBox.Size = new System.Drawing.Size(126, 123);
             this.ownerPicBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -1271,22 +1285,124 @@
             // gbxStoreInfoAdminToolbox
             // 
             this.gbxStoreInfoAdminToolbox.Controls.Add(this.btnEditStoreInfo);
-            this.gbxStoreInfoAdminToolbox.Location = new System.Drawing.Point(12, 0);
+            this.gbxStoreInfoAdminToolbox.Location = new System.Drawing.Point(10, 12);
             this.gbxStoreInfoAdminToolbox.Name = "gbxStoreInfoAdminToolbox";
-            this.gbxStoreInfoAdminToolbox.Size = new System.Drawing.Size(254, 62);
+            this.gbxStoreInfoAdminToolbox.Size = new System.Drawing.Size(233, 62);
             this.gbxStoreInfoAdminToolbox.TabIndex = 14;
             this.gbxStoreInfoAdminToolbox.TabStop = false;
             this.gbxStoreInfoAdminToolbox.Text = "Store Info Admin ToolBox";
             // 
             // btnEditStoreInfo
             // 
-            this.btnEditStoreInfo.Location = new System.Drawing.Point(46, 25);
+            this.btnEditStoreInfo.Location = new System.Drawing.Point(34, 25);
             this.btnEditStoreInfo.Name = "btnEditStoreInfo";
             this.btnEditStoreInfo.Size = new System.Drawing.Size(163, 28);
             this.btnEditStoreInfo.TabIndex = 0;
             this.btnEditStoreInfo.Text = "Edit Store Info";
             this.btnEditStoreInfo.UseVisualStyleBackColor = true;
             this.btnEditStoreInfo.Click += new System.EventHandler(this.btnEditStoreInfo_Click);
+            // 
+            // gbxMessageboxAdminToolbox
+            // 
+            this.gbxMessageboxAdminToolbox.Controls.Add(this.groupBox1);
+            this.gbxMessageboxAdminToolbox.Location = new System.Drawing.Point(9, 69);
+            this.gbxMessageboxAdminToolbox.Name = "gbxMessageboxAdminToolbox";
+            this.gbxMessageboxAdminToolbox.Size = new System.Drawing.Size(279, 554);
+            this.gbxMessageboxAdminToolbox.TabIndex = 14;
+            this.gbxMessageboxAdminToolbox.TabStop = false;
+            this.gbxMessageboxAdminToolbox.Text = "MessageBox Admin ToolBox";
+            // 
+            // btnSaveSmtpSettings
+            // 
+            this.btnSaveSmtpSettings.Location = new System.Drawing.Point(50, 246);
+            this.btnSaveSmtpSettings.Name = "btnSaveSmtpSettings";
+            this.btnSaveSmtpSettings.Size = new System.Drawing.Size(163, 28);
+            this.btnSaveSmtpSettings.TabIndex = 0;
+            this.btnSaveSmtpSettings.Text = "Save Settings";
+            this.btnSaveSmtpSettings.UseVisualStyleBackColor = true;
+            this.btnSaveSmtpSettings.Click += new System.EventHandler(this.btnSaveSmtpSettings_Click);
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.txtSmtpSettingHost);
+            this.groupBox1.Controls.Add(this.btnSaveSmtpSettings);
+            this.groupBox1.Controls.Add(this.txtSmtpSettingPort);
+            this.groupBox1.Controls.Add(this.txtSmtpSettingPassword);
+            this.groupBox1.Controls.Add(this.txtSmtpSettingemail);
+            this.groupBox1.Controls.Add(this.lblSysManHost);
+            this.groupBox1.Controls.Add(this.lblSysManPortNumber);
+            this.groupBox1.Controls.Add(this.lblSysManPassword);
+            this.groupBox1.Controls.Add(this.lblSysManEmail);
+            this.groupBox1.Location = new System.Drawing.Point(7, 77);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(266, 291);
+            this.groupBox1.TabIndex = 2;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Smtp Settings";
+            // 
+            // txtSmtpSettingHost
+            // 
+            this.txtSmtpSettingHost.Location = new System.Drawing.Point(6, 214);
+            this.txtSmtpSettingHost.Name = "txtSmtpSettingHost";
+            this.txtSmtpSettingHost.Size = new System.Drawing.Size(254, 26);
+            this.txtSmtpSettingHost.TabIndex = 8;
+            // 
+            // txtSmtpSettingPort
+            // 
+            this.txtSmtpSettingPort.Location = new System.Drawing.Point(6, 160);
+            this.txtSmtpSettingPort.Name = "txtSmtpSettingPort";
+            this.txtSmtpSettingPort.Size = new System.Drawing.Size(254, 26);
+            this.txtSmtpSettingPort.TabIndex = 7;
+            // 
+            // txtSmtpSettingPassword
+            // 
+            this.txtSmtpSettingPassword.Location = new System.Drawing.Point(6, 110);
+            this.txtSmtpSettingPassword.Name = "txtSmtpSettingPassword";
+            this.txtSmtpSettingPassword.Size = new System.Drawing.Size(254, 26);
+            this.txtSmtpSettingPassword.TabIndex = 6;
+            // 
+            // txtSmtpSettingemail
+            // 
+            this.txtSmtpSettingemail.Location = new System.Drawing.Point(6, 56);
+            this.txtSmtpSettingemail.Name = "txtSmtpSettingemail";
+            this.txtSmtpSettingemail.Size = new System.Drawing.Size(254, 26);
+            this.txtSmtpSettingemail.TabIndex = 5;
+            // 
+            // lblSysManHost
+            // 
+            this.lblSysManHost.AutoSize = true;
+            this.lblSysManHost.Location = new System.Drawing.Point(6, 193);
+            this.lblSysManHost.Name = "lblSysManHost";
+            this.lblSysManHost.Size = new System.Drawing.Size(44, 18);
+            this.lblSysManHost.TabIndex = 3;
+            this.lblSysManHost.Text = "Host:";
+            // 
+            // lblSysManPortNumber
+            // 
+            this.lblSysManPortNumber.AutoSize = true;
+            this.lblSysManPortNumber.Location = new System.Drawing.Point(6, 139);
+            this.lblSysManPortNumber.Name = "lblSysManPortNumber";
+            this.lblSysManPortNumber.Size = new System.Drawing.Size(41, 18);
+            this.lblSysManPortNumber.TabIndex = 2;
+            this.lblSysManPortNumber.Text = "Port:";
+            // 
+            // lblSysManPassword
+            // 
+            this.lblSysManPassword.AutoSize = true;
+            this.lblSysManPassword.Location = new System.Drawing.Point(3, 89);
+            this.lblSysManPassword.Name = "lblSysManPassword";
+            this.lblSysManPassword.Size = new System.Drawing.Size(82, 18);
+            this.lblSysManPassword.TabIndex = 1;
+            this.lblSysManPassword.Text = "Password:";
+            // 
+            // lblSysManEmail
+            // 
+            this.lblSysManEmail.AutoSize = true;
+            this.lblSysManEmail.Location = new System.Drawing.Point(6, 35);
+            this.lblSysManEmail.Name = "lblSysManEmail";
+            this.lblSysManEmail.Size = new System.Drawing.Size(114, 18);
+            this.lblSysManEmail.TabIndex = 0;
+            this.lblSysManEmail.Text = "Email Address:";
             // 
             // Main
             // 
@@ -1336,6 +1452,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.locationPicBox)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ownerPicBox)).EndInit();
             this.gbxStoreInfoAdminToolbox.ResumeLayout(false);
+            this.gbxMessageboxAdminToolbox.ResumeLayout(false);
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1446,6 +1565,17 @@
         private System.Windows.Forms.Button btnEditAnnouncements;
         private System.Windows.Forms.GroupBox gbxStoreInfoAdminToolbox;
         private System.Windows.Forms.Button btnEditStoreInfo;
+        private System.Windows.Forms.GroupBox gbxMessageboxAdminToolbox;
+        private System.Windows.Forms.Button btnSaveSmtpSettings;
+        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.TextBox txtSmtpSettingHost;
+        private System.Windows.Forms.TextBox txtSmtpSettingPort;
+        private System.Windows.Forms.TextBox txtSmtpSettingPassword;
+        private System.Windows.Forms.TextBox txtSmtpSettingemail;
+        private System.Windows.Forms.Label lblSysManHost;
+        private System.Windows.Forms.Label lblSysManPortNumber;
+        private System.Windows.Forms.Label lblSysManPassword;
+        private System.Windows.Forms.Label lblSysManEmail;
     }
 }
 

@@ -10,16 +10,16 @@
 &lt;/SerializableConnectionString&gt;</DesignTimeValue>
       <Value Profile="(Default)">Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\NYMBv2_DB.mdf;Integrated Security=True</Value>
     </Setting>
-    <Setting Name="smtp_Credentials_Email" Type="System.String" Scope="Application">
+    <Setting Name="smtp_Credentials_Email" Type="System.String" Scope="User">
       <Value Profile="(Default)">notyourmothersbasementG3@gmail.com</Value>
     </Setting>
-    <Setting Name="smtp_Credentials_Password" Type="System.String" Scope="Application">
+    <Setting Name="smtp_Credentials_Password" Type="System.String" Scope="User">
       <Value Profile="(Default)">capstoneG3</Value>
     </Setting>
-    <Setting Name="smtp_Host" Type="System.String" Scope="Application">
+    <Setting Name="smtp_Host" Type="System.String" Scope="User">
       <Value Profile="(Default)">smtp.gmail.com</Value>
     </Setting>
-    <Setting Name="smtp_Port" Type="System.Int32" Scope="Application">
+    <Setting Name="smtp_Port" Type="System.Int32" Scope="User">
       <Value Profile="(Default)">587</Value>
     </Setting>
     <Setting Name="generateColumns" Type="System.Boolean" Scope="User">
