@@ -1055,14 +1055,34 @@ namespace NYMBv2
 
         private void button7_Click_1(object sender, EventArgs e)
         {
-            SystemManager_Dummy myManager = new SystemManager_Dummy();
-            myManager.ShowDialog();
+            //SystemManager_Dummy myManager = new SystemManager_Dummy();
+            //myManager.ShowDialog();
         }
 
         private void llblCreateAccount_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             CreateUser myCreateUser = new CreateUser();
             myCreateUser.ShowDialog();
+
+
+            if (myCreateUser.DialogResult == DialogResult.OK)
+            {
+                //If the Active user is a guest then it opens the 
+                //Log in popup. If the user is not a guest then
+                //It logs the user out and logs in the guest.
+                if (ActiveSesson._UserLevel == "Guest")
+                {
+                    LogIn mylogin = new LogIn();
+                    mylogin.ShowDialog();
+                    UpdateActiveUser();
+
+                }
+                else
+                {
+                    SetActiveUserAsGuest();
+                    UpdateActiveUser();
+                }
+            }
         }
     }
 }

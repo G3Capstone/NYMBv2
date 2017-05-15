@@ -287,10 +287,10 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="NYMBv2_DB.mdf">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="NYMBv2_DB_log.ldf">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       <DependentUpon>NYMBv2_DB.mdf</DependentUpon>
     </Content>
     <None Include="Resources\Storefront-Glass-Windows-And-Doors1.jpg" />

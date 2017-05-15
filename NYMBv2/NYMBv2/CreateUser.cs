@@ -24,7 +24,6 @@ namespace NYMBv2
         #region Connection String
         public string connectionString = ConfigurationManager.ConnectionStrings["NYMBv2.Properties.Settings.NYMBv2_DBConnectionString"].ConnectionString;
 
-        private string queryCreateUser;
         #endregion
 
         #region Create User Constructors
@@ -121,15 +120,19 @@ namespace NYMBv2
                                           string lastname, string email)
         {
 
+            string startPath = Application.StartupPath;
+            string filepath = startPath + @"\\NYMBv2\\" + "NYMBv2.mdf";
+            string connString = (@"Data Source=" + filepath + "");
+
             try
             {
 
                 //Create a connection to the database
-                using (SqlConnection connection = new SqlConnection(connectionString))
+                using (SqlConnection connection = new SqlConnection(connString))
                 {
 
                     //SQL Query that adds the Guest SessonToken to the sessonToken table of the database
-                    string queryCreateUser = @"INSERT INTO [dbo].[USER_TABLE] VALUES ('"+username+"', '"+password+"', NULL, NULL, '"+email+"', '"+firstname+"', '"+lastname+"', 'Customer')";
+                    string queryCreateUser = @"INSERT INTO [dbo].[USER_TABLE] VALUES ('" + username + "', '" + password + "', NULL , NULL , '" + email + "', '" + firstname + "', '" + lastname + "', 'Customer')";
 
                     //Creates the SQL Command with the clear query
                     SqlCommand command = new SqlCommand(queryCreateUser, connection);
