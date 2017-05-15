@@ -115,11 +115,11 @@
             // 
             this.lblEmail.AutoSize = true;
             this.lblEmail.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblEmail.Location = new System.Drawing.Point(54, 256);
+            this.lblEmail.Location = new System.Drawing.Point(142, 256);
             this.lblEmail.Name = "lblEmail";
-            this.lblEmail.Size = new System.Drawing.Size(133, 16);
+            this.lblEmail.Size = new System.Drawing.Size(45, 16);
             this.lblEmail.TabIndex = 5;
-            this.lblEmail.Text = "Email (Not Required)";
+            this.lblEmail.Text = "Email ";
             // 
             // txtBxUsername
             // 
@@ -235,7 +235,7 @@
             // 
             // pbxEmail
             // 
-            this.pbxEmail.Location = new System.Drawing.Point(21, 255);
+            this.pbxEmail.Location = new System.Drawing.Point(109, 255);
             this.pbxEmail.Name = "pbxEmail";
             this.pbxEmail.Size = new System.Drawing.Size(27, 20);
             this.pbxEmail.TabIndex = 19;
