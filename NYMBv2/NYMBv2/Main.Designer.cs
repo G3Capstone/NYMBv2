@@ -35,7 +35,6 @@
 			this.rtbAnnouncements = new System.Windows.Forms.RichTextBox();
 			this.lblAnnouncements = new System.Windows.Forms.Label();
 			this.tpInventory = new System.Windows.Forms.TabPage();
-			this.button1 = new System.Windows.Forms.Button();
 			this.textBoxSearch = new System.Windows.Forms.TextBox();
 			this.lblInventory = new System.Windows.Forms.Label();
 			this.tpEvents = new System.Windows.Forms.TabPage();
@@ -236,7 +235,6 @@
 			this.tpInventory.BackColor = System.Drawing.Color.PaleGreen;
 			this.tpInventory.Controls.Add(this.flowLayoutPanelResults);
 			this.tpInventory.Controls.Add(this.buttonSearch);
-			this.tpInventory.Controls.Add(this.button1);
 			this.tpInventory.Controls.Add(this.textBoxSearch);
 			this.tpInventory.Controls.Add(this.lblInventory);
 			this.tpInventory.Location = new System.Drawing.Point(149, 4);
@@ -244,16 +242,6 @@
 			this.tpInventory.Size = new System.Drawing.Size(1296, 670);
 			this.tpInventory.TabIndex = 1;
 			this.tpInventory.Text = "Inventory";
-			// 
-			// button1
-			// 
-			this.button1.Location = new System.Drawing.Point(9, 3);
-			this.button1.Name = "button1";
-			this.button1.Size = new System.Drawing.Size(75, 23);
-			this.button1.TabIndex = 5;
-			this.button1.Text = "button1";
-			this.button1.UseVisualStyleBackColor = true;
-			this.button1.Click += new System.EventHandler(this.button1_Click_1);
 			// 
 			// textBoxSearch
 			// 
@@ -1310,7 +1298,6 @@
 		private System.Windows.Forms.Label lblInventory;
 		private System.Windows.Forms.Button button8;
         private NYMBv2_DBDataSetTableAdapters.SessonTokensTableAdapter sessonTokensTableAdapter1;
-		private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Panel pnlWeek;
         private System.Windows.Forms.GroupBox gbxSaturday;
         private System.Windows.Forms.RichTextBox rtbSaturday;
