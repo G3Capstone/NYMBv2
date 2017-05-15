@@ -514,57 +514,6 @@ namespace NYMBv2
         }
         #endregion
 
-        #region Check for Special
-
-        /**
-        * The CheckPasswordSpecial method accepts a string argument
-        * returns true if the password entered contains at least
-        * 1 special character
-        */
-        private bool CheckPasswordSpecial(string password)
-        {
-            int special = 0;        //The number of special characters in the password.
-            bool valid = false;     //Flags verification of category 
-
-            //Count the punctuation characters in the password.
-            foreach (char ch in password)
-            {
-                if (char.IsPunctuation(ch))
-                {
-                    special++;
-
-                    if (char.IsSymbol(ch))
-                    {
-                        special++;
-
-                    }
-                }
-            }
-
-            //Check if there is at least 1 digit in the password.
-            if (special >= 1)
-            {
-                valid = true;
-
-                lblPasswordErrMsg.Visible = false;
-
-            }
-            else
-            {
-                //flag that the password does not meet the necessary requirements.
-                valid = false;
-
-                //Show the error message below the password textbox.
-                lblPasswordErrMsg.Visible = true;
-
-                //Change the text to inform the user of the password error.
-                lblPasswordErrMsg.Text = "Password must have at least 1 special character.";
-
-            }
-
-            return valid;
-        }
-        #endregion
 
         #region Password shouldn't contain certain special characters
 
@@ -660,8 +609,7 @@ namespace NYMBv2
                 if (CheckPasswordLength(pass) == true &&
                     CheckPasswordUpperCase(pass) == true &&
                     CheckPasswordLowerCase(pass) == true &&
-                    CheckPasswordDigit(pass) == true &&
-                    CheckPasswordSpecial(pass) == true)
+                    CheckPasswordDigit(pass) == true)
                 {
                     flag = true;
                 }
