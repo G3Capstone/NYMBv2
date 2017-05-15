@@ -47,6 +47,15 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="BCrypt.Net, Version=0.1.5073.29922, Culture=neutral, PublicKeyToken=6bcd409ee6bc9292, processorArchitecture=MSIL">
+      <HintPath>..\packages\BCrypt-Official.0.1.109\lib\BCrypt.Net.dll</HintPath>
+    </Reference>
+    <Reference Include="BCrypt.Net.0.1.5073.29922.Fakes">
+      <HintPath>FakesAssemblies\BCrypt.Net.0.1.5073.29922.Fakes.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.QualityTools.Testing.Fakes, Version=12.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.configuration" />
     <Reference Include="System.Core" />
@@ -107,6 +116,7 @@
     <Compile Include="CreateUser.Designer.cs">
       <DependentUpon>CreateUser.cs</DependentUpon>
     </Compile>
+    <Compile Include="CreateUserObj.cs" />
     <Compile Include="Dice.cs" />
     <Compile Include="DiceControl.cs">
       <SubType>UserControl</SubType>
@@ -133,6 +143,7 @@
     <Compile Include="Events Dummy.Designer.cs">
       <DependentUpon>Events Dummy.cs</DependentUpon>
     </Compile>
+    <Compile Include="Hashing.cs" />
     <Compile Include="Inventory Dummy.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -272,6 +283,7 @@
     <None Include="NYMBv2_DBDataSet.xss">
       <DependentUpon>NYMBv2_DBDataSet.xsd</DependentUpon>
     </None>
+    <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -286,11 +298,9 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="NYMBv2_DB.mdf">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
+    <Content Include="LICENSE.txt" />
+    <Content Include="NYMBv2_DB.mdf" />
     <Content Include="NYMBv2_DB_log.ldf">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       <DependentUpon>NYMBv2_DB.mdf</DependentUpon>
     </Content>
     <None Include="Resources\Storefront-Glass-Windows-And-Doors1.jpg" />
