@@ -136,6 +136,12 @@
     <Compile Include="Edit_Store_Info.Designer.cs">
       <DependentUpon>Edit_Store_Info.cs</DependentUpon>
     </Compile>
+    <Compile Include="Edit_Supporting_Data.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Edit_Supporting_Data.Designer.cs">
+      <DependentUpon>Edit_Supporting_Data.cs</DependentUpon>
+    </Compile>
     <Compile Include="Event.cs" />
     <Compile Include="Events Dummy.cs">
       <SubType>Form</SubType>
@@ -234,6 +240,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Edit_Store_Info.resx">
       <DependentUpon>Edit_Store_Info.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Edit_Supporting_Data.resx">
+      <DependentUpon>Edit_Supporting_Data.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Events Dummy.resx">
       <DependentUpon>Events Dummy.cs</DependentUpon>

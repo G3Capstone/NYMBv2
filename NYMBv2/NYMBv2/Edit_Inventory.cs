@@ -65,12 +65,6 @@ namespace NYMBv2
 
 
 
-
-        private void btnViewUsers_Click(object sender, EventArgs e)
-        {
-            
-        }
-
         private void SystemManager_Dummy_Load(object sender, EventArgs e)
         {
 
