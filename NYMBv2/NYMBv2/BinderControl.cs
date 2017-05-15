@@ -35,7 +35,6 @@ namespace NYMBv2
 		{
 			labelColor.Text = color;
 			labelPublisher.Text = publisher;
-			labelBinderSize.Text = itemSize;
 			labelName.Text = name;
 			labelPrice.Text = price;
 			labelQty.Text = qty;
@@ -46,6 +45,11 @@ namespace NYMBv2
 		{
 			get { return color; }
 			set { color = value; }
+		}
+
+		private void labelQty_Click(object sender, EventArgs e)
+		{
+
 		}
 
 		public string Publisher

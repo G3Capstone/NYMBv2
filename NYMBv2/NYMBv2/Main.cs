@@ -1456,13 +1456,6 @@ namespace NYMBv2
 
 		#endregion
 
-		private void button1_Click_1(object sender, EventArgs e)
-		{
-			Inventory_Dummy dummy = new Inventory_Dummy();
-
-			dummy.ShowDialog();
-		}
-
         private void gbxEvents_Enter(object sender, EventArgs e)
         {
 
