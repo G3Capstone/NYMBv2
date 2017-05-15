@@ -55,6 +55,12 @@ namespace NYMBv2
 
         #endregion
 
+        #region MessageForm object
+
+        
+
+        #endregion
+
 
         private void CreateUser_Load(object sender, EventArgs e)
         {
@@ -70,18 +76,31 @@ namespace NYMBv2
             string lastname = txtBxLastName.Text;         //Holds the last name
             string email = txtBxEmail.Text;               //Holds the email address
 
+            //Login Page object.
+            LogIn myLogin = new LogIn();
+
             try
             {
+               //Check if all of the user information is valid.
+               //If it is, then submit it to the database.
                if( ValidateUsername(username) == true &&
-                   ValidatePassword(password) == true &&
+                   ValidatePassword(password, confirm) == true &&
                    ValidateFirstName(firstname) == true &&
                    ValidateLastName(lastname) == true &&
-                   ValidateEmail(email) == true &&
-                   password == confirm)
+                   ValidateEmail(email) == true)
                 {
+                    //Submit the information into the database.
                     CreateUserAccount(username, password, firstname, lastname, email);
 
+                    //Create a dialog box that tells the user that the account has been put into the database.
+                    MessageBox.Show("Your account has been created.");
+
+                    //Take the user back to the login screen.
+                    myLogin.ShowDialog();
+
                 }
+
+               
             }
             catch(Exception ex)
             {
@@ -274,7 +293,6 @@ namespace NYMBv2
         #endregion
 
         #region Password Validation Methods
-
 
         #region Password Length of 8-12 Characters
 
@@ -508,12 +526,18 @@ namespace NYMBv2
             int special = 0;        //The number of special characters in the password.
             bool valid = false;     //Flags verification of category 
 
-            //Count the special characters in the password.
+            //Count the punctuation characters in the password.
             foreach (char ch in password)
             {
                 if (char.IsPunctuation(ch))
                 {
                     special++;
+
+                    if (char.IsSymbol(ch))
+                    {
+                        special++;
+
+                    }
                 }
             }
 
@@ -619,30 +643,40 @@ namespace NYMBv2
          * The first validation checks the password string to see if it meets
          * all the set requirements.
          */
-        private bool ValidatePassword(string password)
+        private bool ValidatePassword(string password, string confirmation)
         {
-            bool flag = false;           //Counts the number of false returns this method receives.
-            string pass = password;      //Holds the password
+            bool flag = false;              //Counts the number of false returns this method receives.
+            string pass = password;         //Holds the password
+            string confrim = confirmation;  //Holds the re-typed password.
 
-            
+
 
             #region Alternative validation code 1
-            
-            
-            //Check if the password meets all of the requirements.
-            if (CheckPasswordLength(pass) == true &&
-                CheckPasswordUpperCase(pass) == true &&
-                CheckPasswordLowerCase(pass) == true &&
-                CheckPasswordDigit(pass) == true &&
-                CheckPasswordSpecial(pass) == true )
+
+            //Check if the passwords match each other.
+            if (password == confirmation)
             {
-                flag = true;
+                //Check if the password meets all of the requirements.
+                if (CheckPasswordLength(pass) == true &&
+                    CheckPasswordUpperCase(pass) == true &&
+                    CheckPasswordLowerCase(pass) == true &&
+                    CheckPasswordDigit(pass) == true &&
+                    CheckPasswordSpecial(pass) == true)
+                {
+                    flag = true;
+                }
+                else
+                {
+                    pass = "";
+                    confirmation = "";
+                }
             }
             else
             {
-                pass = "";
-            }
+                lblConfirmPasswordErrMsg.Visible = true;
 
+                lblConfirmPasswordErrMsg.Text = "Passwords do not match.";
+            }
 
             return flag;
 
@@ -996,6 +1030,7 @@ namespace NYMBv2
             }
         }
 
+
         #region Alternative Email Validation Code
         /*
         private bool CheckEmail(string password)
@@ -1038,6 +1073,9 @@ namespace NYMBv2
 
         #endregion
 
-
+        private void btnCancel_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

@@ -172,6 +172,7 @@
             this.lblUsernameErrMsg.TabIndex = 12;
             this.lblUsernameErrMsg.Text = "Error Text";
             this.lblUsernameErrMsg.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblUsernameErrMsg.Visible = false;
             // 
             // lblPasswordErrMsg
             // 
@@ -182,6 +183,7 @@
             this.lblPasswordErrMsg.TabIndex = 13;
             this.lblPasswordErrMsg.Text = "Error Text";
             this.lblPasswordErrMsg.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblPasswordErrMsg.Visible = false;
             // 
             // lblConfirmPasswordErrMsg
             // 
@@ -192,6 +194,7 @@
             this.lblConfirmPasswordErrMsg.TabIndex = 14;
             this.lblConfirmPasswordErrMsg.Text = "Error Text";
             this.lblConfirmPasswordErrMsg.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblConfirmPasswordErrMsg.Visible = false;
             // 
             // lblEmailErrMsg
             // 
@@ -202,6 +205,7 @@
             this.lblEmailErrMsg.TabIndex = 15;
             this.lblEmailErrMsg.Text = "Error Text";
             this.lblEmailErrMsg.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblEmailErrMsg.Visible = false;
             // 
             // pbxUsernameWarning
             // 
@@ -255,6 +259,7 @@
             this.btnCancel.TabIndex = 21;
             this.btnCancel.Text = "Cancel";
             this.btnCancel.UseVisualStyleBackColor = true;
+            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
             // errorProvider1
             // 
@@ -269,6 +274,7 @@
             this.lblLastErrMsg.TabIndex = 22;
             this.lblLastErrMsg.Text = "Error Text";
             this.lblLastErrMsg.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblLastErrMsg.Visible = false;
             // 
             // lblFirstErrMsg
             // 
@@ -279,6 +285,7 @@
             this.lblFirstErrMsg.TabIndex = 23;
             this.lblFirstErrMsg.Text = "Error Text";
             this.lblFirstErrMsg.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblFirstErrMsg.Visible = false;
             // 
             // CreateUser
             // 
