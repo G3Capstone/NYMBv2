@@ -98,6 +98,9 @@ namespace NYMBv2
                     //Take the user back to the login screen.
                     myLogin.ShowDialog();
 
+                    //Close the CreateUser tab.
+                    this.Close();
+
                 }
 
                
@@ -124,22 +127,10 @@ namespace NYMBv2
                 {
 
                     //SQL Query that adds the Guest SessonToken to the sessonToken table of the database
-                    string query = @"INSERT INTO [dbo].[USER_TABLE] VALUES ('"+username+"', '"+password+"', NULL, NULL, '"+email+"', '"+firstname+"', '"+lastname+"', 'Customer')";
+                    string queryCreateUser = @"INSERT INTO [dbo].[USER_TABLE] VALUES ('"+username+"', '"+password+"', NULL, NULL, '"+email+"', '"+firstname+"', '"+lastname+"', 'Customer')";
 
                     //Creates the SQL Command with the clear query
                     SqlCommand command = new SqlCommand(queryCreateUser, connection);
-
-                    //Connects the database with the command
-                    command.Connection.Open();
-
-                    //Runs the query
-                    command.ExecuteNonQuery();
-
-                    //Closes the connection
-                    command.Connection.Close();
-
-                    //Sets the Command to run the query guest Token 
-                    command = new SqlCommand(queryCreateUser, connection);
 
                     //Connects the database with the command
                     command.Connection.Open();
@@ -202,14 +193,14 @@ namespace NYMBv2
          * that shouldn't be in a username,such as (') and (&).
          */
 
-        private bool CheckUsernameSpecial (string password)
+        private bool CheckUsernameSpecial (string username)
         {
             int special = 0;        //Counts the number of unacceptable characters
             bool valid;             //Flags the validity of the password.
 
             //A username can't contain ('), ("), (&), (;), or (,).
             //Count each char for every instance of the special characters.
-            foreach (char ch in password)
+            foreach (char ch in username)
             {
                 if (ch == '"')
                 {
