@@ -1305,6 +1305,7 @@ namespace NYMBv2
                 SqlCommand cmd = new SqlCommand(query, connection);
 
                 //connecting the SQLCommand Control and the database
+
                 cmd.Connection.Open();
 
                 //Creating a SQLDataReader to read the results of the query ran by the

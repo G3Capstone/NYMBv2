@@ -20,13 +20,17 @@ namespace NYMBv2
 
         private void announcementsBindingNavigatorSaveItem_Click(object sender, EventArgs e)
         {
-            this.Validate();
-            this.announcementsBindingSource.EndEdit();
-            this.tableAdapterManager.UpdateAll(this.nYMBv2_DBDataSet);
-            startDisplayDateDateTimePicker.MinDate = System.DateTime.Now;
-            startDisplayDateDateTimePicker.MaxDate = System.DateTime.Now.AddMonths(6);
-            endDisplayDateDateTimePicker.MinDate = System.DateTime.Now.AddDays(5);
-            endDisplayDateDateTimePicker.MaxDate = System.DateTime.Now.AddMonths(7);
+            try
+            {
+                this.Validate();
+                this.announcementsBindingSource.EndEdit();
+                this.tableAdapterManager.UpdateAll(this.nYMBv2_DBDataSet);
+                startDisplayDateDateTimePicker.MinDate = System.DateTime.Now;
+                startDisplayDateDateTimePicker.MaxDate = System.DateTime.Now.AddMonths(6);
+                endDisplayDateDateTimePicker.MinDate = System.DateTime.Now.AddDays(5);
+                endDisplayDateDateTimePicker.MaxDate = System.DateTime.Now.AddMonths(7);
+            }
+            catch (Exception ex) { MessageBox.Show("Invalid entry, please try again."); }
         }
 
         private void Admin_EditAnnouncements_Load(object sender, EventArgs e)

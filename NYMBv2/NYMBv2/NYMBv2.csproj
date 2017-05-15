@@ -271,9 +271,12 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="LICENSE.txt" />
-    <Content Include="NYMBv2_DB.mdf" />
+    <Content Include="NYMBv2_DB.mdf">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
     <Content Include="NYMBv2_DB_log.ldf">
       <DependentUpon>NYMBv2_DB.mdf</DependentUpon>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <None Include="Resources\Storefront-Glass-Windows-And-Doors1.jpg" />
     <None Include="Resources\incognito1.png" />
