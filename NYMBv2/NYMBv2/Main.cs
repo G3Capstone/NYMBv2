@@ -140,10 +140,7 @@ namespace NYMBv2
 
         }
 
-        private void button8_Click(object sender, EventArgs e)
-        {
-
-        }
+        
 
         #endregion
 
@@ -1215,7 +1212,12 @@ namespace NYMBv2
 
         #region Transactions
 
+		private void button8_Click(object sender, EventArgs e)
+        {
+			Transactions_Dummy dummy = new Transactions_Dummy();
 
+			dummy.Show();
+        }
 
         #endregion
 
