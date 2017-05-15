@@ -1423,6 +1423,27 @@ SELECT UserName, Password, Hash, Email, FirstName, LastName, UserLevel FROM USER
             </Mappings>
             <Sources />
           </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="UserTableViewTableAdapter" GeneratorDataComponentClassName="UserTableViewTableAdapter" Name="UserTableView" UserDataComponentName="UserTableViewTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="NYMBv2_DBConnectionString (Settings)" DbObjectName="dbo.UserTableView" DbObjectType="View" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT UserName, Password, Email, FirstName, LastName, UserLevel FROM dbo.UserTableView</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="UserName" DataSetColumn="UserName" />
+              <Mapping SourceColumn="Password" DataSetColumn="Password" />
+              <Mapping SourceColumn="Email" DataSetColumn="Email" />
+              <Mapping SourceColumn="FirstName" DataSetColumn="FirstName" />
+              <Mapping SourceColumn="LastName" DataSetColumn="LastName" />
+              <Mapping SourceColumn="UserLevel" DataSetColumn="UserLevel" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
         </Tables>
         <Sources />
       </DataSource>
@@ -1431,7 +1452,7 @@ SELECT UserName, Password, Hash, Email, FirstName, LastName, UserLevel FROM USER
   <xs:element name="NYMBv2_DBDataSet" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="NYMBv2_DBDataSet" msprop:Generator_UserDSName="NYMBv2_DBDataSet">
     <xs:complexType>
       <xs:choice minOccurs="0" maxOccurs="unbounded">
-        <xs:element name="Announcements" msprop:Generator_TableClassName="AnnouncementsDataTable" msprop:Generator_TableVarName="tableAnnouncements" msprop:Generator_TablePropName="Announcements" msprop:Generator_RowDeletingName="AnnouncementsRowDeleting" msprop:Generator_RowChangingName="AnnouncementsRowChanging" msprop:Generator_RowEvHandlerName="AnnouncementsRowChangeEventHandler" msprop:Generator_RowDeletedName="AnnouncementsRowDeleted" msprop:Generator_UserTableName="Announcements" msprop:Generator_RowChangedName="AnnouncementsRowChanged" msprop:Generator_RowEvArgName="AnnouncementsRowChangeEvent" msprop:Generator_RowClassName="AnnouncementsRow">
+        <xs:element name="Announcements" msprop:Generator_TableClassName="AnnouncementsDataTable" msprop:Generator_TableVarName="tableAnnouncements" msprop:Generator_RowChangedName="AnnouncementsRowChanged" msprop:Generator_TablePropName="Announcements" msprop:Generator_RowDeletingName="AnnouncementsRowDeleting" msprop:Generator_RowChangingName="AnnouncementsRowChanging" msprop:Generator_RowEvHandlerName="AnnouncementsRowChangeEventHandler" msprop:Generator_RowDeletedName="AnnouncementsRowDeleted" msprop:Generator_RowClassName="AnnouncementsRow" msprop:Generator_UserTableName="Announcements" msprop:Generator_RowEvArgName="AnnouncementsRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="Announcement_x0023_" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="_columnAnnouncement_" msprop:Generator_ColumnPropNameInRow="_Announcement_" msprop:Generator_ColumnPropNameInTable="_Announcement_Column" msprop:Generator_UserColumnName="Announcement#" type="xs:int" />
@@ -1454,7 +1475,7 @@ SELECT UserName, Password, Hash, Email, FirstName, LastName, UserLevel FROM USER
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="Binders" msprop:Generator_TableClassName="BindersDataTable" msprop:Generator_TableVarName="tableBinders" msprop:Generator_TablePropName="Binders" msprop:Generator_RowDeletingName="BindersRowDeleting" msprop:Generator_RowChangingName="BindersRowChanging" msprop:Generator_RowEvHandlerName="BindersRowChangeEventHandler" msprop:Generator_RowDeletedName="BindersRowDeleted" msprop:Generator_UserTableName="Binders" msprop:Generator_RowChangedName="BindersRowChanged" msprop:Generator_RowEvArgName="BindersRowChangeEvent" msprop:Generator_RowClassName="BindersRow">
+        <xs:element name="Binders" msprop:Generator_TableClassName="BindersDataTable" msprop:Generator_TableVarName="tableBinders" msprop:Generator_RowChangedName="BindersRowChanged" msprop:Generator_TablePropName="Binders" msprop:Generator_RowDeletingName="BindersRowDeleting" msprop:Generator_RowChangingName="BindersRowChanging" msprop:Generator_RowEvHandlerName="BindersRowChangeEventHandler" msprop:Generator_RowDeletedName="BindersRowDeleted" msprop:Generator_RowClassName="BindersRow" msprop:Generator_UserTableName="Binders" msprop:Generator_RowEvArgName="BindersRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="Item_x0023_" msprop:Generator_ColumnVarNameInTable="_columnItem_" msprop:Generator_ColumnPropNameInRow="_Item_" msprop:Generator_ColumnPropNameInTable="_Item_Column" msprop:Generator_UserColumnName="Item#" type="xs:int" />
@@ -1482,7 +1503,7 @@ SELECT UserName, Password, Hash, Email, FirstName, LastName, UserLevel FROM USER
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="BoardGames" msprop:Generator_TableClassName="BoardGamesDataTable" msprop:Generator_TableVarName="tableBoardGames" msprop:Generator_TablePropName="BoardGames" msprop:Generator_RowDeletingName="BoardGamesRowDeleting" msprop:Generator_RowChangingName="BoardGamesRowChanging" msprop:Generator_RowEvHandlerName="BoardGamesRowChangeEventHandler" msprop:Generator_RowDeletedName="BoardGamesRowDeleted" msprop:Generator_UserTableName="BoardGames" msprop:Generator_RowChangedName="BoardGamesRowChanged" msprop:Generator_RowEvArgName="BoardGamesRowChangeEvent" msprop:Generator_RowClassName="BoardGamesRow">
+        <xs:element name="BoardGames" msprop:Generator_TableClassName="BoardGamesDataTable" msprop:Generator_TableVarName="tableBoardGames" msprop:Generator_RowChangedName="BoardGamesRowChanged" msprop:Generator_TablePropName="BoardGames" msprop:Generator_RowDeletingName="BoardGamesRowDeleting" msprop:Generator_RowChangingName="BoardGamesRowChanging" msprop:Generator_RowEvHandlerName="BoardGamesRowChangeEventHandler" msprop:Generator_RowDeletedName="BoardGamesRowDeleted" msprop:Generator_RowClassName="BoardGamesRow" msprop:Generator_UserTableName="BoardGames" msprop:Generator_RowEvArgName="BoardGamesRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="Item_x0023_" msprop:Generator_ColumnVarNameInTable="_columnItem_" msprop:Generator_ColumnPropNameInRow="_Item_" msprop:Generator_ColumnPropNameInTable="_Item_Column" msprop:Generator_UserColumnName="Item#" type="xs:int" />
@@ -1496,7 +1517,7 @@ SELECT UserName, Password, Hash, Email, FirstName, LastName, UserLevel FROM USER
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="CardSleeves" msprop:Generator_TableClassName="CardSleevesDataTable" msprop:Generator_TableVarName="tableCardSleeves" msprop:Generator_TablePropName="CardSleeves" msprop:Generator_RowDeletingName="CardSleevesRowDeleting" msprop:Generator_RowChangingName="CardSleevesRowChanging" msprop:Generator_RowEvHandlerName="CardSleevesRowChangeEventHandler" msprop:Generator_RowDeletedName="CardSleevesRowDeleted" msprop:Generator_UserTableName="CardSleeves" msprop:Generator_RowChangedName="CardSleevesRowChanged" msprop:Generator_RowEvArgName="CardSleevesRowChangeEvent" msprop:Generator_RowClassName="CardSleevesRow">
+        <xs:element name="CardSleeves" msprop:Generator_TableClassName="CardSleevesDataTable" msprop:Generator_TableVarName="tableCardSleeves" msprop:Generator_RowChangedName="CardSleevesRowChanged" msprop:Generator_TablePropName="CardSleeves" msprop:Generator_RowDeletingName="CardSleevesRowDeleting" msprop:Generator_RowChangingName="CardSleevesRowChanging" msprop:Generator_RowEvHandlerName="CardSleevesRowChangeEventHandler" msprop:Generator_RowDeletedName="CardSleevesRowDeleted" msprop:Generator_RowClassName="CardSleevesRow" msprop:Generator_UserTableName="CardSleeves" msprop:Generator_RowEvArgName="CardSleevesRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="Item_x0023_" msprop:Generator_ColumnVarNameInTable="_columnItem_" msprop:Generator_ColumnPropNameInRow="_Item_" msprop:Generator_ColumnPropNameInTable="_Item_Column" msprop:Generator_UserColumnName="Item#" type="xs:int" />
@@ -1524,7 +1545,7 @@ SELECT UserName, Password, Hash, Email, FirstName, LastName, UserLevel FROM USER
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="ComicBooks" msprop:Generator_TableClassName="ComicBooksDataTable" msprop:Generator_TableVarName="tableComicBooks" msprop:Generator_TablePropName="ComicBooks" msprop:Generator_RowDeletingName="ComicBooksRowDeleting" msprop:Generator_RowChangingName="ComicBooksRowChanging" msprop:Generator_RowEvHandlerName="ComicBooksRowChangeEventHandler" msprop:Generator_RowDeletedName="ComicBooksRowDeleted" msprop:Generator_UserTableName="ComicBooks" msprop:Generator_RowChangedName="ComicBooksRowChanged" msprop:Generator_RowEvArgName="ComicBooksRowChangeEvent" msprop:Generator_RowClassName="ComicBooksRow">
+        <xs:element name="ComicBooks" msprop:Generator_TableClassName="ComicBooksDataTable" msprop:Generator_TableVarName="tableComicBooks" msprop:Generator_RowChangedName="ComicBooksRowChanged" msprop:Generator_TablePropName="ComicBooks" msprop:Generator_RowDeletingName="ComicBooksRowDeleting" msprop:Generator_RowChangingName="ComicBooksRowChanging" msprop:Generator_RowEvHandlerName="ComicBooksRowChangeEventHandler" msprop:Generator_RowDeletedName="ComicBooksRowDeleted" msprop:Generator_RowClassName="ComicBooksRow" msprop:Generator_UserTableName="ComicBooks" msprop:Generator_RowEvArgName="ComicBooksRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="Item_x0023_" msprop:Generator_ColumnVarNameInTable="_columnItem_" msprop:Generator_ColumnPropNameInRow="_Item_" msprop:Generator_ColumnPropNameInTable="_Item_Column" msprop:Generator_UserColumnName="Item#" type="xs:int" />
@@ -1540,7 +1561,7 @@ SELECT UserName, Password, Hash, Email, FirstName, LastName, UserLevel FROM USER
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="Conditions" msprop:Generator_TableClassName="ConditionsDataTable" msprop:Generator_TableVarName="tableConditions" msprop:Generator_TablePropName="Conditions" msprop:Generator_RowDeletingName="ConditionsRowDeleting" msprop:Generator_RowChangingName="ConditionsRowChanging" msprop:Generator_RowEvHandlerName="ConditionsRowChangeEventHandler" msprop:Generator_RowDeletedName="ConditionsRowDeleted" msprop:Generator_UserTableName="Conditions" msprop:Generator_RowChangedName="ConditionsRowChanged" msprop:Generator_RowEvArgName="ConditionsRowChangeEvent" msprop:Generator_RowClassName="ConditionsRow">
+        <xs:element name="Conditions" msprop:Generator_TableClassName="ConditionsDataTable" msprop:Generator_TableVarName="tableConditions" msprop:Generator_RowChangedName="ConditionsRowChanged" msprop:Generator_TablePropName="Conditions" msprop:Generator_RowDeletingName="ConditionsRowDeleting" msprop:Generator_RowChangingName="ConditionsRowChanging" msprop:Generator_RowEvHandlerName="ConditionsRowChangeEventHandler" msprop:Generator_RowDeletedName="ConditionsRowDeleted" msprop:Generator_RowClassName="ConditionsRow" msprop:Generator_UserTableName="Conditions" msprop:Generator_RowEvArgName="ConditionsRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="Condition" msprop:Generator_ColumnVarNameInTable="columnCondition" msprop:Generator_ColumnPropNameInRow="Condition" msprop:Generator_ColumnPropNameInTable="ConditionColumn" msprop:Generator_UserColumnName="Condition">
@@ -1553,7 +1574,7 @@ SELECT UserName, Password, Hash, Email, FirstName, LastName, UserLevel FROM USER
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="Dice" msprop:Generator_TableClassName="DiceDataTable" msprop:Generator_TableVarName="tableDice" msprop:Generator_TablePropName="Dice" msprop:Generator_RowDeletingName="DiceRowDeleting" msprop:Generator_RowChangingName="DiceRowChanging" msprop:Generator_RowEvHandlerName="DiceRowChangeEventHandler" msprop:Generator_RowDeletedName="DiceRowDeleted" msprop:Generator_UserTableName="Dice" msprop:Generator_RowChangedName="DiceRowChanged" msprop:Generator_RowEvArgName="DiceRowChangeEvent" msprop:Generator_RowClassName="DiceRow">
+        <xs:element name="Dice" msprop:Generator_TableClassName="DiceDataTable" msprop:Generator_TableVarName="tableDice" msprop:Generator_RowChangedName="DiceRowChanged" msprop:Generator_TablePropName="Dice" msprop:Generator_RowDeletingName="DiceRowDeleting" msprop:Generator_RowChangingName="DiceRowChanging" msprop:Generator_RowEvHandlerName="DiceRowChangeEventHandler" msprop:Generator_RowDeletedName="DiceRowDeleted" msprop:Generator_RowClassName="DiceRow" msprop:Generator_UserTableName="Dice" msprop:Generator_RowEvArgName="DiceRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="Item_x0023_" msprop:Generator_ColumnVarNameInTable="_columnItem_" msprop:Generator_ColumnPropNameInRow="_Item_" msprop:Generator_ColumnPropNameInTable="_Item_Column" msprop:Generator_UserColumnName="Item#" type="xs:int" />
@@ -1574,7 +1595,7 @@ SELECT UserName, Password, Hash, Email, FirstName, LastName, UserLevel FROM USER
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="Events" msprop:Generator_TableClassName="EventsDataTable" msprop:Generator_TableVarName="tableEvents" msprop:Generator_TablePropName="Events" msprop:Generator_RowDeletingName="EventsRowDeleting" msprop:Generator_RowChangingName="EventsRowChanging" msprop:Generator_RowEvHandlerName="EventsRowChangeEventHandler" msprop:Generator_RowDeletedName="EventsRowDeleted" msprop:Generator_UserTableName="Events" msprop:Generator_RowChangedName="EventsRowChanged" msprop:Generator_RowEvArgName="EventsRowChangeEvent" msprop:Generator_RowClassName="EventsRow">
+        <xs:element name="Events" msprop:Generator_TableClassName="EventsDataTable" msprop:Generator_TableVarName="tableEvents" msprop:Generator_RowChangedName="EventsRowChanged" msprop:Generator_TablePropName="Events" msprop:Generator_RowDeletingName="EventsRowDeleting" msprop:Generator_RowChangingName="EventsRowChanging" msprop:Generator_RowEvHandlerName="EventsRowChangeEventHandler" msprop:Generator_RowDeletedName="EventsRowDeleted" msprop:Generator_RowClassName="EventsRow" msprop:Generator_UserTableName="Events" msprop:Generator_RowEvArgName="EventsRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="EventId" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnEventId" msprop:Generator_ColumnPropNameInRow="EventId" msprop:Generator_ColumnPropNameInTable="EventIdColumn" msprop:Generator_UserColumnName="EventId" type="xs:int" />
@@ -1618,7 +1639,7 @@ SELECT UserName, Password, Hash, Email, FirstName, LastName, UserLevel FROM USER
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="EventSpace" msprop:Generator_TableClassName="EventSpaceDataTable" msprop:Generator_TableVarName="tableEventSpace" msprop:Generator_TablePropName="EventSpace" msprop:Generator_RowDeletingName="EventSpaceRowDeleting" msprop:Generator_RowChangingName="EventSpaceRowChanging" msprop:Generator_RowEvHandlerName="EventSpaceRowChangeEventHandler" msprop:Generator_RowDeletedName="EventSpaceRowDeleted" msprop:Generator_UserTableName="EventSpace" msprop:Generator_RowChangedName="EventSpaceRowChanged" msprop:Generator_RowEvArgName="EventSpaceRowChangeEvent" msprop:Generator_RowClassName="EventSpaceRow">
+        <xs:element name="EventSpace" msprop:Generator_TableClassName="EventSpaceDataTable" msprop:Generator_TableVarName="tableEventSpace" msprop:Generator_RowChangedName="EventSpaceRowChanged" msprop:Generator_TablePropName="EventSpace" msprop:Generator_RowDeletingName="EventSpaceRowDeleting" msprop:Generator_RowChangingName="EventSpaceRowChanging" msprop:Generator_RowEvHandlerName="EventSpaceRowChangeEventHandler" msprop:Generator_RowDeletedName="EventSpaceRowDeleted" msprop:Generator_RowClassName="EventSpaceRow" msprop:Generator_UserTableName="EventSpace" msprop:Generator_RowEvArgName="EventSpaceRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="Name" msprop:Generator_ColumnVarNameInTable="columnName" msprop:Generator_ColumnPropNameInRow="Name" msprop:Generator_ColumnPropNameInTable="NameColumn" msprop:Generator_UserColumnName="Name">
@@ -1632,7 +1653,7 @@ SELECT UserName, Password, Hash, Email, FirstName, LastName, UserLevel FROM USER
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="Inventory" msprop:Generator_TableClassName="InventoryDataTable" msprop:Generator_TableVarName="tableInventory" msprop:Generator_TablePropName="Inventory" msprop:Generator_RowDeletingName="InventoryRowDeleting" msprop:Generator_RowChangingName="InventoryRowChanging" msprop:Generator_RowEvHandlerName="InventoryRowChangeEventHandler" msprop:Generator_RowDeletedName="InventoryRowDeleted" msprop:Generator_UserTableName="Inventory" msprop:Generator_RowChangedName="InventoryRowChanged" msprop:Generator_RowEvArgName="InventoryRowChangeEvent" msprop:Generator_RowClassName="InventoryRow">
+        <xs:element name="Inventory" msprop:Generator_TableClassName="InventoryDataTable" msprop:Generator_TableVarName="tableInventory" msprop:Generator_RowChangedName="InventoryRowChanged" msprop:Generator_TablePropName="Inventory" msprop:Generator_RowDeletingName="InventoryRowDeleting" msprop:Generator_RowChangingName="InventoryRowChanging" msprop:Generator_RowEvHandlerName="InventoryRowChangeEventHandler" msprop:Generator_RowDeletedName="InventoryRowDeleted" msprop:Generator_RowClassName="InventoryRow" msprop:Generator_UserTableName="Inventory" msprop:Generator_RowEvArgName="InventoryRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="Item_x0023_" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="_columnItem_" msprop:Generator_ColumnPropNameInRow="_Item_" msprop:Generator_ColumnPropNameInTable="_Item_Column" msprop:Generator_UserColumnName="Item#" type="xs:int" />
@@ -1655,7 +1676,7 @@ SELECT UserName, Password, Hash, Email, FirstName, LastName, UserLevel FROM USER
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="ItemType" msprop:Generator_TableClassName="ItemTypeDataTable" msprop:Generator_TableVarName="tableItemType" msprop:Generator_TablePropName="ItemType" msprop:Generator_RowDeletingName="ItemTypeRowDeleting" msprop:Generator_RowChangingName="ItemTypeRowChanging" msprop:Generator_RowEvHandlerName="ItemTypeRowChangeEventHandler" msprop:Generator_RowDeletedName="ItemTypeRowDeleted" msprop:Generator_UserTableName="ItemType" msprop:Generator_RowChangedName="ItemTypeRowChanged" msprop:Generator_RowEvArgName="ItemTypeRowChangeEvent" msprop:Generator_RowClassName="ItemTypeRow">
+        <xs:element name="ItemType" msprop:Generator_TableClassName="ItemTypeDataTable" msprop:Generator_TableVarName="tableItemType" msprop:Generator_RowChangedName="ItemTypeRowChanged" msprop:Generator_TablePropName="ItemType" msprop:Generator_RowDeletingName="ItemTypeRowDeleting" msprop:Generator_RowChangingName="ItemTypeRowChanging" msprop:Generator_RowEvHandlerName="ItemTypeRowChangeEventHandler" msprop:Generator_RowDeletedName="ItemTypeRowDeleted" msprop:Generator_RowClassName="ItemTypeRow" msprop:Generator_UserTableName="ItemType" msprop:Generator_RowEvArgName="ItemTypeRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="Type" msprop:Generator_ColumnVarNameInTable="columnType" msprop:Generator_ColumnPropNameInRow="Type" msprop:Generator_ColumnPropNameInTable="TypeColumn" msprop:Generator_UserColumnName="Type">
@@ -1668,7 +1689,7 @@ SELECT UserName, Password, Hash, Email, FirstName, LastName, UserLevel FROM USER
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="Misc" msprop:Generator_TableClassName="MiscDataTable" msprop:Generator_TableVarName="tableMisc" msprop:Generator_TablePropName="Misc" msprop:Generator_RowDeletingName="MiscRowDeleting" msprop:Generator_RowChangingName="MiscRowChanging" msprop:Generator_RowEvHandlerName="MiscRowChangeEventHandler" msprop:Generator_RowDeletedName="MiscRowDeleted" msprop:Generator_UserTableName="Misc" msprop:Generator_RowChangedName="MiscRowChanged" msprop:Generator_RowEvArgName="MiscRowChangeEvent" msprop:Generator_RowClassName="MiscRow">
+        <xs:element name="Misc" msprop:Generator_TableClassName="MiscDataTable" msprop:Generator_TableVarName="tableMisc" msprop:Generator_RowChangedName="MiscRowChanged" msprop:Generator_TablePropName="Misc" msprop:Generator_RowDeletingName="MiscRowDeleting" msprop:Generator_RowChangingName="MiscRowChanging" msprop:Generator_RowEvHandlerName="MiscRowChangeEventHandler" msprop:Generator_RowDeletedName="MiscRowDeleted" msprop:Generator_RowClassName="MiscRow" msprop:Generator_UserTableName="Misc" msprop:Generator_RowEvArgName="MiscRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="Item_x0023_" msprop:Generator_ColumnVarNameInTable="_columnItem_" msprop:Generator_ColumnPropNameInRow="_Item_" msprop:Generator_ColumnPropNameInTable="_Item_Column" msprop:Generator_UserColumnName="Item#" type="xs:int" />
@@ -1682,7 +1703,7 @@ SELECT UserName, Password, Hash, Email, FirstName, LastName, UserLevel FROM USER
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="Publisher" msprop:Generator_TableClassName="PublisherDataTable" msprop:Generator_TableVarName="tablePublisher" msprop:Generator_TablePropName="Publisher" msprop:Generator_RowDeletingName="PublisherRowDeleting" msprop:Generator_RowChangingName="PublisherRowChanging" msprop:Generator_RowEvHandlerName="PublisherRowChangeEventHandler" msprop:Generator_RowDeletedName="PublisherRowDeleted" msprop:Generator_UserTableName="Publisher" msprop:Generator_RowChangedName="PublisherRowChanged" msprop:Generator_RowEvArgName="PublisherRowChangeEvent" msprop:Generator_RowClassName="PublisherRow">
+        <xs:element name="Publisher" msprop:Generator_TableClassName="PublisherDataTable" msprop:Generator_TableVarName="tablePublisher" msprop:Generator_RowChangedName="PublisherRowChanged" msprop:Generator_TablePropName="Publisher" msprop:Generator_RowDeletingName="PublisherRowDeleting" msprop:Generator_RowChangingName="PublisherRowChanging" msprop:Generator_RowEvHandlerName="PublisherRowChangeEventHandler" msprop:Generator_RowDeletedName="PublisherRowDeleted" msprop:Generator_RowClassName="PublisherRow" msprop:Generator_UserTableName="Publisher" msprop:Generator_RowEvArgName="PublisherRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="PubName" msprop:Generator_ColumnVarNameInTable="columnPubName" msprop:Generator_ColumnPropNameInRow="PubName" msprop:Generator_ColumnPropNameInTable="PubNameColumn" msprop:Generator_UserColumnName="PubName">
@@ -1695,7 +1716,7 @@ SELECT UserName, Password, Hash, Email, FirstName, LastName, UserLevel FROM USER
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="SessonTokens" msprop:Generator_TableClassName="SessonTokensDataTable" msprop:Generator_TableVarName="tableSessonTokens" msprop:Generator_TablePropName="SessonTokens" msprop:Generator_RowDeletingName="SessonTokensRowDeleting" msprop:Generator_RowChangingName="SessonTokensRowChanging" msprop:Generator_RowEvHandlerName="SessonTokensRowChangeEventHandler" msprop:Generator_RowDeletedName="SessonTokensRowDeleted" msprop:Generator_UserTableName="SessonTokens" msprop:Generator_RowChangedName="SessonTokensRowChanged" msprop:Generator_RowEvArgName="SessonTokensRowChangeEvent" msprop:Generator_RowClassName="SessonTokensRow">
+        <xs:element name="SessonTokens" msprop:Generator_TableClassName="SessonTokensDataTable" msprop:Generator_TableVarName="tableSessonTokens" msprop:Generator_RowChangedName="SessonTokensRowChanged" msprop:Generator_TablePropName="SessonTokens" msprop:Generator_RowDeletingName="SessonTokensRowDeleting" msprop:Generator_RowChangingName="SessonTokensRowChanging" msprop:Generator_RowEvHandlerName="SessonTokensRowChangeEventHandler" msprop:Generator_RowDeletedName="SessonTokensRowDeleted" msprop:Generator_RowClassName="SessonTokensRow" msprop:Generator_UserTableName="SessonTokens" msprop:Generator_RowEvArgName="SessonTokensRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="SessonId" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnSessonId" msprop:Generator_ColumnPropNameInRow="SessonId" msprop:Generator_ColumnPropNameInTable="SessonIdColumn" msprop:Generator_UserColumnName="SessonId" type="xs:int" />
@@ -1737,7 +1758,7 @@ SELECT UserName, Password, Hash, Email, FirstName, LastName, UserLevel FROM USER
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="StoreInfo" msprop:Generator_TableClassName="StoreInfoDataTable" msprop:Generator_TableVarName="tableStoreInfo" msprop:Generator_TablePropName="StoreInfo" msprop:Generator_RowDeletingName="StoreInfoRowDeleting" msprop:Generator_RowChangingName="StoreInfoRowChanging" msprop:Generator_RowEvHandlerName="StoreInfoRowChangeEventHandler" msprop:Generator_RowDeletedName="StoreInfoRowDeleted" msprop:Generator_UserTableName="StoreInfo" msprop:Generator_RowChangedName="StoreInfoRowChanged" msprop:Generator_RowEvArgName="StoreInfoRowChangeEvent" msprop:Generator_RowClassName="StoreInfoRow">
+        <xs:element name="StoreInfo" msprop:Generator_TableClassName="StoreInfoDataTable" msprop:Generator_TableVarName="tableStoreInfo" msprop:Generator_RowChangedName="StoreInfoRowChanged" msprop:Generator_TablePropName="StoreInfo" msprop:Generator_RowDeletingName="StoreInfoRowDeleting" msprop:Generator_RowChangingName="StoreInfoRowChanging" msprop:Generator_RowEvHandlerName="StoreInfoRowChangeEventHandler" msprop:Generator_RowDeletedName="StoreInfoRowDeleted" msprop:Generator_RowClassName="StoreInfoRow" msprop:Generator_UserTableName="StoreInfo" msprop:Generator_RowEvArgName="StoreInfoRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="StoreName" msprop:Generator_ColumnVarNameInTable="columnStoreName" msprop:Generator_ColumnPropNameInRow="StoreName" msprop:Generator_ColumnPropNameInTable="StoreNameColumn" msprop:Generator_UserColumnName="StoreName">
@@ -1785,7 +1806,7 @@ SELECT UserName, Password, Hash, Email, FirstName, LastName, UserLevel FROM USER
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="TabletopGames" msprop:Generator_TableClassName="TabletopGamesDataTable" msprop:Generator_TableVarName="tableTabletopGames" msprop:Generator_TablePropName="TabletopGames" msprop:Generator_RowDeletingName="TabletopGamesRowDeleting" msprop:Generator_RowChangingName="TabletopGamesRowChanging" msprop:Generator_RowEvHandlerName="TabletopGamesRowChangeEventHandler" msprop:Generator_RowDeletedName="TabletopGamesRowDeleted" msprop:Generator_UserTableName="TabletopGames" msprop:Generator_RowChangedName="TabletopGamesRowChanged" msprop:Generator_RowEvArgName="TabletopGamesRowChangeEvent" msprop:Generator_RowClassName="TabletopGamesRow">
+        <xs:element name="TabletopGames" msprop:Generator_TableClassName="TabletopGamesDataTable" msprop:Generator_TableVarName="tableTabletopGames" msprop:Generator_RowChangedName="TabletopGamesRowChanged" msprop:Generator_TablePropName="TabletopGames" msprop:Generator_RowDeletingName="TabletopGamesRowDeleting" msprop:Generator_RowChangingName="TabletopGamesRowChanging" msprop:Generator_RowEvHandlerName="TabletopGamesRowChangeEventHandler" msprop:Generator_RowDeletedName="TabletopGamesRowDeleted" msprop:Generator_RowClassName="TabletopGamesRow" msprop:Generator_UserTableName="TabletopGames" msprop:Generator_RowEvArgName="TabletopGamesRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="Item_x0023_" msprop:Generator_ColumnVarNameInTable="_columnItem_" msprop:Generator_ColumnPropNameInRow="_Item_" msprop:Generator_ColumnPropNameInTable="_Item_Column" msprop:Generator_UserColumnName="Item#" type="xs:int" />
@@ -1806,7 +1827,7 @@ SELECT UserName, Password, Hash, Email, FirstName, LastName, UserLevel FROM USER
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="TCGSets" msprop:Generator_TableClassName="TCGSetsDataTable" msprop:Generator_TableVarName="tableTCGSets" msprop:Generator_TablePropName="TCGSets" msprop:Generator_RowDeletingName="TCGSetsRowDeleting" msprop:Generator_RowChangingName="TCGSetsRowChanging" msprop:Generator_RowEvHandlerName="TCGSetsRowChangeEventHandler" msprop:Generator_RowDeletedName="TCGSetsRowDeleted" msprop:Generator_UserTableName="TCGSets" msprop:Generator_RowChangedName="TCGSetsRowChanged" msprop:Generator_RowEvArgName="TCGSetsRowChangeEvent" msprop:Generator_RowClassName="TCGSetsRow">
+        <xs:element name="TCGSets" msprop:Generator_TableClassName="TCGSetsDataTable" msprop:Generator_TableVarName="tableTCGSets" msprop:Generator_RowChangedName="TCGSetsRowChanged" msprop:Generator_TablePropName="TCGSets" msprop:Generator_RowDeletingName="TCGSetsRowDeleting" msprop:Generator_RowChangingName="TCGSetsRowChanging" msprop:Generator_RowEvHandlerName="TCGSetsRowChangeEventHandler" msprop:Generator_RowDeletedName="TCGSetsRowDeleted" msprop:Generator_RowClassName="TCGSetsRow" msprop:Generator_UserTableName="TCGSets" msprop:Generator_RowEvArgName="TCGSetsRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="Set_x0020_Name" msprop:Generator_ColumnVarNameInTable="columnSet_Name" msprop:Generator_ColumnPropNameInRow="Set_Name" msprop:Generator_ColumnPropNameInTable="Set_NameColumn" msprop:Generator_UserColumnName="Set Name">
@@ -1826,7 +1847,7 @@ SELECT UserName, Password, Hash, Email, FirstName, LastName, UserLevel FROM USER
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="TradingCardGames" msprop:Generator_TableClassName="TradingCardGamesDataTable" msprop:Generator_TableVarName="tableTradingCardGames" msprop:Generator_TablePropName="TradingCardGames" msprop:Generator_RowDeletingName="TradingCardGamesRowDeleting" msprop:Generator_RowChangingName="TradingCardGamesRowChanging" msprop:Generator_RowEvHandlerName="TradingCardGamesRowChangeEventHandler" msprop:Generator_RowDeletedName="TradingCardGamesRowDeleted" msprop:Generator_UserTableName="TradingCardGames" msprop:Generator_RowChangedName="TradingCardGamesRowChanged" msprop:Generator_RowEvArgName="TradingCardGamesRowChangeEvent" msprop:Generator_RowClassName="TradingCardGamesRow">
+        <xs:element name="TradingCardGames" msprop:Generator_TableClassName="TradingCardGamesDataTable" msprop:Generator_TableVarName="tableTradingCardGames" msprop:Generator_RowChangedName="TradingCardGamesRowChanged" msprop:Generator_TablePropName="TradingCardGames" msprop:Generator_RowDeletingName="TradingCardGamesRowDeleting" msprop:Generator_RowChangingName="TradingCardGamesRowChanging" msprop:Generator_RowEvHandlerName="TradingCardGamesRowChangeEventHandler" msprop:Generator_RowDeletedName="TradingCardGamesRowDeleted" msprop:Generator_RowClassName="TradingCardGamesRow" msprop:Generator_UserTableName="TradingCardGames" msprop:Generator_RowEvArgName="TradingCardGamesRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="Game_x0020_Name" msprop:Generator_ColumnVarNameInTable="columnGame_Name" msprop:Generator_ColumnPropNameInRow="Game_Name" msprop:Generator_ColumnPropNameInTable="Game_NameColumn" msprop:Generator_UserColumnName="Game Name">
@@ -1839,7 +1860,7 @@ SELECT UserName, Password, Hash, Email, FirstName, LastName, UserLevel FROM USER
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="TradingCards" msprop:Generator_TableClassName="TradingCardsDataTable" msprop:Generator_TableVarName="tableTradingCards" msprop:Generator_TablePropName="TradingCards" msprop:Generator_RowDeletingName="TradingCardsRowDeleting" msprop:Generator_RowChangingName="TradingCardsRowChanging" msprop:Generator_RowEvHandlerName="TradingCardsRowChangeEventHandler" msprop:Generator_RowDeletedName="TradingCardsRowDeleted" msprop:Generator_UserTableName="TradingCards" msprop:Generator_RowChangedName="TradingCardsRowChanged" msprop:Generator_RowEvArgName="TradingCardsRowChangeEvent" msprop:Generator_RowClassName="TradingCardsRow">
+        <xs:element name="TradingCards" msprop:Generator_TableClassName="TradingCardsDataTable" msprop:Generator_TableVarName="tableTradingCards" msprop:Generator_RowChangedName="TradingCardsRowChanged" msprop:Generator_TablePropName="TradingCards" msprop:Generator_RowDeletingName="TradingCardsRowDeleting" msprop:Generator_RowChangingName="TradingCardsRowChanging" msprop:Generator_RowEvHandlerName="TradingCardsRowChangeEventHandler" msprop:Generator_RowDeletedName="TradingCardsRowDeleted" msprop:Generator_RowClassName="TradingCardsRow" msprop:Generator_UserTableName="TradingCards" msprop:Generator_RowEvArgName="TradingCardsRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="Item_x0023_" msprop:Generator_ColumnVarNameInTable="_columnItem_" msprop:Generator_ColumnPropNameInRow="_Item_" msprop:Generator_ColumnPropNameInTable="_Item_Column" msprop:Generator_UserColumnName="Item#" type="xs:int" />
@@ -1874,7 +1895,7 @@ SELECT UserName, Password, Hash, Email, FirstName, LastName, UserLevel FROM USER
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="Transactions" msprop:Generator_TableClassName="TransactionsDataTable" msprop:Generator_TableVarName="tableTransactions" msprop:Generator_TablePropName="Transactions" msprop:Generator_RowDeletingName="TransactionsRowDeleting" msprop:Generator_RowChangingName="TransactionsRowChanging" msprop:Generator_RowEvHandlerName="TransactionsRowChangeEventHandler" msprop:Generator_RowDeletedName="TransactionsRowDeleted" msprop:Generator_UserTableName="Transactions" msprop:Generator_RowChangedName="TransactionsRowChanged" msprop:Generator_RowEvArgName="TransactionsRowChangeEvent" msprop:Generator_RowClassName="TransactionsRow">
+        <xs:element name="Transactions" msprop:Generator_TableClassName="TransactionsDataTable" msprop:Generator_TableVarName="tableTransactions" msprop:Generator_RowChangedName="TransactionsRowChanged" msprop:Generator_TablePropName="Transactions" msprop:Generator_RowDeletingName="TransactionsRowDeleting" msprop:Generator_RowChangingName="TransactionsRowChanging" msprop:Generator_RowEvHandlerName="TransactionsRowChangeEventHandler" msprop:Generator_RowDeletedName="TransactionsRowDeleted" msprop:Generator_RowClassName="TransactionsRow" msprop:Generator_UserTableName="Transactions" msprop:Generator_RowEvArgName="TransactionsRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="timestamp" msprop:Generator_ColumnVarNameInTable="columntimestamp" msprop:Generator_ColumnPropNameInRow="timestamp" msprop:Generator_ColumnPropNameInTable="timestampColumn" msprop:Generator_UserColumnName="timestamp" type="xs:dateTime" />
@@ -1892,7 +1913,7 @@ SELECT UserName, Password, Hash, Email, FirstName, LastName, UserLevel FROM USER
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="USER_LEVELS" msprop:Generator_TableClassName="USER_LEVELSDataTable" msprop:Generator_TableVarName="tableUSER_LEVELS" msprop:Generator_TablePropName="USER_LEVELS" msprop:Generator_RowDeletingName="USER_LEVELSRowDeleting" msprop:Generator_RowChangingName="USER_LEVELSRowChanging" msprop:Generator_RowEvHandlerName="USER_LEVELSRowChangeEventHandler" msprop:Generator_RowDeletedName="USER_LEVELSRowDeleted" msprop:Generator_UserTableName="USER_LEVELS" msprop:Generator_RowChangedName="USER_LEVELSRowChanged" msprop:Generator_RowEvArgName="USER_LEVELSRowChangeEvent" msprop:Generator_RowClassName="USER_LEVELSRow">
+        <xs:element name="USER_LEVELS" msprop:Generator_TableClassName="USER_LEVELSDataTable" msprop:Generator_TableVarName="tableUSER_LEVELS" msprop:Generator_RowChangedName="USER_LEVELSRowChanged" msprop:Generator_TablePropName="USER_LEVELS" msprop:Generator_RowDeletingName="USER_LEVELSRowDeleting" msprop:Generator_RowChangingName="USER_LEVELSRowChanging" msprop:Generator_RowEvHandlerName="USER_LEVELSRowChangeEventHandler" msprop:Generator_RowDeletedName="USER_LEVELSRowDeleted" msprop:Generator_RowClassName="USER_LEVELSRow" msprop:Generator_UserTableName="USER_LEVELS" msprop:Generator_RowEvArgName="USER_LEVELSRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="UserLevel" msprop:Generator_ColumnVarNameInTable="columnUserLevel" msprop:Generator_ColumnPropNameInRow="UserLevel" msprop:Generator_ColumnPropNameInTable="UserLevelColumn" msprop:Generator_UserColumnName="UserLevel">
@@ -1905,7 +1926,7 @@ SELECT UserName, Password, Hash, Email, FirstName, LastName, UserLevel FROM USER
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="USER_TABLE" msprop:Generator_TableClassName="USER_TABLEDataTable" msprop:Generator_TableVarName="tableUSER_TABLE" msprop:Generator_TablePropName="USER_TABLE" msprop:Generator_RowDeletingName="USER_TABLERowDeleting" msprop:Generator_RowChangingName="USER_TABLERowChanging" msprop:Generator_RowEvHandlerName="USER_TABLERowChangeEventHandler" msprop:Generator_RowDeletedName="USER_TABLERowDeleted" msprop:Generator_UserTableName="USER_TABLE" msprop:Generator_RowChangedName="USER_TABLERowChanged" msprop:Generator_RowEvArgName="USER_TABLERowChangeEvent" msprop:Generator_RowClassName="USER_TABLERow">
+        <xs:element name="USER_TABLE" msprop:Generator_TableClassName="USER_TABLEDataTable" msprop:Generator_TableVarName="tableUSER_TABLE" msprop:Generator_RowChangedName="USER_TABLERowChanged" msprop:Generator_TablePropName="USER_TABLE" msprop:Generator_RowDeletingName="USER_TABLERowDeleting" msprop:Generator_RowChangingName="USER_TABLERowChanging" msprop:Generator_RowEvHandlerName="USER_TABLERowChangeEventHandler" msprop:Generator_RowDeletedName="USER_TABLERowDeleted" msprop:Generator_RowClassName="USER_TABLERow" msprop:Generator_UserTableName="USER_TABLE" msprop:Generator_RowEvArgName="USER_TABLERowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="UserName" msprop:Generator_ColumnVarNameInTable="columnUserName" msprop:Generator_ColumnPropNameInRow="UserName" msprop:Generator_ColumnPropNameInTable="UserNameColumn" msprop:Generator_UserColumnName="UserName">
@@ -1960,7 +1981,7 @@ SELECT UserName, Password, Hash, Email, FirstName, LastName, UserLevel FROM USER
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="BindersView" msprop:Generator_TableClassName="BindersViewDataTable" msprop:Generator_TableVarName="tableBindersView" msprop:Generator_TablePropName="BindersView" msprop:Generator_RowDeletingName="BindersViewRowDeleting" msprop:Generator_RowChangingName="BindersViewRowChanging" msprop:Generator_RowEvHandlerName="BindersViewRowChangeEventHandler" msprop:Generator_RowDeletedName="BindersViewRowDeleted" msprop:Generator_UserTableName="BindersView" msprop:Generator_RowChangedName="BindersViewRowChanged" msprop:Generator_RowEvArgName="BindersViewRowChangeEvent" msprop:Generator_RowClassName="BindersViewRow">
+        <xs:element name="BindersView" msprop:Generator_TableClassName="BindersViewDataTable" msprop:Generator_TableVarName="tableBindersView" msprop:Generator_RowChangedName="BindersViewRowChanged" msprop:Generator_TablePropName="BindersView" msprop:Generator_RowDeletingName="BindersViewRowDeleting" msprop:Generator_RowChangingName="BindersViewRowChanging" msprop:Generator_RowEvHandlerName="BindersViewRowChangeEventHandler" msprop:Generator_RowDeletedName="BindersViewRowDeleted" msprop:Generator_RowClassName="BindersViewRow" msprop:Generator_UserTableName="BindersView" msprop:Generator_RowEvArgName="BindersViewRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="Name" msprop:Generator_ColumnVarNameInTable="columnName" msprop:Generator_ColumnPropNameInRow="Name" msprop:Generator_ColumnPropNameInTable="NameColumn" msprop:Generator_UserColumnName="Name">
@@ -1996,7 +2017,7 @@ SELECT UserName, Password, Hash, Email, FirstName, LastName, UserLevel FROM USER
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="BoardGamesView" msprop:Generator_TableClassName="BoardGamesViewDataTable" msprop:Generator_TableVarName="tableBoardGamesView" msprop:Generator_TablePropName="BoardGamesView" msprop:Generator_RowDeletingName="BoardGamesViewRowDeleting" msprop:Generator_RowChangingName="BoardGamesViewRowChanging" msprop:Generator_RowEvHandlerName="BoardGamesViewRowChangeEventHandler" msprop:Generator_RowDeletedName="BoardGamesViewRowDeleted" msprop:Generator_UserTableName="BoardGamesView" msprop:Generator_RowChangedName="BoardGamesViewRowChanged" msprop:Generator_RowEvArgName="BoardGamesViewRowChangeEvent" msprop:Generator_RowClassName="BoardGamesViewRow">
+        <xs:element name="BoardGamesView" msprop:Generator_TableClassName="BoardGamesViewDataTable" msprop:Generator_TableVarName="tableBoardGamesView" msprop:Generator_RowChangedName="BoardGamesViewRowChanged" msprop:Generator_TablePropName="BoardGamesView" msprop:Generator_RowDeletingName="BoardGamesViewRowDeleting" msprop:Generator_RowChangingName="BoardGamesViewRowChanging" msprop:Generator_RowEvHandlerName="BoardGamesViewRowChangeEventHandler" msprop:Generator_RowDeletedName="BoardGamesViewRowDeleted" msprop:Generator_RowClassName="BoardGamesViewRow" msprop:Generator_UserTableName="BoardGamesView" msprop:Generator_RowEvArgName="BoardGamesViewRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="Name" msprop:Generator_ColumnVarNameInTable="columnName" msprop:Generator_ColumnPropNameInRow="Name" msprop:Generator_ColumnPropNameInTable="NameColumn" msprop:Generator_UserColumnName="Name">
@@ -2018,7 +2039,7 @@ SELECT UserName, Password, Hash, Email, FirstName, LastName, UserLevel FROM USER
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="CardSleevesView" msprop:Generator_TableClassName="CardSleevesViewDataTable" msprop:Generator_TableVarName="tableCardSleevesView" msprop:Generator_TablePropName="CardSleevesView" msprop:Generator_RowDeletingName="CardSleevesViewRowDeleting" msprop:Generator_RowChangingName="CardSleevesViewRowChanging" msprop:Generator_RowEvHandlerName="CardSleevesViewRowChangeEventHandler" msprop:Generator_RowDeletedName="CardSleevesViewRowDeleted" msprop:Generator_UserTableName="CardSleevesView" msprop:Generator_RowChangedName="CardSleevesViewRowChanged" msprop:Generator_RowEvArgName="CardSleevesViewRowChangeEvent" msprop:Generator_RowClassName="CardSleevesViewRow">
+        <xs:element name="CardSleevesView" msprop:Generator_TableClassName="CardSleevesViewDataTable" msprop:Generator_TableVarName="tableCardSleevesView" msprop:Generator_RowChangedName="CardSleevesViewRowChanged" msprop:Generator_TablePropName="CardSleevesView" msprop:Generator_RowDeletingName="CardSleevesViewRowDeleting" msprop:Generator_RowChangingName="CardSleevesViewRowChanging" msprop:Generator_RowEvHandlerName="CardSleevesViewRowChangeEventHandler" msprop:Generator_RowDeletedName="CardSleevesViewRowDeleted" msprop:Generator_RowClassName="CardSleevesViewRow" msprop:Generator_UserTableName="CardSleevesView" msprop:Generator_RowEvArgName="CardSleevesViewRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="Name" msprop:Generator_ColumnVarNameInTable="columnName" msprop:Generator_ColumnPropNameInRow="Name" msprop:Generator_ColumnPropNameInTable="NameColumn" msprop:Generator_UserColumnName="Name">
@@ -2054,7 +2075,7 @@ SELECT UserName, Password, Hash, Email, FirstName, LastName, UserLevel FROM USER
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="ComicBooksView" msprop:Generator_TableClassName="ComicBooksViewDataTable" msprop:Generator_TableVarName="tableComicBooksView" msprop:Generator_TablePropName="ComicBooksView" msprop:Generator_RowDeletingName="ComicBooksViewRowDeleting" msprop:Generator_RowChangingName="ComicBooksViewRowChanging" msprop:Generator_RowEvHandlerName="ComicBooksViewRowChangeEventHandler" msprop:Generator_RowDeletedName="ComicBooksViewRowDeleted" msprop:Generator_UserTableName="ComicBooksView" msprop:Generator_RowChangedName="ComicBooksViewRowChanged" msprop:Generator_RowEvArgName="ComicBooksViewRowChangeEvent" msprop:Generator_RowClassName="ComicBooksViewRow">
+        <xs:element name="ComicBooksView" msprop:Generator_TableClassName="ComicBooksViewDataTable" msprop:Generator_TableVarName="tableComicBooksView" msprop:Generator_RowChangedName="ComicBooksViewRowChanged" msprop:Generator_TablePropName="ComicBooksView" msprop:Generator_RowDeletingName="ComicBooksViewRowDeleting" msprop:Generator_RowChangingName="ComicBooksViewRowChanging" msprop:Generator_RowEvHandlerName="ComicBooksViewRowChangeEventHandler" msprop:Generator_RowDeletedName="ComicBooksViewRowDeleted" msprop:Generator_RowClassName="ComicBooksViewRow" msprop:Generator_UserTableName="ComicBooksView" msprop:Generator_RowEvArgName="ComicBooksViewRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="Name" msprop:Generator_ColumnVarNameInTable="columnName" msprop:Generator_ColumnPropNameInRow="Name" msprop:Generator_ColumnPropNameInTable="NameColumn" msprop:Generator_UserColumnName="Name">
@@ -2078,7 +2099,7 @@ SELECT UserName, Password, Hash, Email, FirstName, LastName, UserLevel FROM USER
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="DiceView" msprop:Generator_TableClassName="DiceViewDataTable" msprop:Generator_TableVarName="tableDiceView" msprop:Generator_TablePropName="DiceView" msprop:Generator_RowDeletingName="DiceViewRowDeleting" msprop:Generator_RowChangingName="DiceViewRowChanging" msprop:Generator_RowEvHandlerName="DiceViewRowChangeEventHandler" msprop:Generator_RowDeletedName="DiceViewRowDeleted" msprop:Generator_UserTableName="DiceView" msprop:Generator_RowChangedName="DiceViewRowChanged" msprop:Generator_RowEvArgName="DiceViewRowChangeEvent" msprop:Generator_RowClassName="DiceViewRow">
+        <xs:element name="DiceView" msprop:Generator_TableClassName="DiceViewDataTable" msprop:Generator_TableVarName="tableDiceView" msprop:Generator_RowChangedName="DiceViewRowChanged" msprop:Generator_TablePropName="DiceView" msprop:Generator_RowDeletingName="DiceViewRowDeleting" msprop:Generator_RowChangingName="DiceViewRowChanging" msprop:Generator_RowEvHandlerName="DiceViewRowChangeEventHandler" msprop:Generator_RowDeletedName="DiceViewRowDeleted" msprop:Generator_RowClassName="DiceViewRow" msprop:Generator_UserTableName="DiceView" msprop:Generator_RowEvArgName="DiceViewRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="Name" msprop:Generator_ColumnVarNameInTable="columnName" msprop:Generator_ColumnPropNameInRow="Name" msprop:Generator_ColumnPropNameInTable="NameColumn" msprop:Generator_UserColumnName="Name">
@@ -2107,7 +2128,7 @@ SELECT UserName, Password, Hash, Email, FirstName, LastName, UserLevel FROM USER
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="MiscView" msprop:Generator_TableClassName="MiscViewDataTable" msprop:Generator_TableVarName="tableMiscView" msprop:Generator_TablePropName="MiscView" msprop:Generator_RowDeletingName="MiscViewRowDeleting" msprop:Generator_RowChangingName="MiscViewRowChanging" msprop:Generator_RowEvHandlerName="MiscViewRowChangeEventHandler" msprop:Generator_RowDeletedName="MiscViewRowDeleted" msprop:Generator_UserTableName="MiscView" msprop:Generator_RowChangedName="MiscViewRowChanged" msprop:Generator_RowEvArgName="MiscViewRowChangeEvent" msprop:Generator_RowClassName="MiscViewRow">
+        <xs:element name="MiscView" msprop:Generator_TableClassName="MiscViewDataTable" msprop:Generator_TableVarName="tableMiscView" msprop:Generator_RowChangedName="MiscViewRowChanged" msprop:Generator_TablePropName="MiscView" msprop:Generator_RowDeletingName="MiscViewRowDeleting" msprop:Generator_RowChangingName="MiscViewRowChanging" msprop:Generator_RowEvHandlerName="MiscViewRowChangeEventHandler" msprop:Generator_RowDeletedName="MiscViewRowDeleted" msprop:Generator_RowClassName="MiscViewRow" msprop:Generator_UserTableName="MiscView" msprop:Generator_RowEvArgName="MiscViewRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="Name" msprop:Generator_ColumnVarNameInTable="columnName" msprop:Generator_ColumnPropNameInRow="Name" msprop:Generator_ColumnPropNameInTable="NameColumn" msprop:Generator_UserColumnName="Name">
@@ -2129,7 +2150,7 @@ SELECT UserName, Password, Hash, Email, FirstName, LastName, UserLevel FROM USER
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="TabletopGamesView" msprop:Generator_TableClassName="TabletopGamesViewDataTable" msprop:Generator_TableVarName="tableTabletopGamesView" msprop:Generator_TablePropName="TabletopGamesView" msprop:Generator_RowDeletingName="TabletopGamesViewRowDeleting" msprop:Generator_RowChangingName="TabletopGamesViewRowChanging" msprop:Generator_RowEvHandlerName="TabletopGamesViewRowChangeEventHandler" msprop:Generator_RowDeletedName="TabletopGamesViewRowDeleted" msprop:Generator_UserTableName="TabletopGamesView" msprop:Generator_RowChangedName="TabletopGamesViewRowChanged" msprop:Generator_RowEvArgName="TabletopGamesViewRowChangeEvent" msprop:Generator_RowClassName="TabletopGamesViewRow">
+        <xs:element name="TabletopGamesView" msprop:Generator_TableClassName="TabletopGamesViewDataTable" msprop:Generator_TableVarName="tableTabletopGamesView" msprop:Generator_RowChangedName="TabletopGamesViewRowChanged" msprop:Generator_TablePropName="TabletopGamesView" msprop:Generator_RowDeletingName="TabletopGamesViewRowDeleting" msprop:Generator_RowChangingName="TabletopGamesViewRowChanging" msprop:Generator_RowEvHandlerName="TabletopGamesViewRowChangeEventHandler" msprop:Generator_RowDeletedName="TabletopGamesViewRowDeleted" msprop:Generator_RowClassName="TabletopGamesViewRow" msprop:Generator_UserTableName="TabletopGamesView" msprop:Generator_RowEvArgName="TabletopGamesViewRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="Name" msprop:Generator_ColumnVarNameInTable="columnName" msprop:Generator_ColumnPropNameInRow="Name" msprop:Generator_ColumnPropNameInTable="NameColumn" msprop:Generator_UserColumnName="Name">
@@ -2158,7 +2179,7 @@ SELECT UserName, Password, Hash, Email, FirstName, LastName, UserLevel FROM USER
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="TradingCardsView" msprop:Generator_TableClassName="TradingCardsViewDataTable" msprop:Generator_TableVarName="tableTradingCardsView" msprop:Generator_TablePropName="TradingCardsView" msprop:Generator_RowDeletingName="TradingCardsViewRowDeleting" msprop:Generator_RowChangingName="TradingCardsViewRowChanging" msprop:Generator_RowEvHandlerName="TradingCardsViewRowChangeEventHandler" msprop:Generator_RowDeletedName="TradingCardsViewRowDeleted" msprop:Generator_UserTableName="TradingCardsView" msprop:Generator_RowChangedName="TradingCardsViewRowChanged" msprop:Generator_RowEvArgName="TradingCardsViewRowChangeEvent" msprop:Generator_RowClassName="TradingCardsViewRow">
+        <xs:element name="TradingCardsView" msprop:Generator_TableClassName="TradingCardsViewDataTable" msprop:Generator_TableVarName="tableTradingCardsView" msprop:Generator_RowChangedName="TradingCardsViewRowChanged" msprop:Generator_TablePropName="TradingCardsView" msprop:Generator_RowDeletingName="TradingCardsViewRowDeleting" msprop:Generator_RowChangingName="TradingCardsViewRowChanging" msprop:Generator_RowEvHandlerName="TradingCardsViewRowChangeEventHandler" msprop:Generator_RowDeletedName="TradingCardsViewRowDeleted" msprop:Generator_RowClassName="TradingCardsViewRow" msprop:Generator_UserTableName="TradingCardsView" msprop:Generator_RowEvArgName="TradingCardsViewRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="Name" msprop:Generator_ColumnVarNameInTable="columnName" msprop:Generator_ColumnPropNameInRow="Name" msprop:Generator_ColumnPropNameInTable="NameColumn" msprop:Generator_UserColumnName="Name">
@@ -2198,6 +2219,54 @@ SELECT UserName, Password, Hash, Email, FirstName, LastName, UserLevel FROM USER
               </xs:element>
               <xs:element name="price" msprop:Generator_ColumnVarNameInTable="columnprice" msprop:Generator_ColumnPropNameInRow="price" msprop:Generator_ColumnPropNameInTable="priceColumn" msprop:Generator_UserColumnName="price" type="xs:decimal" />
               <xs:element name="Qty" msprop:Generator_ColumnVarNameInTable="columnQty" msprop:Generator_ColumnPropNameInRow="Qty" msprop:Generator_ColumnPropNameInTable="QtyColumn" msprop:Generator_UserColumnName="Qty" type="xs:int" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="UserTableView" msprop:Generator_TableClassName="UserTableViewDataTable" msprop:Generator_TableVarName="tableUserTableView" msprop:Generator_TablePropName="UserTableView" msprop:Generator_RowDeletingName="UserTableViewRowDeleting" msprop:Generator_RowChangingName="UserTableViewRowChanging" msprop:Generator_RowEvHandlerName="UserTableViewRowChangeEventHandler" msprop:Generator_RowDeletedName="UserTableViewRowDeleted" msprop:Generator_UserTableName="UserTableView" msprop:Generator_RowChangedName="UserTableViewRowChanged" msprop:Generator_RowEvArgName="UserTableViewRowChangeEvent" msprop:Generator_RowClassName="UserTableViewRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="UserName" msprop:Generator_ColumnVarNameInTable="columnUserName" msprop:Generator_ColumnPropNameInRow="UserName" msprop:Generator_ColumnPropNameInTable="UserNameColumn" msprop:Generator_UserColumnName="UserName">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Password" msprop:Generator_ColumnVarNameInTable="columnPassword" msprop:Generator_ColumnPropNameInRow="Password" msprop:Generator_ColumnPropNameInTable="PasswordColumn" msprop:Generator_UserColumnName="Password" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="60" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Email" msprop:Generator_ColumnVarNameInTable="columnEmail" msprop:Generator_ColumnPropNameInRow="Email" msprop:Generator_ColumnPropNameInTable="EmailColumn" msprop:Generator_UserColumnName="Email" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="FirstName" msprop:Generator_ColumnVarNameInTable="columnFirstName" msprop:Generator_ColumnPropNameInRow="FirstName" msprop:Generator_ColumnPropNameInTable="FirstNameColumn" msprop:Generator_UserColumnName="FirstName">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="24" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="LastName" msprop:Generator_ColumnVarNameInTable="columnLastName" msprop:Generator_ColumnPropNameInRow="LastName" msprop:Generator_ColumnPropNameInTable="LastNameColumn" msprop:Generator_UserColumnName="LastName">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="24" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="UserLevel" msprop:Generator_ColumnVarNameInTable="columnUserLevel" msprop:Generator_ColumnPropNameInRow="UserLevel" msprop:Generator_ColumnPropNameInTable="UserLevelColumn" msprop:Generator_UserColumnName="UserLevel">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="8" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
             </xs:sequence>
           </xs:complexType>
         </xs:element>
@@ -2292,32 +2361,36 @@ SELECT UserName, Password, Hash, Email, FirstName, LastName, UserLevel FROM USER
       <xs:selector xpath=".//mstns:USER_TABLE" />
       <xs:field xpath="mstns:UserName" />
     </xs:unique>
+    <xs:unique name="UserTableView_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:UserTableView" />
+      <xs:field xpath="mstns:UserName" />
+    </xs:unique>
   </xs:element>
   <xs:annotation>
     <xs:appinfo>
-      <msdata:Relationship name="FK_BINDERS_Inventory" msdata:parent="Inventory" msdata:child="Binders" msdata:parentkey="Item_x0023_" msdata:childkey="Item_x0023_" msprop:Generator_UserChildTable="Binders" msprop:Generator_ChildPropName="GetBindersRows" msprop:Generator_UserRelationName="FK_BINDERS_Inventory" msprop:Generator_RelationVarName="relationFK_BINDERS_Inventory" msprop:Generator_UserParentTable="Inventory" msprop:Generator_ParentPropName="InventoryRow" />
-      <msdata:Relationship name="FK_BINDERS_Publisher" msdata:parent="Publisher" msdata:child="Binders" msdata:parentkey="PubName" msdata:childkey="Publisher" msprop:Generator_UserChildTable="Binders" msprop:Generator_ChildPropName="GetBindersRows" msprop:Generator_UserRelationName="FK_BINDERS_Publisher" msprop:Generator_RelationVarName="relationFK_BINDERS_Publisher" msprop:Generator_UserParentTable="Publisher" msprop:Generator_ParentPropName="PublisherRow" />
-      <msdata:Relationship name="FK_BOARDGAMES_Inventory" msdata:parent="Inventory" msdata:child="BoardGames" msdata:parentkey="Item_x0023_" msdata:childkey="Item_x0023_" msprop:Generator_UserChildTable="BoardGames" msprop:Generator_ChildPropName="GetBoardGamesRows" msprop:Generator_UserRelationName="FK_BOARDGAMES_Inventory" msprop:Generator_RelationVarName="relationFK_BOARDGAMES_Inventory" msprop:Generator_UserParentTable="Inventory" msprop:Generator_ParentPropName="InventoryRow" />
-      <msdata:Relationship name="FK_BOARDGAMES_PUBLISHER" msdata:parent="Publisher" msdata:child="BoardGames" msdata:parentkey="PubName" msdata:childkey="Publisher" msprop:Generator_UserChildTable="BoardGames" msprop:Generator_ChildPropName="GetBoardGamesRows" msprop:Generator_UserRelationName="FK_BOARDGAMES_PUBLISHER" msprop:Generator_RelationVarName="relationFK_BOARDGAMES_PUBLISHER" msprop:Generator_UserParentTable="Publisher" msprop:Generator_ParentPropName="PublisherRow" />
-      <msdata:Relationship name="FK_CARDSLEEVES_Inventory" msdata:parent="Inventory" msdata:child="CardSleeves" msdata:parentkey="Item_x0023_" msdata:childkey="Item_x0023_" msprop:Generator_UserChildTable="CardSleeves" msprop:Generator_ChildPropName="GetCardSleevesRows" msprop:Generator_UserRelationName="FK_CARDSLEEVES_Inventory" msprop:Generator_RelationVarName="relationFK_CARDSLEEVES_Inventory" msprop:Generator_UserParentTable="Inventory" msprop:Generator_ParentPropName="InventoryRow" />
-      <msdata:Relationship name="FK_CARDSLEEVES_Publisher" msdata:parent="Publisher" msdata:child="CardSleeves" msdata:parentkey="PubName" msdata:childkey="Publisher" msprop:Generator_UserChildTable="CardSleeves" msprop:Generator_ChildPropName="GetCardSleevesRows" msprop:Generator_UserRelationName="FK_CARDSLEEVES_Publisher" msprop:Generator_RelationVarName="relationFK_CARDSLEEVES_Publisher" msprop:Generator_UserParentTable="Publisher" msprop:Generator_ParentPropName="PublisherRow" />
-      <msdata:Relationship name="FK_COMICBOOKS_INVENTORY" msdata:parent="Inventory" msdata:child="ComicBooks" msdata:parentkey="Item_x0023_" msdata:childkey="Item_x0023_" msprop:Generator_UserChildTable="ComicBooks" msprop:Generator_ChildPropName="GetComicBooksRows" msprop:Generator_UserRelationName="FK_COMICBOOKS_INVENTORY" msprop:Generator_RelationVarName="relationFK_COMICBOOKS_INVENTORY" msprop:Generator_UserParentTable="Inventory" msprop:Generator_ParentPropName="InventoryRow" />
-      <msdata:Relationship name="FK_COMICBOOKS_PUBLISHER" msdata:parent="Publisher" msdata:child="ComicBooks" msdata:parentkey="PubName" msdata:childkey="Publisher" msprop:Generator_UserChildTable="ComicBooks" msprop:Generator_ChildPropName="GetComicBooksRows" msprop:Generator_UserRelationName="FK_COMICBOOKS_PUBLISHER" msprop:Generator_RelationVarName="relationFK_COMICBOOKS_PUBLISHER" msprop:Generator_UserParentTable="Publisher" msprop:Generator_ParentPropName="PublisherRow" />
-      <msdata:Relationship name="FK_DICE_Inventory" msdata:parent="Inventory" msdata:child="Dice" msdata:parentkey="Item_x0023_" msdata:childkey="Item_x0023_" msprop:Generator_UserChildTable="Dice" msprop:Generator_ChildPropName="GetDiceRows" msprop:Generator_UserRelationName="FK_DICE_Inventory" msprop:Generator_RelationVarName="relationFK_DICE_Inventory" msprop:Generator_UserParentTable="Inventory" msprop:Generator_ParentPropName="InventoryRow" />
-      <msdata:Relationship name="FK_DICE_Publisher" msdata:parent="Publisher" msdata:child="Dice" msdata:parentkey="PubName" msdata:childkey="Publisher" msprop:Generator_UserChildTable="Dice" msprop:Generator_ChildPropName="GetDiceRows" msprop:Generator_UserRelationName="FK_DICE_Publisher" msprop:Generator_RelationVarName="relationFK_DICE_Publisher" msprop:Generator_UserParentTable="Publisher" msprop:Generator_ParentPropName="PublisherRow" />
-      <msdata:Relationship name="FK_Events_EventSpace" msdata:parent="EventSpace" msdata:child="Events" msdata:parentkey="Name" msdata:childkey="ReservedSpace" msprop:Generator_UserChildTable="Events" msprop:Generator_ChildPropName="GetEventsRows" msprop:Generator_UserRelationName="FK_Events_EventSpace" msprop:Generator_RelationVarName="relationFK_Events_EventSpace" msprop:Generator_UserParentTable="EventSpace" msprop:Generator_ParentPropName="EventSpaceRow" />
-      <msdata:Relationship name="FK_INVENTORY_TYPE" msdata:parent="ItemType" msdata:child="Inventory" msdata:parentkey="Type" msdata:childkey="Type" msprop:Generator_UserChildTable="Inventory" msprop:Generator_ChildPropName="GetInventoryRows" msprop:Generator_UserRelationName="FK_INVENTORY_TYPE" msprop:Generator_RelationVarName="relationFK_INVENTORY_TYPE" msprop:Generator_UserParentTable="ItemType" msprop:Generator_ParentPropName="ItemTypeRow" />
-      <msdata:Relationship name="FK_MISC_Inventory" msdata:parent="Inventory" msdata:child="Misc" msdata:parentkey="Item_x0023_" msdata:childkey="Item_x0023_" msprop:Generator_UserChildTable="Misc" msprop:Generator_ChildPropName="GetMiscRows" msprop:Generator_UserRelationName="FK_MISC_Inventory" msprop:Generator_ParentPropName="InventoryRow" msprop:Generator_RelationVarName="relationFK_MISC_Inventory" msprop:Generator_UserParentTable="Inventory" />
-      <msdata:Relationship name="FK_SessonTokens_USERLEVEL" msdata:parent="USER_LEVELS" msdata:child="SessonTokens" msdata:parentkey="UserLevel" msdata:childkey="UserLevel" msprop:Generator_UserChildTable="SessonTokens" msprop:Generator_ChildPropName="GetSessonTokensRows" msprop:Generator_UserRelationName="FK_SessonTokens_USERLEVEL" msprop:Generator_RelationVarName="relationFK_SessonTokens_USERLEVEL" msprop:Generator_UserParentTable="USER_LEVELS" msprop:Generator_ParentPropName="USER_LEVELSRow" />
-      <msdata:Relationship name="FK_SessonTokens_USERNAME" msdata:parent="USER_TABLE" msdata:child="SessonTokens" msdata:parentkey="UserName" msdata:childkey="User" msprop:Generator_UserChildTable="SessonTokens" msprop:Generator_ChildPropName="GetSessonTokensRows" msprop:Generator_UserRelationName="FK_SessonTokens_USERNAME" msprop:Generator_RelationVarName="relationFK_SessonTokens_USERNAME" msprop:Generator_UserParentTable="USER_TABLE" msprop:Generator_ParentPropName="USER_TABLERow" />
-      <msdata:Relationship name="FK_TABLETOPGAMES_Inventory" msdata:parent="Inventory" msdata:child="TabletopGames" msdata:parentkey="Item_x0023_" msdata:childkey="Item_x0023_" msprop:Generator_UserChildTable="TabletopGames" msprop:Generator_ChildPropName="GetTabletopGamesRows" msprop:Generator_UserRelationName="FK_TABLETOPGAMES_Inventory" msprop:Generator_ParentPropName="InventoryRow" msprop:Generator_RelationVarName="relationFK_TABLETOPGAMES_Inventory" msprop:Generator_UserParentTable="Inventory" />
-      <msdata:Relationship name="FK_TABLETOPGAMES_PUBLISHER" msdata:parent="Publisher" msdata:child="TabletopGames" msdata:parentkey="PubName" msdata:childkey="Publisher" msprop:Generator_UserChildTable="TabletopGames" msprop:Generator_ChildPropName="GetTabletopGamesRows" msprop:Generator_UserRelationName="FK_TABLETOPGAMES_PUBLISHER" msprop:Generator_ParentPropName="PublisherRow" msprop:Generator_RelationVarName="relationFK_TABLETOPGAMES_PUBLISHER" msprop:Generator_UserParentTable="Publisher" />
-      <msdata:Relationship name="FK_TCGSets_Game" msdata:parent="TradingCardGames" msdata:child="TCGSets" msdata:parentkey="Game_x0020_Name" msdata:childkey="Game_x0020_Name" msprop:Generator_UserChildTable="TCGSets" msprop:Generator_ChildPropName="GetTCGSetsRows" msprop:Generator_UserRelationName="FK_TCGSets_Game" msprop:Generator_RelationVarName="relationFK_TCGSets_Game" msprop:Generator_UserParentTable="TradingCardGames" msprop:Generator_ParentPropName="TradingCardGamesRow" />
-      <msdata:Relationship name="FK_TRADINGCARD_Inventory" msdata:parent="Inventory" msdata:child="TradingCards" msdata:parentkey="Item_x0023_" msdata:childkey="Item_x0023_" msprop:Generator_UserChildTable="TradingCards" msprop:Generator_ChildPropName="GetTradingCardsRows" msprop:Generator_UserRelationName="FK_TRADINGCARD_Inventory" msprop:Generator_ParentPropName="InventoryRow" msprop:Generator_RelationVarName="relationFK_TRADINGCARD_Inventory" msprop:Generator_UserParentTable="Inventory" />
-      <msdata:Relationship name="FK_TRADINGCARDS_CONDITION" msdata:parent="Conditions" msdata:child="TradingCards" msdata:parentkey="Condition" msdata:childkey="Condition" msprop:Generator_UserChildTable="TradingCards" msprop:Generator_ChildPropName="GetTradingCardsRows" msprop:Generator_UserRelationName="FK_TRADINGCARDS_CONDITION" msprop:Generator_ParentPropName="ConditionsRow" msprop:Generator_RelationVarName="relationFK_TRADINGCARDS_CONDITION" msprop:Generator_UserParentTable="Conditions" />
-      <msdata:Relationship name="FK_TRADINGCARDS_GAME" msdata:parent="TradingCardGames" msdata:child="TradingCards" msdata:parentkey="Game_x0020_Name" msdata:childkey="Game" msprop:Generator_UserChildTable="TradingCards" msprop:Generator_ChildPropName="GetTradingCardsRows" msprop:Generator_UserRelationName="FK_TRADINGCARDS_GAME" msprop:Generator_ParentPropName="TradingCardGamesRow" msprop:Generator_RelationVarName="relationFK_TRADINGCARDS_GAME" msprop:Generator_UserParentTable="TradingCardGames" />
-      <msdata:Relationship name="FK_TRADINGCARDS_SET" msdata:parent="TCGSets" msdata:child="TradingCards" msdata:parentkey="Set_x0020_Name" msdata:childkey="Set" msprop:Generator_UserChildTable="TradingCards" msprop:Generator_ChildPropName="GetTradingCardsRows" msprop:Generator_UserRelationName="FK_TRADINGCARDS_SET" msprop:Generator_ParentPropName="TCGSetsRow" msprop:Generator_RelationVarName="relationFK_TRADINGCARDS_SET" msprop:Generator_UserParentTable="TCGSets" />
-      <msdata:Relationship name="FK_USER_TABLE_USERLEVELS" msdata:parent="USER_LEVELS" msdata:child="USER_TABLE" msdata:parentkey="UserLevel" msdata:childkey="UserLevel" msprop:Generator_UserChildTable="USER_TABLE" msprop:Generator_ChildPropName="GetUSER_TABLERows" msprop:Generator_UserRelationName="FK_USER_TABLE_USERLEVELS" msprop:Generator_ParentPropName="USER_LEVELSRow" msprop:Generator_RelationVarName="relationFK_USER_TABLE_USERLEVELS" msprop:Generator_UserParentTable="USER_LEVELS" />
+      <msdata:Relationship name="FK_BINDERS_Inventory" msdata:parent="Inventory" msdata:child="Binders" msdata:parentkey="Item_x0023_" msdata:childkey="Item_x0023_" msprop:Generator_UserChildTable="Binders" msprop:Generator_ChildPropName="GetBindersRows" msprop:Generator_UserRelationName="FK_BINDERS_Inventory" msprop:Generator_ParentPropName="InventoryRow" msprop:Generator_RelationVarName="relationFK_BINDERS_Inventory" msprop:Generator_UserParentTable="Inventory" />
+      <msdata:Relationship name="FK_BINDERS_Publisher" msdata:parent="Publisher" msdata:child="Binders" msdata:parentkey="PubName" msdata:childkey="Publisher" msprop:Generator_UserChildTable="Binders" msprop:Generator_ChildPropName="GetBindersRows" msprop:Generator_UserRelationName="FK_BINDERS_Publisher" msprop:Generator_ParentPropName="PublisherRow" msprop:Generator_RelationVarName="relationFK_BINDERS_Publisher" msprop:Generator_UserParentTable="Publisher" />
+      <msdata:Relationship name="FK_BOARDGAMES_Inventory" msdata:parent="Inventory" msdata:child="BoardGames" msdata:parentkey="Item_x0023_" msdata:childkey="Item_x0023_" msprop:Generator_UserChildTable="BoardGames" msprop:Generator_ChildPropName="GetBoardGamesRows" msprop:Generator_UserRelationName="FK_BOARDGAMES_Inventory" msprop:Generator_ParentPropName="InventoryRow" msprop:Generator_RelationVarName="relationFK_BOARDGAMES_Inventory" msprop:Generator_UserParentTable="Inventory" />
+      <msdata:Relationship name="FK_BOARDGAMES_PUBLISHER" msdata:parent="Publisher" msdata:child="BoardGames" msdata:parentkey="PubName" msdata:childkey="Publisher" msprop:Generator_UserChildTable="BoardGames" msprop:Generator_ChildPropName="GetBoardGamesRows" msprop:Generator_UserRelationName="FK_BOARDGAMES_PUBLISHER" msprop:Generator_ParentPropName="PublisherRow" msprop:Generator_RelationVarName="relationFK_BOARDGAMES_PUBLISHER" msprop:Generator_UserParentTable="Publisher" />
+      <msdata:Relationship name="FK_CARDSLEEVES_Inventory" msdata:parent="Inventory" msdata:child="CardSleeves" msdata:parentkey="Item_x0023_" msdata:childkey="Item_x0023_" msprop:Generator_UserChildTable="CardSleeves" msprop:Generator_ChildPropName="GetCardSleevesRows" msprop:Generator_UserRelationName="FK_CARDSLEEVES_Inventory" msprop:Generator_ParentPropName="InventoryRow" msprop:Generator_RelationVarName="relationFK_CARDSLEEVES_Inventory" msprop:Generator_UserParentTable="Inventory" />
+      <msdata:Relationship name="FK_CARDSLEEVES_Publisher" msdata:parent="Publisher" msdata:child="CardSleeves" msdata:parentkey="PubName" msdata:childkey="Publisher" msprop:Generator_UserChildTable="CardSleeves" msprop:Generator_ChildPropName="GetCardSleevesRows" msprop:Generator_UserRelationName="FK_CARDSLEEVES_Publisher" msprop:Generator_ParentPropName="PublisherRow" msprop:Generator_RelationVarName="relationFK_CARDSLEEVES_Publisher" msprop:Generator_UserParentTable="Publisher" />
+      <msdata:Relationship name="FK_COMICBOOKS_INVENTORY" msdata:parent="Inventory" msdata:child="ComicBooks" msdata:parentkey="Item_x0023_" msdata:childkey="Item_x0023_" msprop:Generator_UserChildTable="ComicBooks" msprop:Generator_ChildPropName="GetComicBooksRows" msprop:Generator_UserRelationName="FK_COMICBOOKS_INVENTORY" msprop:Generator_ParentPropName="InventoryRow" msprop:Generator_RelationVarName="relationFK_COMICBOOKS_INVENTORY" msprop:Generator_UserParentTable="Inventory" />
+      <msdata:Relationship name="FK_COMICBOOKS_PUBLISHER" msdata:parent="Publisher" msdata:child="ComicBooks" msdata:parentkey="PubName" msdata:childkey="Publisher" msprop:Generator_UserChildTable="ComicBooks" msprop:Generator_ChildPropName="GetComicBooksRows" msprop:Generator_UserRelationName="FK_COMICBOOKS_PUBLISHER" msprop:Generator_ParentPropName="PublisherRow" msprop:Generator_RelationVarName="relationFK_COMICBOOKS_PUBLISHER" msprop:Generator_UserParentTable="Publisher" />
+      <msdata:Relationship name="FK_DICE_Inventory" msdata:parent="Inventory" msdata:child="Dice" msdata:parentkey="Item_x0023_" msdata:childkey="Item_x0023_" msprop:Generator_UserChildTable="Dice" msprop:Generator_ChildPropName="GetDiceRows" msprop:Generator_UserRelationName="FK_DICE_Inventory" msprop:Generator_ParentPropName="InventoryRow" msprop:Generator_RelationVarName="relationFK_DICE_Inventory" msprop:Generator_UserParentTable="Inventory" />
+      <msdata:Relationship name="FK_DICE_Publisher" msdata:parent="Publisher" msdata:child="Dice" msdata:parentkey="PubName" msdata:childkey="Publisher" msprop:Generator_UserChildTable="Dice" msprop:Generator_ChildPropName="GetDiceRows" msprop:Generator_UserRelationName="FK_DICE_Publisher" msprop:Generator_ParentPropName="PublisherRow" msprop:Generator_RelationVarName="relationFK_DICE_Publisher" msprop:Generator_UserParentTable="Publisher" />
+      <msdata:Relationship name="FK_Events_EventSpace" msdata:parent="EventSpace" msdata:child="Events" msdata:parentkey="Name" msdata:childkey="ReservedSpace" msprop:Generator_UserChildTable="Events" msprop:Generator_ChildPropName="GetEventsRows" msprop:Generator_UserRelationName="FK_Events_EventSpace" msprop:Generator_ParentPropName="EventSpaceRow" msprop:Generator_RelationVarName="relationFK_Events_EventSpace" msprop:Generator_UserParentTable="EventSpace" />
+      <msdata:Relationship name="FK_INVENTORY_TYPE" msdata:parent="ItemType" msdata:child="Inventory" msdata:parentkey="Type" msdata:childkey="Type" msprop:Generator_UserChildTable="Inventory" msprop:Generator_ChildPropName="GetInventoryRows" msprop:Generator_UserRelationName="FK_INVENTORY_TYPE" msprop:Generator_ParentPropName="ItemTypeRow" msprop:Generator_RelationVarName="relationFK_INVENTORY_TYPE" msprop:Generator_UserParentTable="ItemType" />
+      <msdata:Relationship name="FK_MISC_Inventory" msdata:parent="Inventory" msdata:child="Misc" msdata:parentkey="Item_x0023_" msdata:childkey="Item_x0023_" msprop:Generator_UserChildTable="Misc" msprop:Generator_ChildPropName="GetMiscRows" msprop:Generator_UserRelationName="FK_MISC_Inventory" msprop:Generator_RelationVarName="relationFK_MISC_Inventory" msprop:Generator_UserParentTable="Inventory" msprop:Generator_ParentPropName="InventoryRow" />
+      <msdata:Relationship name="FK_SessonTokens_USERLEVEL" msdata:parent="USER_LEVELS" msdata:child="SessonTokens" msdata:parentkey="UserLevel" msdata:childkey="UserLevel" msprop:Generator_UserChildTable="SessonTokens" msprop:Generator_ChildPropName="GetSessonTokensRows" msprop:Generator_UserRelationName="FK_SessonTokens_USERLEVEL" msprop:Generator_ParentPropName="USER_LEVELSRow" msprop:Generator_RelationVarName="relationFK_SessonTokens_USERLEVEL" msprop:Generator_UserParentTable="USER_LEVELS" />
+      <msdata:Relationship name="FK_SessonTokens_USERNAME" msdata:parent="USER_TABLE" msdata:child="SessonTokens" msdata:parentkey="UserName" msdata:childkey="User" msprop:Generator_UserChildTable="SessonTokens" msprop:Generator_ChildPropName="GetSessonTokensRows" msprop:Generator_UserRelationName="FK_SessonTokens_USERNAME" msprop:Generator_ParentPropName="USER_TABLERow" msprop:Generator_RelationVarName="relationFK_SessonTokens_USERNAME" msprop:Generator_UserParentTable="USER_TABLE" />
+      <msdata:Relationship name="FK_TABLETOPGAMES_Inventory" msdata:parent="Inventory" msdata:child="TabletopGames" msdata:parentkey="Item_x0023_" msdata:childkey="Item_x0023_" msprop:Generator_UserChildTable="TabletopGames" msprop:Generator_ChildPropName="GetTabletopGamesRows" msprop:Generator_UserRelationName="FK_TABLETOPGAMES_Inventory" msprop:Generator_RelationVarName="relationFK_TABLETOPGAMES_Inventory" msprop:Generator_UserParentTable="Inventory" msprop:Generator_ParentPropName="InventoryRow" />
+      <msdata:Relationship name="FK_TABLETOPGAMES_PUBLISHER" msdata:parent="Publisher" msdata:child="TabletopGames" msdata:parentkey="PubName" msdata:childkey="Publisher" msprop:Generator_UserChildTable="TabletopGames" msprop:Generator_ChildPropName="GetTabletopGamesRows" msprop:Generator_UserRelationName="FK_TABLETOPGAMES_PUBLISHER" msprop:Generator_RelationVarName="relationFK_TABLETOPGAMES_PUBLISHER" msprop:Generator_UserParentTable="Publisher" msprop:Generator_ParentPropName="PublisherRow" />
+      <msdata:Relationship name="FK_TCGSets_Game" msdata:parent="TradingCardGames" msdata:child="TCGSets" msdata:parentkey="Game_x0020_Name" msdata:childkey="Game_x0020_Name" msprop:Generator_UserChildTable="TCGSets" msprop:Generator_ChildPropName="GetTCGSetsRows" msprop:Generator_UserRelationName="FK_TCGSets_Game" msprop:Generator_ParentPropName="TradingCardGamesRow" msprop:Generator_RelationVarName="relationFK_TCGSets_Game" msprop:Generator_UserParentTable="TradingCardGames" />
+      <msdata:Relationship name="FK_TRADINGCARD_Inventory" msdata:parent="Inventory" msdata:child="TradingCards" msdata:parentkey="Item_x0023_" msdata:childkey="Item_x0023_" msprop:Generator_UserChildTable="TradingCards" msprop:Generator_ChildPropName="GetTradingCardsRows" msprop:Generator_UserRelationName="FK_TRADINGCARD_Inventory" msprop:Generator_RelationVarName="relationFK_TRADINGCARD_Inventory" msprop:Generator_UserParentTable="Inventory" msprop:Generator_ParentPropName="InventoryRow" />
+      <msdata:Relationship name="FK_TRADINGCARDS_CONDITION" msdata:parent="Conditions" msdata:child="TradingCards" msdata:parentkey="Condition" msdata:childkey="Condition" msprop:Generator_UserChildTable="TradingCards" msprop:Generator_ChildPropName="GetTradingCardsRows" msprop:Generator_UserRelationName="FK_TRADINGCARDS_CONDITION" msprop:Generator_RelationVarName="relationFK_TRADINGCARDS_CONDITION" msprop:Generator_UserParentTable="Conditions" msprop:Generator_ParentPropName="ConditionsRow" />
+      <msdata:Relationship name="FK_TRADINGCARDS_GAME" msdata:parent="TradingCardGames" msdata:child="TradingCards" msdata:parentkey="Game_x0020_Name" msdata:childkey="Game" msprop:Generator_UserChildTable="TradingCards" msprop:Generator_ChildPropName="GetTradingCardsRows" msprop:Generator_UserRelationName="FK_TRADINGCARDS_GAME" msprop:Generator_RelationVarName="relationFK_TRADINGCARDS_GAME" msprop:Generator_UserParentTable="TradingCardGames" msprop:Generator_ParentPropName="TradingCardGamesRow" />
+      <msdata:Relationship name="FK_TRADINGCARDS_SET" msdata:parent="TCGSets" msdata:child="TradingCards" msdata:parentkey="Set_x0020_Name" msdata:childkey="Set" msprop:Generator_UserChildTable="TradingCards" msprop:Generator_ChildPropName="GetTradingCardsRows" msprop:Generator_UserRelationName="FK_TRADINGCARDS_SET" msprop:Generator_RelationVarName="relationFK_TRADINGCARDS_SET" msprop:Generator_UserParentTable="TCGSets" msprop:Generator_ParentPropName="TCGSetsRow" />
+      <msdata:Relationship name="FK_USER_TABLE_USERLEVELS" msdata:parent="USER_LEVELS" msdata:child="USER_TABLE" msdata:parentkey="UserLevel" msdata:childkey="UserLevel" msprop:Generator_UserChildTable="USER_TABLE" msprop:Generator_ChildPropName="GetUSER_TABLERows" msprop:Generator_UserRelationName="FK_USER_TABLE_USERLEVELS" msprop:Generator_RelationVarName="relationFK_USER_TABLE_USERLEVELS" msprop:Generator_UserParentTable="USER_LEVELS" msprop:Generator_ParentPropName="USER_LEVELSRow" />
     </xs:appinfo>
   </xs:annotation>
 </xs:schema>

@@ -76,6 +76,18 @@
     <Compile Include="ADMIN_EditEvents.Designer.cs">
       <DependentUpon>ADMIN_EditEvents.cs</DependentUpon>
     </Compile>
+    <Compile Include="ADMIN_EDIT_Binders.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ADMIN_EDIT_Binders.Designer.cs">
+      <DependentUpon>ADMIN_EDIT_Binders.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ADMIN_EDIT_INVENTORY.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ADMIN_EDIT_INVENTORY.Designer.cs">
+      <DependentUpon>ADMIN_EDIT_INVENTORY.cs</DependentUpon>
+    </Compile>
     <Compile Include="Announcement.cs" />
     <Compile Include="Announcements Dummy.cs">
       <SubType>Form</SubType>
@@ -138,9 +150,11 @@
     </Compile>
     <Compile Include="Edit_Supporting_Data.cs">
       <SubType>Form</SubType>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Compile>
     <Compile Include="Edit_Supporting_Data.Designer.cs">
       <DependentUpon>Edit_Supporting_Data.cs</DependentUpon>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Compile>
     <Compile Include="Event.cs" />
     <Compile Include="Events Dummy.cs">
@@ -191,12 +205,6 @@
     <Compile Include="StoreInfo_Dummy.Designer.cs">
       <DependentUpon>StoreInfo_Dummy.cs</DependentUpon>
     </Compile>
-    <Compile Include="Edit_Inventory.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Edit_Inventory.Designer.cs">
-      <DependentUpon>Edit_Inventory.cs</DependentUpon>
-    </Compile>
     <Compile Include="TabletopGame.cs" />
     <Compile Include="TabletopGameControl.cs">
       <SubType>UserControl</SubType>
@@ -219,6 +227,12 @@
     </Compile>
     <EmbeddedResource Include="ADMIN_EditEvents.resx">
       <DependentUpon>ADMIN_EditEvents.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ADMIN_EDIT_Binders.resx">
+      <DependentUpon>ADMIN_EDIT_Binders.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ADMIN_EDIT_INVENTORY.resx">
+      <DependentUpon>ADMIN_EDIT_INVENTORY.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Announcements Dummy.resx">
       <DependentUpon>Announcements Dummy.cs</DependentUpon>
@@ -249,6 +263,7 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Edit_Supporting_Data.resx">
       <DependentUpon>Edit_Supporting_Data.cs</DependentUpon>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </EmbeddedResource>
     <EmbeddedResource Include="Events Dummy.resx">
       <DependentUpon>Events Dummy.cs</DependentUpon>
@@ -277,9 +292,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="StoreInfo_Dummy.resx">
       <DependentUpon>StoreInfo_Dummy.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Edit_Inventory.resx">
-      <DependentUpon>Edit_Inventory.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="TabletopGameControl.resx">
       <DependentUpon>TabletopGameControl.cs</DependentUpon>

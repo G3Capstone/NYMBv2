@@ -1465,8 +1465,12 @@ namespace NYMBv2
 
         private void button7_Click_1(object sender, EventArgs e)
         {
-            //SystemManager_Dummy myManager = new SystemManager_Dummy();
-            //myManager.ShowDialog();
+            //Edit_Supporting_Data supportEditor = new Edit_Supporting_Data();
+            //supportEditor.ShowDialog();
+
+            ADMIN_EDIT_Binders editBinders = new ADMIN_EDIT_Binders();
+            editBinders.ShowDialog();
+                
         }
 
         private void llblCreateAccount_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
@@ -1495,6 +1499,10 @@ namespace NYMBv2
             }
         }
 
-		
-	}
+        private void btnEditInventory_Click(object sender, EventArgs e)
+        {
+            ADMIN_EDIT_INVENTORY editInv = new ADMIN_EDIT_INVENTORY();
+            editInv.ShowDialog();
+        }
+    }
 }
