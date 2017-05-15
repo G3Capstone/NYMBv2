@@ -12,6 +12,7 @@ using System.Configuration;
 using System.Security.Cryptography;
 
 
+
 namespace NYMBv2
 {
     public partial class CreateUser : Form
@@ -512,32 +513,31 @@ namespace NYMBv2
 
         #region Salt and Hash
 
-        public static string ComputeHash(string text, string hash,
-                                          byte[] saltbytes)
+        public static string ComputeHash(string text)
         {
-            //If salt isn't specified, generate it.
-            if (saltbytes == null)
-            {
-                //define minimum and maximum salt sizes.
-                int minsalt = 6;
-                int maxsalt = 15;
+            byte[] saltbytes;
 
-                //Generate a random number for the size of the salt.
-                Random random = new Random();
-                int saltSize = random.Next(minsalt, maxsalt);
 
-                //Allocate a byte array to hold the salt.
-                saltbytes = new byte[saltSize];
+            //define minimum and maximum salt sizes.
+            int minsalt = 6;
+            int maxsalt = 15;
 
-                //Initialize a random number generator.
-                RNGCryptoServiceProvider rng = new RNGCryptoServiceProvider();
+            //Generate a random number for the size of the salt.
+            Random random = new Random();
+            int saltSize = random.Next(minsalt, maxsalt);
 
-                //Fill the salt with cryptographically strong byte values.
-                rng.GetNonZeroBytes(saltbytes);
+            //Allocate a byte array to hold the salt.
+            saltbytes = new byte[saltSize];
+
+            //Initialize a random number generator.
+            RNGCryptoServiceProvider rng = new RNGCryptoServiceProvider();
+
+            //Fill the salt with cryptographically strong byte values.
+            rng.GetNonZeroBytes(saltbytes);
                 
-            }
+            
 
-            //Convert palin text into a byte array.
+            //Convert plain text into a byte array.
             byte[] plainTextBytes = Encoding.UTF8.GetBytes(text);
 
             //Allocate aray, which will hold plain text and salt.
@@ -555,14 +555,24 @@ namespace NYMBv2
             // Because we support multiple hashing algorithms, we must define
             // hash object as a common (abstract) base class. We will specify the
             // actual hashing algorithm class later during object creation.
-            HashAlgorithm hashing;
+            HashAlgorithm hash;
+            int algorithm = random.Next(0, 4);
+            string selectHash;
+            // select a random hashing algorithm
 
-            // Make sure hashing algorithm name is specified.
-            if (hash == null)
-                hash = "";
+            if (algorithm == 0)
+            { selectHash = "SHA1"; }
+            else if (algorithm == 1)
+            { selectHash = "SHA256"; }
+            else if (algorithm == 2)
+            { selectHash = "SHA384"; }
+            else if (algorithm == 3)
+            { selectHash = "SHA512"; }
+            else 
+            { selectHash = "other"; }
 
             // Initialize appropriate hashing algorithm class.
-            switch (hash.ToUpper())
+            switch (selectHash)
             {
                 case "SHA1":
                     hash = new SHA1Managed();
@@ -607,6 +617,7 @@ namespace NYMBv2
             return hashValue;
         }
 
+#endregion
 
         #region Password shouldn't contain certain special characters
 
