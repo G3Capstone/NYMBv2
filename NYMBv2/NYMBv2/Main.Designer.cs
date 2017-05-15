@@ -1234,7 +1234,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.InactiveCaption;
-            this.ClientSize = new System.Drawing.Size(1447, 733);
+            this.ClientSize = new System.Drawing.Size(1370, 733);
             this.Controls.Add(this.llblCreateAccount);
             this.Controls.Add(this.btnLogInAndOut);
             this.Controls.Add(this.lblActiveUser);
