@@ -53,6 +53,11 @@ namespace NYMBv2
 			set { name = value; }
 		}
 
+		private void labelCondition_Click(object sender, EventArgs e)
+		{
+
+		}
+
 		public string Foil
 		{
 			get { return foil; }

@@ -40,6 +40,11 @@ namespace NYMBv2
 			labelPublisher.Text = publisher;
 		}
 
+		private void labelPrice_Click(object sender, EventArgs e)
+		{
+
+		}
+
 		#region get/setters
 		public string Name
 		{
